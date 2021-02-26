@@ -1,8 +1,8 @@
 # Open Automated Chemical Synthesis Platform (model S2)
 
 - [Overview](#overview)
-- [S2 API](#opentrons-api)
-- [S2 App](#opentrons-app)
+- [S2 API](#S2-api)
+- [S2 App](#S2-app)
 - [Contributing](#contributing)
 
 ## Overview
