@@ -3,6 +3,7 @@
 - [Overview](#overview)
 - [S2 API](#S2-api)
 - [S2 App](#S2-app)
+- [Contributing]
 
 ## Overview
 
