@@ -1,0 +1,132 @@
+[
+    {
+        "tracking_number": "03/02/2021/01:41-RXN-1",
+        "reactor_no": 1,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 25,
+        "reagents": [
+            {
+                "name": "A1",
+                "type": "solid",
+                "plate": "plate_5mL:001",
+                "position": "A2",
+                "amount": 1
+            },
+            {
+                "name": "B1",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:002",
+                "position": "D1",
+                "amount": 1.0
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "03/02/2021/01:41-RXN-2",
+        "reactor_no": 2,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 25,
+        "reagents": [
+            {
+                "name": "A1",
+                "type": "solid",
+                "plate": "plate_5mL:001",
+                "position": "A2",
+                "amount": 1
+            },
+            {
+                "name": "B2",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:002",
+                "position": "A2",
+                "amount": 1.0
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "03/02/2021/01:41-RXN-3",
+        "reactor_no": 3,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 25,
+        "reagents": [
+            {
+                "name": "A1",
+                "type": "solid",
+                "plate": "plate_5mL:001",
+                "position": "A2",
+                "amount": 1
+            },
+            {
+                "name": "B3",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:002",
+                "position": "B2",
+                "amount": 2.5
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "03/02/2021/01:41-RXN-4",
+        "reactor_no": 4,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 25,
+        "reagents": [
+            {
+                "name": "A1",
+                "type": "solid",
+                "plate": "plate_5mL:001",
+                "position": "A2",
+                "amount": 2
+            },
+            {
+                "name": "B4",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:002",
+                "position": "C2",
+                "amount": 1.0
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "03/02/2021/01:41-RXN-5",
+        "reactor_no": 5,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 25,
+        "reagents": [
+            {
+                "name": "A1",
+                "type": "solid",
+                "plate": "plate_5mL:001",
+                "position": "A2",
+                "amount": 1
+            },
+            {
+                "name": "B5",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:002",
+                "position": "D2",
+                "amount": 1.0
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    }
+]

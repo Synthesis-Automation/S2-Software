@@ -1,0 +1,73 @@
+{
+    "version": 1.0,
+    "name": "plate_40mL",
+    "cornerOffsetFromSlot": {
+        "x": 22.8,
+        "y": 21.7,
+        "z": 0
+    },
+    "columns": 3,
+    "rows": 2,
+    "wells": {
+        "A1": {
+            "depth": 86.0,
+            "height": 119.5,
+            "volume": 4000,
+            "shape": "circular",
+            "diameter": 13.7,
+            "x": 22.8,
+            "y": 21.7,
+            "z": 0
+        },
+        "B1": {
+            "depth": 86.0,
+            "height": 119.5,
+            "volume": 4000,
+            "shape": "circular",
+            "diameter": 13.7,
+            "x": 22.8,
+            "y": 63.7,
+            "z": 0
+        },
+        "A2": {
+            "depth": 86.0,
+            "height": 119.5,
+            "volume": 4000,
+            "shape": "circular",
+            "diameter": 13.7,
+            "x": 63.8,
+            "y": 21.7,
+            "z": 0
+        },
+        "B2": {
+            "depth": 86.0,
+            "height": 119.5,
+            "volume": 4000,
+            "shape": "circular",
+            "diameter": 13.7,
+            "x": 63.8,
+            "y": 63.7,
+            "z": 0
+        },
+        "A3": {
+            "depth": 86.0,
+            "height": 119.5,
+            "volume": 4000,
+            "shape": "circular",
+            "diameter": 13.7,
+            "x": 104.8,
+            "y": 21.7,
+            "z": 0
+        },
+        "B3": {
+            "depth": 86.0,
+            "height": 119.5,
+            "volume": 4000,
+            "shape": "circular",
+            "diameter": 13.7,
+            "x": 104.8,
+            "y": 63.7,
+            "z": 0
+        }
+    }
+}

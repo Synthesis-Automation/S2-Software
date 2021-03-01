@@ -1,0 +1,4 @@
+
+Protocol file name:  C:/Users/xubar/OneDrive/Robot/Softwares/SynM/App/user_files/test-7_run.txt
+Required plates:  plate_5mL:001
+['Reactor No. 1', 'KF  0.005 mmol ', '']

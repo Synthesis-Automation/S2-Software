@@ -1,0 +1,8 @@
+# Reaction Protocol Format Version 1.0
+# No space in names of chemicals, use ';' to seperate each item, 'mL' for liquid chemicals, 'mmol' for solid chemicals, program ignores any chemical name start with '$'.
+
+A1(0.005 mmol); B1 (0.010 mmol), Water (1.0 mL); 
+A1(0.005 mmol); B2 (0.010 mmol), Water (1.0 mL); 
+A1(0.005 mmol); B3 (0.010 mmol), Water (2.5 mL); 
+A1(0.01 mmol); B4 (0.010 mmol), Water (1.0 mL); 
+A1(0.005 mmol); B5 (0.010 mmol), Water (1.0 mL); 

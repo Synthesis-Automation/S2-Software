@@ -1,0 +1,5 @@
+
+Protocol file name:  C:/Users/xubar/OneDrive/Robot/Softwares/SynM/App/user_files/test-2_run.txt
+Required plates:  plate_5mL:001, plate_40mL:001, plate_5mL:002
+['Reactor No. 1', 'Water  0.45 mL ', 'KF  0.005 mmol ', '']
+['Reactor No. 2', '1-Octene  0.05 mL ', 'iPrOH  0.45 mL ', 'CsF  0.005 mmol ', '']

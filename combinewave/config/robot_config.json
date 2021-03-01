@@ -1,0 +1,40 @@
+{
+  "note": "refenrence is compared to conner of slot A1, Z is to deck surface",
+
+  "max_robot_rows": 3,
+  "max_robot_cols": 5,
+  "col_offset": 134,
+  "row_offset": 92,
+  "reference": {
+    "x": 0,
+    "y": 0,
+    "z": 120
+  },
+
+  "slots": {
+    "A1": { "x": 0, "y": 0 },
+    "A2": { "x": 134, "y": 0 },
+    "A3": { "x": 268, "y": 0 },
+    "A4": { "x": 402, "y": 0 },
+    "A5": { "x": 536, "y": 0 },
+    "B1": { "x": 0, "y": 92 },
+    "B2": { "x": 134, "y": 92 },
+    "B3": { "x": 268, "y": 92 },
+    "B4": { "x": 402, "y": 92 },
+    "B5": { "x": 536, "y": 92 },
+    "C1": { "x": 0, "y": 184 },
+    "C2": { "x": 134, "y": 184 },
+    "C3": { "x": 268, "y": 184 },
+    "C4": { "x": 402, "y": 184 },
+    "C5": { "x": 536, "y": 184 }
+  },
+
+  "steps_per_mm_Z1": 100,
+  "steps_per_mm_Z2": 100,
+  "steps_per_mm_Z3": 100,
+  "steps_per_mm_X": 100,
+  "steps_per_mm_Y": 100,
+
+  "pipette_model": "foreach",
+  "gripper_model": "flexrobo"
+}

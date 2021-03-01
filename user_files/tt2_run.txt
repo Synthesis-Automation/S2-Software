@@ -1,0 +1,8 @@
+
+Protocol file name:  C:/Users/DELL/OneDrive/Robot/Softwares/SynM/App/user_files/tt2_run.txt
+Required plates:  plate_5mL:001, plate_5mL:002
+['Reactor No. 1', 'A1 0.005 mmol ', 'B1  0.010 mmol   Water  1.0 mL ', '']
+['Reactor No. 2', 'A1 0.005 mmol ', 'B2  0.010 mmol   Water  1.0 mL ', '']
+['Reactor No. 3', 'A1 0.005 mmol ', 'B3  0.010 mmol   Water  2.5 mL ', '']
+['Reactor No. 4', 'A1 0.01 mmol ', 'B4  0.010 mmol   Water  1.0 mL ', '']
+['Reactor No. 5', 'A1 0.005 mmol ', 'B5  0.010 mmol   Water  1.0 mL ', '']

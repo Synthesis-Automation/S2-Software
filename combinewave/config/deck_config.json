@@ -1,0 +1,62 @@
+{
+    "A1": {
+        "plate": "not_used:006",
+        "assignment": "Reagent"
+    },
+    "A2": {
+        "plate": "reaction_caps:001",
+        "assignment": "Reaction caps"
+    },
+    "A3": {
+        "plate": "plate_40mL:003",
+        "assignment": "Reagent"
+    },
+    "A4": {
+        "plate": "plate_40mL:002",
+        "assignment": "Reagent"
+    },
+    "A5": {
+        "plate": "trash:001",
+        "assignment": "Trash"
+    },
+    "B1": {
+        "plate": "plate_5mL:003",
+        "assignment": "Reagent"
+    },
+    "B2": {
+        "plate": "plate_5mL:002",
+        "assignment": "Reagent"
+    },
+    "B3": {
+        "plate": "workup_small:001",
+        "assignment": "Workup"
+    },
+    "B4": {
+        "plate": "plate_40mL:001",
+        "assignment": "Reagent"
+    },
+    "B5": {
+        "plate": "tiprack_50uL:002",
+        "assignment": "Tips 50uL"
+    },
+    "C1": {
+        "plate": "plate_clean_up:001",
+        "assignment": "Clean up"
+    },
+    "C2": {
+        "plate": "plate_5mL:001",
+        "assignment": "Reagent"
+    },
+    "C3": {
+        "plate": "plate_8mL:001",
+        "assignment": "Reactor"
+    },
+    "C4": {
+        "plate": "plate_2mL:001",
+        "assignment": "GC LC"
+    },
+    "C5": {
+        "plate": "tiprack_1000uL:001",
+        "assignment": "Tips 1000uL"
+    }
+}

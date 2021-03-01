@@ -1,0 +1,4 @@
+
+Protocol file name:  C:/Users/xubar/OneDrive/Robot/Softwares/SynM/App/user_files/tt1_run.txt
+Required plates:  plate_40mL:002, plate_5mL:002, plate_5mL:001
+['Reactor No. 1', '1-Octene  0.2 mmol  0.0314 mL ', 'DCM  1.5 mL ', 'Ethyl-acrylate  1.6 mmol  0.1739 mL ', 'Grubbs-Cat-2nd-gen  0.002 mmol ', 'Addition-temperature  25 degree ', 'Reaction-temperature  25 degree ', 'Reaction-time  6. h ', 'Workup  brine  1.0 mL .']

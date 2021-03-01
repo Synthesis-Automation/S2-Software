@@ -1,0 +1,24 @@
+{
+  "version": 1.0,
+  "name": "point",
+  "cornerOffsetFromSlot": {
+      "x": 14.3,
+      "y": 11.2,
+      "z": 0
+  },
+  "columns": 1,
+  "rows": 1,
+  "wells": {
+    "A1": {
+      "depth": 17.4,
+      "diameter": 16,
+      "height": 0,
+      "length": 0,
+      "total-liquid-volume": 1,
+      "width": 0,
+      "x": 50.0,
+      "y": 20.0,
+      "z": 0
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+    "version": 1.0,
+    "name": "workup_big",
+    "cornerOffsetFromSlot": {
+        "x": 10,
+        "y": 10,
+        "z": 0
+    },
+    "columns": 3,
+    "rows": 2,
+    "wells": {
+        "A1": {
+            "depth": 82.7,
+            "height": 105.7,
+            "volume": 4000,
+            "shape": "circular",
+            "diameter": 18.0,
+            "x": 10,
+            "y": 10,
+            "z": 0
+        },
+        "B1": {
+            "depth": 82.7,
+            "height": 105.7,
+            "volume": 4000,
+            "shape": "circular",
+            "diameter": 18.0,
+            "x": 10,
+            "y": 102,
+            "z": 0
+        },
+        "A2": {
+            "depth": 82.7,
+            "height": 105.7,
+            "volume": 4000,
+            "shape": "circular",
+            "diameter": 18.0,
+            "x": 144,
+            "y": 10,
+            "z": 0
+        },
+        "B2": {
+            "depth": 82.7,
+            "height": 105.7,
+            "volume": 4000,
+            "shape": "circular",
+            "diameter": 18.0,
+            "x": 144,
+            "y": 102,
+            "z": 0
+        },
+        "A3": {
+            "depth": 82.7,
+            "height": 105.7,
+            "volume": 4000,
+            "shape": "circular",
+            "diameter": 18.0,
+            "x": 278,
+            "y": 10,
+            "z": 0
+        },
+        "B3": {
+            "depth": 82.7,
+            "height": 105.7,
+            "volume": 4000,
+            "shape": "circular",
+            "diameter": 18.0,
+            "x": 278,
+            "y": 102,
+            "z": 0
+        }
+    }
+}
