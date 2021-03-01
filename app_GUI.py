@@ -19,7 +19,6 @@ from combinewave.tools import custom_widgets, helper
 # CAPPER = 'Z1'... defined in parameters.py
 from combinewave.parameters import CAPPER, LIQUID, TABLET, VERSION
 
-
 class Main(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -78,7 +77,7 @@ class Main(tk.Tk):
         tk.Tk.config(self, menu=self.menu)
         # End of main menu
 
-        # Notebook tab
+        # Notebook tabs, each function has one tab
         self.notebook = Notebook(self, style='lefttab.TNotebook')
 
         connect_tab = Connect_tab(self.notebook)
