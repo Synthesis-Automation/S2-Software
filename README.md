@@ -60,3 +60,6 @@ Examples:
 
 
 Easily upload a protocol, calibrate positions, and run your experiment from your computer.
+
+This program used many open-source hardware and software projects:
+e.g., Arduino, AccelStepper, smoothieware for hardware controls; Opentrons, numpy, pandas in software part
