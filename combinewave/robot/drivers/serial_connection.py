@@ -131,8 +131,13 @@ class Connection(object):
         if model == "foreach":
             while True:
                 msg = self.serial_port.readline()
-                print(msg)
-                return msg
+                if msg != '':
+                    print(msg)
+                    time.sleep(0.1)
+                    return msg
+
+                # if b'/0' in msg:
+                #     break
 
 
 def get_port_by_VID(vid):

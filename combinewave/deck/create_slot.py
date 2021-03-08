@@ -24,30 +24,9 @@ class Slot(object):
     def get_max_robot_cols(self):
         return self.robot_config['max_robot_cols']
 
-    def save_deck_config(self, deck_config=None):
-        ''' save deck_config to file, if no parameter is given, the self.deck_conifig will be saved'''
-        if deck_config == None:
-            deck_config_save = self.deck_config
-        else:
-            deck_config_save = deck_config
-        self.update_deck_config(deck_config_save)
-        with open(self.deck_config_file, "w") as json_file:
-            json.dump(deck_config_save, json_file)
-        from combinewave.tools import helper
-        helper.format_json_file(self.deck_config_file)
-
-    def save_calibration(self, plate, calibration_data):
-        '''save calibration data for one plate in the slot '''
-        # example: 'plate='A1', calibration_data=[1, 20, 10.50]'
-        self.calibration[plate] = calibration_data
-        with open(self.calibration_file, "w") as json_file:
-            json.dump(self.calibration, json_file)
-        from combinewave.tools import helper
-        helper.format_json_file(self.calibration_file)
-        self.update_head_offsets()
-
     def setup_slot_on_deck(self):
-        '''generate coordinates for the upper conner of each slots on the deck as a python dictionary: {"A1": (0, 0, 0)}'''
+        '''generate coordinates for the upper conner of each slots on the deck as a python dictionary: '''
+        '''e.g., {A1': {'x': 0, 'y': 0}, 'A2': {'x': 134, 'y': 0},...}'''
         self._slots = {}
         robot_cols = self.get_max_robot_cols()
         robot_rows = self.get_max_robot_rows()
@@ -69,7 +48,5 @@ class Slot(object):
 # test code for this module
 if __name__ == '__main__':
     slot = Slot()
-    # deck.update_deck_config(deck_config)
-
     print(slot._slots)
     print()

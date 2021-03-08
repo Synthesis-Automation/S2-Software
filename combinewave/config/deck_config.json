@@ -1,10 +1,10 @@
 {
     "A1": {
-        "plate": "not_used:006",
+        "plate": "plate_5mL:004",
         "assignment": "Reagent"
     },
     "A2": {
-        "plate": "reaction_caps:001",
+        "plate": "caps:001",
         "assignment": "Reaction caps"
     },
     "A3": {
@@ -40,7 +40,7 @@
         "assignment": "Tips 50uL"
     },
     "C1": {
-        "plate": "plate_clean_up:001",
+        "plate": "clean_up:001",
         "assignment": "Clean up"
     },
     "C2": {

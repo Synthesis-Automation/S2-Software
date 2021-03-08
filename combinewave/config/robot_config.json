@@ -5,6 +5,8 @@
   "max_robot_cols": 5,
   "col_offset": 134,
   "row_offset": 92,
+  "max_number_of_plate": 15,
+  
   "reference": {
     "x": 0,
     "y": 0,

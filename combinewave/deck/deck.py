@@ -61,7 +61,6 @@ class Deck(object):
         self.deck_config_file = Path("combinewave/config/deck_config.json")
         self.robot_config_file = Path("combinewave/config/robot_config.json")
         self.load_robot_config()
-        self.setup_slot_on_deck()
         self.setup_plates()
         self.generate_slot_list()
         self.load_deck_config()
@@ -71,6 +70,8 @@ class Deck(object):
         with open(self.robot_config_file) as config:
             self.robot_config = json.load(config)
         self.refenrence = self.robot_config["reference"]
+        self._slots = self.robot_config["slots"]
+        self.max_number_of_plate = self.robot_config["max_number_of_plate"]
 
     def load_calibration(self):
         with open(self.calibration_file, "r") as cal:
@@ -106,7 +107,7 @@ class Deck(object):
         return self.robot_config['max_robot_cols']
 
     def get_max_number_of_plate(self):
-        self.max_number_of_plate = self.get_max_robot_rows()*self.get_max_robot_cols()
+        # self.max_number_of_plate = self.get_max_robot_rows()*self.get_max_robot_cols()
         return self.max_number_of_plate
 
     def update_deck_config(self, deck_config):
@@ -140,11 +141,9 @@ class Deck(object):
         x1 = self.calibration["Z1"][0]-self.calibration["Z2"][0]
         y1 = self.calibration["Z1"][1]-self.calibration["Z2"][1]
         z1 = self.calibration["Z1"][2]+self.refenrence["z"]
-
         x2 = 0
         y2 = 0
         z2 = self.calibration["Z2"][2]+self.refenrence["z"]
-
         x3 = self.calibration["Z3"][0]-self.calibration["Z2"][0]
         y3 = self.calibration["Z3"][1]-self.calibration["Z2"][1]
         z3 = self.calibration["Z3"][2]+self.refenrence["z"]
@@ -162,11 +161,10 @@ class Deck(object):
             json.dump(self.calibration, json_file)
         from combinewave.tools import helper
         helper.format_json_file(self.calibration_file)
-        self.update_head_offsets()
+        # self.update_head_offsets()
 
     def generate_slot_list(self):
-        # plate_dict = {0: 'A1', 1: 'A2', 2: 'A3', 3: 'A4', 4: 'A5', 5: 'B1', 6: 'B2', 7: 'B3'
-        # plate_dict_reversed {'A1': 0, 'A2': 1, 'A3': 2, 'A4': 3, 'A5': 4, 'B1': 5
+        '''slot_list = ['A1', 'A2', 'A3', 'A4', 'A5', 'B1', 'B2', 'B3', 'B4', 'B5', 'C1', 'C2', 'C3', 'C4', 'C5']'''
         i = 0
         self.plate_dict = {}
         self.plate_dict_reversed = {}
@@ -179,26 +177,6 @@ class Deck(object):
 
     def get_slot_list(self):
         return self.slot_list
-
-    def setup_slot_on_deck(self):
-        '''generate coordinates for the upper conner of each slots on the deck as a python dictionary: {"A1": (0, 0, 0)}'''
-        self._slots = {}
-        robot_cols = self.get_max_robot_cols()
-        robot_rows = self.get_max_robot_rows()
-        row_offset, col_offset = self.get_slot_offsets()
-        A = ord("A")
-        row_names = ""
-        for i in range(robot_rows):
-            row_names = row_names+chr(A+i)
-        for row_index, row in enumerate(row_names):
-            for col_index, col in enumerate(range(1, robot_cols + 1)):
-                slot_coordinates = (
-                    (col_offset * col_index),
-                    (row_offset * row_index),
-                    0
-                )
-                slot_name = "{}{}".format(row, col)
-                self._slots.update({slot_name: slot_coordinates})
 
     def read_plate_definition(self, plate_definition_file='plate_5mL.json'):
         with open(plate_definition_file) as data:
@@ -238,7 +216,9 @@ class Deck(object):
         depth = self._plates[plate]['wells'][vial]['depth']
         height = self._plates[plate]['wells'][vial]['height']
         diameter = self._plates[plate]['wells'][vial]['diameter']
-        (x1, y1, z1) = self._slots[plate]  # slot_coordinates
+        x1 = self._slots[plate]["x"]
+        y1 = self._slots[plate]["y"]
+        z1 = 0
         plate_name = self.deck_config[plate]["plate"]
         plate_type = plate_name.split(':')[0]
         # the final x, y, z  = plate + slot + refenrence
@@ -258,7 +238,7 @@ class Deck(object):
         else:
             return chr(65+row-1)+str(int((number)/row))
 
-    def convert_A1_to_number_by_plate_type(self, name, plate_type="plate_5mL"):
+    def convert_A1_to_number_by_plate_type(self, name, plate_type="plate"):
         '''convert numeric number (e.g., 2) to format like A2, the number start with 0'''
         return self.get_vial_list_by_plate_type(plate_type).index(name)
 
@@ -329,27 +309,7 @@ class Deck(object):
 
 # test code for this module
 if __name__ == '__main__':
-    # deck_config = {
-    #     "A1": {"plate": "plate_5mL:001", "assignment": "Reagent"},
-    #     "A2": {"plate": "plate_5mL:001", "assignment": "Reagent"},
-    #     "A3": {"plate": "plate_5mL:001", "assignment": "Reagent"},
-    #     "A4": {"plate": "plate_5mL:001", "assignment": "Clean up"},
-    #     "A5": {"plate": "plate_5mL:001", "assignment": "Reactor"},
-    #     "B1": {"plate": "plate_5mL:001", "assignment": "Reagent"},
-    #     "B2": {"plate": "plate_5mL:001", "assignment": "Reagent"},
-    #     "B3": {"plate": "plate_5mL:001", "assignment": "Workup"},
-    #     "B4": {"plate": "plate_5mL:001", "assignment": "Trash"},
-    #     "B5": {"plate": "plate_5mL:001", "assignment": "Reagent"},
-    #     "C1": {"plate": "plate_5mL:001", "assignment": "Tips 1000uL"},
-    #     "C2": {"plate": "plate_5mL:001", "assignment": "Reagent"},
-    #     "C3": {"plate": "plate_5mL:001", "assignment": "Reagent"},
-    #     "C4": {"plate": "plate_5mL:001", "assignment": "Reagent"},
-    #     "C5": {"plate": "plate_5mL:001", "assignment": "Reagent"}
-    # }
-
     deck = Deck()
-    # deck.update_deck_config(deck_config)
-
     print("deck._slots")
     print(deck._slots)
     print()
@@ -362,6 +322,7 @@ if __name__ == '__main__':
     print(deck.head_offsets)
     print()
 
+    print("vial cooridnates:")
     vial_1 = deck.vial(plate='A1', vial='A1')
     print(vial_1)
 
@@ -369,17 +330,8 @@ if __name__ == '__main__':
     print(deck.convert_number_to_A1(number=4, plate='B3'))
     print(deck.convert_A1_to_number("A1", plate='B3'))
     print(deck.next_vial('B3', plate='B3'))
-
-    print(deck.refenrence)
     r = deck.get_assignment_of_slot("C3")
     print(r)
-
-    # print("Clean up plate")
-    # a = deck.get_plate_assignment("Clean up")
-    # print(a)
-
-    # # plates = deck._plates
-    # # print(plates)
 
     slots = deck.slot_list
     print("slot_list")
@@ -392,7 +344,7 @@ if __name__ == '__main__':
     print(res)
 
 
-    res = deck.convert_A1_to_number_by_plate_type("B1")
+    res = deck.convert_A1_to_number_by_plate_type("A1", plate_type="plate_5mL")
     print(res)
     # vial_list_ = deck.get_vial_list_by_slot("A2")
     # print(vial_list_)

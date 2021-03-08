@@ -64,6 +64,9 @@ class Pipette(object):
             print("tip NOT attached! code:", res)
             return False
 
+    def send_pickup_tip_cmd(self):  # do nothing, not needed for foreach model
+        pass
+
     def set_transport_air_volume(self, volume=50):  # volume in uL
         self.aspirate(volume)
         time.sleep(0.05)

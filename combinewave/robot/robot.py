@@ -8,7 +8,7 @@ from combinewave.robot.drivers.xy_platform import xy_platform
 from combinewave.robot.drivers.z_platform import z_platform
 from combinewave.robot.drivers.rs485.gripper import gripper
 from combinewave.robot.drivers import rs485_connection
-from combinewave.robot.drivers import pipette, pipette_foreach
+from combinewave.robot.drivers import pipette_foreach
 from combinewave.robot.drivers.serial_connection import get_port_by_VID
 from combinewave.deck import deck
 
@@ -36,10 +36,10 @@ class Robot(object):
 
     def connect(self):
         # find usb ports
-        vid_xy_platform = 0x1D50
+        vid_xy_platform = 0x1D50  # smoothie
         vid_z_platform = 0x1A86  # CH340
         vid_pipette = 0x0403  # FT232
-        vid_modbus = 0x10C4  # CP210x, PID 0xEA60, DTECH
+        vid_modbus = 0x10C4  # CP210x, PID 0xEA60, DTECH/UGreen
 
         self.xy_platform_port = get_port_by_VID(vid_xy_platform)
         self.z_platform_port = get_port_by_VID(vid_z_platform)
@@ -60,7 +60,7 @@ class Robot(object):
             port=self.modbus_port, baudrate=115200)
         self.gripper = gripper.Gripper(
             modbus_connection=connection_485, unit=GRIPPER_ID)
-        self.pipette = pipette.Pipette(pipette_port=self.pipette_port)
+        self.pipette = pipette_foreach.Pipette(pipette_port=self.pipette_port)
         self.pipette.connect()
 
     def update(self):
@@ -209,11 +209,6 @@ class Robot(object):
         self.move_to_top_of_vial(head=CAPPER, vial=vial, z=hold)
         self.gripper.gripper_close(gripper_closing_percent)
         self.gripper.set_rotation_speed(rotation_speed)
-        # self.gripper.rotate(30)
-        # time.sleep(1)
-        # if not self.gripper.is_rotation_ok():
-        #     print("cap could not be openned")
-        #     return False
         self.gripper.rotate(rotation_angle)
         self.z_platform.set_max_speed(head=CAPPER, speed=Z_speed)
         self.z_platform.move(head=CAPPER, z=up_distance)
@@ -339,25 +334,30 @@ class Robot(object):
     # liquid functions
     def pickup_tip(self, vial, tip="Tips_1000uL"):
         if self.pipette.is_tip_attached():
-            print("tip already attached")
-            return
+            msg = "tip already attached"
+            print(msg)
+            return msg
         self.pipette.send_pickup_tip_cmd()
         self.move_to(head=LIQUID, vial=vial)
         tip_position = self.deck.calibration["Tips_1000uL"][2]
         self.z_platform.move_to_abs(head=LIQUID, z=tip_position)
         self.back_to_safe_position(head=LIQUID)
         if self.pipette.is_tip_attached():
-            print("Pickup tip successfully")
+            print("pickup tip successfully")
+            msg = "finish"
+            return msg
         else:
-            print("Pickup tip failed")   
+            msg = "pickup tip failed"
+            print(msg)
+            return msg
 
     def aspirate(self, vial=(), volume=0):
-        '''vial=(), volume= xx uL'''
+        '''vial=("A1", "B1"), volume= xx uL'''
         self.move_to(head=LIQUID, vial=vial)
         self.move_to_bottom_of_vial(head=LIQUID, vial=vial)
         self.pipette.aspirate(volume)
         self.last_volume = volume
-        self.pipette.enable_anti_dropping()
+        # self.pipette.enable_anti_dropping()
 
     def dispense(self, vial=(), volume=0):
         '''vial=(), volume= xx'''
@@ -386,8 +386,9 @@ class Robot(object):
             self.pickup_tip(vial=tip)
         for _ in range(cycles):
             self.aspirate(vial=vial_from, volume=MAX)
+            # 10 mm lower from the top of the vial
             self.move_to_top_of_vial(head=LIQUID, vial=vial_from, z=-10)
-            self.pipette.set_transport_air_volume(volume=50)
+            self.pipette.set_transport_air_volume(volume=20)
             self.dispense(vial=vial_to, volume=MAX)
         if residue != 0:
             self.aspirate(vial=vial_from, volume=residue)

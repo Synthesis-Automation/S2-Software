@@ -19,6 +19,7 @@ from combinewave.tools import custom_widgets, helper
 # CAPPER = 'Z1'... defined in parameters.py
 from combinewave.parameters import CAPPER, LIQUID, TABLET, VERSION
 
+
 class Main(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -77,7 +78,7 @@ class Main(tk.Tk):
         tk.Tk.config(self, menu=self.menu)
         # End of main menu
 
-        # Notebook tabs, each function has one tab
+        # Notebook tab
         self.notebook = Notebook(self, style='lefttab.TNotebook')
 
         connect_tab = Connect_tab(self.notebook)
@@ -159,9 +160,9 @@ class Connect_tab(ttk.Frame):
             self, text="Robot Status: Not connected", fg="red", width=50)
         self.status.pack(side=tk.BOTTOM,  fill=tk.X)
         Label(self, text=" ").pack()
-        canvas = Canvas(self, width=800, height=300)
+        canvas = Canvas(self, width=1200, height=600)
         canvas.pack()
-        self.img = PhotoImage(file="./images/logo.png")
+        self.img = PhotoImage(file="./images/flash.png")
         canvas.create_image(1, 1, anchor=tk.NW, image=self.img)
 
         connect_btn = Button(self, text="Connect and home robot", style="Green.TButton",
@@ -204,7 +205,7 @@ class Calibration_tab(ttk.Frame):
         self.head_select = ttk.Combobox(
             self, state="readonly", font=('Helvetica', '11'))
         self.head_select["values"] = (CAPPER, TABLET, LIQUID)
-        self.head_select.current(1)  # set the selected item
+        self.head_select.current(1)  # set the selected item Z2
         self.head_select.grid(column=0, row=2, padx=15, pady=15, sticky=tk.N)
 
         # Slot selector
@@ -218,10 +219,10 @@ class Calibration_tab(ttk.Frame):
         self.slot_selection = custom_widgets.Item_selection_on_screen(
             parent=self.slot_frame, slot_list=slot_list, COLS=5, ROWS=3, current=self.current_slot)
 
-        #Blank for a seperator
+        # Blank for a seperator
         Label(self, text=" ").grid(column=1, row=6, padx=50, pady=10)
 
-        # Move buttons 
+        # Move buttons
         self.move_frame = tk.LabelFrame(
             self, text="Move functions", fg="RoyalBlue4", font="Helvetica 11 bold")
         self.move_frame.grid(column=0, columnspan=4, row=10,
@@ -295,7 +296,7 @@ class Calibration_tab(ttk.Frame):
         y = chem_robot.xy_platform.smoothie.get_target_position()['y']*2
         current_head = self.head_select.get()
         z = chem_robot.z_platform.get_position(head=current_head)
-        plate_for_calibration = self.slot_selection.get_current(format = "A1")
+        plate_for_calibration = self.slot_selection.get_current(format="A1")
         coordinate_of_vial = chem_robot.deck.vial(plate=plate_for_calibration,
                                                   vial='A1')
         calibration_data = [x-coordinate_of_vial['x']-chem_robot.deck.head_offsets[current_head][0],
@@ -325,14 +326,14 @@ class Calibration_tab(ttk.Frame):
     def save_calibration_Tips(self, tip="Tips_1000uL"):
         ''' the Tips was considered as plate name for simiplicity '''
         z = chem_robot.z_platform.get_position(head=LIQUID)
-        tip_plate_50 = chem_robot.deck.get_plate_assignment("Tips_50uL")
-        tip_plate_1000 = chem_robot.deck.get_plate_assignment("Tips_1000uL")
-        if self.plate_select.get() == tip_plate_1000:
+        tip_plate_50 = chem_robot.deck.get_plate_assignment("Tips 50uL")
+        tip_plate_1000 = chem_robot.deck.get_plate_assignment("Tips 1000uL")
+        if self.slot_selection.get_current(format="A1") == tip_plate_1000:
             chem_robot.deck.save_calibration(plate="Tips_1000uL",
-                                             calibration_data=z)
-        if self.plate_select.get() == tip_plate_50:
+                                             calibration_data=[0, 0, z])
+        if self.slot_selection.get_current(format="A1") == tip_plate_50:
             chem_robot.deck.save_calibration(plate="Tips_50uL",
-                                             calibration_data=z)
+                                             calibration_data=[0, 0, z])
         self.save_calibration_plate()  # also save XY calibrations at the same time
 
     def move_left(self):
@@ -402,9 +403,9 @@ class Manual_control_tab(ttk.Frame):
         self.cap_frame = tk.Frame(self, relief="ridge", bg="gray")
         self.cap_frame.grid(column=1, row=2)
         slot_list = chem_robot.deck.get_vial_list_by_plate_type(
-            plate_type="reaction_caps")
+            plate_type="caps")
         col_row = chem_robot.deck.get_cols_rows_by_plate_type(
-            plate_type="reaction_caps")
+            plate_type="caps")
         self.cap_selection = custom_widgets.Item_selection_on_screen(
             parent=self.cap_frame, slot_list=slot_list, COLS=col_row["columns"], ROWS=col_row["rows"], current=0)
 
@@ -476,50 +477,50 @@ class Manual_control_tab(ttk.Frame):
                command=lambda: self.test_eject_tip()).grid(row=4, padx=10, pady=15, sticky=tk.W)
 
     def move_to_plate(self, head):
-        slot = self.slot_selection.get_current(format = "A1")
-        vial = self.vial_selection.get_current(format = "A1")
+        slot = self.slot_selection.get_current(format="A1")
+        vial = self.vial_selection.get_current(format="A1")
         vial_to = (slot, vial)
         chem_robot.move_to(head=head, vial=vial_to)
 
     def test_decap(self):
-        slot = self.slot_selection.get_current(format = "A1")
-        vial = self.vial_selection.get_current(format = "A1")
+        slot = self.slot_selection.get_current(format="A1")
+        vial = self.vial_selection.get_current(format="A1")
         vial_to = (slot, vial)
         chem_robot.decap(vial=vial_to)
 
     def test_recap(self):
-        slot = self.slot_selection.get_current(format = "A1")
-        vial = self.vial_selection.get_current(format = "A1")
+        slot = self.slot_selection.get_current(format="A1")
+        vial = self.vial_selection.get_current(format="A1")
         vial_to = (slot, vial)
         chem_robot.recap(vial=vial_to)
 
     def test_pickup_cap(self):
-        cap_no = self.cap_selection.get_current(format = "A1")
+        cap_no = self.cap_selection.get_current(format="A1")
         cap_plate = chem_robot.deck.get_plate_assignment("Reaction caps")
         chem_robot.pickup_cap((cap_plate, cap_no))
 
     def test_pickup_tablet(self):
-        slot = self.slot_selection.get_current(format = "A1")
-        vial = self.vial_selection.get_current(format = "A1")
+        slot = self.slot_selection.get_current(format="A1")
+        vial = self.vial_selection.get_current(format="A1")
         vial_to = (slot, vial)
         chem_robot.pickup_tablet(vial=vial_to)
 
     def test_drop_tablet(self):
-        slot = self.slot_selection.get_current(format = "A1")
-        vial = self.vial_selection.get_current(format = "A1")
+        slot = self.slot_selection.get_current(format="A1")
+        vial = self.vial_selection.get_current(format="A1")
         vial_to = (slot, vial)
         chem_robot.drop_tablet(vial=vial_to)
 
     def test_pickup_tip(self):
-        tip_no = self.tip_selection.get_current(format = "A1")
+        tip_no = self.tip_selection.get_current(format="A1")
         tip_plate = chem_robot.deck.get_plate_assignment("Tips 1000uL")
         chem_robot.pickup_tip((tip_plate, tip_no))
 
     def test_aspirate(self):
         volume = simpledialog.askfloat(
             'Volume', 'Please enter aspirate volume (mL)')
-        slot = self.slot_selection.get_current(format = "A1")
-        vial = self.vial_selection.get_current(format = "A1")
+        slot = self.slot_selection.get_current(format="A1")
+        vial = self.vial_selection.get_current(format="A1")
         vial_to = (slot, vial)
         print(volume*1000)
         chem_robot.aspirate(vial=vial_to, volume=int(volume*1000))
@@ -527,30 +528,28 @@ class Manual_control_tab(ttk.Frame):
         chem_robot.pipette.set_transport_air_volume(volume=15)
 
     def test_dispense(self):
-        slot = self.slot_selection.get_current(format = "A1")
-        vial = self.vial_selection.get_current(format = "A1")
+        slot = self.slot_selection.get_current(format="A1")
+        vial = self.vial_selection.get_current(format="A1")
         vial_to = (slot, vial)
         chem_robot.dispense(vial=vial_to)
         chem_robot.back_to_safe_position(head=LIQUID)
 
     def test_eject_tip(self):
         chem_robot.pipette.send_drop_tip_cmd()
-        # chem_robot.drop_tip(vial = )
 
 
 class Slot_assignment():
     def __init__(self, slot):
         self.t = Toplevel()
-        self.slot = slot
+        self.slots = slot
         self.t.title(slot["slot"])
         Label(self.t, text="Plate type").grid(column=0, row=0, padx=10, pady=5)
         Label(self.t, text="Plate serial No.").grid(
             column=1, row=0, padx=10, pady=5)
-        Label(self.t, text="Assignment").grid(column=2, row=0, padx=10, pady=5)
 
         self.plate_type = ttk.Combobox(self.t, width=15, state="readonly")
-        plate_type_turple = ("plate_5mL", "plate_5mL", "plate_8mL", "plate_15mL", "plate_40mL",
-                             "tiprack_1000uL", "tiprack_50uL", "workup_big", "workup_small", "trash", "plate_clean_up", "reaction_caps", "not_used")
+        plate_type_turple = ("plate_5mL", "plate_8mL", "plate_15mL", "plate_40mL",
+                             "tiprack_1000uL", "tiprack_50uL", "workup_big", "workup_small", "trash", "clean_up", "caps", "not_used")
         self.plate_type["values"] = plate_type_turple
         current = plate_type_turple.index(slot["plate_type"])
         self.plate_type.current(current)  # set the selected item
@@ -558,25 +557,17 @@ class Slot_assignment():
 
         self.plate_serial = ttk.Combobox(self.t, state="readonly")
         plate_serial_turple = ("001", "002", "003", "004", "005", "006", "007",
-                               "008", "009", "010", "011", "012")
+                               "008", "009", "010")
         self.plate_serial["values"] = plate_serial_turple
         current = plate_serial_turple.index(slot["plate_no"])
         self.plate_serial.current(current)
         self.plate_serial.grid(column=1, row=2, padx=10, pady=5)
 
-        self.assignment_cbx = ttk.Combobox(self.t, state="readonly")
-        assignment_turple = ("Reagent", "Reactor", "Workup",
-                             "Tips 1000uL", "Tips 50uL", "Trash", "Clean up", "Reaction caps", "GC LC")
-        self.assignment_cbx["values"] = assignment_turple
-        current = assignment_turple.index(slot["assignment"])
-        self.assignment_cbx.current(current)  # set the selected item
-        self.assignment_cbx.grid(column=2, row=2, padx=10, pady=5)
-
         save_btn = Button(self.t, text="Save", command=lambda: self.save())
-        save_btn.grid(row=3, column=1, pady=20, padx=20)
+        save_btn.grid(row=3, column=0, pady=20, padx=20)
         cancel_btn = Button(self.t, text="Cancel",
                             command=lambda: self.cancel())
-        cancel_btn.grid(row=3, column=2, pady=20, padx=20)
+        cancel_btn.grid(row=3, column=1, pady=20, padx=20)
         save_btn.focus_force()
         self.t.grab_set()  # keep this pop window focused
 
@@ -584,18 +575,23 @@ class Slot_assignment():
         plate_type = self.plate_type.get()
         plate_no = self.plate_serial.get()
         plate_name = plate_type + ":" + plate_no
-        assignment = self.assignment_cbx.get()
-        slot = self.slot["slot"]
-        if plate_type == "tiprack_1000uL" and assignment != "Tips 1000uL":
-            messagebox.showinfo(
-                " ", "Warning: <tiprak_1000uL> should be assigned as <Tips 1000uL>")
-            self.t.destroy()
-            return
-        if plate_type != "tiprack_1000uL" and assignment == "Tips 1000uL":
-            messagebox.showinfo(
-                " ", "Warning: only <tiprak_1000uL> could be assigned as <Tips 1000uL>")
-            self.t.destroy()
-            return
+        assignment_dict = {
+            "plate_5mL": "Reagent",
+            "plate_8mL": "Reactor",
+            "plate_15mL": "Reactor",
+            "plate_40mL": "Reagent",
+            "tiprack_1000uL": "Tips 1000uL",
+            "tiprack_50uL": "Tips 50uL",
+            "workup_big": "Workup",
+            "workup_small": "Workup",
+            "trash": "Trash",
+            "clean_up": "Clean up",
+            "caps": "Reaction caps",
+            "not_used": "Not_used",
+            "plate_2mL": "GC LC"
+        }
+        assignment = assignment_dict[plate_type]
+        slot = self.slots["slot"]
         chem_robot.deck.deck_config[slot] = {
             "plate": plate_name, "assignment": assignment}
         chem_robot.deck.save_deck_config(chem_robot.deck.deck_config)
@@ -625,6 +621,10 @@ class Deck_tab(ttk.Frame):
         COLS = 5
         ROWS = 3
         i = 0
+        self.deck_frame = tk.LabelFrame(
+            self, text="  Deck  ", fg="RoyalBlue4", font="Helvetica 11 bold")
+        self.deck_frame.grid(column=0, columnspan=5, row=10,
+                             padx=20, pady=20, sticky=tk.W)
         for row in range(ROWS):
             for col in range(COLS):
                 slot = self.config[i]["slot"]
@@ -634,7 +634,7 @@ class Deck_tab(ttk.Frame):
                 text = f"{slot}\n{plate_type} : {plate_no}\n{assignment}"
                 def action(x=i): return self.slot_assignment(x)
                 btn = Button(
-                    self, text=text, style="Plate.TButton", command=action)
+                    self.deck_frame, text=text, style="Plate.TButton", command=action)
                 if assignment in ["Reactor", "Workup", "Trash", "Tips 1000uL"]:
                     btn.configure(style="Plate_r.TButton")
                 btn.grid(row=row+2, column=col, pady=25, padx=20)

@@ -169,7 +169,7 @@ class Volume_selection():
 
 
 class Information_display():
-    """ scrolledtext for display message """
+    """ on screen scrolledtext for display message """
 
     def __init__(self, parent=None, title="Progress information", width=160, height=15):
         self.parent = parent
@@ -189,3 +189,51 @@ class Information_display():
         self.display.configure(state='disabled')
 
 
+# class Popup():
+#     ''' the module generate a button, which can popup new windows to do something'''
+
+#     def __init__(self, parent, title="Current Tip:  ", slot_list=["A1", "B1"], COLS=5, ROWS=3, current=0):
+#         self.parent = parent
+#         self.slot_list = slot_list
+#         self.title = title
+#         self.COLS = COLS
+#         self.ROWS = ROWS
+#         self.total_number_of_vials = COLS*ROWS
+#         self.current = current
+#         self.item_text = self.title + self.slot_list[self.current]
+#         self.item_button = tk.Button(self.parent, text=self.item_text, font="Helvetica 11", bg="sky blue",
+#                                      command=lambda: self.click())
+#         self.item_button.grid(column=0, row=6, pady=20)
+#         self.time = float(time.time())
+
+#     def click(self):
+#         (self.current, text) = Button_list(self.parent, title="Select Current Item",
+#                                            slot_list=self.slot_list, COLS=self.COLS, ROWS=self.ROWS, current=self.current).show()
+#         self.item_button.configure(text=self.title + text)
+#         self.time = float(time.time())
+
+#     def get_current(self, format="number"):
+#         '''return numeric format such as 0, 1 when format = number, else return format such as A1'''
+#         if format == "number":
+#             return self.current
+#         else:
+#             return self.slot_list[self.current]
+
+#     def set_current(self, current):
+#         self.current = current
+
+#     def next(self, next_no=1):
+#         self.current = self.current + next_no
+#         if self.current == self.total_number_of_vials:
+#             self.current = 0
+#             tk.messagebox.showinfo(
+#                 " ", "Warning: All tips were used, please refill tip rack from A1")
+#         self.item_text = self.title + self.slot_list[self.current]
+#         self.item_button.configure(text=self.item_text)
+
+#     def reset_current(self, current):
+#         self.current = current
+#         self.next(0)
+
+#     def get_update_time(self):
+#         return self.time

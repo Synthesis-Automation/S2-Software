@@ -117,7 +117,7 @@ if __name__ == "__main__":
     my_plate.creat_plate()
     my_plate.save_plate_file()
 
-    my_plate = Plate(name='plate_clean_up', grid=(12, 8), offset=(
+    my_plate = Plate(name='clean_up', grid=(12, 8), offset=(
         11.3, 8.2), spacing=(5, 5), diameter=4.20, depth=60, height=80, volume=0)
     my_plate.creat_plate()
     my_plate.save_plate_file()
@@ -162,7 +162,7 @@ if __name__ == "__main__":
     my_plate.creat_plate()
     my_plate.save_plate_file()
 
-    my_plate = Plate(name='reaction_caps', grid=(4, 3), offset=(
+    my_plate = Plate(name='caps', grid=(4, 3), offset=(
         23, 16.5), spacing=(27, 27), diameter=18.0, depth=59, height=107.5, volume=4000)
     my_plate.creat_plate()
     my_plate.save_plate_file()
