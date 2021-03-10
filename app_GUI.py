@@ -156,18 +156,19 @@ class Main(tk.Tk):
 class Connect_tab(ttk.Frame):
     def __init__(self, parent):
         ttk.Frame.__init__(self, parent)
+
+        Label(self, text=" ").pack()
+        Label(self, text="Wellcome to open automated chemical synthesis platform ", style="Title.Label").pack(pady=10)
+        canvas = Canvas(self, width=800, height=400)
+        canvas.pack(pady=10)
+        self.img = PhotoImage(file="./images/flash.png")
+        canvas.create_image(1, 1, anchor=tk.NW, image=self.img)
+        connect_btn = Button(self, text="Connect and home robot", style="Green.TButton",
+                             command=lambda: self.connect())
+        connect_btn.pack(pady=20)
         self.status = tk.Label(
             self, text="Robot Status: Not connected", fg="red", width=50)
         self.status.pack(side=tk.BOTTOM,  fill=tk.X)
-        Label(self, text=" ").pack()
-        canvas = Canvas(self, width=1200, height=600)
-        canvas.pack()
-        self.img = PhotoImage(file="./images/flash.png")
-        canvas.create_image(1, 1, anchor=tk.NW, image=self.img)
-
-        connect_btn = Button(self, text="Connect and home robot", style="Green.TButton",
-                             command=lambda: self.connect())
-        connect_btn.pack()
 
     def connect(self):
         try:
