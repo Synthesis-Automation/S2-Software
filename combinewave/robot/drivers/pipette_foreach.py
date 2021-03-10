@@ -28,25 +28,45 @@ class Pipette(object):
         self.serial_connection.write_string(normal_mode)
         self.serial_connection.wait_for_pipette(model="foreach")
 
-    def aspirate(self, volume):  # volume in uL
+    def aspirate(self, volume):
+        '''aspirate volume = ? uL'''
         mL_per_step = 0.319
         steps = int(volume/mL_per_step)
         aspirate_cmd = "/1P" + str(steps) + "R\r"
         self.serial_connection.write_string(aspirate_cmd)
         time.sleep(0.05)
         self.serial_connection.wait_for_pipette(model="foreach")
+        self.wait_for_finish()
 
     def send_drop_tip_cmd(self):
         eject_tip = "/1ER\r"
         self.serial_connection.write_string(eject_tip)
         time.sleep(0.05)
         self.serial_connection.wait_for_pipette(model="foreach")
+        self.wait_for_finish()
 
     def dispense(self, volume=0):  # volume in uL
         dispense_all = "/1A0R\r"
         self.serial_connection.write_string(dispense_all)
         time.sleep(0.05)
         self.serial_connection.wait_for_pipette(model="foreach")
+        self.wait_for_finish()
+
+    def wait_for_finish(self):
+        while True:
+            res = self.query()
+            time.sleep(0.05)
+            if b'/0`\x03' in res:
+                print("finsih")
+                return "finsih"
+
+    def query(self):
+        # query_cmd = "/1?31R\r"
+        query_cmd = "/1Q\r"
+        self.serial_connection.write_string(query_cmd)
+        time.sleep(0.05)
+        res = self.serial_connection.wait_for_pipette(model="foreach")
+        return res
 
     def send_tip_check_cmd(self):
         check_tip = "/1?31R\r"

@@ -15,13 +15,18 @@ res = pipette.is_tip_attached()
 
 pipette.aspirate(volume=800)
 
-input("wait.")
-pipette.set_transport_air_volume(50)
-input("will dispense")
-pipette.dispense()
+# for i in range(100):
+#     res = pipette.query()
+#     print(res)
+#     time.sleep(0.1)
+
+# input("wait.")
+# pipette.set_transport_air_volume(50)
+# input("will dispense")
+# pipette.dispense()
 
 
-input("it will eject tip")
-pipette.send_drop_tip_cmd()
-res = pipette.is_tip_attached()
-print(res)
+# input("it will eject tip")
+# pipette.send_drop_tip_cmd()
+# res = pipette.is_tip_attached()
+# print(res)

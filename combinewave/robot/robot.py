@@ -310,7 +310,8 @@ class Robot(object):
     def pickup_tablet(self, vial):
         self.move_to(head=TABLET, vial=vial)
         self.move_to_top_of_vial(head=TABLET, vial=vial)
-        self.z_platform.pickup_tablet(z=-80)
+        DEPTH = -80
+        self.z_platform.pickup_tablet(z=DEPTH)
         self.back_to_safe_position(head=TABLET)
 
     def drop_tablet(self, vial):
@@ -373,7 +374,7 @@ class Robot(object):
     def drop_tip(self, vial=()):
         self.move_to(head=LIQUID, vial=vial)
         self.pipette.send_drop_tip_cmd()
-        time.sleep(0.2)
+        time.sleep(0.05)
 
     def transfer_liquid(self, vial_from=(), vial_to=(),
                         tip=None, trash=(), volume=0):

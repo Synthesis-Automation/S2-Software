@@ -4,3 +4,60 @@
 2021-03-02 15:19:04,873 Start...
 2021-03-02 16:27:40,833 Finished
 
+2021-03-09 02:02:13,304 Start...
+2021-03-09 02:02:24,054 Finished
+
+2021-03-09 16:57:06,103 Start...
+2021-03-09 16:57:14,311 xy_port= COM5, z_port= COM11, modbus_port= COM16, pipette_port= COM3
+2021-03-09 16:57:16,160 Z-platform connected
+2021-03-09 16:57:17,432 E-pipette connected
+2021-03-09 17:01:04,104 Finished
+
+2021-03-09 17:01:12,422 Start...
+2021-03-09 17:01:15,021 xy_port= COM5, z_port= COM11, modbus_port= COM16, pipette_port= COM3
+2021-03-09 17:01:16,864 Z-platform connected
+2021-03-09 17:01:18,093 E-pipette connected
+2021-03-09 17:09:47,922 Finished
+
+2021-03-09 17:09:54,650 Start...
+2021-03-09 17:09:57,294 xy_port= COM5, z_port= COM11, modbus_port= COM16, pipette_port= COM3
+2021-03-09 17:09:59,139 Z-platform connected
+2021-03-09 17:10:00,352 E-pipette connected
+2021-03-09 17:22:21,333 Finished
+
+2021-03-09 17:29:53,498 Start...
+2021-03-09 17:29:57,487 xy_port= COM5, z_port= COM11, modbus_port= COM16, pipette_port= COM3
+2021-03-09 17:29:59,331 Z-platform connected
+2021-03-09 17:30:00,591 E-pipette connected
+2021-03-09 17:32:41,850 Finished
+
+2021-03-10 14:00:42,200 Start...
+2021-03-10 14:00:49,101 xy_port= COM5, z_port= COM11, modbus_port= COM16, pipette_port= COM3
+2021-03-10 14:00:50,943 Z-platform connected
+2021-03-10 14:00:52,189 E-pipette connected
+2021-03-10 14:07:55,741 Finished
+
+2021-03-10 14:08:05,261 Start...
+2021-03-10 14:08:08,295 xy_port= COM5, z_port= COM11, modbus_port= COM16, pipette_port= COM3
+2021-03-10 14:08:10,142 Z-platform connected
+2021-03-10 14:08:11,384 E-pipette connected
+2021-03-10 14:09:14,681 Finished
+
+2021-03-10 14:09:26,617 Start...
+2021-03-10 14:09:29,651 xy_port= COM5, z_port= COM11, modbus_port= COM16, pipette_port= COM3
+2021-03-10 14:09:31,496 Z-platform connected
+2021-03-10 14:09:32,755 E-pipette connected
+2021-03-10 14:12:02,292 Finished
+
+2021-03-10 14:12:03,478 Start...
+2021-03-10 14:12:06,213 xy_port= COM5, z_port= COM11, modbus_port= COM16, pipette_port= COM3
+2021-03-10 14:12:08,073 Z-platform connected
+2021-03-10 14:12:09,281 E-pipette connected
+2021-03-10 14:13:38,974 Finished
+
+2021-03-10 14:13:49,040 Start...
+2021-03-10 14:13:51,274 xy_port= COM5, z_port= COM11, modbus_port= COM16, pipette_port= COM3
+2021-03-10 14:13:53,113 Z-platform connected
+2021-03-10 14:13:54,377 E-pipette connected
+2021-03-10 17:08:05,184 Finished
+

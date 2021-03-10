@@ -136,9 +136,6 @@ class Connection(object):
                     time.sleep(0.1)
                     return msg
 
-                # if b'/0' in msg:
-                #     break
-
 
 def get_port_by_VID(vid):
     '''Returns first serial device with a given VID'''
