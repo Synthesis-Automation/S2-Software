@@ -158,7 +158,8 @@ class Connect_tab(ttk.Frame):
         ttk.Frame.__init__(self, parent)
 
         Label(self, text=" ").pack()
-        Label(self, text="Wellcome to open automated chemical synthesis platform ", style="Title.Label").pack(pady=10)
+        Label(self, text="Wellcome to open automated chemical synthesis platform ",
+              style="Title.Label").pack(pady=10)
         canvas = Canvas(self, width=800, height=400)
         canvas.pack(pady=10)
         self.img = PhotoImage(file="./images/flash.png")
@@ -680,13 +681,34 @@ class Synthesis_tab(ttk.Frame):
         self.plan_box.grid(column=0, rowspan=4, padx=15, columnspan=4, row=3)
         msg = "# Note: No space in names, ';' to seperate each item, 'mL' for liquid chemicals, 'mmol' for solid chemicals, program ignores any chemical name start with '$'.\n\nExample: Compound_A (0.2 mmol, 0.0314 mL); DCM (2 mL); Addition-temperature (25 degree); Reaction-temperature (25 degree); Reaction-time (6. h); Workup (brine, 1.0 mL)."
         self.display_plan(msg)
+        self.is_excel = False
+
+        # Solvent addition selector
+        Label(self, text="Solvent and cap options",
+              style="Default.Label").grid(column=0, row=10, pady=5)
+        self.solvent_frame = tk.Frame(self)
+        self.solvent_frame.grid(column=0, row=11, pady=5)
+        self.solvent_addition_last = tk.IntVar()
+        self.reactor_no_capping = tk.IntVar()
+        tk.Checkbutton(self.solvent_frame, text="Solvent added in the last step", variable=self.solvent_addition_last).grid(row=2, sticky=tk.W)
+        tk.Checkbutton(self.solvent_frame, text="Not cap the reactor", variable=self.reactor_no_capping).grid(row=3, sticky=tk.W)
+        Label(self.solvent_frame, text="Solvent name:").grid(row=5, sticky=tk.W)
+        self.solvent_selection = ttk.Combobox(self.solvent_frame)
+        self.solvent_selection["values"] = (
+            "DCM", "MeOH", "Ethyl-acetate", "Hexanes", "Tolune", "THF", "DCE", "Dioxane", "Acetone")
+        self.solvent_selection.current(0)  # set the selected item
+        self.solvent_selection.grid(row=6, pady=5, sticky=tk.W)
+        Label(self.solvent_frame, text="Solvent volume (mL):").grid(row=7, sticky=tk.W)
+        self.volume = tk.Entry(self.solvent_frame, width=15,
+                             font=('Helvetica', '11'))
+        self.volume.grid(row=8, pady=2, sticky=tk.W)
 
         # Tip selector
         self.current_tip = chem_robot.deck.get_current_tip()
         Label(self, text="Select starting tip",
-              style="Default.Label").grid(column=0, row=10, pady=5)
+              style="Default.Label").grid(column=1, row=10, pady=5)
         self.tip_frame = tk.Frame(self)
-        self.tip_frame.grid(column=0, row=11, sticky=tk.N)
+        self.tip_frame.grid(column=1, row=11, sticky=tk.N)
         slot_list = chem_robot.deck.get_vial_list_by_plate_type(
             plate_type="tiprack_1000uL")
         col_row = chem_robot.deck.get_cols_rows_by_plate_type(
@@ -696,9 +718,9 @@ class Synthesis_tab(ttk.Frame):
 
         # Reactor selector
         Label(self, text="Select starting reactor",
-              style="Default.Label").grid(column=1, row=10, pady=5)
+              style="Default.Label").grid(column=2, row=10, pady=5)
         self.reactor_frame = tk.Frame(self, relief="ridge", bg="gray")
-        self.reactor_frame.grid(column=1, row=11, pady=5)
+        self.reactor_frame.grid(column=2, row=11, pady=5)
         slot_list = chem_robot.deck.get_vial_list_by_plate_type(
             plate_type="plate_8mL")
         col_row = chem_robot.deck.get_cols_rows_by_plate_type(
@@ -729,6 +751,7 @@ class Synthesis_tab(ttk.Frame):
         self.run_button["state"] = "disabled"
 
     def setup_reaction(self, tip=0, simulation=False):
+        solvent_add_last = self.solvent_selection.get()
         if not chem_robot.ready:
             simulation = True
         missing = chem_robot.deck.check_missing_assignment()
@@ -847,7 +870,7 @@ class Synthesis_tab(ttk.Frame):
 
             if chem_robot.stop_flag:
                 return
-            if not simulation:
+            if not simulation and solvent_add_last != 1:
                 chem_robot.pickup_cap((cap_plate, cap_no))
                 if chem_robot.stop_flag:
                     return
@@ -927,7 +950,7 @@ class Synthesis_tab(ttk.Frame):
         if filename == "":
             return
         self.plan_file_name = filename + '.txt'
-        string = "# Reaction Protocol Format Version 1.0\n# No space in names of chemicals, use ';' to seperate each item, 'mL' for liquid chemicals, 'mmol' for solid chemicals, program ignores any chemical name start with '$'.\n"
+        string = "# Reaction Protocol Format Version 1.0\n# No space in names of chemicals, use ';' to seperate each item, 'mL' for liquids, 'mmol' for solids, program ignores any chemical name start with '$'.\n\nExample: Compound_A (0.2 mmol, 0.1 mL); Cmd_B (0.01 mmol); Reaction-temperature (25 degree); Reaction-time (6.0 h); Workup (brine, 1.0 mL).\n"
         self.display_plan(string)
         chem_synthesis.ready = True
         # self.run_button["state"] = "normal"
