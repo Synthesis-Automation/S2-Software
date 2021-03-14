@@ -15,6 +15,17 @@ def format_json_file(json_file_name):
         f.truncate()
 
 
+def is_float(x):
+    try:
+        float(x)
+        if str(x) in ['inf', 'infinity', 'INF', 'INFINITY', 'True', 'NAN', 'nan', 'False', '-inf', '-INF', '-INFINITY', '-infinity', 'NaN', 'Nan']:
+            return False
+        else:
+            return True
+    except:
+        return False
+
+
 if __name__ == "__main__":
     my = {1:"ccc"}
     print(inverse_dict(my))

@@ -696,13 +696,12 @@ class Synthesis_tab(ttk.Frame):
               text="Solvent name:").grid(row=5, sticky=tk.W)
         self.solvent_selection = ttk.Combobox(
             self.solvent_frame, font=('Helvetica', '11'), width=20)
-        self.solvent_selection["values"] = (
-            "DCM", "MeOH", "Ethyl-acetate", "Hexanes", "Toluene", "THF", "DCE", "Dioxane", "Acetone")
+        self.solvent_selection["values"] = ("", "DCM", "MeOH", "Ethyl-acetate", "Hexanes", "Toluene", "THF", "DCE", "Dioxane", "Acetone")
         self.solvent_selection.current(0)  # set the selected item
         self.solvent_selection.grid(row=6, pady=5, sticky=tk.W)
         Label(self.solvent_frame, style="Default.Label",
               text="Solvent volume (mL):").grid(row=7, sticky=tk.W)
-        self.volume_entry = ttk.Entry(self.solvent_frame, width=20,
+        self.volume_entry = ttk.Entry(self.solvent_frame, width=22,
                                       font=('Helvetica', '11'))
         self.volume_entry.grid(row=8, pady=2, sticky=tk.W)
 
@@ -768,6 +767,23 @@ class Synthesis_tab(ttk.Frame):
     def setup_reaction(self, tip=0, simulation=False):
         reactor_no_cap = self.reactor_no_capping.get()
         solvent_last = self.solvent_addition_last.get()
+        if solvent_last == 1:
+            solvent_volume_string = self.volume_entry.get()
+            solvent_name = self.solvent_selection.get()
+            if solvent_name=="":
+                messagebox.showinfo(" ", "Please enter a valid solvent nameL!")
+                return     
+            if not helper.is_float(solvent_volume_string):
+                messagebox.showinfo(" ", "Please enter solvent volume in mL!")
+                return                        
+            solvent_volume = float(solvent_volume_string)
+            solvent_info = chem_synthesis.locate_reagent(solvent_name)
+            if "not found" in solvent_info:
+                messagebox.showinfo(" ", solvent_info)
+                return
+            else:
+                solvent_plate_name = solvent_info["plate"]
+                solvent_pos = solvent_info["vial"]
 
         if not chem_robot.ready:
             simulation = True
@@ -907,15 +923,6 @@ class Synthesis_tab(ttk.Frame):
 
         # Add the solvent in the last step
         if solvent_last == 1:
-            solvent_volume = float(self.volume_entry.get())
-            solvent_name = self.solvent_selection.get()
-            solvent_info = chem_synthesis.locate_reagent(solvent_name)
-            if "not found" in solvent_info:
-                messagebox.showinfo(" ", solvent_info)
-                return
-            else:
-                solvent_plate_name = solvent_info["plate"]
-                solvent_pos = solvent_info["vial"]
             solvent_slot = chem_robot.deck.get_slot_from_plate_name(
                 solvent_plate_name)
             solvent_vial = (solvent_slot, solvent_pos)

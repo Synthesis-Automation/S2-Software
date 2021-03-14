@@ -1,14 +1,21 @@
-from tkinter import *
-master = Tk()
 
-def var_states():
-   print(var1.get(), var2.get())
+def is_float(x):
+    try:
+        float(x)
+        if str(x) in ['inf', 'infinity', 'INF', 'INFINITY', 'True', 'NAN', 'nan', 'False', '-inf', '-INF', '-INFINITY', '-infinity', 'NaN', 'Nan']:
+            return False
+        else:
+            return True
+    except:
+        return False
 
-Label(master, text="Your sex:").grid(row=0, sticky=W)
-var1 = IntVar()
-Checkbutton(master, text="male", variable=var1).grid(row=1, sticky=W)
-var2 = IntVar()
-Checkbutton(master, text="female", variable=var2).grid(row=2, sticky=W)
-Button(master, text='Quit', command=master.quit).grid(row=3, sticky=W, pady=4)
-Button(master, text='Show', command=var_states).grid(row=4, sticky=W, pady=4)
-mainloop()
+
+
+a = "0.5"
+
+print(isFloat(a))
+
+
+a = ""
+
+print(isFloat(a))
