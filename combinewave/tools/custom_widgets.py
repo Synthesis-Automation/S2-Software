@@ -151,7 +151,7 @@ class Volume_selection():
             self.parent, text=title, fg="RoyalBlue4", font="Helvetica 11 bold")
         self.volume_frame.grid()
         self.volume = tk.IntVar(None, len(options)-1)
-        self.text = tk.Entry(self.volume_frame, width=15,
+        self.text = ttk.Entry(self.volume_frame, width=15,
                              font=('Helvetica', '11'))
         self.text.grid(row=0, column=0, padx=5, pady=2, sticky=tk.W)
         for i in range(len(options)):

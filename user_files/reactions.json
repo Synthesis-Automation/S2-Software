@@ -1,24 +1,24 @@
 [
     {
-        "tracking_number": "03/10/2021/14:01-RXN-1",
+        "tracking_number": "03/13/2021/23:19-RXN-1",
         "reactor_no": 1,
         "addition_temperature": 25,
         "reaction_time": 1,
         "reaction_temperature": 25,
         "reagents": [
             {
+                "name": "Water",
+                "type": "pure_liquid",
+                "plate": "plate_40mL:001",
+                "position": "A1",
+                "amount": 0.45
+            },
+            {
                 "name": "KF",
                 "type": "solid",
                 "plate": "plate_5mL:001",
                 "position": "A1",
                 "amount": 1
-            },
-            {
-                "name": "Water",
-                "type": "pure_liquid",
-                "plate": "plate_40mL:001",
-                "position": "A1",
-                "amount": 0.65
             }
         ],
         "workup": {
