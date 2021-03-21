@@ -24,7 +24,7 @@ Hardware drivers:
 	- Gripper (for cap handling, commerical, RS485 modbus)
 	- Communication (USB to RS232， USB to RS485)
 
-Based above drivers, 1) Liquid handler; 2) Tablet handler; 3) Capper handler were constructed. 
+	Based above drivers, 1) Liquid handler; 2) Tablet handler; 3) Capper handler were constructed. 
 
 2) Deck (deck.py, create_plate.py)
 Main function: Convert user vial/bottle locator (plate, vial) such as ("A1", "B2") to phisical coordinate such as {'x': 0, 'y':10, 'z': 10.3})
