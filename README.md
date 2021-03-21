@@ -42,16 +42,16 @@ Function: The chemistry part of project
 	- Reagent database management
 		- Regent index (using excel file, may use SQL in the future)
 	- Reaction protocol management
-		- Reaction plan reading (using a txt/csv file, may use a GUI)
+		- Reaction plan reading (using a txt/csv file format)
 		- Convert to a JSON file for execution.
 	- Bio modules (for future)
 
 API Interface:
 Examples:
 	robot.connect()
-	robot.pickup_tip()
+	robot.pickup_tip(tip_position)
 	robot.transfer_liquid(from = vial1, to = vial2, volume = 100, tip = tip1)
-	robot.decap (vial)
+	robot.decap(vial)
 	synthesis.load_reagent_index(file)
 	synthesis.parse_plan_to_json()
 
