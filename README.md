@@ -20,11 +20,15 @@ Main function: the only entrance for hardware control
 Hardware drivers:
 	- XY_platform (using smoothieware, USB)
 	- Z_platform (using arduino, USB)
-	- E-Pipette (for liquid handling, commericial - Hamilton, RS232)
+	- Electric Pipette (E-Pipette, for liquid handling, commericial - Hamilton, RS232 or Foreach, RS485)
 	- Gripper (for cap handling, commerical, RS485 modbus)
-	- Communication (USB to RS232， USB to RS485)
+	- Communications (USB to RS232， USB to RS485)
 
-	Based above drivers, 1) Liquid handler; 2) Tablet handler; 3) Capper handler were constructed. 
+	Based above drivers, 
+		1) Liquid handler (controled by XY_platform + Z_platform + E-Pipette); 
+		2) Tablet handler (controled by XY_platform + Z_platform);
+		3) Capper handler controled by XY_platform + Z_platform + Gripper)
+	were constructed. 
 
 2) Deck (deck.py, create_plate.py)
 Main function: Convert user vial/bottle locator (plate, vial) such as ("A1", "B2") to phisical coordinate such as {'x': 0, 'y':10, 'z': 10.3})
