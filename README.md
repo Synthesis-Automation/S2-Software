@@ -27,7 +27,7 @@ Hardware drivers:
 	Based above drivers, 
 		1) Liquid handler (controled by XY_platform + Z_platform + E-Pipette); 
 		2) Tablet handler (controled by XY_platform + Z_platform);
-		3) Capper handler controled by XY_platform + Z_platform + Gripper)
+		3) Capper handler (controled by XY_platform + Z_platform + Gripper)
 	were constructed. 
 
 2) Deck (deck.py, create_plate.py)
@@ -61,7 +61,7 @@ Examples:
 	- API calls via robot mudule and chemical synthesis module
 
 
-Easily upload a protocol, calibrate positions, and run your experiment from your computer.
+You can Easily upload or write a protocol and run your reaction from your computer.
 
 This program used many open-source hardware and software projects:
 e.g., Arduino, AccelStepper, smoothieware for hardware controls; Opentrons, numpy, pandas in software part
