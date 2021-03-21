@@ -334,10 +334,10 @@ if __name__ == '__main__':
     print(r)
 
     slots = deck.slot_list
-    print("slot_list")
+    print("slot_list:")
     print(slots)
 
-    vial_list_ = deck.get_vial_list_by_plate_type("plate_5mL")
+    vial_list_ = deck.get_vial_list_by_plate_type("deck")
     print(vial_list_)
 
     res = deck.get_cols_rows_by_plate_type(plate_type="plate_2mL")

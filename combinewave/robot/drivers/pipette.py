@@ -50,7 +50,7 @@ class Pipette(object):
     def send_pickup_tip_cmd(self):  # volume in uL
         cmd = '00TPid0001tt06\r\n'
         self.serial_connection.write_string(cmd)
-        time.sleep(0.1)
+        time.sleep(0.05)
         self.serial_connection.wait_for_pipette()
 
     def send_drop_tip_cmd(self):  # volume in uL

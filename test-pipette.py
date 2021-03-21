@@ -1,24 +1,21 @@
 from combinewave import parameters
 from combinewave.robot.drivers import pipette_foreach
 import time
-pipette = pipette_foreach.Pipette('com3')
+pipette = pipette_foreach.Pipette('com4')
 pipette.connect()
 pipette.initialization()
-
 # pipette.send_pickup_tip_cmd()
 
-res = pipette.is_tip_attached()
-print(res)
-input("put tip please.")
-res = pipette.is_tip_attached()
+# res = pipette.is_tip_attached()
+# input("wait for tip")
+# res = pipette.is_tip_attached()
 
+# pipette.aspirate(volume=800)
 
-pipette.aspirate(volume=800)
-
-# for i in range(100):
-#     res = pipette.query()
-#     print(res)
-#     time.sleep(0.1)
+for i in range(200):
+    res = pipette.is_tip_attached()
+    pipette.wait_for_finish()
+    print(i)
 
 # input("wait.")
 # pipette.set_transport_air_volume(50)

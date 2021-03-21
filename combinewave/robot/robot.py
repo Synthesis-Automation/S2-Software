@@ -9,7 +9,7 @@ from combinewave.robot.drivers.z_platform import z_platform
 from combinewave.robot.drivers.rs485.gripper import gripper
 from combinewave.robot.drivers import rs485_connection
 from combinewave.robot.drivers import pipette_foreach
-from combinewave.robot.drivers.serial_connection import get_port_by_VID
+from combinewave.robot.drivers.serial_connection import get_port_by_VID, get_port_by_serial_no
 from combinewave.deck import deck
 
 # Defined in parameters.py; CAPPER = 'Z1', TABLET = 'Z2', LOQUID = 'Z3'
@@ -38,13 +38,16 @@ class Robot(object):
         # find usb ports
         vid_xy_platform = 0x1D50  # smoothie
         vid_z_platform = 0x1A86  # CH340
-        vid_pipette = 0x0403  # FT232
-        vid_modbus = 0x10C4  # CP210x, PID 0xEA60, DTECH/UGreen
+        vid_pipette = 0x10C4   # CP210x, PID 0xEA60, DTECH
+        vid_modbus = 0x10C4  # CP210x, PID 0xEA60, DTECH
+        sn_pipette = '8C9CF2DFF27FEA119526CA1A09024092'
+        sn_modbus = 'D2B376D8C37FEA11A2BCCA1A09024092'
 
+        self.modbus_port = get_port_by_serial_no(sn_modbus)
+        self.pipette_port = get_port_by_serial_no(sn_pipette)
         self.xy_platform_port = get_port_by_VID(vid_xy_platform)
         self.z_platform_port = get_port_by_VID(vid_z_platform)
-        self.modbus_port = get_port_by_VID(vid_modbus)
-        self.pipette_port = get_port_by_VID(vid_pipette)
+
         usb_info = f"xy_port= {self.xy_platform_port}, z_port= {self.z_platform_port}, modbus_port= {self.modbus_port}, pipette_port= {self.pipette_port}"
         logging.info(usb_info)
         self.xy_platform = xy_platform.XY_platform(
@@ -70,6 +73,13 @@ class Robot(object):
             head_offsets=self.deck.head_offsets, calibration=self.deck.calibration)
         self.z_platform.update(head_offsets=self.deck.head_offsets)
 
+    def home_all_z(self):
+        '''home Z1, Z2 and Z3 together'''
+        self.z_platform.home(head=CAPPER)
+        self.z_platform.home(head=TABLET)
+        self.z_platform.home(head=LIQUID)
+        self.back_to_safe_position_all()
+
     def home_all(self):
         # if self.is_simulation:
         #     return 'simulation'
@@ -81,15 +91,20 @@ class Robot(object):
         self.gripper.gripper_close(5)
         self.ready = True
 
-    def home_all_z(self):
-        '''home Z1, Z2 and Z3 together'''
-        self.z_platform.home(head=CAPPER)
-        self.z_platform.home(head=TABLET)
-        self.z_platform.home(head=LIQUID)
-        self.back_to_safe_position_all()
-
     def home_xy(self):
         self.xy_platform.home('xy')
+
+    def get_axe_position(self, axe = "x"):
+        # axe = "x" "y" "z1", "z2", "z3"
+        axe = axe.lower() # conver to lower case, so both "Z1" or "z1" are accepatble
+        if axe == "x" or axe == "y":
+            position = self.xy_platform.smoothie.get_target_position()[axe]*2
+        elif axe == "z1" or axe == "z2" or axe == "z3":
+            position =  self.z_platform.get_position(head=axe.upper())
+        else:
+            position = -1
+            print("unknown axe name.")
+        return position
 
     def vial(self, plate="A1", vial="A1"):
         return self.deck.vial(plate, vial)
@@ -127,7 +142,7 @@ class Robot(object):
                         TABLET: ["Reagent", "Reactor", "Clean up"]
                         }
         if assignment not in allowed_list[head]:
-            print(f"{head} can not move to {assignment}")
+            print(f"{head} should not move to {assignment}")
             return assignment
         my_vial = self.vial(vial[0], vial[1])
         self.back_to_safe_position_all()
@@ -149,6 +164,7 @@ class Robot(object):
         vial_height = my_vial["height"]
         response = self.z_platform.move_to(head=head, z=vial_height-vial_depth)
         return response
+
 
     # high level functions
     def decap(self, vial=()):
@@ -328,8 +344,9 @@ class Robot(object):
 
     def clean_up_needle(self, vial):
         self.move_to(head=TABLET, vial=vial)
-        self.move_to_top_of_vial(head=TABLET, vial=vial)
-        self.z_platform.pickup_tablet(z=-40)
+        # self.move_to_top_of_vial(head=TABLET, vial=vial)
+        # self.z_platform.pickup_tablet(z=-40)
+        self.z_platform.move_to(head=TABLET, z=40)
         self.back_to_safe_position(head=TABLET)
 
     # liquid functions
@@ -355,13 +372,16 @@ class Robot(object):
     def aspirate(self, vial=(), volume=0):
         '''vial=("A1", "B1"), volume= xx uL'''
         self.move_to(head=LIQUID, vial=vial)
+        # used to blow out all liquids
+        if volume <= 950:
+            self.pipette.aspirate(volume=20)
         self.move_to_bottom_of_vial(head=LIQUID, vial=vial)
         self.pipette.aspirate(volume)
         self.last_volume = volume
         # self.pipette.enable_anti_dropping()
 
     def dispense(self, vial=(), volume=0):
-        '''vial=(), volume= xx'''
+        '''dispense all liquid in the tip, vial=(), volume= xx uL'''
         # self.pipette.enable_anti_dropping()
         if volume == 0:  # make the defaut volume is the everything in the piptette
             liquid_volume = self.last_volume
@@ -374,13 +394,12 @@ class Robot(object):
     def drop_tip(self, vial=()):
         self.move_to(head=LIQUID, vial=vial)
         self.pipette.send_drop_tip_cmd()
-        time.sleep(0.05)
 
     def transfer_liquid(self, vial_from=(), vial_to=(),
                         tip=None, trash=(), volume=0):
         '''vial_from=("A1", "B1"), volume=mL, when tip = None, no tip will be used'''
         MAX = 1000
-        liquid_volume = volume*1000
+        liquid_volume = volume*1000  # convert to uL
         cycles = int(int(liquid_volume)/MAX)
         residue = int(liquid_volume) % MAX
         if tip != None:
@@ -389,12 +408,17 @@ class Robot(object):
             self.aspirate(vial=vial_from, volume=MAX)
             # 10 mm lower from the top of the vial
             self.move_to_top_of_vial(head=LIQUID, vial=vial_from, z=-10)
-            self.pipette.set_transport_air_volume(volume=20)
+            transport_air_volume = 20
+            # self.pipette.set_transport_air_volume(volume=transport_air_volume)
             self.dispense(vial=vial_to, volume=MAX)
         if residue != 0:
+            if residue > 100:
+                transport_air_volume = 15
+            else:
+                transport_air_volume = 6
             self.aspirate(vial=vial_from, volume=residue)
             self.move_to_top_of_vial(head=LIQUID, vial=vial_from, z=-10)
-            self.pipette.set_transport_air_volume(volume=20)
+            self.pipette.set_transport_air_volume(volume=transport_air_volume)
             self.dispense(vial=vial_to, volume=residue)
         if tip != None:
             self.drop_tip(vial=trash)

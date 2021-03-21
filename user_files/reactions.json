@@ -1,26 +1,22 @@
 [
     {
-        "tracking_number": "03/14/2021/17:29-RXN-1",
+        "tracking_number": "03/18/2021/14:15-RXN-1",
         "reactor_no": 1,
         "addition_temperature": 25,
-        "reaction_time": 1,
+        "reaction_time": 6.0,
         "reaction_temperature": 25,
-        "reagents": [
-            {
-                "name": "Water",
-                "type": "pure_liquid",
-                "plate": "plate_40mL:001",
-                "position": "A1",
-                "amount": 0.45
-            },
-            {
-                "name": "KF",
-                "type": "solid",
-                "plate": "plate_5mL:001",
-                "position": "A1",
-                "amount": 1
-            }
-        ],
+        "reagents": [],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "03/18/2021/14:15-RXN-2",
+        "reactor_no": 2,
+        "addition_temperature": 25,
+        "reaction_time": 6.0,
+        "reaction_temperature": 25,
+        "reagents": [],
         "workup": {
             "name": "None"
         }

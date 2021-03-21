@@ -138,9 +138,15 @@ if __name__ == "__main__":
     my_plate.save_plate_file()
 
     my_plate = Plate(name='plate_15mL', grid=(4, 3), offset=(
-        10, 10), spacing=(24, 24), diameter=18.0, depth=75, height=103, volume=4000)
+        23, 19), spacing=(27, 24.5), diameter=18.0, depth=75, height=103, volume=4000)
     my_plate.creat_plate()
     my_plate.save_plate_file()
+
+    # New 
+    # my_plate = Plate(name='plate_15mL', grid=(4, 3), offset=(
+    #     23, 19), spacing=(24, 24), diameter=18.0, depth=75, height=103, volume=4000)
+    # my_plate.creat_plate()
+    # my_plate.save_plate_file()
 
     my_plate = Plate(name='plate_5mL', grid=(7, 4), offset=(
         9.5, 10), spacing=(17.9, 22.2), diameter=18.0, depth=82, height=103, volume=4000)
@@ -158,7 +164,7 @@ if __name__ == "__main__":
     my_plate.save_plate_file()
 
     my_plate = Plate(name='plate_8mL', grid=(4, 3), offset=(
-        28, 20), spacing=(24.0, 24.5), diameter=18.0, depth=59, height=86.5, volume=4000)
+        28, 20), spacing=(24.0, 24.5), diameter=18.0, depth=58, height=86.5, volume=4000)
     my_plate.creat_plate()
     my_plate.save_plate_file()
 

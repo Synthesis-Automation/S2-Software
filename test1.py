@@ -13,3 +13,19 @@ Button(master, text='Quit', command=master.quit).grid(row=3, sticky=W, pady=4)
 Button(master, text='Show', command=var_states).grid(row=4, sticky=W, pady=4)
 mainloop()
 isfloat
+
+
+tip NOT attached! code: b'/0@1\x03\r\n'
+tip NOT attached! code: b'/0@\x03\r\n'
+tip NOT attached! code: b'/0@\x03\r\n'
+
+wait for tip
+tip attached! code: b'/0`1\x03\r\n'
+
+
+tip NOT attached! code: b'/0`0\x03\r\n'
+tip NOT attached! code: b'/0`0\x03\r\n'
+
+
+
+tip attached! code: b'/0`1\x03\r\n'

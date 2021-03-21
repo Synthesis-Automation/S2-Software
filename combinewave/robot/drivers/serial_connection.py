@@ -7,7 +7,6 @@ import serial.tools.list_ports
 def int_to_bytes(x):
     return x.to_bytes((x.bit_length() + 7) // 8, 'big')
 
-
 class Connection(object):
     def __init__(self, port='', parity=serial.PARITY_NONE, baudrate=9600, timeout=0.02):
         sp = serial.Serial()
@@ -27,7 +26,7 @@ class Connection(object):
     def open(self):
         if self.serial_port.isOpen():
             self.serial_port.close()
-        time.sleep(0.2)
+        # time.sleep(0.2)
         self.serial_port.open()
 
     def close(self):
@@ -47,7 +46,7 @@ class Connection(object):
             self.serial_port.reset_input_buffer()
             self.serial_pause()
 
-    def wait_for_data(self, timeout=30):
+    def wait_for_data(self, timeout=20):
         end_time = time.time() + timeout
         while end_time > time.time():
             if self.data_available():
@@ -68,9 +67,15 @@ class Connection(object):
             if res:
                 return res
         raise RuntimeWarning(
-            'No new line from serial port after {} second(s)'.format(timeout))
+            'No new msg line from serial port after {} second(s)'.format(timeout))
+
 
     def write_string(self, data_string):
+        self.serial_port.write(data_string.encode())
+        self.serial_port.flush()
+
+    def send_commond_string(self, data_string):
+        self.flush_input()
         self.serial_port.write(data_string.encode())
         self.serial_port.flush()
 
@@ -129,12 +134,20 @@ class Connection(object):
                 if 'id' in msg:
                     return msg
         if model == "foreach":
+            i = 0
             while True:
+                time.sleep(0.1)
+                i = i+1
+                if i>=50:
+                    print("Time out pipette")
+                    return
                 msg = self.serial_port.readline()
-                if msg != '':
-                    print(msg)
-                    time.sleep(0.1)
+                # print(msg)
+                if msg != b'':
+                    # print("Got response...")
                     return msg
+                else:
+                    print("No response...")
 
 
 def get_port_by_VID(vid):
@@ -147,6 +160,7 @@ def get_port_by_VID(vid):
 def get_port_by_serial_no(sn):
     '''Returns first serial device with a given serial_no'''
     for d in serial.tools.list_ports.comports():
+        print(d.serial_number)
         if d.serial_number == sn:
             return d[0]
 
@@ -160,9 +174,13 @@ def get_all_ports():
 if __name__ == "__main__":
     vid_xy_platform = 0x1D50
     vid_z_platform = 0x1A86
-    vid_pipette = 0x0403  # FT232
+    vid_pipette = 0x10C4  # FT232
     vid_modbus = 0x10C4  # CP210x, PID 0xEA60, DTECH
     vid_waveshare = 0x0403  # FT232, PID 0x6001
+
+    sn_pipette = '8C9CF2DFF27FEA119526CA1A09024092'
+    sn_modbus = 'D2B376D8C37FEA11A2BCCA1A09024092'
+
 
     # print("List of serial port")
     # ports = get_serial_ports_list()
@@ -186,8 +204,11 @@ if __name__ == "__main__":
 
     xy_platform_port = get_port_by_VID(vid_xy_platform)
     z_platform_port = get_port_by_VID(vid_z_platform)
-    modbus_port = get_port_by_VID(vid_modbus)
-    pipette_port = get_port_by_VID(vid_pipette)
+    # modbus_port = get_port_by_VID(vid_modbus)
+    # pipette_port = get_port_by_VID(vid_pipette)
+    modbus_port = get_port_by_serial_no(sn_modbus)
+    pipette_port = get_port_by_serial_no(sn_pipette)
+
 
     usb_info = f"xy_port= {xy_platform_port}, z_port= {z_platform_port}, modbus_port= {modbus_port}, pipette_port= {pipette_port}"
     print(usb_info)

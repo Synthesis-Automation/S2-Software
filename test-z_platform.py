@@ -9,10 +9,15 @@ deck = deck.Deck()
 z_platform = z_platform.Z_platform(port='com11', head_offsets=deck.head_offsets)
 z_platform.connect()
 
-z_platform.home(head='Z1')
-z_platform.home(head='Z2')
-z_platform.move_to(head = "Z2", z=50)
-z_platform.move_to_abs(head = "Z2", z=3)
+
+for i in range(1000):
+    a = z_platform.get_position(head = "Z1")
+    print(i, a)
+
+# z_platform.home(head='Z1')
+# z_platform.home(head='Z2')
+# z_platform.move_to(head = "Z2", z=50)
+# z_platform.move_to_abs(head = "Z2", z=3)
 
 
 # z_platform.pickup_tablet(z=50)
