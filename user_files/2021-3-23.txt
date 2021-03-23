@@ -1,0 +1,12 @@
+# Reaction Protocol Format Version 1.0
+# No space in names of chemicals, use ';' to seperate each item, 'mL' for liquids, 'mmol' for solids, program ignores any chemical name start with '$'.
+
+4-Methoxyphenylboronic-acid (0.1 mmol); K3PO4 (0.14 mmol); $Benzyl-bromide (0.06 mmol, 0.0072 mL); Diphenyl-sulfide(0.012 mmol, 0.002mL); Toluene(1.0 mL); Addition-temperature (25 degree); Reaction-temperature (100 degree); Reaction-time (6.0 h); Workup (brine, 1.0 mL).
+
+4-Methoxyphenylboronic-acid (0.1 mmol); K3PO4 (0.14 mmol); $Benzyl-bromide (0.06 mmol, 0.0072 mL); $Thioxanen-9-one(0.012 mmol); Toluene(1.0 mL); Addition-temperature (25 degree); Reaction-temperature (100 degree); Reaction-time (6.0 h); Workup (brine, 1.0 mL).
+
+
+
+
+
+

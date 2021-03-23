@@ -1,0 +1,4 @@
+# Note: No space in names, ';' to seperate each item, 'mL' for liquid chemicals, 'mmol' for solid chemicals, program ignores any chemical name start with '$'.
+# Example: 
+
+Compound_A (0.005 mmol); Solvent_B (2 mL); Reaction-temperature (25.0 degree); Reaction-time (6.0 h).

@@ -113,6 +113,7 @@ class Button_list(tk.Toplevel):
         self.btn_list = []
         self.slot_list = slot_list
         self.current = current
+        self.choice = self.current
         i = 0
         for col in range(COLS):
             for row in range(ROWS):
@@ -250,12 +251,12 @@ class Move_axes():
         self.robot = robot
 
         # Head selection (Z1:cpapper, Z2:Tablet, Z3:Liquid)
-        Label(self.parent, text="Select head for calibration",
+        Label(self.parent, text="Select Head ",
               style="Default.Label").grid(column=0, row=0, pady=5)
         self.head_select = ttk.Combobox(
             self.parent, state="readonly", font=('Helvetica', '11'))
         self.head_select["values"] = (CAPPER, TABLET, LIQUID)
-        self.head_select.current(1)  # set the selected item Z2
+        self.head_select.current(2)  # set the selected item Z2
         self.head_select.grid(column=0, row=1, padx=15, sticky=tk.N)
 
         ttk.Label(self.parent, text=" Moving distance per-click", style="Default.Label").grid(column=1,

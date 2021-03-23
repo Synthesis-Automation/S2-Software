@@ -133,21 +133,7 @@ class Connection(object):
                     return(error_code)
                 if 'id' in msg:
                     return msg
-        if model == "foreach":
-            i = 0
-            while True:
-                time.sleep(0.1)
-                i = i+1
-                if i>=50:
-                    print("Time out pipette")
-                    return
-                msg = self.serial_port.readline()
-                # print(msg)
-                if msg != b'':
-                    # print("Got response...")
-                    return msg
-                else:
-                    print("No response...")
+
 
 
 def get_port_by_VID(vid):
@@ -208,7 +194,6 @@ if __name__ == "__main__":
     # pipette_port = get_port_by_VID(vid_pipette)
     modbus_port = get_port_by_serial_no(sn_modbus)
     pipette_port = get_port_by_serial_no(sn_pipette)
-
 
     usb_info = f"xy_port= {xy_platform_port}, z_port= {z_platform_port}, modbus_port= {modbus_port}, pipette_port= {pipette_port}"
     print(usb_info)

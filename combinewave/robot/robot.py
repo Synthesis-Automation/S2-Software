@@ -49,7 +49,7 @@ class Robot(object):
         self.z_platform_port = get_port_by_VID(vid_z_platform)
 
         usb_info = f"xy_port= {self.xy_platform_port}, z_port= {self.z_platform_port}, modbus_port= {self.modbus_port}, pipette_port= {self.pipette_port}"
-        logging.info(usb_info)
+        logging.info("Com ports: "+usb_info)
         self.xy_platform = xy_platform.XY_platform(
             port=self.xy_platform_port,
             head_offsets=self.deck.head_offsets,
@@ -312,6 +312,23 @@ class Robot(object):
             return True
         else:
             return False
+
+    def return_cap(self, vial=()):
+        if not self.gripper.is_gripper_holding():
+            print("No cap is holded")
+            return
+        gripper_openning_percent = 80
+        # hold = -9
+        rotation_angle = 400
+        self.move_to(head=CAPPER, vial=vial)
+        self.move_to_top_of_vial(head=CAPPER, vial=vial, z=-10)
+        self.gripper.gripper_open(gripper_openning_percent)
+        self.gripper.rotate(rotation_angle)        
+        self.back_to_safe_position(head=CAPPER)
+        if self.gripper.is_gripper_holding():
+            return False
+        else:
+            return True
 
     def recap_by_press(self, vial=()):
         self.move_to(head=CAPPER, vial=vial)

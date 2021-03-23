@@ -3,7 +3,7 @@ import time
 import logging
 from combinewave.robot.drivers import serial_connection
 
-# Hardare interface of Foreach pipette (http://foreachtek.com/en/ProductInfo.aspx?Id=10517)
+# Hardware interface of Foreach pipette (http://foreachtek.com/en/ProductInfo.aspx?Id=10517)
 class Pipette(object):
     def __init__(self, pipette_port):
         self.pipette_port = pipette_port
@@ -21,19 +21,22 @@ class Pipette(object):
             logging.info("E-pipette failed to connect")
 
     def wait_for_response(self):
-        msg = self.serial_connection.readline_string(timeout=10)
-        print(msg)
+        time.sleep(0.05) # 0.1 is required for reliable communicaiton
+        msg = self.serial_connection.serial_port.readline()
+        # print(msg)
         return msg
 
     def wait_for_finish(self):
         query_cmd = "/1Q\r"
+        i=1
         while True:
             self.serial_connection.send_commond_string(query_cmd)
             time.sleep(0.05)
-            res = self.serial_connection.readline_string()
-            print(res, end="")
-            if '/0`' in res:
-                print("finsih")
+            res = self.serial_connection.serial_port.readline()
+            print(i, res)
+            i = i+1
+            if b'/0`' in res:
+                print("finsih\n")
                 return "finsih"
 
     def initialization(self):
@@ -71,7 +74,7 @@ class Pipette(object):
         check_tip = "/1?31R\r"
         self.serial_connection.send_commond_string(check_tip)
         res = self.wait_for_response()        
-        if "`1\x03" in res:
+        if b"`1\x03" in res:
             print("tip attached! code:", res)
             return True
         else:

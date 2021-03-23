@@ -18,7 +18,6 @@ i = 1
 while i<=1000:
     ok = my_gripper.is_rotation_ok()
     print(i, ok)
-    time.sleep(0.1)
     i = i+1
 
 

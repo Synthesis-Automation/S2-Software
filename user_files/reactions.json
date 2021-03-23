@@ -1,24 +1,25 @@
 [
     {
-        "tracking_number": "03/18/2021/14:15-RXN-1",
+        "tracking_number": "03/23/2021/16:07-RXN-1",
         "reactor_no": 1,
-        "addition_temperature": 25,
+        "addition_temperature": 25.0,
         "reaction_time": 6.0,
-        "reaction_temperature": 25,
-        "reagents": [],
+        "reaction_temperature": 100.0,
+        "reagents": [
+            {
+                "name": "Toluene",
+                "type": "pure_liquid",
+                "plate": "plate_40mL:002",
+                "position": "B1",
+                "amount": 1.0
+            }
+        ],
         "workup": {
-            "name": "None"
-        }
-    },
-    {
-        "tracking_number": "03/18/2021/14:15-RXN-2",
-        "reactor_no": 2,
-        "addition_temperature": 25,
-        "reaction_time": 6.0,
-        "reaction_temperature": 25,
-        "reagents": [],
-        "workup": {
-            "name": "None"
+            "name": "brine",
+            "type": "solution",
+            "plate": "plate_40mL:003",
+            "position": "B2",
+            "amount": 1.0
         }
     }
 ]
