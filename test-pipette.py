@@ -1,5 +1,5 @@
 from combinewave import parameters
-from combinewave.robot.drivers import pipette_foreach
+from combinewave.robot.drivers.pipette import pipette_foreach
 import time
 pipette = pipette_foreach.Pipette('com4')
 pipette.connect()

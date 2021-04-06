@@ -4,10 +4,9 @@ from combinewave import parameters
 
 
 class XY_platform():
-    def __init__(self, port='', baudrate=115200, head_offsets={}, calibration={}):
+    def __init__(self, port='', baudrate=115200, head_offsets={}):
         self.port = port
         self.baudrate = baudrate
-        self.calibration = calibration
         self.head_offsets = head_offsets
         self.stop_flag = False
 
@@ -17,11 +16,10 @@ class XY_platform():
         self.smoothie = smoothie_drivers.SmoothieDriver()
         self.smoothie.connect(c)
         self.smoothie.prevent_squeal_on_boot()
-        self.set_acceleration(x=400, y=400)  # default 1200 mm/sec2 600 for us
-        self.set_speed(x=8000, y=8000)  # 10000 will lose steps
+        self.set_acceleration(x=600, y=400)  # default 1200 mm/sec2 600 for us
+        self.set_speed(x=8000, y=6000)  # 10000 will lose steps
 
-    def update(self, head_offsets={}, calibration={}):
-        self.calibration = calibration
+    def update(self, head_offsets={}):
         self.head_offsets = head_offsets
 
     def set_speed(self, *args, **kwargs):  # 2500 mm/min
@@ -43,14 +41,14 @@ class XY_platform():
         return self.smoothie.get_target_position()[axe]*2
 
     def move_to(self, head='Z1', vial={}):
-        # Vial data format: {'x': 11.14, 'y': 62.04, 'z': 0, 'depth': 85}
-        # the smoothieware has strange problem which limit the highest speed,
-        # I have to work around by double the steps_per_mm for x and y
+        # Vial data format: {'x': 11.14, 'y': 62.04, 'z': 0, 'depth': 85, ...}
+        # the smoothieware has a strange problem which limit the highest speed,
+        # We have to work around by double the steps_per_mm for x and y
         if self.stop_flag:
             return False
         plate = vial['plate']
-        x = vial['x'] + self.head_offsets[head][0] + self.calibration[plate][0]
-        y = vial['y'] + self.head_offsets[head][1] + self.calibration[plate][1]
+        x = vial['x'] + self.head_offsets[head][0]
+        y = vial['y'] + self.head_offsets[head][1]
         self.smoothie.move_head(mode='absolute', x=x/2, y=y/2)
         return True
 

@@ -1,25 +1,54 @@
 [
     {
-        "tracking_number": "03/23/2021/16:07-RXN-1",
+        "tracking_number": "04/06/2021/16:05-RXN-1",
         "reactor_no": 1,
-        "addition_temperature": 25.0,
+        "addition_temperature": 25,
         "reaction_time": 6.0,
-        "reaction_temperature": 100.0,
+        "reaction_temperature": 25.0,
         "reagents": [
             {
-                "name": "Toluene",
+                "name": "KF",
+                "type": "solid",
+                "plate": "plate_5mL:001",
+                "position": "A2",
+                "amount": 1
+            },
+            {
+                "name": "Test",
                 "type": "pure_liquid",
-                "plate": "plate_40mL:002",
-                "position": "B1",
-                "amount": 1.0
+                "plate": "plate_10mL:001",
+                "position": "C4",
+                "amount": 0.1
             }
         ],
         "workup": {
-            "name": "brine",
-            "type": "solution",
-            "plate": "plate_40mL:003",
-            "position": "B2",
-            "amount": 1.0
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/06/2021/16:05-RXN-2",
+        "reactor_no": 2,
+        "addition_temperature": 25,
+        "reaction_time": 6.0,
+        "reaction_temperature": 25.0,
+        "reagents": [
+            {
+                "name": "CsF",
+                "type": "solid",
+                "plate": "plate_5mL:001",
+                "position": "D7",
+                "amount": 1
+            },
+            {
+                "name": "Test",
+                "type": "pure_liquid",
+                "plate": "plate_10mL:001",
+                "position": "C4",
+                "amount": 0.2
+            }
+        ],
+        "workup": {
+            "name": "None"
         }
     }
 ]

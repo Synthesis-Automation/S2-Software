@@ -1,3 +1,0 @@
-# Reaction Protocol Format Version 1.0
-# No space in names of chemicals, use ';' to seperate each item, 'mL' for liquid chemicals, 'mmol' for solid chemicals, program ignores any chemical name start with '$'.
-KF (0.005 mmol);

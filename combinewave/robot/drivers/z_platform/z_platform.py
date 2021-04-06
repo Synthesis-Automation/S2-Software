@@ -76,7 +76,7 @@ class Z_platform(object):
         self.serial_connection.wait_for_finish()
         return True
 
-    def move(self, head='capper', z=0):
+    def move(self, head=CAPPER, z=0):
         if self.stop_flag:
             self.home(head = head)
             return False

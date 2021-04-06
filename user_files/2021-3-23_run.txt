@@ -1,4 +1,0 @@
-
-Protocol file name:  C:/Users/xubar/OneDrive/Robot/Softwares/S2/user_files/2021-3-23_run.txt
-Required plates:  plate_40mL:002
-['Reactor No. 1', '$4-Methoxyphenylboronic-acid  0.1 mmol ', '$K3PO4  0.14 mmol ', '$Benzyl-bromide  0.06 mmol  0.0072 mL ', '$Thioxanen-9-one 0.012 mmol ', 'Toluene 1.0 mL ', 'Addition-temperature  25 degree ', 'Reaction-temperature  100 degree ', 'Reaction-time  6.0 h ', 'Workup  brine  1.0 mL .']

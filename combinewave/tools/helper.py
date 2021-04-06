@@ -16,6 +16,7 @@ def format_json_file(json_file_name):
 
 
 def is_float(x):
+    '''test a string or number could be converted to a float'''
     try:
         float(x)
         if str(x) in ['inf', 'infinity', 'INF', 'INFINITY', 'True', 'NAN', 'nan', 'False', '-inf', '-INF', '-INFINITY', '-infinity', 'NaN', 'Nan']:

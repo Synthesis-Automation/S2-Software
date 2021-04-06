@@ -8,14 +8,14 @@ my_gripper = gripper.Gripper(modbus_connection=connection, unit=1)
 
 # input("press any key to continue")
 my_gripper.initialization()
-# my_gripper.set_rotation_force(99)
-# # my_gripper.gripper_open(60)
-# time.sleep(4)
-# # input("press any key to continue")
-# my_gripper.rotate(300)
+my_gripper.set_rotation_force(99)
+# my_gripper.gripper_open(60)
+time.sleep(4)
+# input("press any key to continue")
+my_gripper.rotate(300)
 
 i = 1
-while i<=1000:
+while i<=5000:
     ok = my_gripper.is_rotation_ok()
     print(i, ok)
     i = i+1

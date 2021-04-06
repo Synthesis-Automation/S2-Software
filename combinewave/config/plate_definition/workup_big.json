@@ -8,6 +8,14 @@
     },
     "columns": 3,
     "rows": 2,
+    "ordering": [
+        "A1",
+        "B1",
+        "A2",
+        "B2",
+        "A3",
+        "B3"
+    ],
     "wells": {
         "A1": {
             "depth": 82.7,

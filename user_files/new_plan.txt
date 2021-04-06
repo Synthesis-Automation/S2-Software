@@ -1,0 +1,5 @@
+# Reaction Protocol Format Version 1.1
+# No space in names, ';' as seperator, 'mL' for liquids, 'mmol' for solids, program ignores chemical name start with '$'.
+# Example: 
+
+Compound_A (0.005 mmol); Solvent_B (2 mL); Reaction-temperature (25.0 degree); Reaction-time (6.0 h).

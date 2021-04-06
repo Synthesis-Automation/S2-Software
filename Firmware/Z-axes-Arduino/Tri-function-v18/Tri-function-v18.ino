@@ -5,8 +5,8 @@
 //Pin definition is from ramps 1.4 using Mega2560
 //interupt pins for Mega2560: 2, 3, 18, 19, 20, 21
 //Small switch 0(LOW) for switch trigged, normal = 1(HIGH), thee backwire is not used.
-//Tablet stepper, microstepping = 2, //4 mm screw
-//steps_per_mm = 5000/50 = 100
+//Tablet stepper, microstepping = 2, //8 mm screw
+//steps_per_mm = 2x200/8 = 50
 
 #define X_MIN_PIN 3 //homing Z1
 #define X_MAX_PIN 2
@@ -55,9 +55,9 @@
 
 #include <AccelStepper.h>
 
-AccelStepper stepper_Z1(1, X_STEP_PIN, X_DIR_PIN);
+AccelStepper stepper_Z3(1, X_STEP_PIN, X_DIR_PIN);
 AccelStepper stepper_Z2(1, Y_STEP_PIN, Y_DIR_PIN);
-AccelStepper stepper_Z3(1, Z_STEP_PIN, Z_DIR_PIN);
+AccelStepper stepper_Z1(1, Z_STEP_PIN, Z_DIR_PIN);
 //AccelStepper stepper_Z4(1, E0_STEP_PIN, E0_DIR_PIN);
 
 void setup()
@@ -68,9 +68,9 @@ void setup()
   Serial.println(F("++++++++++++++++++++++++++++++++++++++"));
   Serial.println(F("+Tablet/Capper/Liquid handling system+"));
   Serial.println(F("+ ZBS Scientific, Shanghai, China ++++"));
-  Serial.println(F("++    Copyright 2020    ++++++++++++++"));
+  Serial.println(F("++    Copyright 2021    ++++++++++++++"));
   Serial.println(F("++++++++++++++++++++++++++++++++++++++"));
-  Serial.println(F("v1.6"));
+  Serial.println(F("v1.8"));
   Serial.println(F("Ready to revceive command:"));
 
   pinMode(X_MIN_PIN, INPUT_PULLUP);
@@ -155,7 +155,7 @@ void dc_motor(int rotate_time, int rotate_speed)
 void eject()
 {
   dc_motor(1500, 120);
-  delay(500);
+  delay(100);
   dc_motor(1500, 120);
 }
 
@@ -163,7 +163,7 @@ int MAX_STEPS = 30000; //stop homing after MAX_STEPS
 void home_Z1()
 {
   long initial_homing = -1; // Used to Home Stepper at startup
-  while (digitalRead(X_MIN_PIN) == HIGH && initial_homing >= -1 * MAX_STEPS)
+  while (digitalRead(Z_MIN_PIN) == HIGH && initial_homing >= -1 * MAX_STEPS)
   { // Make the Stepper move until the switch is activated
     stepper_Z1.moveTo(initial_homing); // Set the position to move to
     initial_homing--;                  // Decrease by 1 for next move if needed
@@ -171,7 +171,7 @@ void home_Z1()
   }
   stepper_Z1.setCurrentPosition(0);    // Set the current position as zero for now
   initial_homing = 1;
-  while (digitalRead(X_MIN_PIN) == LOW)
+  while (digitalRead(Z_MIN_PIN) == LOW)
   { // Make the Stepper move until the switch is deactivated
     stepper_Z1.moveTo(initial_homing);
     initial_homing++;
@@ -206,7 +206,7 @@ void home_Z2()
 void home_Z3()
 {
   long initial_homing = -1;
-  while (digitalRead(Z_MIN_PIN) == HIGH && initial_homing >= -1 * MAX_STEPS)
+  while (digitalRead(X_MIN_PIN) == HIGH && initial_homing >= -1 * MAX_STEPS)
   { // Make the Stepper move until the switch is activated
     stepper_Z3.moveTo(initial_homing); // Set the position to move to
     initial_homing--;                  // Decrease by 1 for next move if needed
@@ -214,7 +214,7 @@ void home_Z3()
   }
   stepper_Z3.setCurrentPosition(0);    // Set the current position as zero for now
   initial_homing = 1;
-  while (digitalRead(Z_MIN_PIN) == LOW)
+  while (digitalRead(X_MIN_PIN) == LOW)
   { // Make the Stepper move unti9ijn  l the switch is deactivated
     stepper_Z3.moveTo(initial_homing);
     initial_homing++;

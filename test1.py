@@ -1,31 +1,15 @@
+#place()方法
 from tkinter import *
-master = Tk()
-
-def var_states():
-   print(var1.get(), var2.get())
-
-Label(master, text="Your sex:").grid(row=0, sticky=W)
-var1 = IntVar()
-Checkbutton(master, text="male", variable=var1).grid(row=1, sticky=W)
-var2 = IntVar()
-Checkbutton(master, text="female", variable=var2).grid(row=2, sticky=W)
-Button(master, text='Quit', command=master.quit).grid(row=3, sticky=W, pady=4)
-Button(master, text='Show', command=var_states).grid(row=4, sticky=W, pady=4)
-mainloop()
-isfloat
-
-
-tip NOT attached! code: b'/0@1\x03\r\n'
-tip NOT attached! code: b'/0@\x03\r\n'
-tip NOT attached! code: b'/0@\x03\r\n'
-
-wait for tip
-tip attached! code: b'/0`1\x03\r\n'
-
-
-tip NOT attached! code: b'/0`0\x03\r\n'
-tip NOT attached! code: b'/0`0\x03\r\n'
-
-
-
-tip attached! code: b'/0`1\x03\r\n'
+#主窗口
+win = Tk()
+#创建窗体
+frame = Frame (win, relief=RAISED, borderwidth=2, width=400, height=300)
+frame.pack(side=TOP, fill=BOTH,ipadx=5, ipady=5, expand=1)
+#第一个按钮的位置在距离窗体左上角的(40，40)坐标处
+button1 = Button(frame, text="Button 1")
+button1.place (x=40,y=40, anchor=W, width=80, height=40)
+#第二个按钮的位置在距离窗体左.上角的(140，80) 坐标处
+button2 = Button(frame, text="Button 2")
+button2 .place(x=140,y=80, anchor=W, width=80, height=40)
+#开始窗口的事件循环
+win. mainloop()

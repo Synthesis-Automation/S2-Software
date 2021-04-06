@@ -3,40 +3,40 @@
 
   "max_robot_rows": 3,
   "max_robot_cols": 5,
-  "col_offset": 134,
-  "row_offset": 92,
+  "col_offset": 140,
+  "row_offset": 100,
   "max_number_of_plate": 15,
   
   "reference": {
-    "x": 0,
-    "y": 0,
-    "z": 120
+    "x": 149.5,
+    "y": 110,
+    "z": 172
   },
 
   "slots": {
     "A1": { "x": 0, "y": 0 },
-    "A2": { "x": 134, "y": 0 },
-    "A3": { "x": 268, "y": 0 },
-    "A4": { "x": 402, "y": 0 },
-    "A5": { "x": 536, "y": 0 },
-    "B1": { "x": 0, "y": 92 },
-    "B2": { "x": 134, "y": 92 },
-    "B3": { "x": 268, "y": 92 },
-    "B4": { "x": 402, "y": 92 },
-    "B5": { "x": 536, "y": 92 },
-    "C1": { "x": 0, "y": 184 },
-    "C2": { "x": 134, "y": 184 },
-    "C3": { "x": 268, "y": 184 },
-    "C4": { "x": 402, "y": 184 },
-    "C5": { "x": 536, "y": 184 }
+    "A2": { "x": 140, "y": 0 },
+    "A3": { "x": 290, "y": 0 },
+    "A4": { "x": 491, "y": 0 },
+    "A5": { "x": 631, "y": 0 },
+    "B1": { "x": 0, "y": 100 },
+    "B2": { "x": 140, "y": 100 },
+    "B3": { "x": 420, "y": 0 },   
+    "B4": { "x": 491, "y": 100 },
+    "B5": { "x": 631, "y": 100 },
+    "C1": { "x": 0, "y": 200 },
+    "C2": { "x": 140, "y": 200 },
+    "C3": { "x": 290, "y": 200 },
+    "C4": { "x": 491, "y": 200 },
+    "C5": { "x": 631, "y": 200 }
   },
 
-  "steps_per_mm_Z1": 100,
-  "steps_per_mm_Z2": 100,
-  "steps_per_mm_Z3": 100,
-  "steps_per_mm_X": 100,
-  "steps_per_mm_Y": 100,
-
   "pipette_model": "foreach",
-  "gripper_model": "flexrobo"
+  "gripper_model": "flexrobo",
+
+  "usb_sn_xy_platform": "10011005AF6998A25E3FEE3AF50020C7",
+  "usb_sn_z_platform": "",
+  "usb_sn_pipette":"8C9CF2DFF27FEA119526CA1A09024092",
+  "usb_sn_modbus": "D2B376D8C37FEA11A2BCCA1A09024092"
+
 }

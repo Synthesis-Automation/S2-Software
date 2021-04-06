@@ -1,4 +1,0 @@
-# Note: No space in names, ';' to seperate each item, 'mL' for liquid chemicals, 'mmol' for solid chemicals, program ignores any chemical name start with '$'. 
-
-Water (0.45 mL); KF (0.005 mmol); 
-Octene (0.05 mL); iPrOH (0.45 mL); CsF (0.005 mmol);

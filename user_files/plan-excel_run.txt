@@ -1,6 +1,0 @@
-
-Protocol file name:  C:/Users/xubar/OneDrive/Robot/Softwares/SynM/App/user_files/plan-excel_run.txt
-Required plates:  plate_40mL:001, plate_5mL:002
-['Reactor No. 1', 'Water  0.45 mL', 'Addition-temperature  25 degree', 'Reaction-temperature  25 degree', 'Reaction-time  6. h', 'Workup  brine  1.0 mL', '']
-['Reactor No. 2', 'Water  0.45 mL', 'DEAD  0. 2 mL', 'Addition-temperature  25 degree', 'Reaction-temperature  25 degree', 'Reaction-time  6. h', 'Workup  brine  1.0 mL']
-['Reactor No. 3', 'Water  0.45 mL', 'DEAD  0. 2 mL', 'Addition-temperature  25 degree', 'Reaction-temperature  25 degree', 'Reaction-time  6. h', 'Workup  brine  1.0 mL']

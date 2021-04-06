@@ -31,9 +31,9 @@ if __name__ == "__main__":
     chem_robot = robot.Robot()
     chem_robot.connect()
     chem_robot.home_all()
-    capper_test("B2", plate_type = "plate_5mL")
-    capper_test("C3", plate_type = "plate_8mL")
-    capper_test("A3", plate_type = "plate_40mL")
+    # capper_test("B2", plate_type = "plate_5mL")
+    # capper_test("C3", plate_type = "plate_8mL")
+    # capper_test("A3", plate_type = "plate_40mL")
     # chem_robot.gripper.rotate_to(450)
     # tablet_test()
     

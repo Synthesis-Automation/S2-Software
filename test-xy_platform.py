@@ -2,32 +2,32 @@ import sys
 from combinewave.robot.drivers.xy_platform import xy_platform
 from combinewave.deck import deck
 
-USB_port = 'com5'
+USB_port = 'com8'
 xy_platform = xy_platform.XY_platform(port=USB_port)
 xy_platform.connect()
-i=0
-for i in range(1000):
-    a = xy_platform.smoothie.get_firmware_version()
-    print(i, a)
+# i=0
+# for i in range(5000):
+#     a = xy_platform.smoothie.get_firmware_version()
+#     print(i, a)
 
-# xy_platform.home(axe='xy')
+xy_platform.home(axe='xy')
 
 # xy_platform.smoothie.set_steps_per_mm('x', 320)
 # xy_platform.smoothie.set_steps_per_mm('y', 320)
 
-# xy_platform.set_acceleration(x=600, y=600)  # default 1200 mm/sec2
-# xy_platform.set_speed(x=8000, y=8000)
+xy_platform.set_acceleration(x=600, y=600)  # default 1200 mm/sec2 600 for us
+xy_platform.set_speed(x=9000, y=6000)  # 10000 will lose steps
 
+print(xy_platform.smoothie.speeds)
+print(xy_platform.smoothie.get_steps_per_mm('x'))
+print(xy_platform.smoothie.get_steps_per_mm('y'))
 
-# xy_platform.move(x=200,  y=300)
-
-# # # speed test
-# # for i in range(1):
-# #     xy_platform.move(x=500,  y=300)
-# #     xy_platform.move(x=-500, y=-300)
-# # print(xy_platform.smoothie.speeds)
-# # print(xy_platform.smoothie.get_steps_per_mm('x'))
-# # print(xy_platform.smoothie.get_steps_per_mm('y'))
+# speed test
+for i in range(20):
+    # input("continue")
+    xy_platform.move(x=650,  y=300)
+    # input("continue")
+    xy_platform.move(x=-650, y=-300)
 
 
 # vial_1 = deck.vial(plate='A1', vial='A1')

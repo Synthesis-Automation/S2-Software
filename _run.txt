@@ -1,0 +1,4 @@
+
+Protocol file name:  _run.txt
+Required plates:  plate_5mL:001, plate_50mL:001
+['Reactor No. 1', 'KF  0.005 mmol ', 'Water  0.8 mL ', 'Reaction-temperature  25.0 degree ', 'Reaction-time  6.0 h .']

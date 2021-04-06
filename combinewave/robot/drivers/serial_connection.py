@@ -7,6 +7,7 @@ import serial.tools.list_ports
 def int_to_bytes(x):
     return x.to_bytes((x.bit_length() + 7) // 8, 'big')
 
+
 class Connection(object):
     def __init__(self, port='', parity=serial.PARITY_NONE, baudrate=9600, timeout=0.02):
         sp = serial.Serial()
@@ -68,7 +69,6 @@ class Connection(object):
                 return res
         raise RuntimeWarning(
             'No new msg line from serial port after {} second(s)'.format(timeout))
-
 
     def write_string(self, data_string):
         self.serial_port.write(data_string.encode())
@@ -135,7 +135,6 @@ class Connection(object):
                     return msg
 
 
-
 def get_port_by_VID(vid):
     '''Returns first serial device with a given VID'''
     for d in serial.tools.list_ports.comports():
@@ -146,7 +145,6 @@ def get_port_by_VID(vid):
 def get_port_by_serial_no(sn):
     '''Returns first serial device with a given serial_no'''
     for d in serial.tools.list_ports.comports():
-        print(d.serial_number)
         if d.serial_number == sn:
             return d[0]
 
@@ -160,13 +158,13 @@ def get_all_ports():
 if __name__ == "__main__":
     vid_xy_platform = 0x1D50
     vid_z_platform = 0x1A86
-    vid_pipette = 0x10C4  # FT232
+    vid_pipette = 0x10C4  # CP210x
     vid_modbus = 0x10C4  # CP210x, PID 0xEA60, DTECH
     vid_waveshare = 0x0403  # FT232, PID 0x6001
+    vid_ika = 0x0483
 
     sn_pipette = '8C9CF2DFF27FEA119526CA1A09024092'
     sn_modbus = 'D2B376D8C37FEA11A2BCCA1A09024092'
-
 
     # print("List of serial port")
     # ports = get_serial_ports_list()

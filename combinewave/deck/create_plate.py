@@ -66,6 +66,13 @@ class Plate(object):
                         }
                         }
                 self._wells.update(well)
+
+        vial_list = []
+        for i in range(self.columns):
+            for j in range(self.rows):
+                vial_name = chr(j + ord('A')) + str(1 + i)
+                vial_list.append(vial_name)
+
         self.plate_data = {"version": 1.0,
                            "name": self.name,
                            "cornerOffsetFromSlot": {
@@ -75,6 +82,7 @@ class Plate(object):
                            },
                            "columns": self.columns,
                            "rows": self.rows,
+                           "ordering": vial_list,
                            "wells": self._wells
                            }
 
@@ -117,8 +125,8 @@ if __name__ == "__main__":
     my_plate.creat_plate()
     my_plate.save_plate_file()
 
-    my_plate = Plate(name='clean_up', grid=(12, 8), offset=(
-        11.3, 8.2), spacing=(5, 5), diameter=4.20, depth=60, height=80, volume=0)
+    my_plate = Plate(name='clean_up', grid=(25, 25), offset=(
+        0, 0), spacing=(1, 1), diameter=4.20, depth=60, height=164, volume=0)
     my_plate.creat_plate()
     my_plate.save_plate_file()
 
@@ -132,13 +140,13 @@ if __name__ == "__main__":
     my_plate.creat_plate()
     my_plate.save_plate_file()
 
-    my_plate = Plate(name='plate_40mL', grid=(3, 2), offset=(
-        22.8, 21.7), spacing=(41, 42), diameter=13.7, depth=86.0, height=119.5, volume=4000)
+    my_plate = Plate(name='plate_50mL', grid=(3, 2), offset=(
+        22.8, 22.2), spacing=(41, 41), diameter=13.7, depth=90.0, height=186, volume=4000)
     my_plate.creat_plate()
     my_plate.save_plate_file()
 
     my_plate = Plate(name='plate_15mL', grid=(4, 3), offset=(
-        23, 19), spacing=(27, 24.5), diameter=18.0, depth=75, height=103, volume=4000)
+        23, 19), spacing=(27, 24.5), diameter=18.0, depth=72, height=103, volume=4000)
     my_plate.creat_plate()
     my_plate.save_plate_file()
 
@@ -149,7 +157,7 @@ if __name__ == "__main__":
     # my_plate.save_plate_file()
 
     my_plate = Plate(name='plate_5mL', grid=(7, 4), offset=(
-        9.5, 10), spacing=(17.9, 22.2), diameter=18.0, depth=82, height=103, volume=4000)
+        9.8, 9.7), spacing=(18.0, 22), diameter=18.0, depth=82, height=173, volume=4000)
     my_plate.creat_plate()
     my_plate.save_plate_file()
 
@@ -163,17 +171,22 @@ if __name__ == "__main__":
     my_plate.creat_plate()
     my_plate.save_plate_file()
 
-    my_plate = Plate(name='plate_8mL', grid=(4, 3), offset=(
-        28, 20), spacing=(24.0, 24.5), diameter=18.0, depth=58, height=86.5, volume=4000)
+    my_plate = Plate(name='reactor_12p', grid=(4, 3), offset=(
+        28, 20), spacing=(24.0, 24.5), diameter=18.0, depth=58, height=166, volume=8000)
     my_plate.creat_plate()
     my_plate.save_plate_file()
 
     my_plate = Plate(name='caps', grid=(4, 3), offset=(
-        23, 16.5), spacing=(27, 27), diameter=18.0, depth=59, height=107.5, volume=4000)
+        23, 16.5), spacing=(27, 27), diameter=18.0, depth=59, height=167, volume=4000)
     my_plate.creat_plate()
     my_plate.save_plate_file()
 
     my_plate = Plate(name='deck', grid=(5, 3), offset=(
         23, 16.5), spacing=(27, 27), diameter=18.0, depth=59, height=107.5, volume=4000)
+    my_plate.creat_plate()
+    my_plate.save_plate_file()
+
+    my_plate = Plate(name='plate_10mL', grid=(4, 3), offset=(
+        15.8, 14.7), spacing=(32.0, 28), diameter=18.0, depth=52, height=143, volume=10000)
     my_plate.creat_plate()
     my_plate.save_plate_file()

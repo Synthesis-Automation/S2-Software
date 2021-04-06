@@ -10,7 +10,7 @@
 
 # self.robot_config
 # example: {
-# "note": "refenrence is compared to conner of slot A1, capper:4mm, tablet 4 mm, liquid:4 mm, 56",
+# "note": "reference is compared to conner of slot A1, capper:4mm, tablet 4 mm, liquid:4 mm, 56",
 # "col_offset": 134,
 # "row_offset": 92,
 # "max_robot_rows":3,
@@ -52,24 +52,23 @@
 
 import json
 from pathlib import Path
+import time
 
 
 class Deck(object):
-    def __init__(self, deck_config={}):
-        self.deck_config = deck_config
+    def __init__(self, robot_config={}):
+        self.robot_config = robot_config
         self.calibration_file = Path("combinewave/config/calibration.json")
         self.deck_config_file = Path("combinewave/config/deck_config.json")
-        self.robot_config_file = Path("combinewave/config/robot_config.json")
         self.load_robot_config()
+        self.load_deck_config()
         self.setup_plates()
         self.generate_slot_list()
-        self.load_deck_config()
         self.load_calibration()
+        self.tip_update_time = float(time.time())
 
     def load_robot_config(self):
-        with open(self.robot_config_file) as config:
-            self.robot_config = json.load(config)
-        self.refenrence = self.robot_config["reference"]
+        self.reference = self.robot_config["reference"]
         self._slots = self.robot_config["slots"]
         self.max_number_of_plate = self.robot_config["max_number_of_plate"]
 
@@ -78,22 +77,31 @@ class Deck(object):
             self.calibration = json.load(cal)
         self.update_head_offsets()
         self.current_tip = self.calibration["Current_tip"]
+        self.deck_calibration_x = self.calibration["Z2"][0]-self.reference["x"]
+        self.deck_calibration_y = self.calibration["Z2"][1]-self.reference["y"]
 
     def set_current_tip(self, tip):
         self.current_tip = tip
+        self.tip_update_time = float(time.time())
+
+    def get_tip_update_time(self):
+        return self.tip_update_time
 
     def save_current_tip(self):
         self.save_calibration("Current_tip", self.current_tip)
 
-    def get_current_tip(self):
-        return self.current_tip
+    def get_current_tip(self, format="number"):
+        '''return numeric format such as 0, 1 when format = number, else return non-numeric format such as A1'''
+        if format == "number":
+            return self.current_tip
+        else:
+            return self.convert_number_to_A1_by_plate_type(self.current_tip, plate_type="tiprack_1000ul")
 
     def load_deck_config(self):
         # read deck config file
         deck_config = {}
         with open(self.deck_config_file) as deck_c:
             deck_config = json.load(deck_c)
-        # print(deck_config)
         self.update_deck_config(deck_config)
 
     def get_slot_offsets(self):
@@ -137,16 +145,16 @@ class Deck(object):
             self.calibration = json.load(cal)
         # calculate the head_offsets from the calibration data
         # the offsets (XY) is vs Z2 (center, Tablet), but offsets (z) is vs the deck surface plane
-        # example: "Z1": [0, 0, 132.1] is the coordinate (x, y, z) of Z1 vs. the ref point
         x1 = self.calibration["Z1"][0]-self.calibration["Z2"][0]
         y1 = self.calibration["Z1"][1]-self.calibration["Z2"][1]
-        z1 = self.calibration["Z1"][2]+self.refenrence["z"]
+        z1 = self.calibration["Z1"][2]+self.reference["z"]
         x2 = 0
         y2 = 0
-        z2 = self.calibration["Z2"][2]+self.refenrence["z"]
+        z2 = self.calibration["Z2"][2]+self.reference["z"]
         x3 = self.calibration["Z3"][0]-self.calibration["Z2"][0]
         y3 = self.calibration["Z3"][1]-self.calibration["Z2"][1]
-        z3 = self.calibration["Z3"][2]+self.refenrence["z"]
+        z3 = self.calibration["Z3"][2]+self.reference["z"]
+        # z1, z2, z3 are actually the z_max (the distance between deck surface and the z-end switch)
         self.head_offsets = {
             "Z1": [x1, y1, z1],
             "Z2": [x2, y2, z2],
@@ -161,7 +169,6 @@ class Deck(object):
             json.dump(self.calibration, json_file)
         from combinewave.tools import helper
         helper.format_json_file(self.calibration_file)
-        # self.update_head_offsets()
 
     def generate_slot_list(self):
         '''slot_list = ['A1', 'A2', 'A3', 'A4', 'A5', 'B1', 'B2', 'B3', 'B4', 'B5', 'C1', 'C2', 'C3', 'C4', 'C5']'''
@@ -209,34 +216,63 @@ class Deck(object):
 
     def vial(self, plate='B1', vial='A1'):
         # This function return x, y, z and depth of a vial, vials = plate['wells']
-        x = self._plates[plate]['wells'][vial]['x']
-        y = self._plates[plate]['wells'][vial]['y']
-        z = self._plates[plate]['wells'][vial]['z']
-        # The above is plate_coordinate
         depth = self._plates[plate]['wells'][vial]['depth']
         height = self._plates[plate]['wells'][vial]['height']
         diameter = self._plates[plate]['wells'][vial]['diameter']
-        x1 = self._slots[plate]["x"]
-        y1 = self._slots[plate]["y"]
-        z1 = 0
         plate_name = self.deck_config[plate]["plate"]
         plate_type = plate_name.split(':')[0]
-        # the final x, y, z  = plate + slot + refenrence
-        X = x + x1 + self.refenrence["x"]
-        Y = y + y1 + self.refenrence["y"]
-        Z = z + z1 + self.refenrence["z"]
+
+        # self.deck_calibration_x was calced. at self.load_calibration()
+        # the final x, y, z  = plate_cooridinate + slot_coordinate + deck_calibration + plate_calibration
+        # there is no z  plate_calibration
+        plate_x = self._plates[plate]['wells'][vial]['x']
+        plate_y = self._plates[plate]['wells'][vial]['y']
+
+        # The above is slot
+        slot_x = self._slots[plate]["x"]
+        slot_y = self._slots[plate]["y"]
+
+        X = plate_x + slot_x + self.deck_calibration_x + \
+            self.calibration[plate][0]
+        Y = plate_y + slot_y + self.deck_calibration_y + \
+            self.calibration[plate][1]
+        Z = 0
+        result = {'x': X, 'y': Y, 'z': Z, 'depth': depth,
+                  'plate': plate, 'vial': vial, 'type': plate_type, 'height': height, 'diameter': diameter}
+        return result
+
+    def vial_coordinate(self, plate='B1', vial='A1'):
+        # This function return x, y, z and depth of a vial, vials = plate['wells']
+        depth = self._plates[plate]['wells'][vial]['depth']
+        height = self._plates[plate]['wells'][vial]['height']
+        diameter = self._plates[plate]['wells'][vial]['diameter']
+        plate_name = self.deck_config[plate]["plate"]
+        plate_type = plate_name.split(':')[0]
+
+        # self.deck_calibration_x was calced. at self.load_calibration()
+        # the final x, y, z  = plate_cooridinate + slot_coordinate + deck_calibration + plate_calibration
+        # there is no z  plate_calibration
+        plate_x = self._plates[plate]['wells'][vial]['x']
+        plate_y = self._plates[plate]['wells'][vial]['y']
+
+        # The above is slot
+        slot_x = self._slots[plate]["x"]
+        slot_y = self._slots[plate]["y"]
+
+        X = plate_x + slot_x + self.deck_calibration_x
+        Y = plate_y + slot_y + self.deck_calibration_y
+        Z = 0
         result = {'x': X, 'y': Y, 'z': Z, 'depth': depth,
                   'plate': plate, 'vial': vial, 'type': plate_type, 'height': height, 'diameter': diameter}
         return result
 
     def convert_number_to_A1(self, number, plate="A1"):
         '''convert numeric number (e.g., 2) to format like A2, the number start with 0'''
-        number = number+1
-        row = self._plates[plate]['rows']
-        if int((number) % row) != 0:
-            return chr(65+int((number) % row)-1)+str(int((number)/row)+1)
-        else:
-            return chr(65+row-1)+str(int((number)/row))
+        return self._plates[plate]['ordering'][number]
+
+    def convert_number_to_A1_by_plate_type(self, number, plate_type="plate_type"):
+        '''convert numeric number (e.g., 2) to format like A2, the number start with 0'''
+        return self.get_vial_list_by_plate_type(plate_type)[number]
 
     def convert_A1_to_number_by_plate_type(self, name, plate_type="plate"):
         '''convert numeric number (e.g., 2) to format like A2, the number start with 0'''
@@ -244,22 +280,11 @@ class Deck(object):
 
     def convert_A1_to_number(self, number, plate="A1"):
         '''convert format "A2" to numeric number (e.g., 2)'''
-        rows = self._plates[plate]['rows']
-        col = int(number[1:])
-        row = (ord(number[0])-ord("A"))+1
-        n = (col-1)*rows+row-1
-        return n
+        return self._plates[plate]['ordering'].index(number)
 
     def get_vial_list_by_slot(self, slot="A1"):
         # generate the vial list in a plate, e.g., ["A1", "B1", ...]
-        vial_list = []
-        rows = self._plates[slot]['rows']
-        columns = self._plates[slot]['columns']
-        for i in range(rows):
-            for j in range(columns):
-                vial_name = chr(i + ord('A')) + str(1 + j)
-                vial_list.append(vial_name)
-        return vial_list
+        return self._plates[slot]['ordering']
 
     def get_vial_list_by_plate_type(self, plate_type="plate_2mL"):
         # generate the vial list in a plate, e.g., ["A1", "B1", ...]
@@ -267,13 +292,7 @@ class Deck(object):
         plate_definition = self.read_plate_definition(Path(
             'combinewave/config/plate_definition')
             / (plate_type + ".json"))
-        rows = plate_definition['rows']
-        columns = plate_definition['columns']
-        for i in range(columns):
-            for j in range(rows):
-                vial_name = chr(j + ord('A')) + str(1 + i)
-                vial_list.append(vial_name)
-        return vial_list
+        return plate_definition['ordering']
 
     def get_cols_rows_by_plate_type(self, plate_type="plate_2mL"):
         # generate the vial cols_rows e.g., {"columns": 5, "rows": 6}
@@ -285,6 +304,12 @@ class Deck(object):
         return {'columns': columns, 'rows': rows}
 
     def next_vial(self, number, plate="A1"):  # format of number:"A1"
+        # This function generate position of next vial (e.g., A1 -> B1)
+        no = self.convert_A1_to_number(number, plate=plate)
+        next_one = self.convert_number_to_A1(no+1, plate=plate)
+        return next_one
+
+    def next_vial_old(self, number, plate="A1"):  # format of number:"A1"
         # This function generate position of next vial (e.g., A1 -> B1)
         no = self.convert_A1_to_number(number, plate=plate)
         next_one = self.convert_number_to_A1(no+1, plate=plate)
@@ -309,10 +334,61 @@ class Deck(object):
 
 # test code for this module
 if __name__ == '__main__':
-    deck = Deck()
+    robot_config = {
+        "note": "refenrence is compared to conner of slot A1, Z is to deck surface",
+
+        "max_robot_rows": 3,
+        "max_robot_cols": 5,
+        "col_offset": 140,
+        "row_offset": 100,
+        "max_number_of_plate": 15,
+
+        "reference": {
+            "x": 149,
+            "y": 108,
+            "z": 172
+        },
+
+        "slots": {
+            "A1": {"x": 0, "y": 0},
+            "A2": {"x": 140, "y": 0},
+            "A3": {"x": 290, "y": 0},
+            "A4": {"x": 491, "y": 0},
+            "A5": {"x": 631, "y": 0},
+            "B1": {"x": 0, "y": 100},
+            "B2": {"x": 140, "y": 100},
+            "B3": {"x": 420, "y": 0},
+            "B4": {"x": 491, "y": 100},
+            "B5": {"x": 631, "y": 100},
+            "C1": {"x": 0, "y": 200},
+            "C2": {"x": 140, "y": 200},
+            "C3": {"x": 290, "y": 200},
+            "C4": {"x": 491, "y": 200},
+            "C5": {"x": 631, "y": 200}
+        },
+
+        "pipette_model": "foreach",
+        "gripper_model": "flexrobo",
+
+        "usb_sn_xy_platform": "10011005AF6998A25E3FEE3AF50020C7",
+        "usb_sn_z_platform": "",
+        "usb_sn_pipette": "8C9CF2DFF27FEA119526CA1A09024092",
+        "usb_sn_modbus": "D2B376D8C37FEA11A2BCCA1A09024092"
+
+    }
+
+    deck = Deck(robot_config)
+    a = deck.get_current_tip()
+    b = deck.get_current_tip(format="A1")
+    print("Current tip = ", a, "or", b)
+
     print("deck._slots")
     print(deck._slots)
     print()
+
+    # print("deck._plates")
+    # print(deck._plates)
+    # print()
 
     print("deck.calibration")
     print(deck.calibration)
@@ -322,30 +398,28 @@ if __name__ == '__main__':
     print(deck.head_offsets)
     print()
 
-    print("vial cooridnates:")
-    vial_1 = deck.vial(plate='A1', vial='A1')
-    print(vial_1)
-
+    print("deck.deck_calibration_x and deck_calibration_y")
+    print(deck.deck_calibration_x, deck.deck_calibration_y)
     print()
-    print(deck.convert_number_to_A1(number=4, plate='B3'))
-    print(deck.convert_A1_to_number("A1", plate='B3'))
-    print(deck.next_vial('B3', plate='B3'))
-    r = deck.get_assignment_of_slot("C3")
-    print(r)
+
+    print("vial cooridnates:")
+    vial_1 = deck.vial(plate='C2', vial='A1')
+    print(vial_1)
 
     slots = deck.slot_list
     print("slot_list:")
     print(slots)
 
+    print("slot_list-2:")
     vial_list_ = deck.get_vial_list_by_plate_type("deck")
     print(vial_list_)
 
+    print("plate_2mL cols and rows")
     res = deck.get_cols_rows_by_plate_type(plate_type="plate_2mL")
     print(res)
 
-
-    res = deck.convert_A1_to_number_by_plate_type("A1", plate_type="plate_5mL")
-    print(res)
+    # res = deck.convert_A1_to_number_by_plate_type("A1", plate_type="plate_5mL")
+    # print(res)
     # vial_list_ = deck.get_vial_list_by_slot("A2")
     # print(vial_list_)
 
@@ -355,3 +429,10 @@ if __name__ == '__main__':
     # print(res)
     # res = deck.convert_A1_to_number("B1", plate_name)
     # print(res)
+
+    # print()
+    # print(deck.convert_number_to_A1(number=4, plate='B3'))
+    # print(deck.convert_A1_to_number("A1", plate='B3'))
+    # print(deck.next_vial('B3', plate='B3'))
+    # r = deck.get_assignment_of_slot("C3")
+    # print(r)

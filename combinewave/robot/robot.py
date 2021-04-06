@@ -3,12 +3,14 @@
 
 import time
 import logging
+import json
+from pathlib import Path
 
 from combinewave.robot.drivers.xy_platform import xy_platform
 from combinewave.robot.drivers.z_platform import z_platform
 from combinewave.robot.drivers.rs485.gripper import gripper
 from combinewave.robot.drivers import rs485_connection
-from combinewave.robot.drivers import pipette_foreach
+from combinewave.robot.drivers.pipette import pipette_foreach
 from combinewave.robot.drivers.serial_connection import get_port_by_VID, get_port_by_serial_no
 from combinewave.deck import deck
 
@@ -25,35 +27,37 @@ class Robot(object):
         pipette_port="",
         modbus_port=""
     ):
+        self.robot_config_file = Path("combinewave/config/robot_config.json")
         self.xy_platform_port = xy_platform_port
         self.z_platform_port = z_platform_port
         self.pipette_port = pipette_port
         self.modbus_port = modbus_port
         self.ready = False
         self.stop_flag = False
-        self.deck = deck.Deck()
         self.is_connected = False
+        self.load_robot_config()
+        self.deck = deck.Deck(self.robot_config)
+
+    def load_robot_config(self):
+        with open(self.robot_config_file) as config:
+            self.robot_config = json.load(config)
 
     def connect(self):
         # find usb ports
-        vid_xy_platform = 0x1D50  # smoothie
-        vid_z_platform = 0x1A86  # CH340
-        vid_pipette = 0x10C4   # CP210x, PID 0xEA60, DTECH
-        vid_modbus = 0x10C4  # CP210x, PID 0xEA60, DTECH
-        sn_pipette = '8C9CF2DFF27FEA119526CA1A09024092'
-        sn_modbus = 'D2B376D8C37FEA11A2BCCA1A09024092'
-
-        self.modbus_port = get_port_by_serial_no(sn_modbus)
-        self.pipette_port = get_port_by_serial_no(sn_pipette)
-        self.xy_platform_port = get_port_by_VID(vid_xy_platform)
-        self.z_platform_port = get_port_by_VID(vid_z_platform)
-
-        usb_info = f"xy_port= {self.xy_platform_port}, z_port= {self.z_platform_port}, modbus_port= {self.modbus_port}, pipette_port= {self.pipette_port}"
-        logging.info("Com ports: "+usb_info)
+        usb_sn_xy_platform = self.robot_config["usb_sn_xy_platform"]
+        usb_sn_z_platform =  self.robot_config["usb_sn_z_platform"]
+        usb_sn_pipette = self.robot_config["usb_sn_pipette"]
+        usb_sn_modbus = self.robot_config["usb_sn_modbus"]
+        self.modbus_port = get_port_by_serial_no(usb_sn_modbus)
+        self.pipette_port = get_port_by_serial_no(usb_sn_pipette)
+        self.xy_platform_port = get_port_by_serial_no(usb_sn_xy_platform)
+        self.z_platform_port = get_port_by_serial_no(usb_sn_z_platform)
+        usb_info = f"xy_port= {self.xy_platform_port}, z_port= {self.z_platform_port}, modbus_port= {self.modbus_port}, pipette_port= {self.pipette_port}"      
+        print("Com ports: ", usb_info)
+        logging.info("Com ports: " + usb_info)
         self.xy_platform = xy_platform.XY_platform(
             port=self.xy_platform_port,
-            head_offsets=self.deck.head_offsets,
-            calibration=self.deck.calibration
+            head_offsets=self.deck.head_offsets
         )
         self.xy_platform.connect()
         self.z_platform = z_platform.Z_platform(
@@ -67,10 +71,10 @@ class Robot(object):
         self.pipette.connect()
 
     def update(self):
-        '''update calibration and head_offsets'''
+        '''update head_offsets'''
         self.deck.update_head_offsets()
         self.xy_platform.update(
-            head_offsets=self.deck.head_offsets, calibration=self.deck.calibration)
+            head_offsets=self.deck.head_offsets)
         self.z_platform.update(head_offsets=self.deck.head_offsets)
 
     def home_all_z(self):
@@ -120,11 +124,11 @@ class Robot(object):
 
     def back_to_safe_position(self, head):
         if head == CAPPER:
-            safe_position = 2
+            safe_position = 10
         if head == LIQUID:
-            safe_position = 2
+            safe_position = 40
         if head == TABLET:
-            safe_position = 2
+            safe_position = 35
         self.z_platform.move_to_abs(head=head, z=safe_position)
 
     def back_to_safe_position_all(self):
@@ -132,7 +136,7 @@ class Robot(object):
         self.back_to_safe_position(head=LIQUID)
         self.back_to_safe_position(head=TABLET)
 
-    def move_to(self, head=CAPPER, vial=()):
+    def move_to(self, head=CAPPER, vial=(), use_allow_list = True):
         # vial is a turple for vial location, e.g., ('A1', 'C2')
         # the first ('A1') is for plate, the second ('C2') is for vial location
         # ("Reagent", "Reactor", "Workup", "Tips 1000uL", "Tips 50uL", "Trash", "Clean up", "Reaction caps", "GC LC")
@@ -141,7 +145,7 @@ class Robot(object):
                         LIQUID: ["Workup", "Reactor", "Tips 1000uL", "Reagent", "GC LC", "Trash"],
                         TABLET: ["Reagent", "Reactor", "Clean up"]
                         }
-        if assignment not in allowed_list[head]:
+        if assignment not in allowed_list[head] and use_allow_list==True:
             print(f"{head} should not move to {assignment}")
             return assignment
         my_vial = self.vial(vial[0], vial[1])
@@ -176,46 +180,60 @@ class Robot(object):
         my_vial = self.vial(vial[0], vial[1])
         vial_type = my_vial["type"]
         self.gripper.set_gripper_force(100)
-        hold = -8
         self.z_platform.set_max_speed(
             head=CAPPER, speed=4000)  # normal Max speed = 4000
-        if vial_type == "plate_15mL":
+        if vial_type == "reactor_27p":
+            hold = -11
             rotation_speed = 80
             rotation_force = 90
             ratio = 6.0
             Z_speed = int(rotation_speed*ratio)
-            rotation_angle = 1400
+            rotation_angle = 1600
             gripper_openning_percent = 70  # 90%
             up_distance = 7
             gripper_closing_percent = 20
         elif vial_type == "plate_5mL":
+            hold = -12
             rotation_speed = 40
             rotation_force = 90
-            ratio = 9.0
+            ratio = 7.0
             Z_speed = int(rotation_speed*ratio)
             rotation_angle = 900
             gripper_openning_percent = 50
             up_distance = rotation_angle/100
             gripper_closing_percent = 10
-        elif vial_type == "plate_8mL":
+        elif vial_type == "reactor_12p":
+            hold = -7
             rotation_speed = 70
             rotation_force = 90
-            ratio = 6.0
+            ratio = 5.0
             Z_speed = int(rotation_speed*ratio)
             rotation_angle = 1400
             gripper_openning_percent = 70
-            up_distance = 7
+            up_distance = 6
             gripper_closing_percent = 20
-        elif vial_type == "plate_40mL":
-            hold = -12
-            rotation_speed = 40
+
+        elif vial_type == "plate_10mL":
+            hold = -14
+            rotation_speed = 70
             rotation_force = 90
-            ratio = 10.0
+            ratio = 11.0
             Z_speed = int(rotation_speed*ratio)
-            rotation_angle = 1000
+            rotation_angle = 1200
             gripper_openning_percent = 100  # percent%
             gripper_closing_percent = 20
-            up_distance = rotation_angle/100
+            up_distance = 15
+
+        elif vial_type == "plate_50mL":
+            hold = -12
+            rotation_speed = 70
+            rotation_force = 90
+            ratio = 5.0
+            Z_speed = int(rotation_speed*ratio)
+            rotation_angle = 1200
+            gripper_openning_percent = 100  # percent%
+            gripper_closing_percent = 20
+            up_distance = rotation_angle/120
         else:
             print("unknow cap type!")
             return False
@@ -224,6 +242,7 @@ class Robot(object):
         self.gripper.gripper_open(gripper_openning_percent)
         self.move_to_top_of_vial(head=CAPPER, vial=vial, z=hold)
         self.gripper.gripper_close(gripper_closing_percent)
+        self.z_platform.move(head=CAPPER, z=-1)
         self.gripper.set_rotation_speed(rotation_speed)
         self.gripper.rotate(rotation_angle)
         self.z_platform.set_max_speed(head=CAPPER, speed=Z_speed)
@@ -231,10 +250,10 @@ class Robot(object):
         self.z_platform.set_max_speed(
             head=CAPPER, speed=3000)  # normal Max speed = 3000
         self.back_to_safe_position(head=CAPPER)
-        r = self.gripper.get_rotation_status()
         if self.gripper.is_gripper_holding():
             return True
         else:
+            print("DeCap problem!")
             return False
 
     def recap(self, vial=()):
@@ -244,50 +263,65 @@ class Robot(object):
             self.z_platform.set_max_speed(
                 head=CAPPER, speed=4000)  # normal Max speed = 4000
             time.sleep(0.1)
-            hold = -8  # cap hold distance
-            if vial_type == "plate_15mL":
+            if vial_type == "reactor_27p":
+                adjustment = -3  # cap hold distance
                 rotation_speed = 80
-                rotation_force = 60
+                rotation_force = 50
                 ratio = 9.0
                 Z_speed = int(rotation_speed*ratio)
-                up_distance = 6
-                rotation_angle = -1400
+                cap_down = -10
+                rotation_angle = -1600
                 gripper_openning_percent = 70
+
             if vial_type == "plate_5mL":
+                adjustment = -5  # cap hold distance
                 rotation_speed = 30
                 rotation_force = 30
-                ratio = 18
+                ratio = 15
                 Z_speed = int(rotation_speed*ratio)
-                up_distance = 8
+                cap_down = -10
                 rotation_angle = -900
                 gripper_openning_percent = 40
-            if vial_type == "plate_8mL":
+
+            if vial_type == "reactor_12p":
+                adjustment = -4  # cap hold distance
                 rotation_speed = 70
                 rotation_force = 30
                 ratio = 8.0
                 Z_speed = int(rotation_speed*ratio)
-                up_distance = 6
+                cap_down = -5.5
                 rotation_angle = -1400
                 gripper_openning_percent = 70
-            if vial_type == "plate_40mL":
-                hold = -11
+
+            if vial_type == "plate_10mL":
+                adjustment = -4  # cap hold distance
                 rotation_speed = 70
                 rotation_force = 30
-                ratio = 20
+                ratio = 3
                 Z_speed = int(rotation_speed*ratio)
-                rotation_angle = -1000
-                up_distance = 5.5
+                rotation_angle = -1200
+                cap_down = -5.5
+                gripper_openning_percent = 100
+
+            if vial_type == "plate_50mL":
+                adjustment = -7  # cap hold distance
+                rotation_speed = 70
+                rotation_force = 30
+                ratio = 3
+                Z_speed = int(rotation_speed*ratio)
+                rotation_angle = -1200
+                cap_down = -5.5
                 gripper_openning_percent = 100
 
             self.move_to(head=CAPPER, vial=vial)
             self.move_to_top_of_vial(
-                head=CAPPER, vial=vial, z=hold+up_distance)
+                head=CAPPER, vial=vial, z=adjustment)
             self.gripper.set_rotation_force(rotation_force)
             self.gripper.set_rotation_speed(rotation_speed)
             self.gripper.rotate(rotation_angle)
             self.z_platform.set_max_speed(
                 head=CAPPER, speed=Z_speed)  # normal Max speed = 4000
-            self.z_platform.move(head=CAPPER, z=-1*up_distance)
+            self.z_platform.move(head=CAPPER, z=cap_down)
             self.gripper.gripper_open(gripper_openning_percent)
             self.z_platform.set_max_speed(
                 head=CAPPER, speed=4000)  # normal Max speed = 4000
@@ -299,9 +333,9 @@ class Robot(object):
         if self.gripper.is_gripper_holding():
             print("Cap already holded")
             return
-        gripper_openning_percent = 100
-        hold = -9
-        rotation_angle = 1400
+        gripper_openning_percent = 80
+        hold = -11
+        rotation_angle = 1600
         self.move_to(head=CAPPER, vial=vial)
         self.gripper.gripper_open(gripper_openning_percent)
         self.move_to_top_of_vial(head=CAPPER, vial=vial, z=hold)
@@ -363,7 +397,7 @@ class Robot(object):
         self.move_to(head=TABLET, vial=vial)
         # self.move_to_top_of_vial(head=TABLET, vial=vial)
         # self.z_platform.pickup_tablet(z=-40)
-        self.z_platform.move_to(head=TABLET, z=40)
+        self.z_platform.move_to(head=TABLET, z=155)
         self.back_to_safe_position(head=TABLET)
 
     # liquid functions

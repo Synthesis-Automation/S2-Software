@@ -6,11 +6,13 @@ from tkinter.ttk import Button, Label
 from combinewave.tools import helper
 from combinewave.parameters import CAPPER, LIQUID, TABLET
 
+
 class Item_selection_on_screen():
     """ give a on screen frame for item selection """
 
     def __init__(self, parent=None, slot_list=["A1", "B1"], COLS=2, ROWS=1, current=0):
         self.parent = parent
+        self.time = float(time.time())
         self.btn_list = []
         self.slot_list = slot_list
         self.current = current
@@ -26,7 +28,7 @@ class Item_selection_on_screen():
                                 relief="ridge",
                                 border=0,
                                 command=action)
-                btn.grid(row=row+2, column=col, pady=10, padx=10)
+                btn.grid(row=row+2, column=col, pady=8, padx=8)
                 self.btn_list.append(btn)
                 i = i+1
         self.btn_list[self.current].configure(bg="sky blue")
@@ -35,6 +37,7 @@ class Item_selection_on_screen():
         self.btn_list[self.current].configure(bg="lightgrey")
         self.btn_list[x].configure(bg="sky blue")
         self.current = x
+        self.time = float(time.time())
 
     def get_current(self, format="number"):
         '''return numeric format such as 0, 1 when format = number, else return non-numeric format such as A1'''
@@ -52,6 +55,15 @@ class Item_selection_on_screen():
         if self.current == self.total_number_of_vials:
             self.current = 0
         self.btn_list[self.current].configure(bg="sky blue")
+
+    def highlight_current(self):
+        self.btn_list[self.current].configure(bg="sky blue")
+
+    def un_highlight_current(self):
+        self.btn_list[self.current].configure(bg="lightgrey")
+
+    def get_update_time(self):
+        return self.time
 
 
 class Item_selection_popup():
@@ -106,8 +118,10 @@ class Item_selection_popup():
 
 class Button_list(tk.Toplevel):
     """used internally"""
+
     def __init__(self, parent, title="", slot_list=[], COLS=1, ROWS=2, current=0):
         tk.Toplevel.__init__(self, parent)
+        self.parent = parent
         self.title(title)
         self.configure(bg="gray")
         self.btn_list = []
@@ -135,6 +149,7 @@ class Button_list(tk.Toplevel):
         self.choice = x
         text = f"x"
         self.btn_list[x].configure(text=text)
+        # self.parent.grab_set() # keep its parent window focused
         self.destroy()
 
     def show(self):
@@ -145,7 +160,7 @@ class Button_list(tk.Toplevel):
 
 
 class Volume_selection():
-    """ give a on screen volume inputor on selection """
+    """ give a on screen volume inputor on selection"""
 
     def __init__(self, parent=None, title="Reaction volume (mL)", options=[{"text": "0.5 mL", "value": 0.5}]):
         self.parent = parent
@@ -153,15 +168,17 @@ class Volume_selection():
         self.volume_frame = tk.LabelFrame(
             self.parent, text=title, fg="RoyalBlue4", font="Helvetica 11 bold")
         self.volume_frame.grid()
-        self.volume = tk.IntVar(None, len(options)-1)
+        # text input entry
         self.text = ttk.Entry(self.volume_frame, width=15,
-                             font=('Helvetica', '11'))
+                              font=('Helvetica', '11'))
         self.text.grid(row=0, column=0, padx=5, pady=2, sticky=tk.W)
+        # option
+        self.volume = tk.IntVar(None, len(options)-1)
         for i in range(len(options)):
-            tk.Radiobutton(self.volume_frame,
-                           text=options[i]["text"], font="Helvetica 11",
-                           variable=self.volume,
-                           value=i).grid(column=0, row=1+i, pady=2, sticky=tk.W)
+            ttk.Radiobutton(self.volume_frame,
+                            text=options[i]["text"],
+                            variable=self.volume,
+                            value=i).grid(column=0, row=1+i, pady=2, sticky=tk.W)
 
     def get_value(self):
         volume_choice = self.volume.get()
@@ -169,6 +186,27 @@ class Volume_selection():
         if self.text.get():
             sample_volume = float(self.text.get())
         return sample_volume
+
+
+class Volume_entry():
+    """ give a on screen volume entry box"""
+
+    def __init__(self, parent=None, title="Volume (mL)"):
+        self.parent = parent
+        self.volume_frame = tk.LabelFrame(
+            self.parent, text=title, fg="RoyalBlue4", font="Helvetica 11 bold")
+        self.volume_frame.grid()
+        # text input entry
+        self.text = ttk.Entry(self.volume_frame, width=15,
+                              font=('Helvetica', '11'))
+        self.text.grid(row=0, column=0, padx=5, pady=2, sticky=tk.W)
+
+    def get(self):
+        volume_string = self.text.get()
+        if helper.is_float(volume_string):
+            return float(volume_string)
+        else:
+            return False
 
 
 class Information_display():
@@ -193,13 +231,16 @@ class Information_display():
 
 
 # For select of the position of a vial on the deck
+# Unfinished yet
 class Vial_selection_on_screen():
     """ give a on screen frame for vial selection (both slot and vial) """
 
-    def __init__(self, parent=None, slot_list=["A1", "B1"], vial_list = ["A1", "B1"], current=("C2", "A1")):
-        self.parent = parent        
-        self.slot_list = [['A1', 'B1', 'C1'], ['A2', 'B2', 'C2'], ['A3', 'B3', 'C3'], ['A4', 'B4', 'C4'], ['A5', 'B5', 'C5']]
-        self.vial_list = [['A1', 'B1', 'C1'], ['A2', 'B2', 'C2'], ['A3', 'B3', 'C3'], ['A4', 'B4', 'C4'], ['A5', 'B5', 'C5']]
+    def __init__(self, parent=None, slot_list=["A1", "B1"], vial_list=["A1", "B1"], current=("C2", "A1")):
+        self.parent = parent
+        self.slot_list = [['A1', 'B1', 'C1'], ['A2', 'B2', 'C2'], [
+            'A3', 'B3', 'C3'], ['A4', 'B4', 'C4'], ['A5', 'B5', 'C5']]
+        self.vial_list = [['A1', 'B1', 'C1'], ['A2', 'B2', 'C2'], [
+            'A3', 'B3', 'C3'], ['A4', 'B4', 'C4'], ['A5', 'B5', 'C5']]
         self.current = current
         self.btn_list = []
         self.vial_selection = {}
@@ -209,7 +250,9 @@ class Vial_selection_on_screen():
         for slot_column in self.slot_list:
             for slot in slot_column:
                 vial_position = "A1"
-                text = self.slot_list[i]+ "\n vial@ "+ self.slot_list[vial_position]
+                text = self.slot_list[i] + "\n vial@ " + \
+                    self.slot_list[vial_position]
+
                 def action(x=slot): return self.click(x)
                 btn = tk.Button(self.parent, text=text, width=8,
                                 bg="lightgrey",
@@ -227,11 +270,11 @@ class Vial_selection_on_screen():
         self.btn_list[self.current].configure(bg="lightgrey")
         self.current = slot_no
         btn_list = Button_list(self.parent, title="Select Current Item",
-                                           slot_list=["A1", "B1", "A2", "B2"], COLS=2, ROWS=2, current=self.vial_selection[slot_no])
+                               slot_list=["A1", "B1", "A2", "B2"], COLS=2, ROWS=2, current=self.vial_selection[slot_no])
         (self.current, text) = btn_list.show()
-        print(self.current, text)
-        text = self.slot_list[slot_no]+ "\n vial@ "+ self.vial_selection[slot_no]
-        self.btn_list[self.current].configure(bg="sky blue", text = text)
+        text = self.slot_list[slot_no] + \
+            "\n vial@ " + self.vial_selection[slot_no]
+        self.btn_list[self.current].configure(bg="sky blue", text=text)
         # self.item_button.configure(text=self.title + text)
 
     def get_current(self, format="number"):
@@ -242,11 +285,10 @@ class Vial_selection_on_screen():
             return self.slot_list[self.current]
 
 
-
 class Move_axes():
     """ An onscreen frame for move all axes """
 
-    def __init__(self, parent=None, robot = None):
+    def __init__(self, parent=None, robot=None):
         self.parent = parent
         self.robot = robot
 
@@ -342,3 +384,55 @@ class Move_axes():
             head=current_head, z=-1*helper.get_float_number(self.distance.get()))
         self.display_XYZ(self.read_XYZ())
 
+
+class Reactor_selection_on_screen():
+    """ give a on screen frame for selection of reactors """
+
+    def __init__(self, parent=None, item_list=["A1", "B1"], current=0):
+        self.parent = parent
+        self.item_list = [{'name': 'A1', 'x': 0.5, 'y': 0.09999999999999998}, {'name': 'A2', 'x': 0.6530833333333333, 'y': 0.13044444444444447}, {'name': 'A3', 'x': 0.7828333333333333, 'y': 0.21716666666666667}, {'name': 'A4', 'x': 0.8695555555555555, 'y': 0.34691666666666665}, {'name': 'A5', 'x': 0.9, 'y': 0.5}, {'name': 'A6', 'x': 0.8695555555555555, 'y': 0.6530833333333333}, {'name': 'A7', 'x': 0.7828333333333333, 'y': 0.7828333333333333}, {'name': 'A8', 'x': 0.6530833333333333, 'y': 0.8695555555555555}, {'name': 'A9', 'x': 0.5, 'y': 0.9}, {'name': 'A10', 'x': 0.34691666666666665, 'y': 0.8695555555555555}, {'name': 'A11', 'x': 0.21716666666666667, 'y': 0.7828333333333333}, {'name': 'A12', 'x': 0.13044444444444447, 'y': 0.6530833333333333}, {'name': 'A13', 'x': 0.09999999999999998, 'y': 0.5}, {'name': 'A14', 'x': 0.13044444444444447, 'y': 0.34691666666666665}, {'name': 'A15', 'x': 0.21716666666666667, 'y': 0.21716666666666667}, {'name': 'A16', 'x': 0.34691666666666665, 'y': 0.13044444444444447}, {'name': 'B1', 'x': 0.5, 'y': 0.25}, {'name': 'B2', 'x': 0.6469444444444444, 'y': 0.29774999999999996}, {'name': 'B3', 'x': 0.7377777777777778, 'y': 0.42275}, {'name': 'B4', 'x': 0.7377777777777778, 'y': 0.57725}, {'name': 'B5', 'x': 0.6469444444444444, 'y': 0.70225}, {'name': 'B6', 'x': 0.5, 'y': 0.75}, {'name': 'B7', 'x': 0.35305555555555557, 'y': 0.70225}, {'name': 'B8', 'x': 0.26222222222222225, 'y': 0.57725}, {'name': 'B9', 'x': 0.26222222222222225, 'y': 0.42275}, {'name': 'B10', 'x': 0.35305555555555557, 'y': 0.29774999999999996}, {'name': 'C1', 'x': 0.5, 'y': 0.5}]
+
+
+        self.btn_list = []
+        self.current = current
+        self.total = len(self.item_list)
+        for i in range(self.total):
+            text = self.item_list[i]["name"]
+            def action(x=i): return self.click(x)
+            btn = tk.Button(self.parent, text=text, width=3,
+                            bg="lightgrey",
+                            relief="ridge",
+                            border=0,
+                            command=action)
+            btn.place(relx=self.item_list[i]['x'],
+                      rely=self.item_list[i]['y'], anchor=tk.NW)
+            self.btn_list.append(btn)
+        self.btn_list[self.current].configure(bg="sky blue")
+
+    def click(self, x):
+        self.btn_list[self.current].configure(bg="lightgrey")
+        self.btn_list[x].configure(bg="sky blue")
+        self.current = x
+
+    def get_current(self, format="number"):
+        '''return numeric format such as 0, 1 when format = number, else return non-numeric format such as A1'''
+        if format == "number":
+            return self.current
+        else:
+            return self.item_list[self.current]["name"]
+
+    def set_current(self, current_item):
+        self.current = current_item
+
+    def next(self, next_no=1):
+        self.btn_list[self.current].configure(bg="lightgrey")
+        self.current = self.current + next_no
+        if self.current == self.total:
+            self.current = 0
+        self.btn_list[self.current].configure(bg="sky blue")
+
+    def highlight_current(self):
+        self.btn_list[self.current].configure(bg="sky blue")
+
+    def un_highlight_current(self):
+        self.btn_list[self.current].configure(bg="lightgrey")
