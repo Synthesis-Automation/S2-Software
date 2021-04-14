@@ -45,14 +45,14 @@ class Robot(object):
     def connect(self):
         # find usb ports
         usb_sn_xy_platform = self.robot_config["usb_sn_xy_platform"]
-        usb_sn_z_platform =  self.robot_config["usb_sn_z_platform"]
+        usb_sn_z_platform = self.robot_config["usb_sn_z_platform"]
         usb_sn_pipette = self.robot_config["usb_sn_pipette"]
         usb_sn_modbus = self.robot_config["usb_sn_modbus"]
         self.modbus_port = get_port_by_serial_no(usb_sn_modbus)
         self.pipette_port = get_port_by_serial_no(usb_sn_pipette)
         self.xy_platform_port = get_port_by_serial_no(usb_sn_xy_platform)
         self.z_platform_port = get_port_by_serial_no(usb_sn_z_platform)
-        usb_info = f"xy_port= {self.xy_platform_port}, z_port= {self.z_platform_port}, modbus_port= {self.modbus_port}, pipette_port= {self.pipette_port}"      
+        usb_info = f"xy_port= {self.xy_platform_port}, z_port= {self.z_platform_port}, modbus_port= {self.modbus_port}, pipette_port= {self.pipette_port}"
         print("Com ports: ", usb_info)
         logging.info("Com ports: " + usb_info)
         self.xy_platform = xy_platform.XY_platform(
@@ -98,13 +98,13 @@ class Robot(object):
     def home_xy(self):
         self.xy_platform.home('xy')
 
-    def get_axe_position(self, axe = "x"):
+    def get_axe_position(self, axe="x"):
         # axe = "x" "y" "z1", "z2", "z3"
-        axe = axe.lower() # conver to lower case, so both "Z1" or "z1" are accepatble
+        axe = axe.lower()  # conver to lower case, so both "Z1" or "z1" are accepatble
         if axe == "x" or axe == "y":
             position = self.xy_platform.smoothie.get_target_position()[axe]*2
         elif axe == "z1" or axe == "z2" or axe == "z3":
-            position =  self.z_platform.get_position(head=axe.upper())
+            position = self.z_platform.get_position(head=axe.upper())
         else:
             position = -1
             print("unknown axe name.")
@@ -136,7 +136,7 @@ class Robot(object):
         self.back_to_safe_position(head=LIQUID)
         self.back_to_safe_position(head=TABLET)
 
-    def move_to(self, head=CAPPER, vial=(), use_allow_list = True):
+    def move_to(self, head=CAPPER, vial=(), use_allow_list=True):
         # vial is a turple for vial location, e.g., ('A1', 'C2')
         # the first ('A1') is for plate, the second ('C2') is for vial location
         # ("Reagent", "Reactor", "Workup", "Tips 1000uL", "Tips 50uL", "Trash", "Clean up", "Reaction caps", "GC LC")
@@ -145,7 +145,7 @@ class Robot(object):
                         LIQUID: ["Workup", "Reactor", "Tips 1000uL", "Reagent", "GC LC", "Trash"],
                         TABLET: ["Reagent", "Reactor", "Clean up"]
                         }
-        if assignment not in allowed_list[head] and use_allow_list==True:
+        if assignment not in allowed_list[head] and use_allow_list == True:
             print(f"{head} should not move to {assignment}")
             return assignment
         my_vial = self.vial(vial[0], vial[1])
@@ -169,8 +169,8 @@ class Robot(object):
         response = self.z_platform.move_to(head=head, z=vial_height-vial_depth)
         return response
 
-
     # high level functions
+
     def decap(self, vial=()):
         if self.gripper.is_gripper_holding():
             print("can open cap because a cap is already holded")
@@ -188,7 +188,7 @@ class Robot(object):
             rotation_force = 90
             ratio = 6.0
             Z_speed = int(rotation_speed*ratio)
-            rotation_angle = 1600
+            rotation_angle = 1800
             gripper_openning_percent = 70  # 90%
             up_distance = 7
             gripper_closing_percent = 20
@@ -198,7 +198,7 @@ class Robot(object):
             rotation_force = 90
             ratio = 7.0
             Z_speed = int(rotation_speed*ratio)
-            rotation_angle = 900
+            rotation_angle = 1100
             gripper_openning_percent = 50
             up_distance = rotation_angle/100
             gripper_closing_percent = 10
@@ -214,10 +214,10 @@ class Robot(object):
             gripper_closing_percent = 20
 
         elif vial_type == "plate_10mL":
-            hold = -14
+            hold = -12
             rotation_speed = 70
             rotation_force = 90
-            ratio = 11.0
+            ratio = 9.0
             Z_speed = int(rotation_speed*ratio)
             rotation_angle = 1200
             gripper_openning_percent = 100  # percent%
@@ -269,8 +269,8 @@ class Robot(object):
                 rotation_force = 50
                 ratio = 9.0
                 Z_speed = int(rotation_speed*ratio)
-                cap_down = -10
-                rotation_angle = -1600
+                cap_down = -9
+                rotation_angle = -1800
                 gripper_openning_percent = 70
 
             if vial_type == "plate_5mL":
@@ -279,8 +279,8 @@ class Robot(object):
                 rotation_force = 30
                 ratio = 15
                 Z_speed = int(rotation_speed*ratio)
-                cap_down = -10
-                rotation_angle = -900
+                cap_down = -9
+                rotation_angle = -1100
                 gripper_openning_percent = 40
 
             if vial_type == "reactor_12p":
@@ -296,11 +296,11 @@ class Robot(object):
             if vial_type == "plate_10mL":
                 adjustment = -4  # cap hold distance
                 rotation_speed = 70
-                rotation_force = 30
-                ratio = 3
+                rotation_force = 25
+                ratio = 5
                 Z_speed = int(rotation_speed*ratio)
                 rotation_angle = -1200
-                cap_down = -5.5
+                cap_down = -8
                 gripper_openning_percent = 100
 
             if vial_type == "plate_50mL":
@@ -333,9 +333,9 @@ class Robot(object):
         if self.gripper.is_gripper_holding():
             print("Cap already holded")
             return
-        gripper_openning_percent = 80
+        gripper_openning_percent = 75
         hold = -11
-        rotation_angle = 1600
+        rotation_angle = 1800
         self.move_to(head=CAPPER, vial=vial)
         self.gripper.gripper_open(gripper_openning_percent)
         self.move_to_top_of_vial(head=CAPPER, vial=vial, z=hold)
@@ -352,12 +352,12 @@ class Robot(object):
             print("No cap is holded")
             return
         gripper_openning_percent = 80
-        # hold = -9
-        rotation_angle = 400
+        rotation_angle = 250
         self.move_to(head=CAPPER, vial=vial)
-        self.move_to_top_of_vial(head=CAPPER, vial=vial, z=-10)
+        down = -9
+        self.move_to_top_of_vial(head=CAPPER, vial=vial, z=down)
         self.gripper.gripper_open(gripper_openning_percent)
-        self.gripper.rotate(rotation_angle)        
+        self.gripper.rotate(rotation_angle)
         self.back_to_safe_position(head=CAPPER)
         if self.gripper.is_gripper_holding():
             return False
@@ -377,7 +377,7 @@ class Robot(object):
     def pickup_tablet(self, vial):
         self.move_to(head=TABLET, vial=vial)
         self.move_to_top_of_vial(head=TABLET, vial=vial)
-        DEPTH = -80
+        DEPTH = -84
         self.z_platform.pickup_tablet(z=DEPTH)
         self.back_to_safe_position(head=TABLET)
 

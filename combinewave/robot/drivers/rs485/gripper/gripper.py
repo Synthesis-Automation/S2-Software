@@ -16,7 +16,7 @@ class Gripper():
         self.set_rotation_speed(percent=60)
         time.sleep(0.1)
         self.rotate_position = 0
-        self.gripper_close(10)
+        self.gripper_close(5)
 
     def gripper_open(self, percent):  # percentage of gripper open
         distance = int(percent*10)

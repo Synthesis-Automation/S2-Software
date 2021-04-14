@@ -5,6 +5,7 @@ import socket
 import threading
 import logging
 import random
+import os
 from pathlib import Path
 
 import tkinter as tk
@@ -15,7 +16,7 @@ from tkinter.ttk import Notebook, Separator, Label, Button
 from combinewave.robot import robot
 from combinewave.chemical_synthesis import synthesis
 from combinewave.tools import custom_widgets, helper
-# CAPPER = 'Z1'...
+# CAPPER = 'Z3'...
 from combinewave.parameters import CAPPER, LIQUID, TABLET, VERSION, SYSTEM_NAME, NEW_PLAN_HEADER
 
 
@@ -48,15 +49,19 @@ class Main(tk.Tk):
         self.file_menu.add_command(label="Exit", command=self.exit_gui)
         self.menu.add_cascade(label="File ", menu=self.file_menu)
 
-        self.connect_menu = Menu(self.menu, tearoff=0)
-        self.connect_menu.add_command(
-            label="Copy", command=lambda: chem_robot.connect())
-        self.menu.add_cascade(label="Edit ", menu=self.connect_menu)
+        self.log_menu = Menu(self.menu, tearoff=0)
+        self.log_menu.add_command(
+            label="Open log book", command=lambda: self.open_log_book())
+        self.log_menu.add_separator()
+        self.log_menu.add_command(
+            label="Empty log book", command=lambda: self.open_log_book())
+        self.menu.add_cascade(label="Log ", menu=self.log_menu)
+
 
         self.home_menu = Menu(self.menu, tearoff=0)
-        self.home_menu.add_command(label="Home all",
+        self.home_menu.add_command(label="Home all axes",
                                    command=lambda: chem_robot.home_all())
-        self.home_menu.add_command(label="Home Z only",
+        self.home_menu.add_command(label="Home Z axes only",
                                    command=lambda: chem_robot.home_all_z())
         self.menu.add_cascade(label="Home-robot ", menu=self.home_menu)
 
@@ -116,7 +121,7 @@ class Main(tk.Tk):
 
         self.tip_tab = Tip_tab(self.notebook)
         self.tip_img = PhotoImage(
-            file=Path("./images/manual_control_t.png"))
+            file=Path("./images/tips.png"))
         self.notebook.add(
             self.tip_tab, text="Tip Selection\n", image=self.tip_img, compound=tk.TOP)
 
@@ -131,7 +136,7 @@ class Main(tk.Tk):
         self.notebook.add(self.monitor_tab, text="Reaction Monitor\n",
                           image=self.monitor_img, compound=tk.TOP)
 
-        self.workup_tab = Workup_tab(self.notebook)
+        self.workup_tab = Workup_tab(self.notebook, tip_selection=self.tip_tab)
         self.workup_img = PhotoImage(file=Path("./images/workup.png"))
         self.notebook.add(self.workup_tab, text="Reaction Workup\n",
                           image=self.workup_img, compound=tk.TOP)
@@ -144,7 +149,7 @@ class Main(tk.Tk):
         messagebox.showinfo(" ", SYSTEM_NAME + " " + VERSION)
 
     def solvent_distrubution(self):
-        popup = Reagent_distrubution(tip_selector=self.tip_tab.tip_selector)
+        popup = Reagent_distrubution(tip_selection=self.tip_tab.tip_selector)
         self.wait_window(popup.popup_window)
 
     def manual_control(self):
@@ -174,6 +179,10 @@ class Main(tk.Tk):
     def update_tip_by_tab_clicked(self, event=None):
         # Make sure that all tip selection have the same current tip number
         self.synthesis_tab.reactor_update()
+        self.workup_tab.reactor_update()
+
+    def open_log_book(self):
+        os.startfile(".\myapp.log")
 
     def exit_gui(self):
         self.tip_tab.save()
@@ -229,7 +238,7 @@ class Deck_tab(ttk.Frame):
         ttk.Frame.__init__(self, parent)
         Label(self, text="Deck Setup", style="Title.Label").grid(
             column=0, row=0, padx=50, pady=10, columnspan=4)
-        self.slot_list = chem_robot.deck.slot_list
+        self.slot_list = chem_robot.deck.get_slot_list()
         self.btn_list = []
         self.config = []
         i = 0
@@ -267,7 +276,7 @@ class Deck_tab(ttk.Frame):
                 i = i+1
 
         # reactor selection
-        if "12p" in chem_robot.deck.deck_config["C3"]["plate"]:
+        if "reactor_12p" in chem_robot.deck.deck_config["C3"]["plate"]:
             reactor_id = 0
         else:
             reactor_id = 1
@@ -301,6 +310,7 @@ class Deck_tab(ttk.Frame):
         chem_robot.deck.deck_config[reactor_slot] = {
             "plate": reactor_list[reactor_id], "assignment": "Reactor"}
         chem_robot.deck.save_deck_config(chem_robot.deck.deck_config)
+        chem_robot.deck.reset_current_reactor()
 
     def slot_assignment(self, x):
         popup = Slot_assignment(self.config[x])
@@ -388,23 +398,48 @@ class Tip_tab(ttk.Frame):
     def __init__(self, parent):
         ttk.Frame.__init__(self, parent)
         Label(self, text="Tip Selection", style="Title.Label").grid(
-            column=0, row=0, padx=50, pady=10, columnspan=4)
+            column=0, row=0, padx=50, pady=10, columnspan=2)
 
         # Tip selector
         self.tip_frame = tk.Frame(self)
         self.tip_frame.grid(column=0, row=11, padx=20, sticky=tk.W)
         Label(self.tip_frame, text="Select current tip (1000 uL)",
               style="Default.Label").grid(row=0, pady=5)
+
+        # show picture of tip rack
+        canvas = Canvas(self.tip_frame, width=220, height=200)
+        canvas.grid(column=0, row=1, padx=10, pady=10)
+        self.img = PhotoImage(file="./images/tips_rack.png")
+        canvas.create_image(1, 1, anchor=tk.NW, image=self.img)
+
         slot_list = chem_robot.deck.get_vial_list_by_plate_type(
             plate_type="tiprack_1000uL")
         col_row = chem_robot.deck.get_cols_rows_by_plate_type(
             plate_type="tiprack_1000uL")
         self.tip_selection_frame = tk.Frame(
             self.tip_frame, relief="ridge", bg="gray")
-        self.tip_selection_frame.grid(row=1)
+        self.tip_selection_frame.grid(row=2)
         self.current_tip = chem_robot.deck.get_current_tip()
         self.tip_selector = custom_widgets.Item_selection_on_screen(
             parent=self.tip_selection_frame, slot_list=slot_list, COLS=col_row["columns"], ROWS=col_row["rows"], current=self.current_tip)
+
+        # Tip selector (samll tip)
+        self.tip_frame_s = tk.Frame(self)
+        self.tip_frame_s.grid(column=1, row=11, padx=20, sticky=tk.W)
+        Label(self.tip_frame_s, text="Select current tip (50 uL)",
+              style="Default.Label").grid(row=0, pady=5)
+
+        canvas_s = Canvas(self.tip_frame_s, width=220, height=200)
+        canvas_s.grid(column=0, row=1, padx=10, pady=10)
+        self.img_small = PhotoImage(file="./images/tips_rack_small.png")
+        canvas_s.create_image(1, 1, anchor=tk.NW, image=self.img_small)
+
+        self.tip_selection_frame_small = tk.Frame(
+            self.tip_frame_s, relief="ridge", bg="LemonChiffon4")
+        self.tip_selection_frame_small.grid(row=2)
+        self.current_tip_small = 0  # chem_robot.deck.get_current_tip()
+        self.tip_selector_small = custom_widgets.Item_selection_on_screen(
+            parent=self.tip_selection_frame_small, slot_list=slot_list, COLS=col_row["columns"], ROWS=col_row["rows"], current=self.current_tip_small)
 
     def save(self):
         chem_robot.deck.set_current_tip(self.tip_selector.get_current())
@@ -434,7 +469,7 @@ class Synthesis_tab(ttk.Frame):
               ip_address, style="Default.Label").grid(column=0, columnspan=4, row=1, padx=15, pady=5, sticky=tk.W)
 
         # Reaction plan editor
-        self.plan_box = scrolledtext.ScrolledText(self, width=150, height=16)
+        self.plan_box = scrolledtext.ScrolledText(self, width=150, height=14)
         self.plan_box.grid(column=0, rowspan=4, padx=15, columnspan=4, row=3)
         self.display_plan(NEW_PLAN_HEADER)
         self.is_excel = False
@@ -443,7 +478,7 @@ class Synthesis_tab(ttk.Frame):
         # Solvent option
         self.solvent_frame = tk.Frame(self)
         self.solvent_frame.grid(column=0, row=11, sticky=tk.N)
-        Label(self.solvent_frame, text=" ").grid(row=0, sticky=tk.W)
+        Label(self.solvent_frame, text=" \n\n").grid(row=0, sticky=tk.W)
         self.solvent_addition_last = tk.IntVar()
         ttk.Checkbutton(self.solvent_frame, text="Add the below solvent at last",
                         variable=self.solvent_addition_last).grid(row=2, sticky=tk.W)
@@ -465,21 +500,20 @@ class Synthesis_tab(ttk.Frame):
                                       font=('Helvetica', '11'))
         self.volume_entry.grid(row=8, pady=2, sticky=tk.W)
 
-        Label(self, text="Current reactor",
-              style="Default.Label").grid(column=1, row=11, sticky=tk.E)
-
-        if "12p" in chem_robot.deck.deck_config["C3"]["plate"]:
-            self.current_reactor = "12p"
-        else:
-            self.current_reactor = "27p"
-        self.show_reactor(self.current_reactor)
+        # Reactor selection
+        self.reactor_selection_frame = tk.Frame(
+            self, width=300, height=260)
+        self.reactor_selection_frame.grid(column=1, row=11)
+        self.current_reactor = chem_robot.deck.get_current_reactor()
+        self.reactor_selection = custom_widgets.Reactor_on_screen(
+            parent=self.reactor_selection_frame, reactor_type=self.current_reactor,  current=0)
 
         # Display information
         self.display_frame = tk.Frame(self)
         self.display_frame.grid(column=0, rowspan=6, columnspan=4,
                                 row=20, padx=15, pady=10)
         self.information = custom_widgets.Information_display(
-            self.display_frame, title="Parsed reaction protocol will be shown here:\n", width=150, height=10)
+            self.display_frame, title="Parsed reaction protocol will be shown here:\n", width=150, height=12)
 
         # Parse, run and stop buttons
         self.parse_button = Button(
@@ -493,40 +527,15 @@ class Synthesis_tab(ttk.Frame):
         self.stop_button.grid(column=3, row=30, pady=10)
         self.run_button["state"] = "disabled"
 
-    def show_reactor(self, reactor="12p"):
-        if reactor == "12p":
-            self.reactor_frame = tk.Frame(self)
-            self.reactor_frame.grid(column=2, row=11, sticky=tk.N)
-            Label(self.reactor_frame, text="Current reactor",
-                  style="Default.Label").grid(row=0, pady=5)
-            slot_list = chem_robot.deck.get_vial_list_by_plate_type(
-                plate_type="reactor_12p")
-            col_row = chem_robot.deck.get_cols_rows_by_plate_type(
-                plate_type="reactor_12p")
-            self.reactor_selection_frame = tk.Frame(
-                self.reactor_frame, relief="ridge", bg="gray")
-            self.reactor_selection_frame.grid(row=1)
-            self.reactor_selection = custom_widgets.Item_selection_on_screen(
-                parent=self.reactor_selection_frame, slot_list=slot_list, COLS=col_row["columns"], ROWS=col_row["rows"], current=0)
-        elif reactor == "27p":
-            self.reactor_frame = tk.Frame(self)
-            self.reactor_frame.grid(column=2, row=11, sticky=tk.N)
-            self.reactor_selection_frame = tk.Frame(
-                self.reactor_frame, width=300, height=260)
-            self.reactor_selection_frame.grid(row=1)
-            self.reactor_selection = custom_widgets.Reactor_selection_on_screen(
-                parent=self.reactor_selection_frame, current=0)
-        else:
-            print("Unknown reactor")
-
     def reactor_update(self):
-        if "12p" in chem_robot.deck.deck_config["C3"]["plate"]:
-            current_reactor = "12p"
-        else:
-            current_reactor = "27p"
+        current_reactor = chem_robot.deck.get_current_reactor()
         if current_reactor != self.current_reactor:
-            self.reactor_frame.destroy()
-            self.show_reactor(current_reactor)
+            self.reactor_selection_frame.destroy()
+            self.reactor_selection_frame = tk.Frame(
+                self, width=300, height=260)
+            self.reactor_selection_frame.grid(column=1, row=11)
+            self.reactor_selection = custom_widgets.Reactor_on_screen(
+                parent=self.reactor_selection_frame, reactor_type=current_reactor,  current=0)
             self.current_reactor = current_reactor
 
     def setup(self, tip=0, simulation=False):
@@ -536,7 +545,7 @@ class Synthesis_tab(ttk.Frame):
             solvent_volume_string = self.volume_entry.get()
             solvent_name = self.solvent_selection.get()
             if solvent_name == "":
-                messagebox.showinfo(" ", "Please enter a valid solvent nameL!")
+                messagebox.showinfo(" ", "Please enter a valid solvent name!")
                 return
             if not helper.is_float(solvent_volume_string):
                 messagebox.showinfo(" ", "Please enter solvent volume in mL!")
@@ -556,7 +565,8 @@ class Synthesis_tab(ttk.Frame):
             "Warning", f"Please make sure:\n 1) Reactor vials are uncapped.\n 2) Enough caps are put on cap plate (from A1). \n 3) All reagent vials are secured in the plate.")
         if not ok:
             return
-        missing = chem_robot.deck.check_missing_assignment()
+        missing = chem_robot.deck.check_missing_assignment(required_plates=[
+                                                           "Reagent", "Reactor", "Tips 1000uL", "Trash", "Clean up", "Reaction caps"])
         if missing != "complete":
             retry = messagebox.askyesno(
                 "Warning", f"Warning: No {missing} plate is assigned, continue?.")
@@ -1115,44 +1125,25 @@ class Monitor_tab(ttk.Frame):
 
 
 class Workup_tab(ttk.Frame):
-    def __init__(self, parent):
+    def __init__(self, parent, tip_selection=None):
         ttk.Frame.__init__(self, parent)
-
+        self.tip_selection = tip_selection
         Label(self, text="Reaction Workup", style="Title.Label").grid(
             column=0, columnspan=4, row=0, pady=20)
 
-        # Tip selector
-        current_tip = chem_robot.deck.get_current_tip()
-        Label(self, text="Select starting tip",
-              style="Default.Label").grid(column=0, row=4, pady=5)
-        self.tip_frame = tk.Frame(self)
-        self.tip_frame.grid(column=0, row=6, sticky=tk.N)
-        slot_list = chem_robot.deck.get_vial_list_by_plate_type(
-            plate_type="tiprack_1000uL")
-        col_row = chem_robot.deck.get_cols_rows_by_plate_type(
-            plate_type="tiprack_1000uL")
-        self.tip_selection = custom_widgets.Item_selection_popup(
-            parent=self.tip_frame, title="Current Tip:  ", slot_list=slot_list, COLS=col_row["columns"], ROWS=col_row["rows"], current=current_tip)
-
-        # Reactor selector
-        Label(self, text="Select starting reactor",
-              style="Default.Label").grid(column=1, row=4, pady=5)
-        self.reactor_frame = tk.Frame(self, relief="ridge", bg="gray")
-        self.reactor_frame.grid(column=1, row=6)
-        slot_list = chem_robot.deck.get_vial_list_by_plate_type(
-            plate_type="reactor_12p")
-        cols = chem_robot.deck.get_cols_rows_by_plate_type(
-            plate_type="reactor_12p")["columns"]
-        rows = chem_robot.deck.get_cols_rows_by_plate_type(
-            plate_type="reactor_12p")["rows"]
-        self.reactor_selection = custom_widgets.Item_selection_on_screen(
-            parent=self.reactor_frame, slot_list=slot_list, COLS=cols, ROWS=rows, current=0)
+        # Reactor selection
+        self.reactor_selection_frame = tk.Frame(
+            self, width=300, height=260)
+        self.reactor_selection_frame.grid(column=1, row=11, rowspan=2)
+        self.current_reactor = chem_robot.deck.get_current_reactor()
+        self.reactor_selection = custom_widgets.Reactor_on_screen(
+            parent=self.reactor_selection_frame, reactor_type=self.current_reactor,  current=0)
 
         # Workup cartridge selector
-        Label(self, text="Select starting workup cartridge",
-              style="Default.Label").grid(column=2, row=4, padx=5)
+        Label(self, text="Current workup cartridge",
+              style="Default.Label").grid(column=3, row=11, padx=5, sticky=tk.N)
         self.workup_frame = tk.Frame(self, relief="ridge", bg="gray")
-        self.workup_frame.grid(column=2, row=6)
+        self.workup_frame.grid(column=3, row=12, sticky=tk.N)
         slot_list = chem_robot.deck.get_vial_list_by_plate_type(
             plate_type="workup_small")
         col_row = chem_robot.deck.get_cols_rows_by_plate_type(
@@ -1162,8 +1153,9 @@ class Workup_tab(ttk.Frame):
 
         # Number of reactions selector
         self.number_frame = tk.LabelFrame(
-            self, text="Number of reactions", fg="RoyalBlue4", font="Helvetica 11")
-        self.number_frame.grid(column=0, row=9, pady=20, sticky=tk.N)
+            self, text="Number of reactions", fg="RoyalBlue4", font="Helvetica 11 bold")
+        self.number_frame.grid(column=0, row=11, padx=50,
+                               pady=10, sticky=tk.NW)
         self.number_reaction = ttk.Combobox(
             self.number_frame, state="readonly", font=('Helvetica', '11'))
         self.number_reaction["values"] = (
@@ -1177,16 +1169,23 @@ class Workup_tab(ttk.Frame):
                    {"text": "2.0 mL", "value": 2.0}
                    ]
         self.reaction_volume_frame = tk.Frame(self, relief="ridge", bg="gray")
-        self.reaction_volume_frame.grid(column=1, row=9, pady=10, sticky=tk.N)
+        self.reaction_volume_frame.grid(
+            column=0, row=12, padx=50, pady=10, sticky=tk.NW)
         self.reaction_volume_selection = custom_widgets.Volume_selection(
             parent=self.reaction_volume_frame, title="Reaction volume (mL)", options=options)
+
+        # show picture of arrow
+        canvas = Canvas(self, width=150, height=100)
+        canvas.grid(column=2, row=11, rowspan=2, padx=10, pady=10)
+        self.img = PhotoImage(file="./images/right.png")
+        canvas.create_image(1, 1, anchor=tk.NW, image=self.img)
 
         # Display of information
         self.display_frame = tk.Frame(self, relief="ridge", bg="gray")
         self.display_frame.grid(column=0, rowspan=6, columnspan=4,
                                 row=50, padx=15, pady=10)
         self.information = custom_widgets.Information_display(
-            self.display_frame, title="Progress of operation:", width=150, height=15)
+            self.display_frame, title="Progress of operation:", width=150, height=20)
 
         # Run, pause and stop buttons
         self.run_button = Button(
@@ -1198,6 +1197,15 @@ class Workup_tab(ttk.Frame):
         self.stop_button.grid(column=1, row=60, padx=10, pady=10)
 
     def workup_reaction(self, simulation=False):
+
+        missing = chem_robot.deck.check_missing_assignment(required_plates=["Reagent", "Reactor", "Workup",
+                                                                            "Tips 1000uL", "Trash", "Reaction caps"])
+        if missing != "complete":
+            retry = messagebox.askyesno(
+                "Warning", f"Warning: No {missing} plate is assigned, continue?.")
+            if not retry:
+                return
+
         '''main entry for workup'''
         chem_robot.set_stop_flag(stop=False)
         if not chem_robot.ready:
@@ -1299,10 +1307,16 @@ class Workup_tab(ttk.Frame):
                 chem_robot.set_stop_flag(False)
                 return "continue"
 
-
-# This following is the pop-up windows used in the program
-
-# Used in deck setup
+    def reactor_update(self):
+        current_reactor = chem_robot.deck.get_current_reactor()
+        if current_reactor != self.current_reactor:
+            self.reactor_selection_frame.destroy()
+            self.reactor_selection_frame = tk.Frame(
+                self, width=300, height=260)
+            self.reactor_selection_frame.grid(column=1, row=11, rowspan=2)
+            self.reactor_selection = custom_widgets.Reactor_on_screen(
+                parent=self.reactor_selection_frame, reactor_type=current_reactor,  current=0)
+            self.current_reactor = current_reactor
 
 
 # Plate Calibration, accessed from menu - calibration
@@ -1312,17 +1326,17 @@ class Plate_calibration(ttk.Frame):
         self.popup_window.title("Plate Calibration ")
 
         # Slot selector
-        move_botton = Button(self.popup_window, text="Move to selected slot @", style="Default.TButton",
-                             command=lambda: self.move_to_plate())
-        move_botton.grid(column=1, row=0, pady=5)
         self.current_slot = 5
         self.slot_frame = tk.Frame(
             self.popup_window, relief="ridge", bg="gray")
-        self.slot_frame.grid(column=1, row=1, padx=10, rowspan=3)
+        self.slot_frame.grid(column=1, row=0, padx=10, pady=10, rowspan=3)
         slot_list = chem_robot.deck.get_vial_list_by_plate_type(
             plate_type="deck")
         self.slot_selection = custom_widgets.Item_selection_on_screen(
             parent=self.slot_frame, slot_list=slot_list, COLS=5, ROWS=3, current=self.current_slot)
+        move_botton = Button(self.popup_window, text="Move to selected slot @", style="Default.TButton",
+                             command=lambda: self.move_to_plate())
+        move_botton.grid(column=1, row=5, pady=5)
 
         Label(self.popup_window, text=" ").grid(
             column=1, row=7, padx=10, pady=10)
@@ -1369,7 +1383,8 @@ class Plate_calibration(ttk.Frame):
             plate_type="deck")[self.slot_selection.get_current()]
         vial_to = (slot, "A1")
         current_head = self.move_axies.get_current_head()
-        chem_robot.move_to(head=current_head, vial=vial_to, use_allow_list=False)
+        chem_robot.move_to(head=current_head, vial=vial_to,
+                           use_allow_list=False)
 
 
 # Tip Calibration, accessed from menu - calibration
@@ -1479,54 +1494,48 @@ class Reference_calibration(ttk.Frame):
 
 # Reagent distrubution - transfer one reagent (solvents) to multiple reacters
 class Reagent_distrubution():
-    def __init__(self, tip_selector=None):
-        self.tip_selector = tip_selector
+    def __init__(self, tip_selection=None):
+        self.tip_selection = tip_selection
         self.popup_window = Toplevel()
         self.popup_window.title("Liquid distribution ")
 
         # Solvent option
         self.solvent_frame = tk.Frame(self.popup_window)
-        self.solvent_frame.grid(column=0, row=7, sticky=tk.N)
-        Label(self.solvent_frame, text=" ").grid(row=3, sticky=tk.W)
+        self.solvent_frame.grid(column=0, row=0, sticky=tk.N)
+        Label(self.solvent_frame, text=" ").grid(row=0, sticky=tk.W)
         Label(self.solvent_frame, style="Default.Label",
-              text="Liquid Reagent Name:").grid(row=5, sticky=tk.W)
+              text="Liquid Reagent Name:").grid(row=1, sticky=tk.W)
         self.solvent_selection = ttk.Combobox(
             self.solvent_frame, font=('Helvetica', '11'), width=20)
         self.solvent_selection["values"] = (
             "", "Water", "DCM", "MeOH", "Ethyl-acetate", "Hexanes", "Toluene", "THF", "DCE", "Dioxane", "Acetone")
         self.solvent_selection.current(0)  # set the selected item
-        self.solvent_selection.grid(row=6, pady=5, sticky=tk.W)
+        self.solvent_selection.grid(row=3, pady=5, sticky=tk.W)
         Label(self.solvent_frame, style="Default.Label",
-              text="Liquid Volume (mL):").grid(row=7, sticky=tk.W)
+              text="Liquid Volume (mL):").grid(row=4, sticky=tk.W)
         self.volume_entry = ttk.Entry(self.solvent_frame, width=22,
                                       font=('Helvetica', '11'))
-        self.volume_entry.grid(row=8, pady=2, sticky=tk.W)
-
-        # Reactor selector
-        self.reactor_frame = tk.Frame(self.popup_window)
-        self.reactor_frame.grid(column=1, row=7, sticky=tk.N)
-        Label(self.reactor_frame, text="Current reactor",
-              style="Default.Label").grid(row=0, pady=5)
-        slot_list = chem_robot.deck.get_vial_list_by_plate_type(
-            plate_type="reactor_12p")
-        col_row = chem_robot.deck.get_cols_rows_by_plate_type(
-            plate_type="reactor_12p")
-        self.reactor_selection_frame = tk.Frame(
-            self.reactor_frame, relief="ridge", bg="gray")
-        self.reactor_selection_frame.grid(row=1)
-        self.reactor_selection = custom_widgets.Item_selection_on_screen(
-            parent=self.reactor_selection_frame, slot_list=slot_list, COLS=col_row["columns"], ROWS=col_row["rows"], current=0)
+        self.volume_entry.grid(row=5, pady=2, sticky=tk.W)
 
         # Number of reactions selection
         self.number_frame = tk.LabelFrame(
             self.popup_window, text="Number of reactions", fg="RoyalBlue4", font="Helvetica 11")
-        self.number_frame.grid(column=0, row=10, padx=10, pady=10)
+        self.number_frame.grid(column=0, row=6, padx=10, pady=10)
         self.number_reaction = ttk.Combobox(
             self.number_frame, state="readonly", font=('Helvetica', '11'))
         self.number_reaction["values"] = (
             1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
         self.number_reaction.current(0)  # set the selected item
         self.number_reaction.grid(pady=5)
+
+        # Reactor selector
+        self.reactor_selection_frame = tk.Frame(
+            self.popup_window, width=300, height=260)
+        self.reactor_selection_frame.grid(
+            column=1, row=0, rowspan=9, sticky=tk.N)
+        self.current_reactor = chem_robot.deck.get_current_reactor()
+        self.reactor_selection = custom_widgets.Reactor_on_screen(
+            parent=self.reactor_selection_frame, reactor_type=self.current_reactor,  current=0)
 
         # Display information
         self.display_frame = tk.Frame(self.popup_window)
@@ -1563,11 +1572,11 @@ class Reagent_distrubution():
         # self.button_exit.focus_force()
         # self.popup_window.grab_set()  # keep this pop window focused
         number_of_reaction = int(self.number_reaction.get())
-        current_tip = self.get_current_tip()
+        current_tip = self.tip_selection.get_current()
         available_tip = len(chem_robot.deck.get_vial_list_by_plate_type(
             "tiprack_1000uL"))-current_tip
         available_reactor = len(chem_robot.deck.get_vial_list_by_plate_type(
-            "reactor_12p"))-self.reactor_selection.get_current()
+            self.current_reactor))-self.reactor_selection.get_current()
         if available_tip < number_of_reaction:
             self.information.display_msg(
                 "Warning: No enough tip, please refill tips.", start_over=False)
@@ -1613,8 +1622,8 @@ class Reagent_distrubution():
             if not retry:
                 return
 
-        #tip_no = self.tip_selection.get_current(format="A1")
-        tip_no = chem_robot.deck.get_current_tip(format="A1")
+        tip_no = self.tip_selection.get_current(format="A1")
+        # tip_no = chem_robot.deck.get_current_tip(format="A1")
         tip_plate = chem_robot.deck.get_plate_assignment("Tips 1000uL")
         tip = (tip_plate, tip_no)
 
@@ -1668,7 +1677,7 @@ class Reagent_distrubution():
 
         chem_robot.deck.set_current_tip(chem_robot.deck.get_current_tip()+1)
         chem_robot.deck.save_current_tip()
-        self.tip_selector.next()
+        self.tip_selection.next()
         self.popup_window.grab_release()
         self.exit_button["state"] = "normal"
         self.run_button["state"] = "normal"
@@ -1787,7 +1796,7 @@ class Manual_control():
         slot = self.slot_selection.get_current(format="A1")
         vial = self.vial_selection.get_current(format="A1")
         vial_to = (slot, vial)
-        chem_robot.move_to(head=head, vial=vial_to, use_allow_list = False)
+        chem_robot.move_to(head=head, vial=vial_to, use_allow_list=False)
 
     def test_decap(self):
         slot = self.slot_selection.get_current(format="A1")
@@ -1865,29 +1874,23 @@ class Cap_operation():
         self.popup_window.title(self.option)
 
         # Reactor selector
-        self.reactor_frame = tk.Frame(self.popup_window)
-        self.reactor_frame.grid(column=0, row=7, sticky=tk.N)
-        Label(self.reactor_frame, text="Current reactor @ plate",
-              style="Default.Label").grid(row=0, pady=5)
-        slot_list = chem_robot.deck.get_vial_list_by_plate_type(
-            plate_type="reactor_12p")
-        col_row = chem_robot.deck.get_cols_rows_by_plate_type(
-            plate_type="reactor_12p")
         self.reactor_selection_frame = tk.Frame(
-            self.reactor_frame, relief="ridge", bg="gray")
-        self.reactor_selection_frame.grid(row=1)
-        self.reactor_selection = custom_widgets.Item_selection_on_screen(
-            parent=self.reactor_selection_frame, slot_list=slot_list, COLS=col_row["columns"], ROWS=col_row["rows"], current=0)
+            self.popup_window, width=300, height=260)
+        self.reactor_selection_frame.grid(
+            column=0, row=7, rowspan=9, sticky=tk.N)
+        self.current_reactor = chem_robot.deck.get_current_reactor()
+        self.reactor_selection = custom_widgets.Reactor_on_screen(
+            parent=self.reactor_selection_frame, reactor_type=self.current_reactor,  current=0)
 
         # Cap selector
         self.cap_frame = tk.Frame(self.popup_window)
-        self.cap_frame.grid(column=2, row=7, sticky=tk.N)
-        Label(self.cap_frame, text="Current cap @ plate",
+        self.cap_frame.grid(column=2, row=8, sticky=tk.N)
+        Label(self.cap_frame, text="Cap plate\n",
               style="Default.Label").grid(row=0, pady=5)
         slot_list = chem_robot.deck.get_vial_list_by_plate_type(
-            plate_type="reactor_12p")
+            plate_type="caps")
         col_row = chem_robot.deck.get_cols_rows_by_plate_type(
-            plate_type="reactor_12p")
+            plate_type="caps")
         self.cap_selection_frame = tk.Frame(
             self.cap_frame, relief="ridge", bg="gray")
         self.cap_selection_frame.grid(row=1)
@@ -1895,20 +1898,21 @@ class Cap_operation():
             parent=self.cap_selection_frame, slot_list=slot_list, COLS=col_row["columns"], ROWS=col_row["rows"], current=0)
 
         if self.option == "Cap reactors":
-            direction = "  Cap\n=======>>>"
-        else:
             direction = "    Cap\n<<<======="
+        else:
+            direction = "  Cap\n=======>>>"
         Label(self.popup_window, text=direction,
-              style="Default.Label").grid(column=1, row=7, pady=5)
+              style="Default.Label").grid(column=1, row=8, pady=5)
 
         # Number of reactions selection
         self.number_frame = tk.LabelFrame(
             self.popup_window, text="Number of reactors", fg="RoyalBlue4", font="Helvetica 11")
-        self.number_frame.grid(column=0, row=8, padx=10, pady=10)
+        self.number_frame.grid(
+            column=0, row=19, columnspan=2, padx=10, pady=20)
         self.number_reaction = ttk.Combobox(
             self.number_frame, state="readonly", font=('Helvetica', '11'))
         self.number_reaction["values"] = (
-            1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16)
         self.number_reaction.current(0)  # set the selected item
         self.number_reaction.grid(pady=5)
 
@@ -1934,8 +1938,9 @@ class Cap_operation():
 
     def setup(self):
         number_of_reaction = int(self.number_reaction.get())
+        current_reactor = "reactor_27p"
         available_reactor = len(chem_robot.deck.get_vial_list_by_plate_type(
-            "reactor_12p"))-self.reactor_selection.get_current()
+            current_reactor))-self.reactor_selection.get_current()
 
         if available_reactor < number_of_reaction:
             self.information.display_msg(

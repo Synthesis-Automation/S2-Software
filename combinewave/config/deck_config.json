@@ -16,8 +16,8 @@
         "assignment": "Reagent"
     },
     "A5": {
-        "plate": "plate_5mL:003",
-        "assignment": "Reagent"
+        "plate": "workup_small:001",
+        "assignment": "Workup"
     },
     "B1": {
         "plate": "plate_2mL:001",
@@ -48,7 +48,7 @@
         "assignment": "Reagent"
     },
     "C3": {
-        "plate": "reactor_27p:001",
+        "plate": "reactor_12p:001",
         "assignment": "Reactor"
     },
     "C4": {

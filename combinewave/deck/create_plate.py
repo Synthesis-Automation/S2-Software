@@ -121,7 +121,7 @@ if __name__ == "__main__":
     # my_plate.save_plate_file()
 
     my_plate = Plate(name='tiprack_1000uL', grid=(12, 8), offset=(
-        14.3, 11.2), spacing=(9, 9), diameter=4.20, depth=0, height=10, volume=0)
+        16.3, 13.2), spacing=(9, 9), diameter=4.20, depth=0, height=10, volume=0)
     my_plate.creat_plate()
     my_plate.save_plate_file()
 
@@ -187,6 +187,6 @@ if __name__ == "__main__":
     my_plate.save_plate_file()
 
     my_plate = Plate(name='plate_10mL', grid=(4, 3), offset=(
-        15.8, 14.7), spacing=(32.0, 28), diameter=18.0, depth=52, height=143, volume=10000)
+        15.8, 14.7), spacing=(32.0, 28), diameter=18.0, depth=52, height=153, volume=10000)
     my_plate.creat_plate()
     my_plate.save_plate_file()

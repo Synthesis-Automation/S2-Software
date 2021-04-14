@@ -208,7 +208,7 @@ class Volume_entry():
         else:
             return False
 
-
+import logging
 class Information_display():
     """ on screen scrolledtext for display message """
 
@@ -228,6 +228,8 @@ class Information_display():
         self.display.see("end")
         self.display.update()
         self.display.configure(state='disabled')
+        logging.info(msg)
+
 
 
 # For select of the position of a vial on the deck
@@ -390,9 +392,8 @@ class Reactor_selection_on_screen():
 
     def __init__(self, parent=None, item_list=["A1", "B1"], current=0):
         self.parent = parent
-        self.item_list = [{'name': 'A1', 'x': 0.5, 'y': 0.09999999999999998}, {'name': 'A2', 'x': 0.6530833333333333, 'y': 0.13044444444444447}, {'name': 'A3', 'x': 0.7828333333333333, 'y': 0.21716666666666667}, {'name': 'A4', 'x': 0.8695555555555555, 'y': 0.34691666666666665}, {'name': 'A5', 'x': 0.9, 'y': 0.5}, {'name': 'A6', 'x': 0.8695555555555555, 'y': 0.6530833333333333}, {'name': 'A7', 'x': 0.7828333333333333, 'y': 0.7828333333333333}, {'name': 'A8', 'x': 0.6530833333333333, 'y': 0.8695555555555555}, {'name': 'A9', 'x': 0.5, 'y': 0.9}, {'name': 'A10', 'x': 0.34691666666666665, 'y': 0.8695555555555555}, {'name': 'A11', 'x': 0.21716666666666667, 'y': 0.7828333333333333}, {'name': 'A12', 'x': 0.13044444444444447, 'y': 0.6530833333333333}, {'name': 'A13', 'x': 0.09999999999999998, 'y': 0.5}, {'name': 'A14', 'x': 0.13044444444444447, 'y': 0.34691666666666665}, {'name': 'A15', 'x': 0.21716666666666667, 'y': 0.21716666666666667}, {'name': 'A16', 'x': 0.34691666666666665, 'y': 0.13044444444444447}, {'name': 'B1', 'x': 0.5, 'y': 0.25}, {'name': 'B2', 'x': 0.6469444444444444, 'y': 0.29774999999999996}, {'name': 'B3', 'x': 0.7377777777777778, 'y': 0.42275}, {'name': 'B4', 'x': 0.7377777777777778, 'y': 0.57725}, {'name': 'B5', 'x': 0.6469444444444444, 'y': 0.70225}, {'name': 'B6', 'x': 0.5, 'y': 0.75}, {'name': 'B7', 'x': 0.35305555555555557, 'y': 0.70225}, {'name': 'B8', 'x': 0.26222222222222225, 'y': 0.57725}, {'name': 'B9', 'x': 0.26222222222222225, 'y': 0.42275}, {'name': 'B10', 'x': 0.35305555555555557, 'y': 0.29774999999999996}, {'name': 'C1', 'x': 0.5, 'y': 0.5}]
-
-
+        self.item_list = [{'name': 'A1', 'x': 0.5, 'y': 0.09999999999999998}, {'name': 'A2', 'x': 0.6530833333333333, 'y': 0.13044444444444447}, {'name': 'A3', 'x': 0.7828333333333333, 'y': 0.21716666666666667}, {'name': 'A4', 'x': 0.8695555555555555, 'y': 0.34691666666666665}, {'name': 'A5', 'x': 0.9, 'y': 0.5}, {'name': 'A6', 'x': 0.8695555555555555, 'y': 0.6530833333333333}, {'name': 'A7', 'x': 0.7828333333333333, 'y': 0.7828333333333333}, {'name': 'A8', 'x': 0.6530833333333333, 'y': 0.8695555555555555}, {'name': 'A9', 'x': 0.5, 'y': 0.9}, {'name': 'A10', 'x': 0.34691666666666665, 'y': 0.8695555555555555}, {'name': 'A11', 'x': 0.21716666666666667, 'y': 0.7828333333333333}, {'name': 'A12', 'x': 0.13044444444444447, 'y': 0.6530833333333333}, {'name': 'A13', 'x': 0.09999999999999998, 'y': 0.5}, {
+            'name': 'A14', 'x': 0.13044444444444447, 'y': 0.34691666666666665}, {'name': 'A15', 'x': 0.21716666666666667, 'y': 0.21716666666666667}, {'name': 'A16', 'x': 0.34691666666666665, 'y': 0.13044444444444447}, {'name': 'B1', 'x': 0.5, 'y': 0.25}, {'name': 'B2', 'x': 0.6469444444444444, 'y': 0.29774999999999996}, {'name': 'B3', 'x': 0.7377777777777778, 'y': 0.42275}, {'name': 'B4', 'x': 0.7377777777777778, 'y': 0.57725}, {'name': 'B5', 'x': 0.6469444444444444, 'y': 0.70225}, {'name': 'B6', 'x': 0.5, 'y': 0.75}, {'name': 'B7', 'x': 0.35305555555555557, 'y': 0.70225}, {'name': 'B8', 'x': 0.26222222222222225, 'y': 0.57725}, {'name': 'B9', 'x': 0.26222222222222225, 'y': 0.42275}, {'name': 'B10', 'x': 0.35305555555555557, 'y': 0.29774999999999996}, {'name': 'C1', 'x': 0.5, 'y': 0.5}]
         self.btn_list = []
         self.current = current
         self.total = len(self.item_list)
@@ -436,3 +437,63 @@ class Reactor_selection_on_screen():
 
     def un_highlight_current(self):
         self.btn_list[self.current].configure(bg="lightgrey")
+
+
+# Reactor selection
+class Reactor_on_screen():
+    """ give a on screen frame for selection of reactors """
+
+    def __init__(self, parent=None, reactor_type="reactor_12p", current=0):
+        self.parent = parent
+        self.reactor_type = reactor_type
+        if self.reactor_type == "reactor_27p":
+            self.item_list = [{'name': 'A1', 'x': 0.5, 'y': 0.09999999999999998}, {'name': 'A2', 'x': 0.6530833333333333, 'y': 0.13044444444444447}, {'name': 'A3', 'x': 0.7828333333333333, 'y': 0.21716666666666667}, {'name': 'A4', 'x': 0.8695555555555555, 'y': 0.34691666666666665}, {'name': 'A5', 'x': 0.9, 'y': 0.5}, {'name': 'A6', 'x': 0.8695555555555555, 'y': 0.6530833333333333}, {'name': 'A7', 'x': 0.7828333333333333, 'y': 0.7828333333333333}, {'name': 'A8', 'x': 0.6530833333333333, 'y': 0.8695555555555555}, {'name': 'A9', 'x': 0.5, 'y': 0.9}, {'name': 'A10', 'x': 0.34691666666666665, 'y': 0.8695555555555555}, {'name': 'A11', 'x': 0.21716666666666667, 'y': 0.7828333333333333}, {'name': 'A12', 'x': 0.13044444444444447, 'y': 0.6530833333333333}, {'name': 'A13', 'x': 0.09999999999999998, 'y': 0.5}, {
+                'name': 'A14', 'x': 0.13044444444444447, 'y': 0.34691666666666665}, {'name': 'A15', 'x': 0.21716666666666667, 'y': 0.21716666666666667}, {'name': 'A16', 'x': 0.34691666666666665, 'y': 0.13044444444444447}, {'name': 'B1', 'x': 0.5, 'y': 0.25}, {'name': 'B2', 'x': 0.6469444444444444, 'y': 0.29774999999999996}, {'name': 'B3', 'x': 0.7377777777777778, 'y': 0.42275}, {'name': 'B4', 'x': 0.7377777777777778, 'y': 0.57725}, {'name': 'B5', 'x': 0.6469444444444444, 'y': 0.70225}, {'name': 'B6', 'x': 0.5, 'y': 0.75}, {'name': 'B7', 'x': 0.35305555555555557, 'y': 0.70225}, {'name': 'B8', 'x': 0.26222222222222225, 'y': 0.57725}, {'name': 'B9', 'x': 0.26222222222222225, 'y': 0.42275}, {'name': 'B10', 'x': 0.35305555555555557, 'y': 0.29774999999999996}, {'name': 'C1', 'x': 0.5, 'y': 0.5}]
+        elif self.reactor_type == "reactor_12p":
+            self.item_list = [{'name': 'A1', 'x': 0.2153846153846154, 'y': 0.25384615384615383}, {'name': 'B1', 'x': 0.2153846153846154, 'y': 0.4423076923076923}, {'name': 'C1', 'x': 0.2153846153846154, 'y': 0.6307692307692307}, {'name': 'A2', 'x': 0.4, 'y': 0.25384615384615383}, {'name': 'B2', 'x': 0.4, 'y': 0.4423076923076923}, {'name': 'C2', 'x': 0.4, 'y': 0.6307692307692307}, {'name': 'A3', 'x': 0.5846153846153846, 'y': 0.25384615384615383}, {'name': 'B3', 'x': 0.5846153846153846, 'y': 0.4423076923076923}, {'name': 'C3', 'x': 0.5846153846153846, 'y': 0.6307692307692307}, {'name': 'A4', 'x': 0.7692307692307693, 'y': 0.25384615384615383}, {'name': 'B4', 'x': 0.7692307692307693, 'y': 0.4423076923076923}, {'name': 'C4', 'x': 0.7692307692307693, 'y': 0.6307692307692307}]
+        tk.Label(self.parent, text="Current reactor", fg="RoyalBlue4", font="Helvetica 11 bold").place(relx=0.35, rely=0, anchor=tk.NW)
+        self.btn_list = []
+        self.current = current
+        self.total = len(self.item_list)
+        for i in range(self.total):
+            text = self.item_list[i]["name"]
+            def action(x=i): return self.click(x)
+            btn = tk.Button(self.parent, text=text, width=3,
+                            bg="lightgrey",
+                            relief="ridge",
+                            border=0,
+                            command=action)
+            btn.place(relx=self.item_list[i]['x'],
+                      rely=self.item_list[i]['y'], anchor=tk.NW)
+            self.btn_list.append(btn)
+        self.btn_list[self.current].configure(bg="sky blue")
+
+    def click(self, x):
+        self.btn_list[self.current].configure(bg="lightgrey")
+        self.btn_list[x].configure(bg="sky blue")
+        self.current = x
+
+    def get_current(self, format="number"):
+        '''return numeric format such as 0, 1 when format = number, else return non-numeric format such as A1'''
+        if format == "number":
+            return self.current
+        else:
+            return self.item_list[self.current]["name"]
+
+    def set_current(self, current_item):
+        self.current = current_item
+
+    def next(self, next_no=1):
+        self.btn_list[self.current].configure(bg="lightgrey")
+        self.current = self.current + next_no
+        if self.current == self.total:
+            self.current = 0
+        self.btn_list[self.current].configure(bg="sky blue")
+
+    def highlight_current(self):
+        self.btn_list[self.current].configure(bg="sky blue")
+
+    def un_highlight_current(self):
+        self.btn_list[self.current].configure(bg="lightgrey")
+
+

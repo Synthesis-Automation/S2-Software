@@ -62,15 +62,22 @@ class Deck(object):
         self.deck_config_file = Path("combinewave/config/deck_config.json")
         self.load_robot_config()
         self.load_deck_config()
-        self.setup_plates()
-        self.generate_slot_list()
         self.load_calibration()
-        self.tip_update_time = float(time.time())
+        self.setup_plates()
+        self.slot_list = ['A1', 'A2', 'A3', 'A4', 'A5', 'B1', 'B2', 'B3', 'B4', 'B5', 'C1', 'C2', 'C3', 'C4', 'C5']
 
     def load_robot_config(self):
         self.reference = self.robot_config["reference"]
         self._slots = self.robot_config["slots"]
         self.max_number_of_plate = self.robot_config["max_number_of_plate"]
+
+    def load_deck_config(self):
+        # read deck config file
+        deck_config = {}
+        with open(self.deck_config_file) as deck_c:
+            deck_config = json.load(deck_c)
+        self.update_deck_config(deck_config)
+        self.reset_current_reactor()
 
     def load_calibration(self):
         with open(self.calibration_file, "r") as cal:
@@ -84,8 +91,14 @@ class Deck(object):
         self.current_tip = tip
         self.tip_update_time = float(time.time())
 
-    def get_tip_update_time(self):
-        return self.tip_update_time
+    def get_current_reactor(self):
+        return self.current_reactor
+
+    def reset_current_reactor(self):
+        '''reset value of current reactor from data in plate assignment'''
+        reactor_slot = self.get_plate_assignment(assignment="Reactor")
+        reactor_name = self.deck_config[reactor_slot]["plate"]
+        self.current_reactor = reactor_name.split(':')[0]
 
     def save_current_tip(self):
         self.save_calibration("Current_tip", self.current_tip)
@@ -96,13 +109,6 @@ class Deck(object):
             return self.current_tip
         else:
             return self.convert_number_to_A1_by_plate_type(self.current_tip, plate_type="tiprack_1000ul")
-
-    def load_deck_config(self):
-        # read deck config file
-        deck_config = {}
-        with open(self.deck_config_file) as deck_c:
-            deck_config = json.load(deck_c)
-        self.update_deck_config(deck_config)
 
     def get_slot_offsets(self):
         return (self.robot_config['row_offset'],
@@ -170,18 +176,6 @@ class Deck(object):
         from combinewave.tools import helper
         helper.format_json_file(self.calibration_file)
 
-    def generate_slot_list(self):
-        '''slot_list = ['A1', 'A2', 'A3', 'A4', 'A5', 'B1', 'B2', 'B3', 'B4', 'B5', 'C1', 'C2', 'C3', 'C4', 'C5']'''
-        i = 0
-        self.plate_dict = {}
-        self.plate_dict_reversed = {}
-        self.slot_list = []
-        for entry in self._slots:
-            self.plate_dict.update({i: entry})
-            self.plate_dict_reversed.update({entry: i})
-            self.slot_list.append(entry)
-            i = i+1
-
     def get_slot_list(self):
         return self.slot_list
 
@@ -243,19 +237,15 @@ class Deck(object):
 
     def vial_coordinate(self, plate='B1', vial='A1'):
         # This function return x, y, z and depth of a vial, vials = plate['wells']
+        # Plate calibration data was not used.
         depth = self._plates[plate]['wells'][vial]['depth']
         height = self._plates[plate]['wells'][vial]['height']
         diameter = self._plates[plate]['wells'][vial]['diameter']
         plate_name = self.deck_config[plate]["plate"]
         plate_type = plate_name.split(':')[0]
-
-        # self.deck_calibration_x was calced. at self.load_calibration()
-        # the final x, y, z  = plate_cooridinate + slot_coordinate + deck_calibration + plate_calibration
-        # there is no z  plate_calibration
         plate_x = self._plates[plate]['wells'][vial]['x']
         plate_y = self._plates[plate]['wells'][vial]['y']
 
-        # The above is slot
         slot_x = self._slots[plate]["x"]
         slot_y = self._slots[plate]["y"]
 
@@ -268,7 +258,11 @@ class Deck(object):
 
     def convert_number_to_A1(self, number, plate="A1"):
         '''convert numeric number (e.g., 2) to format like A2, the number start with 0'''
-        return self._plates[plate]['ordering'][number]
+        if number == len(self._plates[plate]['ordering']):
+            num = 0
+        else:
+            num = number
+        return self._plates[plate]['ordering'][num]
 
     def convert_number_to_A1_by_plate_type(self, number, plate_type="plate_type"):
         '''convert numeric number (e.g., 2) to format like A2, the number start with 0'''
@@ -304,12 +298,6 @@ class Deck(object):
         return {'columns': columns, 'rows': rows}
 
     def next_vial(self, number, plate="A1"):  # format of number:"A1"
-        # This function generate position of next vial (e.g., A1 -> B1)
-        no = self.convert_A1_to_number(number, plate=plate)
-        next_one = self.convert_number_to_A1(no+1, plate=plate)
-        return next_one
-
-    def next_vial_old(self, number, plate="A1"):  # format of number:"A1"
         # This function generate position of next vial (e.g., A1 -> B1)
         no = self.convert_A1_to_number(number, plate=plate)
         next_one = self.convert_number_to_A1(no+1, plate=plate)
@@ -418,6 +406,8 @@ if __name__ == '__main__':
     res = deck.get_cols_rows_by_plate_type(plate_type="plate_2mL")
     print(res)
 
+    current_reactor = deck.get_current_reactor()
+    print("current_reactor", current_reactor)
     # res = deck.convert_A1_to_number_by_plate_type("A1", plate_type="plate_5mL")
     # print(res)
     # vial_list_ = deck.get_vial_list_by_slot("A2")

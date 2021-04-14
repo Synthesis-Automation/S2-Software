@@ -12,7 +12,7 @@ reactor_frame = tk.Frame(relief=tk.RAISED, borderwidth=2, width=400, height=400)
 # # tk.Label(reactor_frame, text="Current reactor").grid(row=0, pady=5)
 # reactor_selection_frame = tk.Frame(reactor_frame, relief="ridge", bg="gray")     
 # reactor_selection_frame.grid(row=1)
-reactor_selection = custom_widgets.Reactor_selection_on_screen(current=0)
+reactor_selection = custom_widgets.Reactor_on_screen(current=0)
 
 # my_frame = tk.Frame(root)
 # my_frame.pack()
