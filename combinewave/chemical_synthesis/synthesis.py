@@ -92,8 +92,11 @@ class Synthesis(object):
                     if '#' in space_striped_row[0]:
                         continue
                     # remove '(' and ')' ','
-                    cleaned_row = [re.sub("[(),]", " ", x)
+                    # cleaned_row = [re.sub("[(),]", " ", x)
+                    #                for x in space_striped_row]
+                    cleaned_row = [re.sub("[,]", " ", x)
                                    for x in space_striped_row]
+
                     self.synthesis_plan.append(cleaned_row)
             csvFile.close()
         except:
@@ -134,7 +137,7 @@ class Synthesis(object):
             if '#' in space_striped_row[0]:
                 continue
             # remove '(' and ')'
-            cleaned_row = [re.sub("[(),]", " ", x)
+            cleaned_row = [re.sub("[,]", " ", x)
                            for x in space_striped_row]
             self.synthesis_plan.append(cleaned_row)
         # print(self.synthesis_plan)
@@ -145,11 +148,13 @@ class Synthesis(object):
         reagent_found = False
         reagent_name_lower_case = reagent_name.lower()  # the program ignores the case
         NAME_ROW = 0
-        CAS_ROW = 1
+        CAS_NO_ROW = 1
         PLATE_ROW = 2
         VIAL_ROW = 3
         TYPE_ROW  = 4
         AMOUNT_ROW = 5
+        VOLATILE_ROW = 6
+        #Volatile
         for row in range(len(self.reagent_index)):
             name = self.reagent_index[row][NAME_ROW].strip()  # extract the first word
             name_lower_case = name.lower()
@@ -158,11 +163,12 @@ class Synthesis(object):
                 my_reagent_vial = self.reagent_index[row][VIAL_ROW].strip()
                 my_reagent_type = self.reagent_index[row][TYPE_ROW].strip()
                 my_reagent_amount = self.reagent_index[row][AMOUNT_ROW]
+                is_volatile = self.reagent_index[row][VOLATILE_ROW]
                 reagent_found = True
         if reagent_found == False:
             print(reagent_name, "was not in the reagent list")
             return reagent_name+" was not found in the reagent databse.\nPlease edit your reagent_index (excel file)."
-        return {'plate': my_reagent_plate, 'vial': my_reagent_vial, 'type': my_reagent_type, 'amount': my_reagent_amount}
+        return {'plate': my_reagent_plate, 'vial': my_reagent_vial, 'type': my_reagent_type, 'amount': my_reagent_amount, "is_volatile": is_volatile}
 
     def parse_plan_to_json(self):
         rxn_data = []
@@ -179,19 +185,19 @@ class Synthesis(object):
                 if '$' in row[i]:
                     continue
 
-                if "Addition-temperature" in row[i]:
+                if "addition-temperature" in row[i].lower():
                     addition_temperature = helper.get_float_number(row[i])
                     continue
 
-                if "Reaction-temperature" in row[i]:
+                if "reaction-temperature" in row[i].lower():
                     reaction_temperature = helper.get_float_number(row[i])
                     continue
 
-                if "Reaction-time" in row[i]:
+                if "reaction-time" in row[i].lower():
                     reaction_time = helper.get_float_number(row[i])
                     continue
 
-                if "Workup" in row[i]:
+                if "workup" in row[i].lower():
                     if 'none' in row[i]:
                         workup_entry = {}
                     else:
@@ -209,7 +215,7 @@ class Synthesis(object):
                         }
                     continue
 
-                if "mL" in row[i]:
+                if "ml" in row[i].lower():
                     # split to find the first word
                     liquid_name = row[i].split(None, 1)[0]
                     liquid_volume = helper.get_float_number(row[i])
@@ -222,13 +228,14 @@ class Synthesis(object):
                             "type": liquid['type'],
                             "plate": liquid['plate'],
                             "position": liquid['vial'],
-                            "amount": liquid_volume
+                            "amount": liquid_volume,
+                            "is_volatile": liquid['is_volatile']
                         }
                     )
                     self.reagent_plate_list.append(liquid['plate'])
                     continue
 
-                if "mmol" in row[i]:
+                if "mmol" in row[i].lower():
                     tablet_name = row[i].split(None, 1)[0]
                     tablet_amount = helper.get_float_number(row[i])
 

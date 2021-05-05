@@ -1,7 +1,6 @@
 # Reaction Protocol Format Version 1.1
 # No space in names, ';' as seperator, 'mL' for liquids, 'mmol' for solids, program ignores chemical name start with '$'.
 
-CsF (0.005 mmol); DCM (0.2 mL); Ethyl-acetate (0.2 mL); Reaction-temperature (25.0 degree); Reaction-time (6.0 h).
-
+Br-PhCH2COOEt (0.1 mL); Ph-B-Tol (0.3 mL); Ethyl-acetate (0.2 mL); Reaction-temperature (25.0 degree); Reaction-time (6.0 h).
 
 

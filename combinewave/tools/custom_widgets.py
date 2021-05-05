@@ -1,3 +1,4 @@
+import logging
 import time
 
 import tkinter as tk
@@ -169,7 +170,7 @@ class Volume_selection():
             self.parent, text=title, fg="RoyalBlue4", font="Helvetica 11 bold")
         self.volume_frame.grid()
         # text input entry
-        self.text = ttk.Entry(self.volume_frame, width=15,
+        self.text = ttk.Entry(self.volume_frame, width=20,
                               font=('Helvetica', '11'))
         self.text.grid(row=0, column=0, padx=5, pady=2, sticky=tk.W)
         # option
@@ -197,7 +198,7 @@ class Volume_entry():
             self.parent, text=title, fg="RoyalBlue4", font="Helvetica 11 bold")
         self.volume_frame.grid()
         # text input entry
-        self.text = ttk.Entry(self.volume_frame, width=15,
+        self.text = ttk.Entry(self.volume_frame, width=20,
                               font=('Helvetica', '11'))
         self.text.grid(row=0, column=0, padx=5, pady=2, sticky=tk.W)
 
@@ -208,7 +209,7 @@ class Volume_entry():
         else:
             return False
 
-import logging
+
 class Information_display():
     """ on screen scrolledtext for display message """
 
@@ -229,7 +230,6 @@ class Information_display():
         self.display.update()
         self.display.configure(state='disabled')
         logging.info(msg)
-
 
 
 # For select of the position of a vial on the deck
@@ -450,8 +450,10 @@ class Reactor_on_screen():
             self.item_list = [{'name': 'A1', 'x': 0.5, 'y': 0.09999999999999998}, {'name': 'A2', 'x': 0.6530833333333333, 'y': 0.13044444444444447}, {'name': 'A3', 'x': 0.7828333333333333, 'y': 0.21716666666666667}, {'name': 'A4', 'x': 0.8695555555555555, 'y': 0.34691666666666665}, {'name': 'A5', 'x': 0.9, 'y': 0.5}, {'name': 'A6', 'x': 0.8695555555555555, 'y': 0.6530833333333333}, {'name': 'A7', 'x': 0.7828333333333333, 'y': 0.7828333333333333}, {'name': 'A8', 'x': 0.6530833333333333, 'y': 0.8695555555555555}, {'name': 'A9', 'x': 0.5, 'y': 0.9}, {'name': 'A10', 'x': 0.34691666666666665, 'y': 0.8695555555555555}, {'name': 'A11', 'x': 0.21716666666666667, 'y': 0.7828333333333333}, {'name': 'A12', 'x': 0.13044444444444447, 'y': 0.6530833333333333}, {'name': 'A13', 'x': 0.09999999999999998, 'y': 0.5}, {
                 'name': 'A14', 'x': 0.13044444444444447, 'y': 0.34691666666666665}, {'name': 'A15', 'x': 0.21716666666666667, 'y': 0.21716666666666667}, {'name': 'A16', 'x': 0.34691666666666665, 'y': 0.13044444444444447}, {'name': 'B1', 'x': 0.5, 'y': 0.25}, {'name': 'B2', 'x': 0.6469444444444444, 'y': 0.29774999999999996}, {'name': 'B3', 'x': 0.7377777777777778, 'y': 0.42275}, {'name': 'B4', 'x': 0.7377777777777778, 'y': 0.57725}, {'name': 'B5', 'x': 0.6469444444444444, 'y': 0.70225}, {'name': 'B6', 'x': 0.5, 'y': 0.75}, {'name': 'B7', 'x': 0.35305555555555557, 'y': 0.70225}, {'name': 'B8', 'x': 0.26222222222222225, 'y': 0.57725}, {'name': 'B9', 'x': 0.26222222222222225, 'y': 0.42275}, {'name': 'B10', 'x': 0.35305555555555557, 'y': 0.29774999999999996}, {'name': 'C1', 'x': 0.5, 'y': 0.5}]
         elif self.reactor_type == "reactor_12p":
-            self.item_list = [{'name': 'A1', 'x': 0.2153846153846154, 'y': 0.25384615384615383}, {'name': 'B1', 'x': 0.2153846153846154, 'y': 0.4423076923076923}, {'name': 'C1', 'x': 0.2153846153846154, 'y': 0.6307692307692307}, {'name': 'A2', 'x': 0.4, 'y': 0.25384615384615383}, {'name': 'B2', 'x': 0.4, 'y': 0.4423076923076923}, {'name': 'C2', 'x': 0.4, 'y': 0.6307692307692307}, {'name': 'A3', 'x': 0.5846153846153846, 'y': 0.25384615384615383}, {'name': 'B3', 'x': 0.5846153846153846, 'y': 0.4423076923076923}, {'name': 'C3', 'x': 0.5846153846153846, 'y': 0.6307692307692307}, {'name': 'A4', 'x': 0.7692307692307693, 'y': 0.25384615384615383}, {'name': 'B4', 'x': 0.7692307692307693, 'y': 0.4423076923076923}, {'name': 'C4', 'x': 0.7692307692307693, 'y': 0.6307692307692307}]
-        tk.Label(self.parent, text="Current reactor", fg="RoyalBlue4", font="Helvetica 11 bold").place(relx=0.35, rely=0, anchor=tk.NW)
+            self.item_list = [{'name': 'A1', 'x': 0.2153846153846154, 'y': 0.25384615384615383}, {'name': 'B1', 'x': 0.2153846153846154, 'y': 0.4423076923076923}, {'name': 'C1', 'x': 0.2153846153846154, 'y': 0.6307692307692307}, {'name': 'A2', 'x': 0.4, 'y': 0.25384615384615383}, {'name': 'B2', 'x': 0.4, 'y': 0.4423076923076923}, {'name': 'C2', 'x': 0.4, 'y': 0.6307692307692307}, {
+                'name': 'A3', 'x': 0.5846153846153846, 'y': 0.25384615384615383}, {'name': 'B3', 'x': 0.5846153846153846, 'y': 0.4423076923076923}, {'name': 'C3', 'x': 0.5846153846153846, 'y': 0.6307692307692307}, {'name': 'A4', 'x': 0.7692307692307693, 'y': 0.25384615384615383}, {'name': 'B4', 'x': 0.7692307692307693, 'y': 0.4423076923076923}, {'name': 'C4', 'x': 0.7692307692307693, 'y': 0.6307692307692307}]
+        tk.Label(self.parent, text="Current reactor", fg="RoyalBlue4",
+                 font="Helvetica 11 bold").place(relx=0.35, rely=0, anchor=tk.NW)
         self.btn_list = []
         self.current = current
         self.total = len(self.item_list)
@@ -497,3 +499,10 @@ class Reactor_on_screen():
         self.btn_list[self.current].configure(bg="lightgrey")
 
 
+def pause():
+    yes = tk.messagebox.askyesno(
+        "Warning", "Operation paused. Are you sure want to stop?")
+    if yes:
+        return "stop"
+    else:
+        return "continue"

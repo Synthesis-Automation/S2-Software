@@ -1,8 +1,0 @@
-
-Protocol file name:  C:/Users/xubar/OneDrive/Robot/Softwares/S2/user_files/test-2_run.txt
-Required plates:  plate_5mL:001, plate_50mL:001, plate_10mL:001
-['Reactor No. 1', 'CsF  0.005 mmol ', 'Water  0.89 mL ', 'Test  0.2 mL ', 'Reaction-temperature  25.0 degree ', 'Reaction-time  6.0 h .']
-['Reactor No. 2', 'KF  0.005 mmol ', 'Water  0.89 mL ', 'Test  0.2 mL ', 'Reaction-temperature  25.0 degree ', 'Reaction-time  6.0 h .']
-['Reactor No. 3', 'CsF  0.005 mmol ', 'Water  0.89 mL ', 'Test  0.2 mL ', 'Reaction-temperature  25.0 degree ', 'Reaction-time  6.0 h .']
-['Reactor No. 4', 'KF  0.005 mmol ', 'Water  0.89 mL ', 'Test  0.2 mL ', 'Reaction-temperature  25.0 degree ', 'Reaction-time  6.0 h .']
-['Reactor No. 5', 'CsF  0.005 mmol ', 'Water  0.89 mL ', 'Test  0.2 mL ', 'Reaction-temperature  25.0 degree ', 'Reaction-time  6.0 h .']

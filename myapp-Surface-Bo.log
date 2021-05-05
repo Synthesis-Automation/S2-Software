@@ -1,0 +1,2099 @@
+2021-04-25 14:19:40,084 Start...
+2021-04-25 14:19:44,069 Com ports: xy_port= COM8, z_port= COM14, modbus_port= COM16, pipette_port= COM4
+2021-04-25 14:19:45,333 Z-platform connected
+2021-04-25 14:19:46,419 E-pipette connected
+2021-04-25 14:20:14,670 Com ports: xy_port= COM8, z_port= COM14, modbus_port= COM16, pipette_port= COM4
+2021-04-25 14:20:38,115 Start...
+2021-04-25 14:45:10,052 Start...
+2021-04-25 14:45:18,875 Com ports: xy_port= COM8, z_port= COM14, modbus_port= COM16, pipette_port= COM4
+2021-04-25 14:45:20,126 Z-platform connected
+2021-04-25 14:45:21,220 E-pipette connected
+2021-04-25 14:45:59,071 Run 1 of 1, transfer cap for reactor@ A1
+2021-04-25 14:46:12,264 
+Finished....................................................
+
+2021-04-25 14:46:29,530 Run 1 of 1, transfer cap for reactor@ A2
+2021-04-25 14:46:43,181 
+Finished....................................................
+
+2021-04-25 14:46:51,719 Run 1 of 1, transfer cap for reactor@ A3
+2021-04-25 14:47:05,589 
+Finished....................................................
+
+2021-04-25 14:47:24,747 Run 1 of 1, transfer cap for reactor@ A4
+2021-04-25 14:47:38,647 
+Finished....................................................
+
+2021-04-25 14:48:07,821 Run 1 of 1, transfer cap for reactor@ A5
+2021-04-25 14:48:21,709 
+Finished....................................................
+
+2021-04-25 14:48:32,935 Run 1 of 6, transfer cap for reactor@ A6
+2021-04-25 14:48:46,911 Run 2 of 6, transfer cap for reactor@ A7
+2021-04-25 14:49:01,163 Run 3 of 6, transfer cap for reactor@ A8
+2021-04-25 14:49:15,319 Run 4 of 6, transfer cap for reactor@ A9
+2021-04-25 14:49:29,347 Run 5 of 6, transfer cap for reactor@ A10
+2021-04-25 14:49:43,894 Run 6 of 6, transfer cap for reactor@ A11
+2021-04-25 14:49:58,190 
+Finished....................................................
+
+2021-04-25 14:51:13,797 Start...
+2021-04-25 14:51:16,014 Com ports: xy_port= COM8, z_port= COM14, modbus_port= COM16, pipette_port= COM4
+2021-04-25 14:51:17,261 Z-platform connected
+2021-04-25 14:51:18,323 E-pipette connected
+2021-04-25 14:52:11,126 Run 1 of 1, transfer cap for reactor@ A12
+2021-04-25 14:52:24,331 
+Finished....................................................
+
+2021-04-25 14:52:44,383 Run 1 of 12, transfer cap for reactor@ A1
+2021-04-25 14:52:57,766 Run 2 of 12, transfer cap for reactor@ A2
+2021-04-25 14:53:11,851 Run 3 of 12, transfer cap for reactor@ A3
+2021-04-25 14:53:26,134 Run 4 of 12, transfer cap for reactor@ A4
+2021-04-25 14:53:40,529 Run 5 of 12, transfer cap for reactor@ A5
+2021-04-25 14:53:54,644 Run 6 of 12, transfer cap for reactor@ A6
+2021-04-25 14:54:08,948 Run 7 of 12, transfer cap for reactor@ A7
+2021-04-25 14:54:23,381 Run 8 of 12, transfer cap for reactor@ A8
+2021-04-25 14:54:38,071 Run 9 of 12, transfer cap for reactor@ A9
+2021-04-25 14:54:52,477 Run 10 of 12, transfer cap for reactor@ A10
+2021-04-25 14:55:07,014 Run 11 of 12, transfer cap for reactor@ A11
+2021-04-25 14:55:21,568 Run 12 of 12, transfer cap for reactor@ A12
+2021-04-25 14:55:35,577 
+Finished....................................................
+
+2021-04-25 14:55:46,808 Run 1 of 4, transfer cap for reactor@ A1
+2021-04-25 14:55:59,684 Run 2 of 4, transfer cap for reactor@ A2
+2021-04-25 14:56:13,363 Run 3 of 4, transfer cap for reactor@ A3
+2021-04-25 14:56:27,038 Run 4 of 4, transfer cap for reactor@ A4
+2021-04-25 14:56:40,629 
+Finished....................................................
+
+2021-04-25 14:57:17,940 Start...
+2021-04-25 14:57:29,460 Com ports: xy_port= COM8, z_port= COM14, modbus_port= COM16, pipette_port= COM4
+2021-04-25 14:57:30,720 Z-platform connected
+2021-04-25 14:57:31,783 E-pipette connected
+2021-04-25 14:59:02,004 Run 1 of 3, transfer cap for reactor@ A5
+2021-04-25 14:59:15,276 Run 2 of 3, transfer cap for reactor@ A6
+2021-04-25 14:59:29,163 Run 3 of 3, transfer cap for reactor@ A7
+2021-04-25 14:59:43,407 
+Finished....................................................
+
+2021-04-25 15:00:33,291 Run 1 of 3, transfer cap for reactor@ A8
+2021-04-25 15:00:47,366 Run 2 of 3, transfer cap for reactor@ A9
+2021-04-25 15:01:01,382 Run 3 of 3, transfer cap for reactor@ A10
+2021-04-25 15:01:15,832 
+Finished....................................................
+
+2021-04-25 15:21:06,332 Run 1 of 2, transfer cap for reactor@ A11
+2021-04-25 15:21:20,432 Run 2 of 2, transfer cap for reactor@ A12
+2021-04-25 15:21:34,119 
+Finished....................................................
+
+2021-04-25 16:10:03,666 Start...
+2021-04-25 16:10:08,119 Com ports: xy_port= COM8, z_port= COM14, modbus_port= COM16, pipette_port= COM4
+2021-04-25 16:10:09,376 Z-platform connected
+2021-04-25 16:10:10,438 E-pipette connected
+2021-04-25 16:10:43,140 Run 1 of 12, transfer cap for reactor@ A1
+2021-04-25 16:10:57,229 Run 2 of 12, transfer cap for reactor@ A2
+2021-04-25 16:11:11,282 Run 3 of 12, transfer cap for reactor@ A3
+2021-04-25 16:11:25,436 Run 4 of 12, transfer cap for reactor@ A4
+2021-04-25 16:11:39,834 Run 5 of 12, transfer cap for reactor@ A5
+2021-04-25 16:11:54,026 Run 6 of 12, transfer cap for reactor@ A6
+2021-04-25 16:12:08,231 Run 7 of 12, transfer cap for reactor@ A7
+2021-04-25 16:12:22,536 Run 8 of 12, transfer cap for reactor@ A8
+2021-04-25 16:12:37,140 Run 9 of 12, transfer cap for reactor@ A9
+2021-04-25 16:12:51,527 Run 10 of 12, transfer cap for reactor@ A10
+2021-04-25 16:13:06,195 Run 11 of 12, transfer cap for reactor@ A11
+2021-04-25 16:13:20,700 Run 12 of 12, transfer cap for reactor@ A12
+2021-04-25 16:13:34,757 
+Finished....................................................
+
+2021-04-25 16:13:49,086 Run 1 of 1, transfer cap for reactor@ A1
+2021-04-25 16:14:02,066 
+Finished....................................................
+
+2021-04-25 16:15:14,765 Start...
+2021-04-25 16:15:17,380 Com ports: xy_port= COM8, z_port= COM14, modbus_port= COM16, pipette_port= COM4
+2021-04-25 16:15:18,622 Z-platform connected
+2021-04-25 16:15:19,643 E-pipette connected
+2021-04-25 16:15:41,454 Run 1 of 1, transfer cap for reactor@ A2
+2021-04-25 16:15:54,684 
+Finished....................................................
+
+2021-04-25 16:16:22,850 Run 1 of 1, transfer cap for reactor@ A3
+2021-04-25 16:16:36,716 
+Finished....................................................
+
+2021-04-25 16:17:25,132 Start...
+2021-04-25 16:17:27,107 Com ports: xy_port= COM8, z_port= COM14, modbus_port= COM16, pipette_port= COM4
+2021-04-25 16:17:28,352 Z-platform connected
+2021-04-25 16:17:29,412 E-pipette connected
+2021-04-25 16:18:03,853 Run 1 of 1, transfer cap for reactor@ A4
+2021-04-25 16:18:17,216 
+Finished....................................................
+
+2021-04-25 16:19:09,403 Start...
+2021-04-25 16:19:11,979 Com ports: xy_port= COM8, z_port= COM14, modbus_port= COM16, pipette_port= COM4
+2021-04-25 16:19:13,227 Z-platform connected
+2021-04-25 16:19:14,248 E-pipette connected
+2021-04-25 16:19:54,050 Run 1 of 1, transfer cap for reactor@ A5
+2021-04-25 16:20:07,518 
+Finished....................................................
+
+2021-04-25 16:20:41,124 Run 1 of 7, transfer cap for reactor@ A6
+2021-04-25 16:20:55,115 Run 2 of 7, transfer cap for reactor@ A7
+2021-04-25 16:21:09,468 Run 3 of 7, transfer cap for reactor@ A8
+2021-04-25 16:21:23,741 Run 4 of 7, transfer cap for reactor@ A9
+2021-04-25 16:21:37,953 Run 5 of 7, transfer cap for reactor@ A10
+2021-04-25 16:21:52,608 Run 6 of 7, transfer cap for reactor@ A11
+2021-04-25 16:22:06,987 Run 7 of 7, transfer cap for reactor@ A12
+2021-04-25 16:22:20,890 
+Finished....................................................
+
+2021-04-25 16:22:34,807 Run 1 of 12, transfer cap for reactor@ A1
+2021-04-25 16:22:48,192 Run 2 of 12, transfer cap for reactor@ A2
+2021-04-25 16:23:02,158 Run 3 of 12, transfer cap for reactor@ A3
+2021-04-25 16:23:16,398 Run 4 of 12, transfer cap for reactor@ A4
+2021-04-25 16:23:30,800 Run 5 of 12, transfer cap for reactor@ A5
+2021-04-25 16:23:45,022 Run 6 of 12, transfer cap for reactor@ A6
+2021-04-25 16:23:59,092 Run 7 of 12, transfer cap for reactor@ A7
+2021-04-25 16:24:13,613 Run 8 of 12, transfer cap for reactor@ A8
+2021-04-25 16:24:28,200 Run 9 of 12, transfer cap for reactor@ A9
+2021-04-25 16:24:42,788 Run 10 of 12, transfer cap for reactor@ A10
+2021-04-25 16:24:57,369 Run 11 of 12, transfer cap for reactor@ A11
+2021-04-25 16:25:11,929 Run 12 of 12, transfer cap for reactor@ A12
+2021-04-25 16:25:25,887 
+Finished....................................................
+
+2021-04-26 10:25:37,415 Start...
+2021-04-26 11:09:29,292 Start...
+2021-04-26 11:09:41,698 Com ports: xy_port= COM8, z_port= COM14, modbus_port= COM16, pipette_port= COM4
+2021-04-26 11:09:42,936 Z-platform connected
+2021-04-26 11:09:44,025 E-pipette connected
+2021-04-26 11:10:29,207 [
+    {
+        "tracking_number": "04/26/2021/11:10-RXN-1",
+        "reactor_no": 1,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:10-RXN-2",
+        "reactor_no": 2,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Pd(OAc)2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A1",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:10-RXN-3",
+        "reactor_no": 3,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "CuI",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A4",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    }
+]
+2021-04-26 11:22:08,737 [
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-1",
+        "reactor_no": 1,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-2",
+        "reactor_no": 2,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Pd(OAc)2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A1",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-3",
+        "reactor_no": 3,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "CuI",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A4",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-4",
+        "reactor_no": 4,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "PdCl2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "B1",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-5",
+        "reactor_no": 5,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ag2O",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A3",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-6",
+        "reactor_no": 6,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ag2CO3",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "C3",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-7",
+        "reactor_no": 7,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Co(nmp)2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A5",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-8",
+        "reactor_no": 8,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "CoCl2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "B5",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-9",
+        "reactor_no": 9,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "FeCl3",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A6",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-10",
+        "reactor_no": 10,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "PPh3AuCl",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A7",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-11",
+        "reactor_no": 11,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ir(cod)2Cl2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "C7",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-12",
+        "reactor_no": 12,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ru(bpy)2Cl2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "D7",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    }
+]
+2021-04-26 11:22:10,036 [
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-1",
+        "reactor_no": 1,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-2",
+        "reactor_no": 2,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Pd(OAc)2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A1",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-3",
+        "reactor_no": 3,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "CuI",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A4",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-4",
+        "reactor_no": 4,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "PdCl2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "B1",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-5",
+        "reactor_no": 5,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ag2O",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A3",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-6",
+        "reactor_no": 6,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ag2CO3",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "C3",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-7",
+        "reactor_no": 7,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Co(nmp)2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A5",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-8",
+        "reactor_no": 8,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "CoCl2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "B5",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-9",
+        "reactor_no": 9,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "FeCl3",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A6",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-10",
+        "reactor_no": 10,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "PPh3AuCl",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A7",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-11",
+        "reactor_no": 11,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ir(cod)2Cl2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "C7",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-12",
+        "reactor_no": 12,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ru(bpy)2Cl2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "D7",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    }
+]
+2021-04-26 11:22:31,439 [
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-1",
+        "reactor_no": 1,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-2",
+        "reactor_no": 2,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Pd(OAc)2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A1",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-3",
+        "reactor_no": 3,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "CuI",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A4",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-4",
+        "reactor_no": 4,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "PdCl2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "B1",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-5",
+        "reactor_no": 5,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ag2O",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A3",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-6",
+        "reactor_no": 6,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ag2CO3",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "C3",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-7",
+        "reactor_no": 7,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Co(nmp)2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A5",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-8",
+        "reactor_no": 8,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "CoCl2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "B5",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-9",
+        "reactor_no": 9,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "FeCl3",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A6",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-10",
+        "reactor_no": 10,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "PPh3AuCl",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A7",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-11",
+        "reactor_no": 11,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ir(cod)2Cl2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "C7",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:22-RXN-12",
+        "reactor_no": 12,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ru(bpy)2Cl2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "D7",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    }
+]
+2021-04-26 11:25:10,821 [
+    {
+        "tracking_number": "04/26/2021/11:25-RXN-1",
+        "reactor_no": 1,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:25-RXN-2",
+        "reactor_no": 2,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Pd(OAc)2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A1",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:25-RXN-3",
+        "reactor_no": 3,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "CuI",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A4",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:25-RXN-4",
+        "reactor_no": 4,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "PdCl2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "B1",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:25-RXN-5",
+        "reactor_no": 5,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ag2O",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A3",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:25-RXN-6",
+        "reactor_no": 6,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ag2CO3",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "C3",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:25-RXN-7",
+        "reactor_no": 7,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Co(nmp)2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A5",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:25-RXN-8",
+        "reactor_no": 8,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "CoCl2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "B5",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:25-RXN-9",
+        "reactor_no": 9,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "FeCl3",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A6",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:25-RXN-10",
+        "reactor_no": 10,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "PPh3AuCl",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A7",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:25-RXN-11",
+        "reactor_no": 11,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ir(cod)2Cl2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "C7",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "04/26/2021/11:25-RXN-12",
+        "reactor_no": 12,
+        "addition_temperature": 25,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
+        "reagents": [
+            {
+                "name": "Br-PhCH2COOEt",
+                "type": "pure_liquid",
+                "plate": "plate_5mL:003",
+                "position": "A1",
+                "amount": 0.024,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Ru(bpy)2Cl2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "D7",
+                "amount": 1
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    }
+]
+2021-04-26 11:25:15,158 Starting running...
+2021-04-26 11:25:15,173 
+Setup reaction No. 1 of 12, (tracking number: 04/26/2021/11:25-RXN-1)
+2021-04-26 11:25:15,173 Transfer Br-PhCH2COOEt (pure_liquid) from vial@ (A5, A1), amount: 0.024 (mL or tablet) to reactor@ A1 ...
+2021-04-26 11:26:01,411 Transfer Ph-B-Tol (solution) from vial@ (C4, B3), amount: 0.045 (mL or tablet) to reactor@ A1 ...
+2021-04-26 11:26:44,848 
+Setup reaction No. 2 of 12, (tracking number: 04/26/2021/11:25-RXN-2)
+2021-04-26 11:26:44,848 Transfer Br-PhCH2COOEt (pure_liquid) from vial@ (A5, A1), amount: 0.024 (mL or tablet) to reactor@ A2 ...
+2021-04-26 11:27:30,288 Transfer Ph-B-Tol (solution) from vial@ (C4, B3), amount: 0.045 (mL or tablet) to reactor@ A2 ...
+2021-04-26 11:28:13,568 Transfer Pd(OAc)2 (solid) from vial@ (B5, A1), amount: 1 (mL or tablet) to reactor@ A2 ...
+2021-04-26 11:29:40,565 
+Setup reaction No. 3 of 12, (tracking number: 04/26/2021/11:25-RXN-3)
+2021-04-26 11:29:40,565 Transfer Br-PhCH2COOEt (pure_liquid) from vial@ (A5, A1), amount: 0.024 (mL or tablet) to reactor@ A3 ...
+2021-04-26 11:30:25,157 Transfer Ph-B-Tol (solution) from vial@ (C4, B3), amount: 0.045 (mL or tablet) to reactor@ A3 ...
+2021-04-26 11:31:08,416 Transfer CuI (solid) from vial@ (B5, A4), amount: 1 (mL or tablet) to reactor@ A3 ...
+2021-04-26 11:31:45,413 
+Setup reaction No. 4 of 12, (tracking number: 04/26/2021/11:25-RXN-4)
+2021-04-26 11:31:45,413 Transfer Br-PhCH2COOEt (pure_liquid) from vial@ (A5, A1), amount: 0.024 (mL or tablet) to reactor@ A4 ...
+2021-04-26 11:32:30,124 Transfer Ph-B-Tol (solution) from vial@ (C4, B3), amount: 0.045 (mL or tablet) to reactor@ A4 ...
+2021-04-26 11:33:13,504 Transfer PdCl2 (solid) from vial@ (B5, B1), amount: 1 (mL or tablet) to reactor@ A4 ...
+2021-04-26 11:33:49,737 
+Setup reaction No. 5 of 12, (tracking number: 04/26/2021/11:25-RXN-5)
+2021-04-26 11:33:49,752 Transfer Br-PhCH2COOEt (pure_liquid) from vial@ (A5, A1), amount: 0.024 (mL or tablet) to reactor@ A5 ...
+2021-04-26 11:34:34,820 Transfer Ph-B-Tol (solution) from vial@ (C4, B3), amount: 0.045 (mL or tablet) to reactor@ A5 ...
+2021-04-26 11:35:18,399 Transfer Ag2O (solid) from vial@ (B5, A3), amount: 1 (mL or tablet) to reactor@ A5 ...
+2021-04-26 11:35:56,099 
+Setup reaction No. 6 of 12, (tracking number: 04/26/2021/11:25-RXN-6)
+2021-04-26 11:35:56,114 Transfer Br-PhCH2COOEt (pure_liquid) from vial@ (A5, A1), amount: 0.024 (mL or tablet) to reactor@ A6 ...
+2021-04-26 11:36:41,335 Transfer Ph-B-Tol (solution) from vial@ (C4, B3), amount: 0.045 (mL or tablet) to reactor@ A6 ...
+2021-04-26 11:37:24,996 Transfer Ag2CO3 (solid) from vial@ (B5, C3), amount: 1 (mL or tablet) to reactor@ A6 ...
+2021-04-26 11:38:01,553 
+Setup reaction No. 7 of 12, (tracking number: 04/26/2021/11:25-RXN-7)
+2021-04-26 11:38:01,569 Transfer Br-PhCH2COOEt (pure_liquid) from vial@ (A5, A1), amount: 0.024 (mL or tablet) to reactor@ A7 ...
+2021-04-26 11:38:47,079 Transfer Ph-B-Tol (solution) from vial@ (C4, B3), amount: 0.045 (mL or tablet) to reactor@ A7 ...
+2021-04-26 11:39:30,883 Transfer Co(nmp)2 (solid) from vial@ (B5, A5), amount: 1 (mL or tablet) to reactor@ A7 ...
+2021-04-26 11:40:07,735 
+Setup reaction No. 8 of 12, (tracking number: 04/26/2021/11:25-RXN-8)
+2021-04-26 11:40:07,735 Transfer Br-PhCH2COOEt (pure_liquid) from vial@ (A5, A1), amount: 0.024 (mL or tablet) to reactor@ A8 ...
+2021-04-26 11:40:53,353 Transfer Ph-B-Tol (solution) from vial@ (C4, B3), amount: 0.045 (mL or tablet) to reactor@ A8 ...
+2021-04-26 11:41:37,279 Transfer CoCl2 (solid) from vial@ (B5, B5), amount: 1 (mL or tablet) to reactor@ A8 ...
+2021-04-26 11:42:16,398 
+Setup reaction No. 9 of 12, (tracking number: 04/26/2021/11:25-RXN-9)
+2021-04-26 11:42:16,398 Transfer Br-PhCH2COOEt (pure_liquid) from vial@ (A5, A1), amount: 0.024 (mL or tablet) to reactor@ A9 ...
+2021-04-26 11:43:02,014 Transfer Ph-B-Tol (solution) from vial@ (C4, B3), amount: 0.045 (mL or tablet) to reactor@ A9 ...
+2021-04-26 11:43:45,968 Transfer FeCl3 (solid) from vial@ (B5, A6), amount: 1 (mL or tablet) to reactor@ A9 ...
+2021-04-26 11:44:23,790 
+Setup reaction No. 10 of 12, (tracking number: 04/26/2021/11:25-RXN-10)
+2021-04-26 11:44:23,806 Transfer Br-PhCH2COOEt (pure_liquid) from vial@ (A5, A1), amount: 0.024 (mL or tablet) to reactor@ A10 ...
+2021-04-26 11:45:09,361 Transfer Ph-B-Tol (solution) from vial@ (C4, B3), amount: 0.045 (mL or tablet) to reactor@ A10 ...
+2021-04-26 11:45:53,496 Transfer PPh3AuCl (solid) from vial@ (B5, A7), amount: 1 (mL or tablet) to reactor@ A10 ...
+2021-04-26 11:46:33,588 
+Setup reaction No. 11 of 12, (tracking number: 04/26/2021/11:25-RXN-11)
+2021-04-26 11:46:33,588 Transfer Br-PhCH2COOEt (pure_liquid) from vial@ (A5, A1), amount: 0.024 (mL or tablet) to reactor@ A11 ...
+2021-04-26 11:47:19,004 Transfer Ph-B-Tol (solution) from vial@ (C4, B3), amount: 0.045 (mL or tablet) to reactor@ A11 ...
+2021-04-26 11:48:03,136 Transfer Ir(cod)2Cl2 (solid) from vial@ (B5, C7), amount: 1 (mL or tablet) to reactor@ A11 ...
+2021-04-26 11:48:42,639 
+Setup reaction No. 12 of 12, (tracking number: 04/26/2021/11:25-RXN-12)
+2021-04-26 11:48:42,655 Transfer Br-PhCH2COOEt (pure_liquid) from vial@ (A5, A1), amount: 0.024 (mL or tablet) to reactor@ A12 ...
+2021-04-26 11:49:27,904 Transfer Ph-B-Tol (solution) from vial@ (C4, B3), amount: 0.045 (mL or tablet) to reactor@ A12 ...
+2021-04-26 11:50:11,884 Transfer Ru(bpy)2Cl2 (solid) from vial@ (B5, D7), amount: 1 (mL or tablet) to reactor@ A12 ...
+2021-04-26 11:51:06,592 
+Setup reaction competed, starting to add the last solvent
+
+2021-04-26 11:51:06,592 Run 1 of 12, adding solvent Toluene 1.5 mL to reactor at A1 using tip A7
+2021-04-26 11:51:31,695 Stopping......
+
+2021-04-26 11:55:03,582 Br-PhCH2COOEt
+ was not found in the reagent databse.
+Please edit your reagent_index (excel file).
+2021-04-26 11:55:32,790 Br-PhCH2COOEt
+ was not found in the reagent databse.
+Please edit your reagent_index (excel file).
+2021-04-26 11:55:34,331 Br-PhCH2COOEt
+ was not found in the reagent databse.
+Please edit your reagent_index (excel file).
+2021-04-26 11:56:12,693 Stopping......
+
+2021-04-26 11:56:15,460 Stopping......
+
+2021-04-26 11:57:26,579 Ph-B-Tol
+ was not found in the reagent databse.
+Please edit your reagent_index (excel file).
+2021-04-26 11:58:03,495 Starting transfering...
+2021-04-26 11:58:03,495 Run 1 of 12, adding solvent Ph-B-Tol 0.42 mL to reactor at A1 using tip B7
+2021-04-26 11:58:17,182 Run 2 of 12, adding solvent Ph-B-Tol 0.42 mL to reactor at A2 using tip B7
+2021-04-26 11:58:33,379 Run 3 of 12, adding solvent Ph-B-Tol 0.42 mL to reactor at A3 using tip B7
+2021-04-26 11:58:49,345 Run 4 of 12, adding solvent Ph-B-Tol 0.42 mL to reactor at A4 using tip B7
+2021-04-26 11:59:05,155 Run 5 of 12, adding solvent Ph-B-Tol 0.42 mL to reactor at A5 using tip B7
+2021-04-26 11:59:20,873 Run 6 of 12, adding solvent Ph-B-Tol 0.42 mL to reactor at A6 using tip B7
+2021-04-26 11:59:36,001 Run 7 of 12, adding solvent Ph-B-Tol 0.42 mL to reactor at A7 using tip B7
+2021-04-26 11:59:52,856 Run 8 of 12, adding solvent Ph-B-Tol 0.42 mL to reactor at A8 using tip B7
+2021-04-26 12:00:08,823 Run 9 of 12, adding solvent Ph-B-Tol 0.42 mL to reactor at A9 using tip B7
+2021-04-26 12:00:24,954 Run 10 of 12, adding solvent Ph-B-Tol 0.42 mL to reactor at A10 using tip B7
+2021-04-26 12:00:41,325 Run 11 of 12, adding solvent Ph-B-Tol 0.42 mL to reactor at A11 using tip B7
+2021-04-26 12:00:57,857 Run 12 of 12, adding solvent Ph-B-Tol 0.42 mL to reactor at A12 using tip B7
+2021-04-26 12:01:27,448 
+Finished....................................................
+
+2021-04-26 12:02:14,753 Starting transfering...
+2021-04-26 12:02:14,753 Run 1 of 1, adding solvent Ph-B-Tol 0.42 mL to reactor at A6 using tip C7
+2021-04-26 12:02:40,642 
+Finished....................................................
+
+2021-04-26 12:03:38,754 Starting transfering...
+2021-04-26 12:03:38,754 Run 1 of 12, adding solvent Toluene 1.0 mL to reactor at A1 using tip D7
+2021-04-26 12:03:54,933 Run 2 of 12, adding solvent Toluene 1.0 mL to reactor at A2 using tip D7
+2021-04-26 12:04:13,268 Run 3 of 12, adding solvent Toluene 1.0 mL to reactor at A3 using tip D7
+2021-04-26 12:04:31,443 Run 4 of 12, adding solvent Toluene 1.0 mL to reactor at A4 using tip D7
+2021-04-26 12:04:49,507 Run 5 of 12, adding solvent Toluene 1.0 mL to reactor at A5 using tip D7
+2021-04-26 12:05:07,390 Run 6 of 12, adding solvent Toluene 1.0 mL to reactor at A6 using tip D7
+2021-04-26 12:05:25,401 Run 7 of 12, adding solvent Toluene 1.0 mL to reactor at A7 using tip D7
+2021-04-26 12:05:43,697 Run 8 of 12, adding solvent Toluene 1.0 mL to reactor at A8 using tip D7
+2021-04-26 12:06:02,175 Run 9 of 12, adding solvent Toluene 1.0 mL to reactor at A9 using tip D7
+2021-04-26 12:06:20,804 Run 10 of 12, adding solvent Toluene 1.0 mL to reactor at A10 using tip D7
+2021-04-26 12:06:39,418 Run 11 of 12, adding solvent Toluene 1.0 mL to reactor at A11 using tip D7
+2021-04-26 12:06:58,123 Run 12 of 12, adding solvent Toluene 1.0 mL to reactor at A12 using tip D7
+2021-04-26 12:07:29,169 
+Finished....................................................
+
+2021-04-26 12:08:04,295 Run 1 of 12, transfer cap for reactor@ A1
+2021-04-26 12:08:18,320 Run 2 of 12, transfer cap for reactor@ A2
+2021-04-26 12:08:32,111 Run 3 of 12, transfer cap for reactor@ A3
+2021-04-26 12:08:46,153 Run 4 of 12, transfer cap for reactor@ A4
+2021-04-26 12:09:00,171 Run 5 of 12, transfer cap for reactor@ A5
+2021-04-26 12:09:14,275 Run 6 of 12, transfer cap for reactor@ A6
+2021-04-26 12:09:28,376 Run 7 of 12, transfer cap for reactor@ A7
+2021-04-26 12:09:42,752 Run 8 of 12, transfer cap for reactor@ A8
+2021-04-26 12:09:57,054 Run 9 of 12, transfer cap for reactor@ A9
+2021-04-26 12:10:11,182 Run 10 of 12, transfer cap for reactor@ A10
+2021-04-26 12:10:25,939 Run 11 of 12, transfer cap for reactor@ A11
+2021-04-26 12:10:40,354 Run 12 of 12, transfer cap for reactor@ A12
+2021-04-26 12:10:54,284 
+Finished....................................................
+
+2021-04-27 10:04:39,514 Start...
+2021-04-27 10:04:42,653 Com ports: xy_port= COM8, z_port= COM14, modbus_port= COM16, pipette_port= COM4
+2021-04-27 10:04:43,906 Z-platform connected
+2021-04-27 10:04:44,991 E-pipette connected
+2021-04-27 10:05:34,256 Start...
+2021-04-27 10:05:36,874 Com ports: xy_port= COM8, z_port= COM14, modbus_port= COM16, pipette_port= COM4
+2021-04-27 10:05:38,120 Z-platform connected
+2021-04-27 10:05:39,219 E-pipette connected
+2021-04-27 10:07:25,065 Run 1 of 12, transfer cap for reactor@ A1
+2021-04-27 10:07:38,723 Run 2 of 12, transfer cap for reactor@ A2
+2021-04-27 10:07:52,677 Run 3 of 12, transfer cap for reactor@ A3
+2021-04-27 10:08:07,032 Run 4 of 12, transfer cap for reactor@ A4
+2021-04-27 10:08:21,400 Run 5 of 12, transfer cap for reactor@ A5
+2021-04-27 10:08:35,642 Run 6 of 12, transfer cap for reactor@ A6
+2021-04-27 10:08:49,768 Run 7 of 12, transfer cap for reactor@ A7
+2021-04-27 10:09:04,263 Run 8 of 12, transfer cap for reactor@ A8
+2021-04-27 10:09:19,098 Run 9 of 12, transfer cap for reactor@ A9
+2021-04-27 10:09:33,604 Run 10 of 12, transfer cap for reactor@ A10
+2021-04-27 10:09:48,255 Run 11 of 12, transfer cap for reactor@ A11
+2021-04-27 10:10:02,895 Run 12 of 12, transfer cap for reactor@ A12
+2021-04-27 10:10:16,930 
+Finished....................................................
+
+2021-04-27 10:11:34,724 Starting transfering...
+2021-04-27 10:11:34,729 Run 1 of 12, adding solvent MeOH 1.0 mL to reactor at A1 using tip D4
+2021-04-27 10:11:51,153 Run 2 of 12, adding solvent MeOH 1.0 mL to reactor at A2 using tip D4
+2021-04-27 10:12:09,954 Run 3 of 12, adding solvent MeOH 1.0 mL to reactor at A3 using tip D4
+2021-04-27 10:12:28,710 Run 4 of 12, adding solvent MeOH 1.0 mL to reactor at A4 using tip D4
+2021-04-27 10:12:47,199 Run 5 of 12, adding solvent MeOH 1.0 mL to reactor at A5 using tip D4
+2021-04-27 10:13:05,556 Run 6 of 12, adding solvent MeOH 1.0 mL to reactor at A6 using tip D4
+2021-04-27 10:13:23,838 Run 7 of 12, adding solvent MeOH 1.0 mL to reactor at A7 using tip D4
+2021-04-27 10:13:42,647 Run 8 of 12, adding solvent MeOH 1.0 mL to reactor at A8 using tip D4
+2021-04-27 10:14:23,282 Stopping......
+

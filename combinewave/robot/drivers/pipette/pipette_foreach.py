@@ -21,7 +21,7 @@ class Pipette(object):
             logging.info("E-pipette failed to connect")
 
     def wait_for_response(self):
-        time.sleep(0.05) # 0.1 is required for reliable communicaiton
+        time.sleep(0.1) # 0.1 is required for reliable communicaiton???
         msg = self.serial_connection.serial_port.readline()
         # print(msg)
         return msg
@@ -31,7 +31,7 @@ class Pipette(object):
         i=1
         while True:
             self.serial_connection.send_commond_string(query_cmd)
-            time.sleep(0.05)
+            time.sleep(0.1)
             res = self.serial_connection.serial_port.readline()
             print(i, res)
             i = i+1

@@ -1,6 +1,0 @@
-
-Protocol file name:  C:/Users/xubar/OneDrive/Robot/Softwares/S2/user_files/2021-3-18_run.txt
-Required plates:  plate_5mL:001, plate_50mL:002, plate_5mL:002
-['Reactor No. 1', '4-Methoxyphenylboronic-acid  0.1 mmol ', 'K3PO4  0.14 mmol ', 'Benzyl-bromide  0.06 mmol  0.0072 mL ', 'Toluene  1.0 mL ', 'Addition-temperature  25 degree ', 'Reaction-temperature  100 degree ', 'Reaction-time  6.0 h ', 'Workup  brine  1.0 mL .']
-['Reactor No. 2', '4-Methoxyphenylboronic-acid  0.1 mmol ', 'K3PO4  0.14 mmol ', 'Benzyl-bromide  0.06 mmol  0.0072 mL ', 'Xylene 1.0 mL ', 'Addition-temperature  25 degree ', 'Reaction-temperature  100 degree ', 'Reaction-time  6.0 h ', 'Workup  brine  1.0 mL .']
-['Reactor No. 3', '4-Methoxyphenylboronic-acid  0.1 mmol ', 'K3PO4  0.14 mmol ', 'Benzyl-bromide  0.06 mmol  0.0072 mL ', 'Dioxane 1.0 mL ', 'Addition-temperature  25 degree ', 'Reaction-temperature  100 degree ', 'Reaction-time  6.0 h ', 'Workup  brine  1.0 mL .']

@@ -1,8 +1,7 @@
 # Reaction Protocol Format Version 1.1
-# No space in names, ';' as seperator, 'mL' for liquids, 'mmol' for solids, program ignores chemical name start with '$'.
-# Example: 
+# No space in names, ';' as seperator, 'mL' for liquids, 'mmol' for solids, program ignores chemical name start with
+Water (0.89 mL); reaction-temperature (35.0 degree); reaction-time (7.0 h).
 
-KF (0.005 mmol); Water (0.89 mL); Test (0.2 mL); Reaction-temperature (25.0 degree); Reaction-time (6.0 h).
 
 
 

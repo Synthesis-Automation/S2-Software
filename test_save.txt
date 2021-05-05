@@ -1,0 +1,4 @@
+
+Protocol file name:  test_save.txt
+Required plates:  
+['Reactor No. 0', 'Pd(OAc)2 (0.15 mol/L  2 mL)', 'Phenethyl-alcohol (0.2 mmol  0.024 mL)', 'DEAD (0.4 mmol)', 'Reaction-temperature (25 degree)', 'Reaction-time (12.0 h)', 'Workup (none).']

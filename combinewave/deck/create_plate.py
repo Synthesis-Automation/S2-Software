@@ -126,7 +126,7 @@ if __name__ == "__main__":
     my_plate.save_plate_file()
 
     my_plate = Plate(name='clean_up', grid=(25, 25), offset=(
-        0, 0), spacing=(1, 1), diameter=4.20, depth=60, height=164, volume=0)
+        0, 0), spacing=(0.6, 0.6), diameter=4.20, depth=60, height=164, volume=0)
     my_plate.creat_plate()
     my_plate.save_plate_file()
 
@@ -150,7 +150,6 @@ if __name__ == "__main__":
     my_plate.creat_plate()
     my_plate.save_plate_file()
 
-    # New 
     # my_plate = Plate(name='plate_15mL', grid=(4, 3), offset=(
     #     23, 19), spacing=(24, 24), diameter=18.0, depth=75, height=103, volume=4000)
     # my_plate.creat_plate()
@@ -171,8 +170,13 @@ if __name__ == "__main__":
     my_plate.creat_plate()
     my_plate.save_plate_file()
 
+    my_plate = Plate(name='reactor_12p_8mL', grid=(4, 3), offset=(
+        43.75, 56.62), spacing=(24.0, 24.5), diameter=18.0, depth=58, height=165, volume=8000)
+    my_plate.creat_plate()
+    my_plate.save_plate_file()
+
     my_plate = Plate(name='reactor_12p', grid=(4, 3), offset=(
-        28, 20), spacing=(24.0, 24.5), diameter=18.0, depth=58, height=166, volume=8000)
+        43.75, 56.62), spacing=(24.0, 24.5), diameter=18.0, depth=58, height=182, volume=8000)
     my_plate.creat_plate()
     my_plate.save_plate_file()
 

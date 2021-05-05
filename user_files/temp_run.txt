@@ -1,4 +1,0 @@
-
-Protocol file name:  C:/Users/xubar/OneDrive/Robot/Softwares/S2/user_files/temp_run.txt
-Required plates:  plate_10mL:001, plate_5mL:001
-['Reactor No. 1', 'CsF  0.005 mmol ', 'Test  0.2 mL ', 'Reaction-temperature  25.0 degree ', 'Reaction-time  6.0 h .']

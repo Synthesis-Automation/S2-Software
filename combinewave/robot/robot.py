@@ -85,8 +85,6 @@ class Robot(object):
         self.back_to_safe_position_all()
 
     def home_all(self):
-        # if self.is_simulation:
-        #     return 'simulation'
         self.home_all_z()
         self.xy_platform.home('xy')
         self.pipette.initialization()
@@ -121,6 +119,7 @@ class Robot(object):
             # self.z_platform.stop_flag = stop
         else:
             self.stop_flag = stop
+        # self.check_stop_status()
 
     def back_to_safe_position(self, head):
         if head == CAPPER:
@@ -155,7 +154,7 @@ class Robot(object):
 
     def move_to_top_of_vial(self, head=CAPPER, vial=(), z=0):
         '''Move Z head to the top of the vial'''
-        # e.g., use z = -7 (mm) to move the head to a lower position for dipense and hold the cap
+        # e.g., use z = -7 (mm) to move the head to a lower position for dipensing and hold the cap
         my_vial = self.vial(vial[0], vial[1])
         vial_height = my_vial["height"]
         response = self.z_platform.move_to(head=head, z=vial_height + z)
@@ -170,6 +169,16 @@ class Robot(object):
         return response
 
     # high level functions
+
+    def lock_vial_before_decap(self, vial_type="plate_5mL"):
+        ''' make sure a 5 mL vial in lock position by rotate the vial and push down a small distance at the same time'''
+        ROTATION = 80
+        DOWN = -3
+        self.gripper.rotate(ROTATION)
+        self.z_platform.move(head=CAPPER, z=DOWN)
+        self.gripper.rotate(-1*ROTATION)
+        # self.z_platform.move(head=CAPPER, z=1)
+
 
     def decap(self, vial=()):
         if self.gripper.is_gripper_holding():
@@ -188,7 +197,7 @@ class Robot(object):
             rotation_force = 90
             ratio = 6.0
             Z_speed = int(rotation_speed*ratio)
-            rotation_angle = 1800
+            rotation_angle = 2000
             gripper_openning_percent = 70  # 90%
             up_distance = 7
             gripper_closing_percent = 20
@@ -242,7 +251,10 @@ class Robot(object):
         self.gripper.gripper_open(gripper_openning_percent)
         self.move_to_top_of_vial(head=CAPPER, vial=vial, z=hold)
         self.gripper.gripper_close(gripper_closing_percent)
-        self.z_platform.move(head=CAPPER, z=-1)
+        if vial_type == "plate_5mL":
+            self.lock_vial_before_decap()
+        else:
+            self.z_platform.move(head=CAPPER, z=-1)
         self.gripper.set_rotation_speed(rotation_speed)
         self.gripper.rotate(rotation_angle)
         self.z_platform.set_max_speed(head=CAPPER, speed=Z_speed)
@@ -266,11 +278,21 @@ class Robot(object):
             if vial_type == "reactor_27p":
                 adjustment = -3  # cap hold distance
                 rotation_speed = 80
-                rotation_force = 50
-                ratio = 9.0
+                rotation_force = 40
+                ratio = 6.0
                 Z_speed = int(rotation_speed*ratio)
-                cap_down = -9
-                rotation_angle = -1800
+                cap_down = -8
+                rotation_angle = -2000
+                gripper_openning_percent = 70
+
+            if vial_type == "reactor_12p":
+                adjustment = -3  # cap hold distance
+                rotation_speed = 80
+                rotation_force = 40
+                ratio = 6.0
+                Z_speed = int(rotation_speed*ratio)
+                cap_down = -8
+                rotation_angle = -2000
                 gripper_openning_percent = 70
 
             if vial_type == "plate_5mL":
@@ -283,7 +305,7 @@ class Robot(object):
                 rotation_angle = -1100
                 gripper_openning_percent = 40
 
-            if vial_type == "reactor_12p":
+            if vial_type == "reactor_12p_8mL":
                 adjustment = -4  # cap hold distance
                 rotation_speed = 70
                 rotation_force = 30
@@ -334,8 +356,8 @@ class Robot(object):
             print("Cap already holded")
             return
         gripper_openning_percent = 75
-        hold = -11
-        rotation_angle = 1800
+        hold = -12
+        rotation_angle = 2000
         self.move_to(head=CAPPER, vial=vial)
         self.gripper.gripper_open(gripper_openning_percent)
         self.move_to_top_of_vial(head=CAPPER, vial=vial, z=hold)
@@ -352,7 +374,7 @@ class Robot(object):
             print("No cap is holded")
             return
         gripper_openning_percent = 80
-        rotation_angle = 250
+        rotation_angle = 500
         self.move_to(head=CAPPER, vial=vial)
         down = -9
         self.move_to_top_of_vial(head=CAPPER, vial=vial, z=down)
@@ -424,12 +446,12 @@ class Robot(object):
         '''vial=("A1", "B1"), volume= xx uL'''
         self.move_to(head=LIQUID, vial=vial)
         # used to blow out all liquids
-        if volume <= 950:
-            self.pipette.aspirate(volume=20)
+        if volume >= 950:
+            volume = 950
+        self.pipette.aspirate(volume=40)
         self.move_to_bottom_of_vial(head=LIQUID, vial=vial)
         self.pipette.aspirate(volume)
         self.last_volume = volume
-        # self.pipette.enable_anti_dropping()
 
     def dispense(self, vial=(), volume=0):
         '''dispense all liquid in the tip, vial=(), volume= xx uL'''
@@ -444,31 +466,45 @@ class Robot(object):
 
     def drop_tip(self, vial=()):
         self.move_to(head=LIQUID, vial=vial)
+        self.move_to_top_of_vial(head=LIQUID, vial=vial, z=-60)
         self.pipette.send_drop_tip_cmd()
 
     def transfer_liquid(self, vial_from=(), vial_to=(),
-                        tip=None, trash=(), volume=0):
+                        tip=None, trash=(), volume=0, is_volatile = "no"):
         '''vial_from=("A1", "B1"), volume=mL, when tip = None, no tip will be used'''
         MAX = 1000
         liquid_volume = volume*1000  # convert to uL
         cycles = int(int(liquid_volume)/MAX)
         residue = int(liquid_volume) % MAX
         if tip != None:
-            self.pickup_tip(vial=tip)
+            self.pickup_tip(vial=tip)    
+        if is_volatile == "yes":
+            self.aspirate(vial=vial_from, volume=300)
+            self.move_to_top_of_vial(head=LIQUID, vial=vial_from, z=-10)
+            self.pipette.dispense()
+            for i in range(2):
+                self.move_to_bottom_of_vial(head=LIQUID, vial=vial_from)
+                self.pipette.aspirate(300)
+                self.move_to_top_of_vial(head=LIQUID, vial=vial_from, z=-10)
+                self.pipette.dispense()
+
         for _ in range(cycles):
             self.aspirate(vial=vial_from, volume=MAX)
             # 10 mm lower from the top of the vial
             self.move_to_top_of_vial(head=LIQUID, vial=vial_from, z=-10)
-            transport_air_volume = 20
-            # self.pipette.set_transport_air_volume(volume=transport_air_volume)
+            transport_air_volume = 10
+            self.pipette.set_transport_air_volume(volume=transport_air_volume)
             self.dispense(vial=vial_to, volume=MAX)
         if residue != 0:
             if residue > 100:
-                transport_air_volume = 15
+                transport_air_volume = 10
             else:
                 transport_air_volume = 6
             self.aspirate(vial=vial_from, volume=residue)
+            self.z_platform.move(head = LIQUID, z=50)
+            time.sleep(2)
             self.move_to_top_of_vial(head=LIQUID, vial=vial_from, z=-10)
+            time.sleep(1)
             self.pipette.set_transport_air_volume(volume=transport_air_volume)
             self.dispense(vial=vial_to, volume=residue)
         if tip != None:

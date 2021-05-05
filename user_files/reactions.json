@@ -1,31 +1,26 @@
 [
     {
-        "tracking_number": "04/14/2021/17:16-RXN-1",
+        "tracking_number": "05/05/2021/14:06-RXN-1",
         "reactor_no": 1,
         "addition_temperature": 25,
-        "reaction_time": 6.0,
-        "reaction_temperature": 25.0,
+        "reaction_time": 1,
+        "reaction_temperature": 110.0,
         "reagents": [
             {
-                "name": "CsF",
-                "type": "solid",
-                "plate": "plate_5mL:001",
-                "position": "D7",
-                "amount": 1
-            },
-            {
-                "name": "Water",
+                "name": "Br-PhCH2COOEt",
                 "type": "pure_liquid",
-                "plate": "plate_50mL:001",
+                "plate": "plate_5mL:003",
                 "position": "A1",
-                "amount": 0.89
+                "amount": 0.024,
+                "is_volatile": "no"
             },
             {
-                "name": "Test",
-                "type": "pure_liquid",
-                "plate": "plate_10mL:001",
-                "position": "C4",
-                "amount": 0.2
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
             }
         ],
         "workup": {
@@ -33,32 +28,34 @@
         }
     },
     {
-        "tracking_number": "04/14/2021/17:16-RXN-2",
+        "tracking_number": "05/05/2021/14:06-RXN-2",
         "reactor_no": 2,
         "addition_temperature": 25,
-        "reaction_time": 6.0,
-        "reaction_temperature": 25.0,
+        "reaction_time": 1,
+        "reaction_temperature": 25,
         "reagents": [
             {
-                "name": "KF",
-                "type": "solid",
-                "plate": "plate_5mL:001",
-                "position": "A2",
-                "amount": 1
-            },
-            {
-                "name": "Water",
+                "name": "Br-PhCH2COOEt",
                 "type": "pure_liquid",
-                "plate": "plate_50mL:001",
+                "plate": "plate_5mL:003",
                 "position": "A1",
-                "amount": 0.89
+                "amount": 0.024,
+                "is_volatile": "no"
             },
             {
-                "name": "Test",
-                "type": "pure_liquid",
-                "plate": "plate_10mL:001",
-                "position": "C4",
-                "amount": 0.2
+                "name": "Ph-B-Tol",
+                "type": "solution",
+                "plate": "plate_50mL:001",
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
+            },
+            {
+                "name": "Pd(OAc)2",
+                "type": "solid",
+                "plate": "plate_5mL:002",
+                "position": "A1",
+                "amount": 1
             }
         ],
         "workup": {
@@ -66,98 +63,34 @@
         }
     },
     {
-        "tracking_number": "04/14/2021/17:16-RXN-3",
+        "tracking_number": "05/05/2021/14:06-RXN-3",
         "reactor_no": 3,
         "addition_temperature": 25,
-        "reaction_time": 6.0,
-        "reaction_temperature": 25.0,
+        "reaction_time": 1,
+        "reaction_temperature": 25,
         "reagents": [
             {
-                "name": "CsF",
-                "type": "solid",
-                "plate": "plate_5mL:001",
-                "position": "D7",
-                "amount": 1
-            },
-            {
-                "name": "Water",
+                "name": "Br-PhCH2COOEt",
                 "type": "pure_liquid",
-                "plate": "plate_50mL:001",
+                "plate": "plate_5mL:003",
                 "position": "A1",
-                "amount": 0.89
+                "amount": 0.024,
+                "is_volatile": "no"
             },
             {
-                "name": "Test",
-                "type": "pure_liquid",
-                "plate": "plate_10mL:001",
-                "position": "C4",
-                "amount": 0.2
-            }
-        ],
-        "workup": {
-            "name": "None"
-        }
-    },
-    {
-        "tracking_number": "04/14/2021/17:16-RXN-4",
-        "reactor_no": 4,
-        "addition_temperature": 25,
-        "reaction_time": 6.0,
-        "reaction_temperature": 25.0,
-        "reagents": [
-            {
-                "name": "KF",
-                "type": "solid",
-                "plate": "plate_5mL:001",
-                "position": "A2",
-                "amount": 1
-            },
-            {
-                "name": "Water",
-                "type": "pure_liquid",
+                "name": "Ph-B-Tol",
+                "type": "solution",
                 "plate": "plate_50mL:001",
-                "position": "A1",
-                "amount": 0.89
+                "position": "B3",
+                "amount": 0.045,
+                "is_volatile": "no"
             },
             {
-                "name": "Test",
-                "type": "pure_liquid",
-                "plate": "plate_10mL:001",
-                "position": "C4",
-                "amount": 0.2
-            }
-        ],
-        "workup": {
-            "name": "None"
-        }
-    },
-    {
-        "tracking_number": "04/14/2021/17:16-RXN-5",
-        "reactor_no": 5,
-        "addition_temperature": 25,
-        "reaction_time": 6.0,
-        "reaction_temperature": 25.0,
-        "reagents": [
-            {
-                "name": "CsF",
+                "name": "CuI",
                 "type": "solid",
-                "plate": "plate_5mL:001",
-                "position": "D7",
+                "plate": "plate_5mL:002",
+                "position": "A4",
                 "amount": 1
-            },
-            {
-                "name": "Water",
-                "type": "pure_liquid",
-                "plate": "plate_50mL:001",
-                "position": "A1",
-                "amount": 0.89
-            },
-            {
-                "name": "Test",
-                "type": "pure_liquid",
-                "plate": "plate_10mL:001",
-                "position": "C4",
-                "amount": 0.2
             }
         ],
         "workup": {
