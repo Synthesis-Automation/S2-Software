@@ -1,0 +1,233 @@
+{
+    "version": 1.0,
+    "name": "reactor_circle_8mL_20p",
+    "cornerOffsetFromSlot": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+    },
+    "ordering": [
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "A5",
+        "A6",
+        "A7",
+        "A8",
+        "A9",
+        "A10",
+        "A11",
+        "A12",
+        "A13",
+        "A14",
+        "A15",
+        "A16",
+        "A17",
+        "A18",
+        "A19",
+        "A20"
+    ],
+    "wells": {
+        "A1": {
+            "depth": 59,
+            "height": 144,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 79.22,
+            "y": 1.0300000000000011,
+            "z": 0
+        },
+        "A2": {
+            "depth": 59,
+            "height": 144,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 101.25,
+            "y": 9.04,
+            "z": 0
+        },
+        "A3": {
+            "depth": 59,
+            "height": 144,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 119.21000000000001,
+            "y": 24.11,
+            "z": 0
+        },
+        "A4": {
+            "depth": 59,
+            "height": 144,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 130.93,
+            "y": 44.41,
+            "z": 0
+        },
+        "A5": {
+            "depth": 59,
+            "height": 144,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 135.0,
+            "y": 67.5,
+            "z": 0
+        },
+        "A6": {
+            "depth": 59,
+            "height": 144,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 130.93,
+            "y": 90.59,
+            "z": 0
+        },
+        "A7": {
+            "depth": 59,
+            "height": 144,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 119.21000000000001,
+            "y": 110.89,
+            "z": 0
+        },
+        "A8": {
+            "depth": 59,
+            "height": 144,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 101.25,
+            "y": 125.96000000000001,
+            "z": 0
+        },
+        "A9": {
+            "depth": 59,
+            "height": 144,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 79.22,
+            "y": 133.97,
+            "z": 0
+        },
+        "A10": {
+            "depth": 59,
+            "height": 144,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 55.78,
+            "y": 133.97,
+            "z": 0
+        },
+        "A11": {
+            "depth": 59,
+            "height": 144,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 33.75,
+            "y": 125.96000000000001,
+            "z": 0
+        },
+        "A12": {
+            "depth": 59,
+            "height": 144,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 15.79,
+            "y": 110.89,
+            "z": 0
+        },
+        "A13": {
+            "depth": 59,
+            "height": 144,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 4.07,
+            "y": 90.59,
+            "z": 0
+        },
+        "A14": {
+            "depth": 59,
+            "height": 144,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 0.0,
+            "y": 67.5,
+            "z": 0
+        },
+        "A15": {
+            "depth": 59,
+            "height": 144,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 4.07,
+            "y": 44.41,
+            "z": 0
+        },
+        "A16": {
+            "depth": 59,
+            "height": 144,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 15.79,
+            "y": 24.11,
+            "z": 0
+        },
+        "A17": {
+            "depth": 59,
+            "height": 144,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 33.75,
+            "y": 9.04,
+            "z": 0
+        },
+        "A18": {
+            "depth": 59,
+            "height": 144,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 55.78,
+            "y": 1.0300000000000011,
+            "z": 0
+        },
+        "A19": {
+            "depth": 59,
+            "height": 144,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": -11.4,
+            "y": 0,
+            "z": 0
+        },
+        "A20": {
+            "depth": 59,
+            "height": 144,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 11.4,
+            "y": 0,
+            "z": 0
+        }
+    }
+}

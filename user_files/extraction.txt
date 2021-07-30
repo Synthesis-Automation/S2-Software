@@ -1,0 +1,4 @@
+# No space in names, ';' as seperator, 'mL' for liquids, 'mmol' for solids, program ignores chemical name start with '$'. 
+
+MeOH (1.0 mL), NaCl-water (1.0 mL), MeOtBu (2.0 mL)
+

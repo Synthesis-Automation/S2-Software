@@ -1,0 +1,123 @@
+{
+    "version": 1.0,
+    "name": "reactor_circle_8mL_10p",
+    "cornerOffsetFromSlot": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+    },
+    "ordering": [
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "A5",
+        "A6",
+        "A7",
+        "A8",
+        "A9",
+        "A10"
+    ],
+    "wells": {
+        "A1": {
+            "depth": 59,
+            "height": 175,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 49.74,
+            "y": 1.8599999999999994,
+            "z": 0
+        },
+        "A2": {
+            "depth": 59,
+            "height": 175,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 68.74,
+            "y": 15.66,
+            "z": 0
+        },
+        "A3": {
+            "depth": 59,
+            "height": 175,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 76.0,
+            "y": 38.0,
+            "z": 0
+        },
+        "A4": {
+            "depth": 59,
+            "height": 175,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 68.74,
+            "y": 60.34,
+            "z": 0
+        },
+        "A5": {
+            "depth": 59,
+            "height": 175,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 49.74,
+            "y": 74.14,
+            "z": 0
+        },
+        "A6": {
+            "depth": 59,
+            "height": 175,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 26.259999999999998,
+            "y": 74.14,
+            "z": 0
+        },
+        "A7": {
+            "depth": 59,
+            "height": 175,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 7.260000000000002,
+            "y": 60.34,
+            "z": 0
+        },
+        "A8": {
+            "depth": 59,
+            "height": 175,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 0.0,
+            "y": 38.0,
+            "z": 0
+        },
+        "A9": {
+            "depth": 59,
+            "height": 175,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 7.260000000000002,
+            "y": 15.66,
+            "z": 0
+        },
+        "A10": {
+            "depth": 59,
+            "height": 175,
+            "volume": 0,
+            "shape": "circular",
+            "diameter": 0,
+            "x": 26.259999999999998,
+            "y": 1.8599999999999994,
+            "z": 0
+        }
+    }
+}

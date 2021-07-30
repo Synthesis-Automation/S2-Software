@@ -1,16 +1,13 @@
 # coding:utf-8
-import json
-import socket
-import threading
 from pathlib import Path
 
-from combinewave import parameters
-from combinewave.robot import robot
-from combinewave.tools import helper
-from combinewave.deck import deck
+from chem_robox import parameters
+from chem_robox.robot import robot
+from chem_robox.tools import helper
+from chem_robox.deck import deck
 
 # CAPPER = 'Z1'... defined in parameters.py
-from combinewave.parameters import CAPPER, LIQUID, TABLET
+from chem_robox.parameters import CAPPER, LIQUID, TABLET
 
 
 def capper_test(plate, plate_type):
@@ -31,9 +28,12 @@ if __name__ == "__main__":
     chem_robot = robot.Robot()
     chem_robot.connect()
     chem_robot.home_all()
+    chem_robot.move_to(vial = ("R1", "A1"))
     # capper_test("B2", plate_type = "plate_5mL")
     # capper_test("C3", plate_type = "plate_8mL")
     # capper_test("A3", plate_type = "plate_40mL")
     # chem_robot.gripper.rotate_to(450)
     # tablet_test()
-    
+
+
+

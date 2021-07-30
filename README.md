@@ -25,9 +25,9 @@ Hardware drivers:
 	- Communications (USB to RS232， USB to RS485)
 
 	Based above drivers, 
-		1) Liquid handler (controled by XY_platform + Z_platform + E-Pipette); 
-		2) Tablet handler (controled by XY_platform + Z_platform);
-		3) Capper handler (controled by XY_platform + Z_platform + Gripper)
+		1) Liquid handler (controlled by XY_platform + Z_platform + E-Pipette); 
+		2) Tablet handler (controlled by XY_platform + Z_platform);
+		3) Capper handler (controlled by XY_platform + Z_platform + Gripper)
 	were constructed. 
 
 2) Deck (deck.py, create_plate.py)
@@ -58,7 +58,7 @@ Examples:
 ## S2 GUI App
 
 	- Tkinter (for now)
-	- API calls via robot mudule and chemical synthesis module
+	- API calls via robot moudule and chemical synthesis module
 
 
 You can Easily upload or write a protocol and run your reaction from your computer.

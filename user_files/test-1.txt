@@ -1,8 +1,0 @@
-# Reaction Protocol Format Version 1.1
-# No space in names, ';' as seperator, 'mL' for liquids, 'mmol' for solids, program ignores chemical name start with
-Water (0.89 mL); reaction-temperature (35.0 degree); reaction-time (7.0 h).
-
-
-
-
-

@@ -1,0 +1,4 @@
+AcOH (0.0057 mL), MeOH (0.5 mL), Phenethylamine (0.0109 mL), Cyclobutanone (0.0152 mL), NaBH3CN (0.5 mL)
+AcOH (0.0067 mL), MeOH (0.6 mL), Isopropylaniline (0.0109 mL), Benzaldehyde (0.0102 mL), NaBH3CN (0.5 mL)
+
+

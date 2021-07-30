@@ -1,8 +1,0 @@
-# No space in names, ';' as seperator, 'mL' for liquids, 'mmol' for solids, program ignores chemical name start with '$'.
-Br-PhCH2COOEt (0.024 mL); Ph-B-Tol (0.045 mL); $K2CO3-water (0.12 mL); Reaction-temperature (110 degree).
-Br-PhCH2COOEt (0.024 mL); Ph-B-Tol (0.045 mL); $K2CO3-water (0.12 mL); Pd(OAc)2 (0.005 mmol); 
-Br-PhCH2COOEt (0.024 mL); Ph-B-Tol (0.045 mL); $K2CO3-water (0.12 mL); CuI (0.005 mmol);
-
-
-
-

@@ -1,48 +1,63 @@
-import sys
-from combinewave.robot.drivers.xy_platform import xy_platform
-from combinewave.deck import deck
+from chem_robox.robot.drivers.xy_platform import xy_platform, smoothie_drivers
+from chem_robox.deck import deck
+from pathlib import Path
+import json
 
-USB_port = 'com8'
-xy_platform = xy_platform.XY_platform(port=USB_port)
-xy_platform.connect()
-# i=0
-# for i in range(5000):
-#     a = xy_platform.smoothie.get_firmware_version()
-#     print(i, a)
+# test code for this module      
+if __name__ == '__main__':
+    robot_config_file = Path("chem_robox/config/robot_config.json")
+    with open(robot_config_file) as config:
+        robot_config = json.load(config)
+    my_deck = deck.Deck(robot_config)
+    head_offsets = my_deck.head_offsets
 
-xy_platform.home(axe='xy')
+    USB_port = 'com5'
+    xy_platform = xy_platform.XY_platform(
+        port=USB_port, head_offsets=head_offsets, firmware="Marlin")
+    xy_platform.connect()
 
-# xy_platform.smoothie.set_steps_per_mm('x', 320)
-# xy_platform.smoothie.set_steps_per_mm('y', 320)
+    # For Fuyu linear module, 20 mm/sec will lose steps
+    # xy_platform.set_steps_per_mm(axis='x', steps_per_mm=1600)
+    # xy_platform.set_steps_per_mm(axis='y', steps_per_mm=1600)
+    # xy_platform.set_speed(x=18, y=18)
+    # xy_platform.set_acceleration(x= 1000, y = 1000)
 
-xy_platform.set_acceleration(x=600, y=600)  # default 1200 mm/sec2 600 for us
-xy_platform.set_speed(x=9000, y=6000)  # 10000 will lose steps
+    # # XY linear module, 20 mm/sec will lose steps
+    # xy_platform.motion_control.set_steps_per_mm(axis='x', steps_per_mm=160)
+    # xy_platform.motion_control.set_steps_per_mm(axis = 'y', steps_per_mm = 160)
+    # xy_platform.set_speed(x=50, y=50)
+    # xy_platform.set_acceleration(x= 1000, y = 1000)
 
-print(xy_platform.smoothie.speeds)
-print(xy_platform.smoothie.get_steps_per_mm('x'))
-print(xy_platform.smoothie.get_steps_per_mm('y'))
+    # xy_platform.home('xy')
+    # xy_platform.home("x")
 
-# speed test
-for i in range(20):
-    # input("continue")
-    xy_platform.move(x=650,  y=300)
-    # input("continue")
-    xy_platform.move(x=-650, y=-300)
+    # Lower level control
+    # for i in range(1):
+    #     # input("continue")
+    #     print(i)
+    #     xy_platform.motion_control.move_to(x=100,  y=0)
+    #     print("go back")
+    #     xyz = xy_platform.motion_control.get_current_position()
+    #     print(xyz)
+    #     xy_platform.motion_control.move_to(x=10,  y=0)
+    #     xyz = xy_platform.motion_control.get_current_position()
+    #     print(xyz)
 
+    vial_1 = my_deck.vial(plate='R1', vial='A1')
+    vial_1 = {'x': 3.805, 'y': 1.9, 'z': 0, 'depth': 59.0, 'plate': 'R1', 'vial': 'A1', 'type': 'reactor_square_8mL_20p', 'height': 166.0, 'diameter': 18.0}
+    vial_2 = my_deck.vial(plate='R1', vial='A5')
+    print(vial_2)
+    for i in range(2):
+        xy_platform.move_to(vial=vial_1)
+        xy_platform.move_to(vial=vial_2)
+    print('Done')
 
-# vial_1 = deck.vial(plate='A1', vial='A1')
-# print(vial_1)
-# vial_2 = deck.vial(plate='C5', vial='A1')
-# print(vial_2)
-# for i in range(10):
-#     xy_platform.move_to(vial=vial_1)
-#     xy_platform.move_to(vial=vial_2)
-# print('Done')
-
-# # import time
-# # index = 3
-# # for i in range(10):
-# # 	xy_platform.mosfet_engage(index)   # 2 is for the fan (top one)
-# # 	time.sleep(0.5)
-# # 	xy_platform.mosfet_disengage(index)
-# # 	time.sleep(0.5)
+    # for i in range(10):
+    #     xy_platform.mosfet_engage(index_1)   # 2 is for the fan (top one)
+    #     time.sleep(0.5)
+    #     xy_platform.mosfet_disengage(index_1)
+    #     time.sleep(0.5)
+    #     xy_platform.mosfet_engage(index_2)   # 2 is for the fan (top one)
+    #     time.sleep(0.5)
+    #     xy_platform.mosfet_disengage(index_2)
+    #     time.sleep(0.5)

@@ -1,0 +1,122 @@
+2021-07-16 11:05:26,885 Com ports: xy_port= COM8, z_port= COM14, modbus_port= COM16, pipette_port= COM11
+2021-07-16 11:05:28,118 Z-platform connected
+2021-07-16 11:05:29,172 E-pipette connected
+2021-07-16 11:06:19,246 Com ports: xy_port= COM8, z_port= COM15, modbus_port= COM16, pipette_port= COM11
+2021-07-16 11:06:20,497 Z-platform connected
+2021-07-16 11:06:21,547 E-pipette connected
+2021-07-16 11:09:54,615 Com ports: xy_port= COM8, z_port= COM15, modbus_port= COM16, pipette_port= COM11
+2021-07-16 11:09:55,865 Z-platform connected
+2021-07-16 11:09:56,893 E-pipette connected
+2021-07-16 11:15:00,548 Com ports: xy_port= COM8, z_port= COM15, modbus_port= COM16, pipette_port= COM11
+2021-07-16 11:15:01,790 Z-platform connected
+2021-07-16 11:15:02,816 E-pipette connected
+2021-07-16 11:16:36,970 Com ports: xy_port= COM8, z_port= COM15, modbus_port= COM16, pipette_port= COM11
+2021-07-16 11:16:38,242 Z-platform connected
+2021-07-16 11:16:39,273 E-pipette connected
+2021-07-16 11:18:13,431 Com ports: xy_port= COM8, z_port= COM15, modbus_port= COM16, pipette_port= COM11
+2021-07-16 11:18:14,674 Z-platform connected
+2021-07-16 11:18:15,699 E-pipette connected
+2021-07-16 11:18:39,542 Com ports: xy_port= COM8, z_port= COM15, modbus_port= COM16, pipette_port= COM11
+2021-07-16 11:18:40,779 Z-platform connected
+2021-07-16 11:18:41,816 E-pipette connected
+2021-07-16 11:19:13,760 Com ports: xy_port= COM8, z_port= COM15, modbus_port= COM16, pipette_port= COM11
+2021-07-16 11:19:15,006 Z-platform connected
+2021-07-16 11:19:16,032 E-pipette connected
+2021-07-16 11:19:47,116 Com ports: xy_port= COM8, z_port= COM15, modbus_port= COM16, pipette_port= COM11
+2021-07-16 11:19:48,359 Z-platform connected
+2021-07-16 11:19:49,390 E-pipette connected
+2021-07-16 11:20:56,775 Simulation mode （模拟运行模式）..........................................................
+2021-07-16 11:20:56,775 Reaction No. 1 of 2, (tracking number: 07/16/2021/11:20/1)
+2021-07-16 11:20:56,791 Transfer AcOH (pure_liquid, 0.0057 mL) from vial@ (C2, C1), to reactor@ A1 ...
+2021-07-16 11:20:56,869 Transfer MeOH (pure_liquid, 0.5 mL) from vial@ (B4, B2), to reactor@ A1 ...
+2021-07-16 11:20:56,932 Transfer Phenethylamine (pure_liquid, 0.0109 mL) from vial@ (B2, A3), to reactor@ A1 ...
+2021-07-16 11:20:57,011 Transfer Cyclobutanone (pure_liquid, 0.0152 mL) from vial@ (C2, A2), to reactor@ A1 ...
+2021-07-16 11:20:57,083 Transfer NaBH3CN (solution, 0.5 mL) from vial@ (A2, A1), to reactor@ A1 ...
+2021-07-16 11:20:57,146 Add cap to reactor@ A1
+2021-07-16 11:20:57,146  
+2021-07-16 11:20:57,146 Reaction No. 2 of 2, (tracking number: 07/16/2021/11:20/2)
+2021-07-16 11:20:57,162 Transfer AcOH (pure_liquid, 0.0067 mL) from vial@ (C2, C1), to reactor@ A2 ...
+2021-07-16 11:20:57,224 Transfer MeOH (pure_liquid, 0.6 mL) from vial@ (B4, B2), to reactor@ A2 ...
+2021-07-16 11:20:57,318 Transfer Isopropylaniline (pure_liquid, 0.0109 mL) from vial@ (B2, B1), to reactor@ A2 ...
+2021-07-16 11:20:57,397 Transfer Benzaldehyde (pure_liquid, 0.0102 mL) from vial@ (C2, A3), to reactor@ A2 ...
+2021-07-16 11:20:57,475 Transfer NaBH3CN (solution, 0.5 mL) from vial@ (A2, A1), to reactor@ A2 ...
+2021-07-16 11:20:57,553 Add cap to reactor@ A2
+2021-07-16 11:20:57,569  
+2021-07-16 11:20:57,585 *Finished*
+
+2021-07-16 11:20:57,585 Synthesis plan was parsed successfully! All reagents have been located.
+2021-07-16 11:20:57,585 Required plates: plate_50mL:003, plate_10mL:001, plate_50mL:001, plate_10mL:002
+
+2021-07-16 11:20:57,600 End of simulation..................................................................
+
+2021-07-16 11:21:00,900 Simulation mode （模拟运行模式）..........................................................
+2021-07-16 11:21:00,916 Running in the saver mode （节省模式启动）
+2021-07-16 11:21:00,948 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-07-16 11:21:00,949 Transfer AcOH (pure_liquid, 0.0057 mL) from vial@ (C2, C1) to reactor@ A1
+2021-07-16 11:21:01,012 Transfer AcOH (pure_liquid, 0.0067 mL) from vial@ (C2, C1) to reactor@ A2
+2021-07-16 11:21:01,075 Transfer MeOH (pure_liquid, 0.5 mL) from vial@ (B4, B2) to reactor@ A1
+2021-07-16 11:21:01,153 Transfer MeOH (pure_liquid, 0.6 mL) from vial@ (B4, B2) to reactor@ A2
+2021-07-16 11:21:01,215 
+2021-07-16 11:21:01,231 Starting the main sequence (开始主反应序列)
+2021-07-16 11:21:01,231 Reaction No. 1 of 2, (tracking number: 07/16/2021/11:21/1)
+2021-07-16 11:21:01,246 Transfer Phenethylamine (pure_liquid, 0.0109 mL) from vial@ (B2, A3), to reactor@ A1 ...
+2021-07-16 11:21:01,309 Transfer Cyclobutanone (pure_liquid, 0.0152 mL) from vial@ (C2, A2), to reactor@ A1 ...
+2021-07-16 11:21:01,394  
+2021-07-16 11:21:01,410 Reaction No. 2 of 2, (tracking number: 07/16/2021/11:21/2)
+2021-07-16 11:21:01,410 Transfer Isopropylaniline (pure_liquid, 0.0109 mL) from vial@ (B2, B1), to reactor@ A2 ...
+2021-07-16 11:21:01,472 Transfer Benzaldehyde (pure_liquid, 0.0102 mL) from vial@ (C2, A3), to reactor@ A2 ...
+2021-07-16 11:21:01,550  
+2021-07-16 11:21:01,566 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-07-16 11:21:01,582 Transfer NaBH3CN (solution, 0.5 mL) from vial@ (A2, A1) to reactor@ A1
+2021-07-16 11:21:01,661 Transfer NaBH3CN (solution, 0.5 mL) from vial@ (A2, A1) to reactor@ A2
+2021-07-16 11:21:01,755 *Finished*
+
+2021-07-16 11:21:01,770 Synthesis plan was parsed successfully! All reagents have been located.
+2021-07-16 11:21:01,770 Required plates: plate_50mL:003, plate_10mL:001, plate_50mL:001, plate_10mL:002
+
+2021-07-16 11:21:01,786 End of simulation..................................................................
+
+2021-07-16 11:21:09,370 Start running...........................................................................
+2021-07-16 11:21:09,386 Running in the saver mode （节省模式启动）
+2021-07-16 11:21:09,386 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-07-16 11:24:28,431 Com ports: xy_port= COM8, z_port= COM15, modbus_port= COM16, pipette_port= COM11
+2021-07-16 11:24:29,675 Z-platform connected
+2021-07-16 11:24:30,694 E-pipette connected
+2021-07-16 11:32:59,258 Simulation mode （模拟运行模式）..........................................................
+2021-07-16 11:32:59,258 Running in the saver mode （节省模式启动）
+2021-07-16 11:32:59,274 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-07-16 11:32:59,274 Transfer AcOH (pure_liquid, 0.0057 mL) from vial@ (C2, C1) to reactor@ A1
+2021-07-16 11:32:59,336 Transfer AcOH (pure_liquid, 0.0067 mL) from vial@ (C2, C1) to reactor@ A2
+2021-07-16 11:32:59,414 Transfer MeOH (pure_liquid, 0.5 mL) from vial@ (B4, B2) to reactor@ A1
+2021-07-16 11:32:59,492 Transfer MeOH (pure_liquid, 0.6 mL) from vial@ (B4, B2) to reactor@ A2
+2021-07-16 11:32:59,571 
+2021-07-16 11:32:59,571 Starting the main sequence (开始主反应序列)
+2021-07-16 11:32:59,586 Reaction No. 1 of 2, (tracking number: 07/16/2021/11:32/1)
+2021-07-16 11:32:59,586 Transfer Phenethylamine (pure_liquid, 0.0109 mL) from vial@ (B2, A3), to reactor@ A1 ...
+2021-07-16 11:32:59,649 Transfer Cyclobutanone (pure_liquid, 0.0152 mL) from vial@ (C2, A2), to reactor@ A1 ...
+2021-07-16 11:32:59,727  
+2021-07-16 11:32:59,742 Reaction No. 2 of 2, (tracking number: 07/16/2021/11:32/2)
+2021-07-16 11:32:59,742 Transfer Isopropylaniline (pure_liquid, 0.0109 mL) from vial@ (B2, B1), to reactor@ A2 ...
+2021-07-16 11:32:59,805 Transfer Benzaldehyde (pure_liquid, 0.0102 mL) from vial@ (C2, A3), to reactor@ A2 ...
+2021-07-16 11:32:59,883  
+2021-07-16 11:32:59,899 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-07-16 11:32:59,914 Transfer NaBH3CN (solution, 0.5 mL) from vial@ (A2, A1) to reactor@ A1
+2021-07-16 11:32:59,977 Transfer NaBH3CN (solution, 0.5 mL) from vial@ (A2, A1) to reactor@ A2
+2021-07-16 11:33:00,039 *Finished*
+
+2021-07-16 11:33:00,039 Synthesis plan was parsed successfully! All reagents have been located.
+2021-07-16 11:33:00,055 Required plates: plate_50mL:003, plate_10mL:002, plate_50mL:001, plate_10mL:001
+
+2021-07-16 11:33:00,055 End of simulation..................................................................
+
+2021-07-16 11:33:08,536 Start running...........................................................................
+2021-07-16 11:33:08,568 Running in the saver mode （节省模式启动）
+2021-07-16 11:33:08,568 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-07-16 11:33:20,086 Transfer AcOH (pure_liquid, 0.0057 mL) from vial@ (C2, C1) to reactor@ A1
+2021-07-16 11:33:44,135 Transfer AcOH (pure_liquid, 0.0067 mL) from vial@ (C2, C1) to reactor@ A2
+2021-07-16 11:34:28,782 Transfer MeOH (pure_liquid, 0.5 mL) from vial@ (B4, B2) to reactor@ A1
+2021-07-16 11:34:29,138 Paused ......
+
+2021-07-16 11:43:40,586 Com ports: xy_port= COM8, z_port= COM15, modbus_port= COM16, pipette_port= COM11
+2021-07-16 11:43:41,834 Z-platform connected
+2021-07-16 11:43:42,851 E-pipette connected

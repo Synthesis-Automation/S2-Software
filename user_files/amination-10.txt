@@ -1,0 +1,8 @@
+# No space in names, ',' as seperator, 'mL' for liquids, 'mmol' for solids, program ignores chemical name start with '$'. 
+# reductive amination, ref: Synthesis 2019, 51, A-K
+# Conditions: Amine (0.1 mmol), AcOH (0.1 mmol, 1.0 equiv), MeOH (1.0 mL), carbonyl compound (0.1 mmol, 1.0 equiv), then NaBH3CN (0.2 mmol, 2.0 equiv, 0.4 M in MeOH solution, 0.5 mL), rt for overnight, workup (diluted by water and extracted using DCM). (Note: we change to dilution using 10% Nacl solution and extraction using MeOtBu). 
+# AcOH (FW 60, density 1.05), NaBH3CN (FW 62.8, 125.6 mg in 5mL MeOH, 0.4 M), benzylamine (FW 107.15, density 0.98)
+
+benzylamine (0.0109 mL), benzaldehyde (0.0102 mL)
+benzylamine (0.0109 mL), Pyran-4-amine (0.0102 mL)
+

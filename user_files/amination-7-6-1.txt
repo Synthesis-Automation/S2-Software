@@ -1,0 +1,21 @@
+AcOH (0.0057 mL), Phenethylamine (0.0109 mL), Cyclobutanone (0.0102 mL), NaBH3CN (0.5 mL),
+AcOH (0.0057 mL), Isopropylaniline (0.0109 mL), Benzaldehyde (0.0102 mL), NaBH3CN (0.5 mL),
+AcOH (0.0057 mL), Aniline (0.0109 mL), Hexanal (0.0102 mL), NaBH3CN (0.5 mL)
+AcOH (0.0057 mL), Pyran-4-amine (0.0109 mL), Benzaldehyde (0.0102 mL), NaBH3CN (0.5 mL),
+AcOH (0.0057 mL), Butylamine (0.0109 mL), Tolualdehyde (0.0102 mL), NaBH3CN (0.5 mL),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
