@@ -1,5 +1,5 @@
 {
-  "note": "refenrence is compared to conner of slot A1, Z is to deck surface, 37",
+  "Version": "1.0, note: refenrence is compared to conner of slot A1, Z is to deck surface",
   "max_robot_rows": 3,
   "max_robot_cols": 5,
   "col_offset": 140,
