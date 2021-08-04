@@ -1,6 +1,6 @@
 from chem_robox.robot.drivers.pipette import pipette_foreach
 import time
-pipette = pipette_foreach.Pipette('com11')
+pipette = pipette_foreach.Pipette('com8')
 pipette.connect()
 pipette.initialization()
 # pipette.increase_range()
@@ -14,19 +14,19 @@ pipette.initialization()
 # pipette.dispense()
 
 
-pipette.aspirate(volume=1100)
+# pipette.aspirate(volume=110)
 # pipette.dispense()
 
 
-# for i in range(100):
-#     print("Start testing...")
-#     pipette.initialization()
-#     res = pipette.is_tip_attached()
-#     pipette.aspirate(i*30)
-#     res = pipette.is_tip_attached()
-#     pipette.dispense()
-#     pipette.send_drop_tip_cmd()
-#     print(i)
+for i in range(100):
+    print("Start testing...")
+    pipette.initialization()
+    res = pipette.is_tip_attached()
+    pipette.aspirate(i*30)
+    res = pipette.is_tip_attached()
+    pipette.dispense()
+    pipette.send_drop_tip_cmd()
+    print(i)
 
 
 # for i in range(2000):

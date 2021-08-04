@@ -58,7 +58,6 @@
 AccelStepper stepper_Z3(1, X_STEP_PIN, X_DIR_PIN);
 AccelStepper stepper_Z2(1, Y_STEP_PIN, Y_DIR_PIN);
 AccelStepper stepper_Z1(1, Z_STEP_PIN, Z_DIR_PIN);
-
 //AccelStepper stepper_Z4(1, E0_STEP_PIN, E0_DIR_PIN);
 
 void setup()
@@ -107,7 +106,7 @@ void setup()
   digitalWrite(Y_ENABLE_PIN, LOW); // Enable driver
   digitalWrite(Z_DIR_PIN, LOW);
   digitalWrite(Z_ENABLE_PIN, LOW); // Enable driver
-//  digitalWrite(E0_DIR_PIN, LOW);               
+//  digitalWrite(E0_DIR_PIN, LOW);
 //  digitalWrite(E0_ENABLE_PIN, LOW); // Enable driver
 
   stepper_Z1.setMaxSpeed(3000);
@@ -206,7 +205,8 @@ void home_Z2()
 
 void home_Z3()
 {
-  long initial_homing = -1;
+  long initial_homing = -1; // Used to Home Stepper at startup
+
   while (digitalRead(X_MIN_PIN) == HIGH && initial_homing >= -1 * MAX_STEPS)
   { // Make the Stepper move until the switch is activated
     stepper_Z3.moveTo(initial_homing); // Set the position to move to
@@ -216,7 +216,7 @@ void home_Z3()
   stepper_Z3.setCurrentPosition(0);    // Set the current position as zero for now
   initial_homing = 1;
   while (digitalRead(X_MIN_PIN) == LOW)
-  { // Make the Stepper move unti9ijn  l the switch is deactivated
+  { // Make the Stepper move until the switch is deactivated
     stepper_Z3.moveTo(initial_homing);
     initial_homing++;
     stepper_Z3.run();

@@ -1,7 +1,7 @@
 from chem_robox.robot.drivers import serial_connection
 from chem_robox.robot.drivers.xy_platform import marlin_driver, smoothie_drivers
 from chem_robox import parameters
-MARLIN_SPEED_MULTIPLIER = 16
+MARLIN_SPEED_MULTIPLIER = 32
 
 class XY_platform():
     def __init__(self, port='', baudrate=115200, head_offsets={}, firmware="Smoothie"):
@@ -20,14 +20,10 @@ class XY_platform():
             self.motion_control = smoothie_drivers.SmoothieDriver()
         self.motion_control.connect(c)
         if self.firmware == "Marlin":
-            self.motion_control.set_steps_per_mm(axis = 'x', steps_per_mm = 2560)
-            self.motion_control.set_steps_per_mm(axis = 'y', steps_per_mm = 2560)
-            self.set_speed(x=500/MARLIN_SPEED_MULTIPLIER, y=500/MARLIN_SPEED_MULTIPLIER)
-            self.set_acceleration(x=100, y=100) # 100 is very stable
-        else:
-            self.motion_control.set_steps_per_mm(axis = 'x', steps_per_mm = 160)
-            self.set_speed(x=18, y=18)
-            self.set_acceleration(x=8000, y=6000) # 10000 will lose steps
+            self.motion_control.set_steps_per_mm(axis = 'x', steps_per_mm = 5120)
+            self.motion_control.set_steps_per_mm(axis = 'y', steps_per_mm = 5120)
+            self.set_speed(x=300/MARLIN_SPEED_MULTIPLIER, y=100/MARLIN_SPEED_MULTIPLIER)
+            self.set_acceleration(x=80, y=20) # 100 is stable
 
     def update(self, head_offsets={}):
         self.head_offsets = head_offsets
@@ -84,9 +80,13 @@ class XY_platform():
         return True
 
     def move(self, x=0, y=0, z=0, a=0, b=0):
-        # for smoothie driver
-        self.motion_control.move_head(
-            mode='relative', x=x/z, y=y/2, z=z, a=a, b=b)
+        x1 = self.get_position("x")
+        y1 = self.get_position("y")
+        print(x1, y1)
+        X = (x+x1)/MARLIN_SPEED_MULTIPLIER
+        Y = (y+y1)/MARLIN_SPEED_MULTIPLIER
+        print(X, Y)
+        self.motion_control.move_to(x=X, y=Y)
 
     def mosfet_engage(self, index):
         """

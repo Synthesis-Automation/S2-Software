@@ -21,7 +21,7 @@ class Z_platform(object):
         time.sleep(1)
         is_open = self.serial_connection.isOpen()
         if is_open:
-            logging.info("Z-platform connected")
+            print("Z-platform connected")
         else:
             logging.info("Z-platform failed to connect")
 
@@ -87,10 +87,10 @@ class Z_platform(object):
 
     # following is tablet functions
 
-    def pickup_tablet(self, z=10):
+    def pickup_tablet(self, z=100):
         # z is the how much mm the needle will go down to pick the tablet
         if self.stop_flag == False:
-            move = z*-1
+            move = z
             h = str(int(move*parameters.steps_per_mm_Z))  # h=32768 max
             cmd = 'pickup_tablet$' + h
             self.serial_connection.send_command(cmd)

@@ -27,13 +27,13 @@ class Robot(object):
         xy_platform_port="",
         z_platform_port="",
         pipette_port="",
-        modbus_port=""
+        gripper_port=""
     ):
         self.robot_config_file = Path("chem_robox/config/robot_config.json")
         self.xy_platform_port = xy_platform_port
         self.z_platform_port = z_platform_port
         self.pipette_port = pipette_port
-        self.modbus_port = modbus_port
+        self.gripper_port = gripper_port
         self.ready = False
         self.stop_flag = False
         self.is_connected = False
@@ -49,13 +49,31 @@ class Robot(object):
         usb_sn_xy_platform = self.robot_config["usb_serial_no"]["xy_platform"]
         usb_sn_z_platform = self.robot_config["usb_serial_no"]["z_platform"]
         usb_sn_pipette = self.robot_config["usb_serial_no"]["pipette"]
-        usb_sn_modbus = self.robot_config["usb_serial_no"]["modbus"]
-        self.modbus_port = get_port_by_serial_no(usb_sn_modbus)
+        usb_sn_gripper = self.robot_config["usb_serial_no"]["gripper"]
+
+        self.gripper_port = get_port_by_serial_no(usb_sn_gripper)
         self.pipette_port = get_port_by_serial_no(usb_sn_pipette)
         self.xy_platform_port = get_port_by_serial_no(usb_sn_xy_platform)
         self.z_platform_port = get_port_by_serial_no(usb_sn_z_platform)
-        usb_info = f"xy_port= {self.xy_platform_port}, z_port= {self.z_platform_port}, modbus_port= {self.modbus_port}, pipette_port= {self.pipette_port}"
+
+        # Convert a string to a hex nmuber (VID)
+        usb_vid_xy_platform = int(
+            self.robot_config["usb_serial_VID"]["xy_platform"], 16)
+        usb_vid_z_platform = int(
+            self.robot_config["usb_serial_VID"]["z_platform"], 16)
+        usb_vid_pipette = int(
+            self.robot_config["usb_serial_VID"]["pipette"], 16)
+        usb_vid_gripper = int(
+            self.robot_config["usb_serial_VID"]["gripper"], 16)
+
+        self.z_platform_port = get_port_by_VID(usb_vid_z_platform)
+        self.xy_platform_port = get_port_by_VID(usb_vid_xy_platform)
+        self.gripper_port = get_port_by_VID(usb_vid_gripper)
+        self.pipette_port = get_port_by_VID(usb_vid_pipette)
+        usb_info = f"xy_port= {self.xy_platform_port}, z_port= {self.z_platform_port}, gripper_port= {self.gripper_port}, pipette_port= {self.pipette_port}"
+        print(usb_info)
         logging.info("Com ports: " + usb_info)
+
         self.xy_platform = xy_platform.XY_platform(
             port=self.xy_platform_port,
             head_offsets=self.deck.head_offsets, firmware="Marlin"
@@ -65,7 +83,7 @@ class Robot(object):
             port=self.z_platform_port, head_offsets=self.deck.head_offsets)
         self.z_platform.connect()
         connection_485 = rs485_connection.RS485(
-            port=self.modbus_port, baudrate=115200)
+            port=self.gripper_port, baudrate=115200)
         self.gripper = gripper.Gripper(
             modbus_connection=connection_485, unit=GRIPPER_ID)
         self.pipette = pipette_foreach.Pipette(pipette_port=self.pipette_port)
@@ -80,8 +98,11 @@ class Robot(object):
 
     def home_all_z(self):
         '''home Z1, Z2 and Z3 together'''
+        print("Start to home Z-Capper...")
         self.z_platform.home(head=CAPPER)
+        print("Start to home Z-Tablet...")
         self.z_platform.home(head=TABLET)
+        print("Start to home Z-Liquid...")
         self.z_platform.home(head=LIQUID)
         self.back_to_safe_position_all()
 
@@ -631,7 +652,6 @@ class Robot(object):
 
 # misc funcitons
     # use mosfets to control the lights
-
 
     def green_light(self, state='on'):
         GREEN_MOSFET = 2

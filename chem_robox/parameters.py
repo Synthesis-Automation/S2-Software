@@ -11,6 +11,6 @@ CAPPER = "Z3"
 
 GRIPPER_ID = 1
 
-VERSION = "v 0.8"
+VERSION = "v 1.0"
 SYSTEM_NAME = "Open Automatic Chemical Synthesis Platform - ChemRobox"
 NEW_PLAN_HEADER = "# No space in names, ',' as seperator, 'mL' for liquids, 'mmol' for solids, program ignores chemical name start with '$'. \n\nCompound_A (0.005 mmol), Solvent_B (2 mL), Reaction-temperature (25.0 degree), Reaction-time (6.0 h)"

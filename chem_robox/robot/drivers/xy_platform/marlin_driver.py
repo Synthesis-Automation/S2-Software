@@ -67,19 +67,16 @@ class Marlin_driver(object):
     STEPS_PER_MM = 'M92'
 
     PUSH_SPEED = 'M120'
-    POP_SPEED = 'M121'
+    POP_SPEED = 'M121'  
 
     ABSOLUTE_POSITIONING = 'G90'
     RELATIVE_POSITIONING = 'G91'
 
-    MOSFET = [
-        {True: 'M41', False: 'M40'},
-        {True: 'M43', False: 'M42'},
-        {True: 'M45', False: 'M44'},
-        {True: 'M47', False: 'M46'},
-        {True: 'M49', False: 'M48'},
-        {True: 'M51', False: 'M50'}
-    ]
+    FAN_ON = "M106"  #Turn on the fan at 200/255 DC: M106 S200
+    FAN_OFF = "M107"
+    # M206 - Set Home Offsets M206 X10
+
+    # M220 - Set Feedrate Percentage: M220 S100
 
     """
     Serial port connection to talk to the device.
@@ -162,13 +159,8 @@ class Marlin_driver(object):
         self.send_command(cmd)
         self.wait_for_finish()
 
-    # def get_position(self):
-    #     return {
-    #         'current': self.get_current_position(),
-    #         'target': self.get_target_position()
-    #     }
-
     def get_current_position(self):
+        # return format: {"x": x, "y": y, "z": z, "a": a}
         self.send_command(self.GET_POSITION)
         current_string = self.readline_from_serial()
         self.wait_for_finish()

@@ -219,7 +219,6 @@ class Main(tk.Tk):
         path = os.path.realpath(logbook_folder)
         os.startfile(path)
 
-
     def empty_log_book(self):
         yes = messagebox.askyesno(
             "Info", "Are you sure to empty log book?")
@@ -263,7 +262,7 @@ class Connect_tab(ttk.Frame):
                 #     "Info", "Make sure it is safe to home robot, proceed?")
                 # if not yes:
                 #     return False
-                chem_robot.green_light("on")
+                # chem_robot.green_light("on")
                 chem_robot.home_xy()
                 chem_robot.move_to(head=TABLET, vial=(
                     "A3", "A1"), use_allow_list=False)
@@ -698,12 +697,12 @@ class Synthesis_tab(ttk.Frame):
                         return "stop"
                     output_msg = f"Add cap to reactor@ {reactor_vial[1]}"
                     self.information.display_msg(output_msg, start_over=False)
-                    if not simulation:                        
+                    if not simulation:
                         chem_robot.pickup_cap((cap_plate, cap_no))
                         self.cap_selection.next()
                     if chem_robot.check_stop_status() == "stop":
                         return "stop"
-                    if not simulation:                         
+                    if not simulation:
                         chem_robot.recap(reactor_vial)
                     if chem_robot.check_stop_status() == "stop":
                         return "stop"
@@ -845,9 +844,11 @@ class Synthesis_tab(ttk.Frame):
             if not retry:
                 return
         if not simulation:
-            self.information.display_msg("Start running...........................................................................")
+            self.information.display_msg(
+                "Start running...........................................................................")
         else:
-            self.information.display_msg("Simulation mode （模拟运行模式）..........................................................")
+            self.information.display_msg(
+                "Simulation mode （模拟运行模式）..........................................................")
 
         cap_plate = chem_robot.deck.get_plate_assignment("Reaction caps")
         reactor_plate = chem_robot.deck.get_current_reactor_slot()
@@ -1040,6 +1041,7 @@ class Synthesis_tab(ttk.Frame):
         self.information.display_msg(required_plate_list, start_over=False)
         end_msg = "End of simulation..................................................................\n"
         self.information.display_msg(end_msg, start_over=False)
+
 
 class Monitor_tab(ttk.Frame):
     def __init__(self, parent, tip_selection=None):

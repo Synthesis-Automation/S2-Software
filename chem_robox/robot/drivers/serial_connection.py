@@ -27,7 +27,6 @@ class Connection(object):
     def open(self):
         if self.serial_port.isOpen():
             self.serial_port.close()
-        # time.sleep(0.2)
         self.serial_port.open()
 
     def close(self):
@@ -84,35 +83,13 @@ class Connection(object):
         self.serial_port.write(data_string.encode())
         self.serial_port.flush()
 
-    def send_command(
-            self,
-            command):
+    def send_command(self, command):
         """
-        Sends a GCode command.  Keyword arguments will be automatically
-        converted to GCode syntax.
-
-        Returns a string with the Smoothie board's response
-        Empty string if no response from Smoothie
-
-        send_command(self.MOVE, x=100 y=100)
-        G0 X100 Y100
-
-        appends M400 if m400=True. This will cause smoothie to send 'ok'
-        only after it empties the queue (finishes making a move).
+        Sends a GCode command, adding a "\r\n" to the end. 
         """
-        #log.debug('sending {} command w/timeout = {}'.format(command, timeout))
-        # if not self.is_connected():
-        #     self.toggle_port()
-
-        # m400_cmd = 'M400' if m400 else ''
-
-        # args = ' '.join(['{}{}'.format(k, v) for k, v in kwargs.items()])
         cmd_line = command+"\r\n"
         self.flush_input()
         self.write_string(cmd_line)
-
-        # if read_after:
-        #     return self.readline_from_serial(timeout=timeout)
 
     def wait_for_finish(self):
         while True:
@@ -161,11 +138,11 @@ def get_all_ports():
 
 
 if __name__ == "__main__":
-    vid_xy_platform = 0x1D50
-    vid_z_platform = 0x1A86
+    vid_xy_platform = int("0x1D50", 16)
+    vid_z_platform = int("0x1A86", 16)
     vid_pipette = 0x10C4  # CP210x
     vid_modbus = 0x10C4  # CP210x, PID 0xEA60, DTECH
-    vid_waveshare = 0x0403  # FT232, PID 0x6001
+    vid_waveshare = 0x0403  # FT232
     vid_ika = 0x0483
 
     sn_pipette = '8C9CF2DFF27FEA119526CA1A09024092'
@@ -183,16 +160,10 @@ if __name__ == "__main__":
     #     print(d.vid, d.pid, d.device, d.serial_number)
 
     get_all_ports()
-    # sn_waveshare = "AH0704GQA"
-    # sn = "14014012AF6998A25E3FFDBCF50020C0"
-    # sn_ugreen = "AR0KH8VEA"
-    # sn_z_tek = "FT9L1TAQA"
-    # sn_iocrest = "DA005415A"
-    # com_port = get_port_by_serial_no(sn_ugreen)
-    # print(com_port)
 
     xy_platform_port = get_port_by_VID(vid_xy_platform)
     z_platform_port = get_port_by_VID(vid_z_platform)
+    print("z_platform_port:", z_platform_port)
     # modbus_port = get_port_by_VID(vid_modbus)
     # pipette_port = get_port_by_VID(vid_pipette)
     modbus_port = get_port_by_serial_no(sn_modbus)

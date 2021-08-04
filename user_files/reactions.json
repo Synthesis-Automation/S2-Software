@@ -1,6 +1,6 @@
 [
     {
-        "tracking_number": "07/16/2021/11:33/1",
+        "tracking_number": "08/04/2021/15:46/1",
         "reactor_no": 1,
         "addition_temperature": 25,
         "reaction_time": 1,
@@ -20,58 +20,6 @@
                 "plate": "plate_50mL:001",
                 "position": "B2",
                 "amount": 0.5,
-                "is_volatile": "yes"
-            },
-            {
-                "name": "Phenethylamine",
-                "type": "pure_liquid",
-                "plate": "plate_10mL:002",
-                "position": "A3",
-                "amount": 0.0109,
-                "is_volatile": "no"
-            },
-            {
-                "name": "Cyclobutanone",
-                "type": "pure_liquid",
-                "plate": "plate_10mL:001",
-                "position": "A2",
-                "amount": 0.0152,
-                "is_volatile": "no"
-            },
-            {
-                "name": "NaBH3CN",
-                "type": "solution",
-                "plate": "plate_50mL:003",
-                "position": "A1",
-                "amount": 0.5,
-                "is_volatile": "yes"
-            }
-        ],
-        "workup": {
-            "name": "None"
-        }
-    },
-    {
-        "tracking_number": "07/16/2021/11:33/2",
-        "reactor_no": 2,
-        "addition_temperature": 25,
-        "reaction_time": 1,
-        "reaction_temperature": 25,
-        "reagents": [
-            {
-                "name": "AcOH",
-                "type": "pure_liquid",
-                "plate": "plate_10mL:001",
-                "position": "C1",
-                "amount": 0.0067,
-                "is_volatile": "no"
-            },
-            {
-                "name": "MeOH",
-                "type": "pure_liquid",
-                "plate": "plate_50mL:001",
-                "position": "B2",
-                "amount": 0.6,
                 "is_volatile": "yes"
             },
             {

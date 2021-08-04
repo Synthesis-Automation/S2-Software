@@ -2,7 +2,7 @@ import time
 from chem_robox.robot.drivers import rs485_connection
 from chem_robox.robot.drivers.rs485.vince import vince
 
-connection = rs485_connection.RS485(port='com6', baudrate=115200)
+connection = rs485_connection.RS485(port='com10', baudrate=115200)
 
 motor = vince.vince(modbus_connection = connection, unit=7)
 time.sleep(0.1)
@@ -17,7 +17,7 @@ motor.move_to(0)
 # time.sleep(3)
 # # motor.disable_motor()
 
-# for i in range(100):
-#     s = motor.read_state()
-#     print(s)
-#     time.sleep(0.1)
+for i in range(1000):
+    s = motor.read_state()
+    print(s)
+

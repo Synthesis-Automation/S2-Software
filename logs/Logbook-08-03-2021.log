@@ -1,0 +1,18 @@
+2021-08-03 15:07:58,066 Com ports: xy_port= None, z_port= None, modbus_port= None, pipette_port= com9
+2021-08-03 15:22:23,800 Com ports: xy_port= com4, z_port= com7, modbus_port= com8, pipette_port= com9
+2021-08-03 15:22:25,848 Z-platform connected
+2021-08-03 15:22:27,258 E-pipette connected
+2021-08-03 15:24:59,579 Com ports: xy_port= com4, z_port= com7, modbus_port= com8, pipette_port= com9
+2021-08-03 15:25:01,651 Z-platform connected
+2021-08-03 15:25:03,029 E-pipette connected
+2021-08-03 15:28:41,085 Com ports: xy_port= com4, z_port= com7, modbus_port= com8, pipette_port= com9
+2021-08-03 15:28:43,144 Z-platform connected
+2021-08-03 15:28:44,308 E-pipette connected
+2021-08-03 15:36:39,334 Com ports: xy_port= com4, z_port= com7, modbus_port= com8, pipette_port= com9
+2021-08-03 15:36:41,409 Z-platform connected
+2021-08-03 15:36:42,787 E-pipette connected
+2021-08-03 15:38:06,093 Com ports: xy_port= com4, z_port= com7, modbus_port= com8, pipette_port= com9
+2021-08-03 15:38:09,305 E-pipette connected
+2021-08-03 15:39:46,924 Com ports: xy_port= com4, z_port= com7, modbus_port= com8, pipette_port= com9
+2021-08-03 15:42:47,399 Com ports: xy_port= com4, z_port= com7, modbus_port= com8, pipette_port= com9
+2021-08-03 15:43:26,984 Com ports: xy_port= com4, z_port= com7, modbus_port= com8, pipette_port= com9

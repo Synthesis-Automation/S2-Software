@@ -17,9 +17,10 @@ class Pipette(object):
         time.sleep(1)
         is_open = self.serial_connection.isOpen()
         if is_open:
-            logging.info("E-pipette connected")
+            print("E-pipette connected")
         else:
             logging.info("E-pipette failed to connect")
+            print("E-pipette failed to connect")
 
     def wait_for_response(self):
         while True:
