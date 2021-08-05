@@ -1,9 +1,0 @@
-2021-07-15 19:49:30,160 Com ports: xy_port= None, z_port= None, modbus_port= None, pipette_port= None
-2021-07-15 19:49:32,311 Com ports: xy_port= None, z_port= None, modbus_port= None, pipette_port= None
-2021-07-15 22:41:07,269 System not ready, run in the simulation mode:
-
-2021-07-15 22:41:07,786 Run 1 of 1, sampling 0.005 mL from reactor A1 to GC/LC vial at A1
-2021-07-15 22:41:08,801 Sampling competed, starting to add dilution solvent...
-2021-07-15 22:41:08,806 Run 1 of 1, adding dilution solvent MeOH 0.8 mL to GC/LC vial at A1
-2021-07-15 22:41:09,828 *Finished*
-

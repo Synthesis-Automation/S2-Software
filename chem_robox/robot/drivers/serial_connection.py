@@ -100,21 +100,21 @@ class Connection(object):
                 print("error occurs (serial port)")
                 return(False)
 
-    def wait_for_pipette(self, model="hamilton"):
-        '''Wait unitl hamilton pipette send back its response'''
-        if model == "hamilton":
-            while True:
-                msg = self.readline_string()
-                print(msg)
-                error_code = msg.split("er", 1)[-1]
-                if error_code == 0:
-                    print('Pipette response OK')
-                    return(msg)
-                elif 'er' in msg:
-                    print("error code: ", error_code)
-                    return(error_code)
-                if 'id' in msg:
-                    return msg
+    # def wait_for_pipette(self, model="hamilton"):
+    #     '''Wait unitl hamilton pipette send back its response'''
+    #     if model == "hamilton":
+    #         while True:
+    #             msg = self.readline_string()
+    #             print(msg)
+    #             error_code = msg.split("er", 1)[-1]
+    #             if error_code == 0:
+    #                 print('Pipette response OK')
+    #                 return(msg)
+    #             elif 'er' in msg:
+    #                 print("error code: ", error_code)
+    #                 return(error_code)
+    #             if 'id' in msg:
+    #                 return msg
 
 
 def get_port_by_VID(vid):
