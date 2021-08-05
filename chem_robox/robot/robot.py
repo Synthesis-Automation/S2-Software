@@ -155,20 +155,18 @@ class Robot(object):
             self.stop_flag = stop
 
     def back_to_safe_position(self, head):
-        if self.ready:
-            if head == CAPPER:
-                safe_position = 5
-            if head == LIQUID:
-                safe_position = 5
-            if head == TABLET:
-                safe_position = 35
-            self.z_platform.move_to_abs(head=head, z=safe_position)
+        if head == CAPPER:
+            safe_position = 85
+        if head == LIQUID:
+            safe_position = 5
+        if head == TABLET:
+            safe_position = 35
+        self.z_platform.move_to_abs(head=head, z=safe_position)
 
     def back_to_safe_position_all(self):
-        if self.ready:
-            self.back_to_safe_position(head=CAPPER)
-            self.back_to_safe_position(head=LIQUID)
-            self.back_to_safe_position(head=TABLET)
+        self.back_to_safe_position(head=CAPPER)
+        self.back_to_safe_position(head=LIQUID)
+        self.back_to_safe_position(head=TABLET)
 
     def move_to(self, head=CAPPER, vial=(), use_allow_list=True):
         # vial is a turple for vial location, e.g., ('A1', 'C2')

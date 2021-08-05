@@ -16,7 +16,7 @@ class Gripper():
         time.sleep(WAIT_TIME)
         self.rotate_position = 0
         self.set_gripper_force(99)
-        self.gripper_close(75)
+        self.gripper_close(35)
         self.rotate(720)
 
     def gripper_open(self, percent):  # percentage of gripper open

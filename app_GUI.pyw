@@ -268,6 +268,7 @@ class Connect_tab(ttk.Frame):
                     "A3", "A1"), use_allow_list=False)
                 chem_robot.gripper.initialization()
                 chem_robot.pipette.initialization()
+                chem_robot.back_to_safe_position_all()
                 chem_robot.ready = True
             self.status.configure(text="Robot Status: Ready",
                                   fg="green")
