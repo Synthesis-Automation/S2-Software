@@ -62,7 +62,7 @@ class Main(tk.Tk):
         self.log_menu.add_command(
             label="Open log book folder", command=lambda: self.open_log_book_folder())
 
-        self.menu.add_cascade(label="Log-book ", menu=self.log_menu)
+        self.menu.add_cascade(label="LogBook ", menu=self.log_menu)
 
         self.home_menu = Menu(self.menu, tearoff=0)
         self.home_menu.add_command(label="Home all axes",
@@ -71,12 +71,27 @@ class Main(tk.Tk):
                                    command=lambda: chem_robot.home_all_z())
         self.menu.add_cascade(label="Home-robot ", menu=self.home_menu)
 
-        self.reset_menu = Menu(self.menu, tearoff=0)
-        self.reset_menu.add_command(
+        self.pipette_menu = Menu(self.menu, tearoff=0)
+        self.pipette_menu.add_command(
             label="Reset pipette", command=lambda: chem_robot.pipette.initialization())
-        self.reset_menu.add_command(
+        # self.pipette_menu.add_command(
+        #     label="Reset gripper", command=lambda: chem_robot.gripper.initialization())
+        self.menu.add_cascade(label="Pipette  ", menu=self.pipette_menu)
+
+        self.gripper_menu = Menu(self.menu, tearoff=0)
+        self.gripper_menu.add_command(
             label="Reset gripper", command=lambda: chem_robot.gripper.initialization())
-        self.menu.add_cascade(label="Reset  ", menu=self.reset_menu)
+        self.gripper_menu.add_command(
+            label="Gripper open (100%)", command=lambda: chem_robot.gripper.gripper_open(100))
+        self.gripper_menu.add_command(
+            label="Gripper open (80%)", command=lambda: chem_robot.gripper.gripper_open(80))
+        self.gripper_menu.add_command(
+            label="Gripper open (50%)", command=lambda: chem_robot.gripper.gripper_open(50))                          
+        self.gripper_menu.add_command(
+            label="Gripper open (30%)", command=lambda: chem_robot.gripper.gripper_open(30))   
+        self.gripper_menu.add_command(
+            label="Gripper close", command=lambda: chem_robot.gripper.gripper_open(0))
+        self.menu.add_cascade(label="Gripper  ", menu=self.gripper_menu)
 
         self.calibration_menu = Menu(self.menu, tearoff=0)
         self.calibration_menu.add_command(
@@ -251,24 +266,24 @@ class Connect_tab(ttk.Frame):
             self, text="Robot Status: Not connected", fg="red", width=50)
         self.status.pack(side=tk.BOTTOM,  fill=tk.X)
 
-    def connect(self):
+    def connect(self, ask_before_homing = False):
         try:
             if not chem_robot.ready:
                 if not chem_robot.is_connected:
                     chem_robot.connect()
                     chem_robot.home_all_z()
                     chem_robot.is_connected = True
-                # yes = messagebox.askyesno(
-                #     "Info", "Make sure it is safe to home robot, proceed?")
-                # if not yes:
-                #     return False
+                if ask_before_homing:    
+                    yes = messagebox.askyesno(
+                        "Info", "Make sure it is safe to home robot, proceed?")
+                    if not yes:
+                        return False
                 # chem_robot.green_light("on")
                 chem_robot.home_xy()
                 chem_robot.move_to(head=TABLET, vial=(
                     "A3", "A1"), use_allow_list=False)
                 chem_robot.gripper.initialization()
                 chem_robot.pipette.initialization()
-                chem_robot.back_to_safe_position_all()
                 chem_robot.ready = True
             self.status.configure(text="Robot Status: Ready",
                                   fg="green")
