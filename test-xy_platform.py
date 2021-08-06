@@ -11,7 +11,7 @@ if __name__ == '__main__':
     my_deck = deck.Deck(robot_config)
     head_offsets = my_deck.head_offsets
 
-    USB_port = 'com5'
+    USB_port = 'com12'
     xy_platform = xy_platform.XY_platform(
         port=USB_port, head_offsets=head_offsets, firmware="Marlin")
     xy_platform.connect()
@@ -28,7 +28,7 @@ if __name__ == '__main__':
     # xy_platform.set_speed(x=50, y=50)
     # xy_platform.set_acceleration(x= 1000, y = 1000)
 
-    xy_platform.home('xy')
+    xy_platform.home('y')
     
 
     # Lower level control
@@ -43,33 +43,33 @@ if __name__ == '__main__':
     #     xyz = xy_platform.motion_control.get_current_position()
     #     print(xyz)
 
-    vial_1 = my_deck.vial(plate='R1', vial='A1')
+    # vial_1 = my_deck.vial(plate='R1', vial='A1')
+    # # vial_1 = {'x': 3.805, 'y': 1.9, 'z': 0, 'depth': 59.0, 'plate': 'R1', 'vial': 'A1', 'type': 'reactor_square_8mL_20p', 'height': 166.0, 'diameter': 18.0}
+    # # vial_2 = {'x': 600, 'y': 280, 'z': 0, 'depth': 59.0, 'plate': 'R1', 'vial': 'A1', 'type': 'reactor_square_8mL_20p', 'height': 166.0, 'diameter': 18.0}
     # vial_1 = {'x': 3.805, 'y': 1.9, 'z': 0, 'depth': 59.0, 'plate': 'R1', 'vial': 'A1', 'type': 'reactor_square_8mL_20p', 'height': 166.0, 'diameter': 18.0}
     # vial_2 = {'x': 600, 'y': 280, 'z': 0, 'depth': 59.0, 'plate': 'R1', 'vial': 'A1', 'type': 'reactor_square_8mL_20p', 'height': 166.0, 'diameter': 18.0}
-    vial_1 = {'x': 3.805, 'y': 1.9, 'z': 0, 'depth': 59.0, 'plate': 'R1', 'vial': 'A1', 'type': 'reactor_square_8mL_20p', 'height': 166.0, 'diameter': 18.0}
-    vial_2 = {'x': 600, 'y': 280, 'z': 0, 'depth': 59.0, 'plate': 'R1', 'vial': 'A1', 'type': 'reactor_square_8mL_20p', 'height': 166.0, 'diameter': 18.0}
-    vial_3 = {'x': 600, 'y': 1.9, 'z': 0, 'depth': 59.0, 'plate': 'R1', 'vial': 'A1', 'type': 'reactor_square_8mL_20p', 'height': 166.0, 'diameter': 18.0}
+    # vial_3 = {'x': 600, 'y': 1.9, 'z': 0, 'depth': 59.0, 'plate': 'R1', 'vial': 'A1', 'type': 'reactor_square_8mL_20p', 'height': 166.0, 'diameter': 18.0}
 
-    print(vial_2)
-    xy_platform.move_to(vial=vial_2)
-    for i in range(1):
-        xy_platform.move_to(vial=vial_3)
-        xy_platform.move_to(vial=vial_2)
+    # print(vial_2)
+    # xy_platform.move_to(vial=vial_2)
+    # for i in range(1):
+    #     xy_platform.move_to(vial=vial_3)
+    #     xy_platform.move_to(vial=vial_2)
     
 
-    for i in range(1):
-        xy_platform.move(x = -20)
-        xy_platform.move(x = 20)
+    # for i in range(1):
+    #     xy_platform.move(x = -20)
+    #     xy_platform.move(x = 20)
     
 
-    print('Done')
+    # print('Done')
 
-    # for i in range(10):
-    #     xy_platform.mosfet_engage(index_1)   # 2 is for the fan (top one)
-    #     time.sleep(0.5)
-    #     xy_platform.mosfet_disengage(index_1)
-    #     time.sleep(0.5)
-    #     xy_platform.mosfet_engage(index_2)   # 2 is for the fan (top one)
-    #     time.sleep(0.5)
-    #     xy_platform.mosfet_disengage(index_2)
-    #     time.sleep(0.5)
+    # # for i in range(10):
+    # #     xy_platform.mosfet_engage(index_1)   # 2 is for the fan (top one)
+    # #     time.sleep(0.5)
+    # #     xy_platform.mosfet_disengage(index_1)
+    # #     time.sleep(0.5)
+    # #     xy_platform.mosfet_engage(index_2)   # 2 is for the fan (top one)
+    # #     time.sleep(0.5)
+    # #     xy_platform.mosfet_disengage(index_2)
+    # #     time.sleep(0.5)

@@ -86,9 +86,9 @@ class Main(tk.Tk):
         self.gripper_menu.add_command(
             label="Gripper open (80%)", command=lambda: chem_robot.gripper.gripper_open(80))
         self.gripper_menu.add_command(
-            label="Gripper open (50%)", command=lambda: chem_robot.gripper.gripper_open(50))                          
+            label="Gripper open (50%)", command=lambda: chem_robot.gripper.gripper_open(50))
         self.gripper_menu.add_command(
-            label="Gripper open (30%)", command=lambda: chem_robot.gripper.gripper_open(30))   
+            label="Gripper open (30%)", command=lambda: chem_robot.gripper.gripper_open(30))
         self.gripper_menu.add_command(
             label="Gripper close", command=lambda: chem_robot.gripper.gripper_open(0))
         self.menu.add_cascade(label="Gripper  ", menu=self.gripper_menu)
@@ -266,14 +266,14 @@ class Connect_tab(ttk.Frame):
             self, text="Robot Status: Not connected", fg="red", width=50)
         self.status.pack(side=tk.BOTTOM,  fill=tk.X)
 
-    def connect(self, ask_before_homing = False):
+    def connect(self, ask_before_homing=False):
         try:
             if not chem_robot.ready:
                 if not chem_robot.is_connected:
                     chem_robot.connect()
                     chem_robot.home_all_z()
                     chem_robot.is_connected = True
-                if ask_before_homing:    
+                if ask_before_homing:
                     yes = messagebox.askyesno(
                         "Info", "Make sure it is safe to home robot, proceed?")
                     if not yes:
@@ -2118,8 +2118,28 @@ class Manual_control():
         self.cap_frame = tk.Frame(
             self.labelframe_z3, relief="ridge", bg="gray")
         self.cap_frame.grid(column=0, row=8, rowspan=2, columnspan=2)
-        slot_list = chem_robot.deck.get_vial_list_by_plate_type(
-            plate_type="caps")
+        slot_list = [
+            "A1",
+            "B1",
+            "C1",
+            "D1",
+            "A2",
+            "B2",
+            "C2",
+            "D2",
+            "A3",
+            "B3",
+            "C3",
+            "D3",
+            "A4",
+            "B4",
+            "C4",
+            "D4",
+            "A5",
+            "B5",
+            "C5",
+            "D5"
+        ]
         col_row = chem_robot.deck.get_cols_rows_by_plate_type(
             plate_type="caps")
         self.cap_selection = custom_widgets.Item_selection_on_screen(

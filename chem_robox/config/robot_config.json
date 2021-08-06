@@ -5,11 +5,7 @@
   "col_offset": 140,
   "row_offset": 100,
   "max_number_of_plate": 15,
-  "reference": {
-    "x": 160,
-    "y": 200,
-    "z": 144
-  },
+
   "slot_list": [
     "A1",
     "A2",
@@ -27,6 +23,13 @@
     "C4",
     "C5"
   ],
+
+  "reference": {
+    "x": 160,
+    "y": 200,
+    "z": 144
+  },
+
   "slots": {
     "A1": {
       "x": 6,
@@ -117,12 +120,7 @@
     "Cyclic 8 mL -20 positions",
     "Cyclic 8 mL -10 positions"
   ],
-  "reactor_slot_list": [
-    "R1",
-    "R2",
-    "R3",
-    "R4"
-  ],
+  "reactor_slot_list": ["R1", "R2", "R3", "R4"],
   "assignments": {
     "plate_5mL": "Reagent",
     "plate_10mL": "Reagent",
@@ -160,5 +158,4 @@
 
   "calibration_file_name": "chem_robox/config/calibration.json",
   "deck_config_file_name": "chem_robox/config/deck_config.json"
-
 }
