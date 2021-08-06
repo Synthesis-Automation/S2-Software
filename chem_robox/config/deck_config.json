@@ -24,7 +24,7 @@
         "assignment": "Not_used"
     },
     "B2": {
-        "plate": "plate_10mL:002",
+        "plate": "plate_10mL:001",
         "assignment": "Reagent"
     },
     "B3": {
@@ -44,16 +44,16 @@
         "assignment": "GC LC"
     },
     "C2": {
-        "plate": "plate_50mL:001",
-        "assignment": "Reagent"
+        "plate": "workup_8mL_20p:001",
+        "assignment": "Workup"
     },
     "C3": {
         "plate": "reactor_square_8mL_20p:001",
         "assignment": "Reactor"
     },
     "C4": {
-        "plate": "workup_8mL_20p:001",
-        "assignment": "Workup"
+        "plate": "not_used:002",
+        "assignment": "Not_used"
     },
     "C5": {
         "plate": "plate_5mL:001",

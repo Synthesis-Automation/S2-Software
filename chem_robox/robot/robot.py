@@ -267,7 +267,7 @@ class Robot(object):
             up_distance = 6
             gripper_closing_percent = 20
 
-        elif vial_type in ["reactor_circle_8mL_20p", "reactor_circle_8mL_10p", "reactor_square_8mL_20p"]:
+        elif vial_type in ["reactor_circle_8mL_20p", "reactor_circle_8mL_10p", "reactor_square_8mL_20p", "workup_8mL_20p"]:
             hold = -7
             rotation_speed = 99
             rotation_force = 90
@@ -347,7 +347,7 @@ class Robot(object):
                 rotation_angle = -2000
                 gripper_openning_percent = 70
 
-            if vial_type in ["reactor_circle_8mL_20p", "reactor_circle_8mL_10p", "reactor_square_8mL_20p"]:
+            if vial_type in ["reactor_circle_8mL_20p", "reactor_circle_8mL_10p", "reactor_square_8mL_20p", "workup_8mL_20p"]:
                 adjustment = -3  # cap hold distance
                 rotation_speed = 60
                 rotation_force = 30
