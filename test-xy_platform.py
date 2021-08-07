@@ -28,7 +28,7 @@ if __name__ == '__main__':
     # xy_platform.set_speed(x=50, y=50)
     # xy_platform.set_acceleration(x= 1000, y = 1000)
 
-    xy_platform.home('y')
+    # xy_platform.home('y')
     
 
     # Lower level control
@@ -57,9 +57,9 @@ if __name__ == '__main__':
     #     xy_platform.move_to(vial=vial_2)
     
 
-    # for i in range(1):
-    #     xy_platform.move(x = -20)
-    #     xy_platform.move(x = 20)
+    for i in range(5):
+        xy_platform.move(y = 250)
+        xy_platform.move(y = -250)
     
 
     # print('Done')

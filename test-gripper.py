@@ -2,7 +2,7 @@ import time
 from chem_robox.robot.drivers import rs485_connection
 from chem_robox.robot.drivers.rs485.gripper import gripper
 
-connection = rs485_connection.RS485(port='com8', baudrate=115200)
+connection = rs485_connection.RS485(port='com7', baudrate=115200)
 
 my_gripper = gripper.Gripper(modbus_connection=connection, unit=1)
 
@@ -16,7 +16,7 @@ my_gripper.rotate(300)
 my_gripper.gripper_open(100)
 
 i = 1
-while i<=5000:
+while i<=2000:
     ok = my_gripper.is_rotation_ok()
     print(i, ok)
     i = i+1

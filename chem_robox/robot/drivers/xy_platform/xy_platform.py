@@ -82,10 +82,8 @@ class XY_platform():
     def move(self, x=0, y=0, z=0, a=0, b=0):
         x1 = self.get_position("x")
         y1 = self.get_position("y")
-        print(x1, y1)
         X = (x+x1)/MARLIN_SPEED_MULTIPLIER
         Y = (y+y1)/MARLIN_SPEED_MULTIPLIER
-        print(X, Y)
         self.motion_control.move_to(x=X, y=Y)
 
     def mosfet_engage(self, index):

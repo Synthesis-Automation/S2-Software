@@ -13,7 +13,7 @@ my_deck = deck.Deck(robot_config)
 head_offsets = my_deck.head_offsets
 deck = deck.Deck(robot_config)
 
-z_platform = z_platform.Z_platform(port='com4', head_offsets=deck.head_offsets)
+z_platform = z_platform.Z_platform(port='com13', head_offsets=deck.head_offsets)
 z_platform.connect()
 
 
@@ -30,13 +30,13 @@ z_platform.pickup_tablet()
 input("pickup")
 z_platform.drop_tablet()
 DISTANCE = 200
-for i in range(5):
-    z_platform.move(head="Z1", z=-1*DISTANCE)
-    z_platform.move(head="Z1", z=DISTANCE)
-    z_platform.move(head="Z2", z=-1*DISTANCE)
-    z_platform.move(head="Z2", z=DISTANCE)
-    z_platform.move(head="Z3", z=-1*DISTANCE)
-    z_platform.move(head="Z3", z=DISTANCE)
+# for i in range(5):
+#     z_platform.move(head="Z1", z=-1*DISTANCE)
+#     z_platform.move(head="Z1", z=DISTANCE)
+#     z_platform.move(head="Z2", z=-1*DISTANCE)
+#     z_platform.move(head="Z2", z=DISTANCE)
+#     z_platform.move(head="Z3", z=-1*DISTANCE)
+#     z_platform.move(head="Z3", z=DISTANCE)
 
 # z_platform.move_to_abs(head="Z2", z=3)
 
