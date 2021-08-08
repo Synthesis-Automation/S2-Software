@@ -144,7 +144,7 @@
   },
 
   "usb_serial_VID": {
-    "xy_platform": ["0x1D50", "0x0483", "0x067B"],
+    "xy_platform": ["0x1D50", "0x0483"],
     "z_platform": ["0x1A86"],
     "pipette": ["0x0403"],
     "gripper": ["0x067B"]
