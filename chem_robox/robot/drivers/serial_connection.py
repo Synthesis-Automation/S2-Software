@@ -100,29 +100,18 @@ class Connection(object):
                 print("error occurs (serial port)")
                 return(False)
 
-    # def wait_for_pipette(self, model="hamilton"):
-    #     '''Wait unitl hamilton pipette send back its response'''
-    #     if model == "hamilton":
-    #         while True:
-    #             msg = self.readline_string()
-    #             print(msg)
-    #             error_code = msg.split("er", 1)[-1]
-    #             if error_code == 0:
-    #                 print('Pipette response OK')
-    #                 return(msg)
-    #             elif 'er' in msg:
-    #                 print("error code: ", error_code)
-    #                 return(error_code)
-    #             if 'id' in msg:
-    #                 return msg
-
-
 def get_port_by_VID(vid):
     '''Returns first serial device with a given VID'''
     for d in serial.tools.list_ports.comports():
         if d.vid == vid:
             return d[0]
 
+def get_port_by_VID_list(vid_string_list):
+    '''Returns first serial device with a VID list, VID was given as hex string, e.g. '0x126b' '''
+    for d in serial.tools.list_ports.comports():
+        for vid in vid_string_list:
+            if d.vid == int(vid ,16):
+                return d[0]
 
 def get_port_by_serial_no(sn):
     '''Returns first serial device with a given serial_no'''
@@ -144,6 +133,7 @@ if __name__ == "__main__":
     vid_modbus = 0x10C4  # CP210x, PID 0xEA60, DTECH
     vid_waveshare = 0x0403  # FT232
     vid_ika = 0x0483
+    vid_list = ["0x1D50", "0x067B"]
 
     sn_pipette = '8C9CF2DFF27FEA119526CA1A09024092'
     sn_modbus = 'D2B376D8C37FEA11A2BCCA1A09024092'
@@ -171,3 +161,6 @@ if __name__ == "__main__":
 
     usb_info = f"xy_port= {xy_platform_port}, z_port= {z_platform_port}, modbus_port= {modbus_port}, pipette_port= {pipette_port}"
     print(usb_info)
+
+    usb_port = get_port_by_VID_list(vid_list)
+    print(usb_port)

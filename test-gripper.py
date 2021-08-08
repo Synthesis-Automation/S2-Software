@@ -1,8 +1,16 @@
 import time
 from chem_robox.robot.drivers import rs485_connection
 from chem_robox.robot.drivers.rs485.gripper import gripper
+from chem_robox.robot.drivers.serial_connection import get_port_by_VID_list, get_port_by_serial_no
+from pathlib import Path
+import json
 
-connection = rs485_connection.RS485(port='com7', baudrate=115200)
+robot_config_file = Path("chem_robox/config/robot_config.json")
+with open(robot_config_file) as config:
+    robot_config = json.load(config)
+usb_vid_gripper = robot_config["usb_serial_VID"]["gripper"]
+gripper_port = get_port_by_VID_list(usb_vid_gripper)
+connection = rs485_connection.RS485(port=gripper_port, baudrate=115200)
 
 my_gripper = gripper.Gripper(modbus_connection=connection, unit=1)
 

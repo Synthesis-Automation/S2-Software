@@ -74,8 +74,8 @@ class Main(tk.Tk):
         self.pipette_menu = Menu(self.menu, tearoff=0)
         self.pipette_menu.add_command(
             label="Reset pipette", command=lambda: chem_robot.pipette.initialization())
-        # self.pipette_menu.add_command(
-        #     label="Reset gripper", command=lambda: chem_robot.gripper.initialization())
+        self.pipette_menu.add_command(
+            label="Eject tip", command=lambda: chem_robot.pipette.send_drop_tip_cmd())
         self.menu.add_cascade(label="Pipette  ", menu=self.pipette_menu)
 
         self.gripper_menu = Menu(self.menu, tearoff=0)

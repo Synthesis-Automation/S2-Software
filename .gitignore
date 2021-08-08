@@ -1,5 +1,3 @@
-chem_robox\config
+chem_robox\config\calibration.json
 !\*.pyc
 !*.pyc
-
-

@@ -1,5 +1,5 @@
 from chem_robox.robot.drivers.pipette import pipette_foreach
-from chem_robox.robot.drivers.serial_connection import get_port_by_VID, get_port_by_serial_no
+from chem_robox.robot.drivers.serial_connection import get_port_by_VID_list, get_port_by_serial_no
 from pathlib import Path
 import json
 from chem_robox.deck import deck
@@ -10,9 +10,8 @@ with open(robot_config_file) as config:
 my_deck = deck.Deck(robot_config)
 
 # Convert a string to a hex nmuber (VID)
-usb_vid_pipette = int(
-    robot_config["usb_serial_VID"]["pipette"], 16)
-pipette_port = get_port_by_VID(usb_vid_pipette)
+usb_vid_pipette = robot_config["usb_serial_VID"]["pipette"]
+pipette_port = get_port_by_VID_list(usb_vid_pipette)
 
 pipette = pipette_foreach.Pipette(pipette_port)
 pipette.connect()

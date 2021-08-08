@@ -12,7 +12,7 @@ from chem_robox.robot.drivers.z_platform import z_platform
 from chem_robox.robot.drivers.rs485.gripper import gripper
 from chem_robox.robot.drivers import rs485_connection
 from chem_robox.robot.drivers.pipette import pipette_foreach
-from chem_robox.robot.drivers.serial_connection import get_port_by_VID, get_port_by_serial_no
+from chem_robox.robot.drivers.serial_connection import get_port_by_VID, get_port_by_VID_list, get_port_by_serial_no
 from chem_robox.deck import deck
 
 # Defined in parameters.py; CAPPER = 'Z1', TABLET = 'Z2', LOQUID = 'Z3'
@@ -44,39 +44,37 @@ class Robot(object):
         with open(self.robot_config_file) as config:
             self.robot_config = json.load(config)
 
-    def connect(self):
-        # find usb port name
-        usb_sn_xy_platform = self.robot_config["usb_serial_no"]["xy_platform"]
-        usb_sn_z_platform = self.robot_config["usb_serial_no"]["z_platform"]
-        usb_sn_pipette = self.robot_config["usb_serial_no"]["pipette"]
-        usb_sn_gripper = self.robot_config["usb_serial_no"]["gripper"]
+    def get_usb_ports(self):
+        # find usb port names
+        # usb_sn_xy_platform = self.robot_config["usb_serial_no"]["xy_platform"]
+        # usb_sn_z_platform = self.robot_config["usb_serial_no"]["z_platform"]
+        # usb_sn_pipette = self.robot_config["usb_serial_no"]["pipette"]
+        # usb_sn_gripper = self.robot_config["usb_serial_no"]["gripper"]
 
-        self.gripper_port = get_port_by_serial_no(usb_sn_gripper)
-        self.pipette_port = get_port_by_serial_no(usb_sn_pipette)
-        self.xy_platform_port = get_port_by_serial_no(usb_sn_xy_platform)
-        self.z_platform_port = get_port_by_serial_no(usb_sn_z_platform)
+        # self.gripper_port = get_port_by_serial_no(usb_sn_gripper)
+        # self.pipette_port = get_port_by_serial_no(usb_sn_pipette)
+        # self.xy_platform_port = get_port_by_serial_no(usb_sn_xy_platform)
+        # self.z_platform_port = get_port_by_serial_no(usb_sn_z_platform)
 
         # Convert a string to a hex nmuber (VID)
-        usb_vid_xy_platform = int(
-            self.robot_config["usb_serial_VID"]["xy_platform"], 16)
-        usb_vid_z_platform = int(
-            self.robot_config["usb_serial_VID"]["z_platform"], 16)
-        usb_vid_pipette = int(
-            self.robot_config["usb_serial_VID"]["pipette"], 16)
-        usb_vid_gripper = int(
-            self.robot_config["usb_serial_VID"]["gripper"], 16)
+        usb_vid_xy_platform = self.robot_config["usb_serial_VID"]["xy_platform"]
+        self.xy_platform_port = get_port_by_VID_list(usb_vid_xy_platform)
 
-        self.xy_platform_port = get_port_by_VID(usb_vid_xy_platform)
-        # for octpus
-        if not self.xy_platform_port:
-            self.xy_platform_port = get_port_by_VID(0x0483)
-        self.z_platform_port = get_port_by_VID(usb_vid_z_platform)
-        self.gripper_port = get_port_by_VID(usb_vid_gripper)
-        self.pipette_port = get_port_by_VID(usb_vid_pipette)
+        usb_vid_z_platform = self.robot_config["usb_serial_VID"]["z_platform"]
+        self.z_platform_port = get_port_by_VID_list(usb_vid_z_platform)
+
+        usb_vid_pipette = self.robot_config["usb_serial_VID"]["pipette"]
+        self.pipette_port = get_port_by_VID_list(usb_vid_pipette)
+
+        usb_vid_gripper = self.robot_config["usb_serial_VID"]["gripper"]
+        self.gripper_port = get_port_by_VID_list(usb_vid_gripper)
+
         usb_info = f"xy_port= {self.xy_platform_port}, z_port= {self.z_platform_port}, gripper_port= {self.gripper_port}, pipette_port= {self.pipette_port}"
         print(usb_info)
         logging.info("Com ports: " + usb_info)
 
+    def connect(self):
+        self.get_usb_ports()
         self.xy_platform = xy_platform.XY_platform(
             port=self.xy_platform_port,
             head_offsets=self.deck.head_offsets, firmware="Marlin"

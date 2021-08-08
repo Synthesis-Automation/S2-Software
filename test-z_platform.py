@@ -5,7 +5,7 @@ from pathlib import Path
 from chem_robox.robot.drivers.z_platform import z_platform
 from chem_robox import parameters
 from chem_robox.deck import deck
-from chem_robox.robot.drivers.serial_connection import get_port_by_VID, get_port_by_serial_no
+from chem_robox.robot.drivers.serial_connection import get_port_by_VID_list, get_port_by_serial_no
 
 robot_config_file = Path("chem_robox/config/robot_config.json")
 with open(robot_config_file) as config:
@@ -13,21 +13,8 @@ with open(robot_config_file) as config:
 my_deck = deck.Deck(robot_config)
 head_offsets = my_deck.head_offsets
 # Convert a string to a hex nmuber (VID)
-usb_vid_xy_platform = int(
-    robot_config["usb_serial_VID"]["xy_platform"], 16)
-usb_vid_z_platform = int(
-    robot_config["usb_serial_VID"]["z_platform"], 16)
-usb_vid_pipette = int(
-    robot_config["usb_serial_VID"]["pipette"], 16)
-usb_vid_gripper = int(
-    robot_config["usb_serial_VID"]["gripper"], 16)
-
-z_platform_port = get_port_by_VID(usb_vid_z_platform)
-xy_platform_port = get_port_by_VID(usb_vid_xy_platform)
-gripper_port = get_port_by_VID(usb_vid_gripper)
-pipette_port = get_port_by_VID(usb_vid_pipette)
-usb_info = f"xy_port= {xy_platform_port}, z_port= {z_platform_port}, gripper_port= {gripper_port}, pipette_port= {pipette_port}"
-print(usb_info)
+usb_vid_z_platform = robot_config["usb_serial_VID"]["z_platform"]
+z_platform_port = get_port_by_VID_list(usb_vid_z_platform)
 
 z_platform = z_platform.Z_platform(port=z_platform_port, head_offsets=head_offsets)
 z_platform.connect()
