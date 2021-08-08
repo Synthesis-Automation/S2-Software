@@ -66,8 +66,11 @@ class Robot(object):
         usb_vid_gripper = int(
             self.robot_config["usb_serial_VID"]["gripper"], 16)
 
-        self.z_platform_port = get_port_by_VID(usb_vid_z_platform)
         self.xy_platform_port = get_port_by_VID(usb_vid_xy_platform)
+        # for octpus
+        if not self.xy_platform_port:
+            self.xy_platform_port = get_port_by_VID(0x0483)
+        self.z_platform_port = get_port_by_VID(usb_vid_z_platform)
         self.gripper_port = get_port_by_VID(usb_vid_gripper)
         self.pipette_port = get_port_by_VID(usb_vid_pipette)
         usb_info = f"xy_port= {self.xy_platform_port}, z_port= {self.z_platform_port}, gripper_port= {self.gripper_port}, pipette_port= {self.pipette_port}"
