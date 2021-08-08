@@ -1,6 +1,20 @@
 from chem_robox.robot.drivers.pipette import pipette_foreach
-import time
-pipette = pipette_foreach.Pipette('com8')
+from chem_robox.robot.drivers.serial_connection import get_port_by_VID, get_port_by_serial_no
+from pathlib import Path
+import json
+from chem_robox.deck import deck
+
+robot_config_file = Path("chem_robox/config/robot_config.json")
+with open(robot_config_file) as config:
+    robot_config = json.load(config)
+my_deck = deck.Deck(robot_config)
+
+# Convert a string to a hex nmuber (VID)
+usb_vid_pipette = int(
+    robot_config["usb_serial_VID"]["pipette"], 16)
+pipette_port = get_port_by_VID(usb_vid_pipette)
+
+pipette = pipette_foreach.Pipette(pipette_port)
 pipette.connect()
 pipette.initialization()
 # pipette.increase_range()
@@ -18,7 +32,7 @@ pipette.initialization()
 # pipette.dispense()
 
 
-for i in range(100):
+for i in range(30):
     print("Start testing...")
     pipette.initialization()
     res = pipette.is_tip_attached()
