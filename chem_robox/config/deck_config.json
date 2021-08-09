@@ -1,11 +1,11 @@
 {
     "A1": {
-        "plate": "not_used:001",
-        "assignment": "Not_used"
+        "plate": "tiprack_50uL:001",
+        "assignment": "Tips 50uL"
     },
     "A2": {
-        "plate": "tiprack_1000uL:003",
-        "assignment": "Tips 1000uL"
+        "plate": "not_used:001",
+        "assignment": "Not_used"
     },
     "A3": {
         "plate": "trash:001",
@@ -20,8 +20,8 @@
         "assignment": "Reagent"
     },
     "B1": {
-        "plate": "not_used:001",
-        "assignment": "Not_used"
+        "plate": "tiprack_1000uL:001",
+        "assignment": "Tips 1000uL"
     },
     "B2": {
         "plate": "plate_50mL:001",
@@ -44,16 +44,16 @@
         "assignment": "GC LC"
     },
     "C2": {
-        "plate": "workup_8mL_20p:001",
-        "assignment": "Workup"
+        "plate": "not_used:001",
+        "assignment": "Not_used"
     },
     "C3": {
         "plate": "reactor_square_8mL_20p:001",
         "assignment": "Reactor"
     },
     "C4": {
-        "plate": "not_used:002",
-        "assignment": "Not_used"
+        "plate": "workup_8mL_20p:002",
+        "assignment": "Workup"
     },
     "C5": {
         "plate": "plate_5mL:001",

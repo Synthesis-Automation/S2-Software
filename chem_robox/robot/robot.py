@@ -174,7 +174,7 @@ class Robot(object):
         # the first ('A1') is for plate, the second ('C2') is for vial location
         # ("Reagent", "Reactor", "Workup", "Tips 1000uL", "Tips 50uL", "Trash", "Clean up", "Reaction caps", "GC LC")
         assignment = self.deck.get_assignment_of_slot(vial[0])
-        allowed_list = {CAPPER: ["Reactor", "Reagent", "Reaction caps"],
+        allowed_list = {CAPPER: ["Reactor", "Reagent", "Reaction caps", "Workup"],
                         LIQUID: ["Workup", "Reactor", "Tips 1000uL", "Tips 50uL", "Reagent", "GC LC", "Trash"],
                         TABLET: ["Reagent", "Reactor", "Clean up"]
                         }
@@ -280,7 +280,7 @@ class Robot(object):
             gripper_closing_percent = 20
 
         elif vial_type == "plate_50mL" or vial_type == "plate_10mL":
-            hold = -12
+            hold = -6
             rotation_speed = 70
             rotation_force = 90
             ratio = 5.0
@@ -379,7 +379,7 @@ class Robot(object):
                 gripper_openning_percent = 70
 
             if vial_type == "plate_50mL" or vial_type == "plate_10mL":
-                adjustment = -7  # cap hold distance
+                adjustment = -3  # cap hold distance
                 rotation_speed = 70
                 rotation_force = 30
                 ratio = 3
@@ -451,16 +451,18 @@ class Robot(object):
 
     def pickup_tablet(self, vial):
         if not self.ready:
+            print("Robot not ready!")
             return "not ready"
         self.move_to(head=TABLET, vial=vial)
         # self.move_to_top_of_vial(head=TABLET, vial=vial)
-        DEPTH = -84-82+5
+        DEPTH = (-84-82+5)*-1
         self.z_platform.pickup_tablet(z=DEPTH)
         self.back_to_safe_position(head=TABLET)
         return "finish"
 
     def drop_tablet(self, vial):
         if not self.ready:
+            print("Robot not ready!")
             return
         self.move_to(head=TABLET, vial=vial)
         self.move_to_top_of_vial(head=TABLET, vial=vial)

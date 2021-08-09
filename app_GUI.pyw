@@ -91,6 +91,8 @@ class Main(tk.Tk):
             label="Gripper open (30%)", command=lambda: chem_robot.gripper.gripper_open(30))
         self.gripper_menu.add_command(
             label="Gripper close", command=lambda: chem_robot.gripper.gripper_open(0))
+        self.gripper_menu.add_command(
+            label="Gripper rotate 90 degree", command=lambda: chem_robot.gripper.rotate(90))
         self.menu.add_cascade(label="Gripper  ", menu=self.gripper_menu)
 
         self.calibration_menu = Menu(self.menu, tearoff=0)
@@ -2165,12 +2167,14 @@ class Manual_control():
         slot = self.slot_selection.get_current(format="A1")
         vial = self.vial_selection.get_current(format="A1")
         vial_to = (slot, vial)
+        chem_robot.move_to(head=CAPPER, vial=vial_to)
         chem_robot.decap(vial=vial_to)
 
     def test_recap(self):
         slot = self.slot_selection.get_current(format="A1")
         vial = self.vial_selection.get_current(format="A1")
         vial_to = (slot, vial)
+        chem_robot.move_to(head=CAPPER, vial=vial_to)
         chem_robot.recap(vial=vial_to)
 
     def test_pickup_cap(self):

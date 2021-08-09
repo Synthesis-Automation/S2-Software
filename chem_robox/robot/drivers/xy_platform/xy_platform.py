@@ -60,7 +60,7 @@ class XY_platform():
         if self.firmware == "Marlin":
             pos = self.motion_control.get_current_position()
         else:
-            pos = self.motion_control.get_target_position()  # smoothie_pos
+            pos = self.motion_control.get_target_position()
         return pos
 
     def move_to(self, head='Z1', vial={}):

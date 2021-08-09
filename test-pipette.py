@@ -16,7 +16,7 @@ pipette_port = get_port_by_VID_list(usb_vid_pipette)
 pipette = pipette_foreach.Pipette(pipette_port)
 pipette.connect()
 pipette.initialization()
-# pipette.increase_range()
+pipette.increase_range()
 # pipette.send_pickup_tip_cmd()
 
 # res = pipette.is_tip_attached()
