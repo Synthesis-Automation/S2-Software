@@ -28,7 +28,26 @@ if __name__ == "__main__":
     chem_robot = robot.Robot()
     chem_robot.connect()
     chem_robot.home_all()
-    chem_robot.move_to(vial = ("R1", "A1"))
+
+    chem_robot.gripper.gripper_open(100)
+    vial_1 = ("C4", "A1")
+    chem_robot.move_to(head=CAPPER, vial=vial_1)
+    chem_robot.move_to_top_of_vial(head=CAPPER, vial=vial_1)
+
+    a = input("press any key")
+
+    vial_2 = ("C5", "A1")
+    chem_robot.move_to(head=CAPPER, vial=vial_2)
+    
+    chem_robot.move_to_top_of_vial(head=CAPPER, vial=vial_2)
+
+    a = input("press any key")
+
+    vial_3 = ("C2", "A1")
+    chem_robot.move_to(head=CAPPER, vial=vial_3)
+    chem_robot.move_to_top_of_vial(head=CAPPER, vial=vial_3)
+
+    # chem_robot.move_to(vial = ("R1", "A1"))
     # capper_test("B2", plate_type = "plate_5mL")
     # capper_test("C3", plate_type = "plate_8mL")
     # capper_test("A3", plate_type = "plate_40mL")

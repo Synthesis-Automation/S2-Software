@@ -20,11 +20,11 @@
         "assignment": "Reagent"
     },
     "B1": {
-        "plate": "tiprack_1000uL:001",
+        "plate": "tiprack_1000uL:002",
         "assignment": "Tips 1000uL"
     },
     "B2": {
-        "plate": "plate_50mL:001",
+        "plate": "plate_50mL:002",
         "assignment": "Reagent"
     },
     "B3": {
@@ -44,8 +44,8 @@
         "assignment": "GC LC"
     },
     "C2": {
-        "plate": "not_used:001",
-        "assignment": "Not_used"
+        "plate": "plate_50mL:001",
+        "assignment": "Reagent"
     },
     "C3": {
         "plate": "reactor_square_8mL_20p:001",

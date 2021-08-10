@@ -19,7 +19,7 @@
     "wells": {
         "A1": {
             "depth": 89.0,
-            "height": 186,
+            "height": 178,
             "volume": 4000,
             "shape": "circular",
             "diameter": 13.7,
@@ -29,7 +29,7 @@
         },
         "B1": {
             "depth": 89.0,
-            "height": 186,
+            "height": 178,
             "volume": 4000,
             "shape": "circular",
             "diameter": 13.7,
@@ -39,7 +39,7 @@
         },
         "A2": {
             "depth": 89.0,
-            "height": 186,
+            "height": 178,
             "volume": 4000,
             "shape": "circular",
             "diameter": 13.7,
@@ -49,7 +49,7 @@
         },
         "B2": {
             "depth": 89.0,
-            "height": 186,
+            "height": 178,
             "volume": 4000,
             "shape": "circular",
             "diameter": 13.7,
@@ -59,7 +59,7 @@
         },
         "A3": {
             "depth": 89.0,
-            "height": 186,
+            "height": 178,
             "volume": 4000,
             "shape": "circular",
             "diameter": 13.7,
@@ -69,7 +69,7 @@
         },
         "B3": {
             "depth": 89.0,
-            "height": 186,
+            "height": 178,
             "volume": 4000,
             "shape": "circular",
             "diameter": 13.7,

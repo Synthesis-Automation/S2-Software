@@ -41,7 +41,7 @@
     "wells": {
         "A1": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -51,7 +51,7 @@
         },
         "B1": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -61,7 +61,7 @@
         },
         "C1": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -71,7 +71,7 @@
         },
         "D1": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -81,7 +81,7 @@
         },
         "A2": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -91,7 +91,7 @@
         },
         "B2": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -101,7 +101,7 @@
         },
         "C2": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -111,7 +111,7 @@
         },
         "D2": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -121,7 +121,7 @@
         },
         "A3": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -131,7 +131,7 @@
         },
         "B3": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -141,7 +141,7 @@
         },
         "C3": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -151,7 +151,7 @@
         },
         "D3": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -161,7 +161,7 @@
         },
         "A4": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -171,7 +171,7 @@
         },
         "B4": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -181,7 +181,7 @@
         },
         "C4": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -191,7 +191,7 @@
         },
         "D4": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -201,7 +201,7 @@
         },
         "A5": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -211,7 +211,7 @@
         },
         "B5": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -221,7 +221,7 @@
         },
         "C5": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -231,7 +231,7 @@
         },
         "D5": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -241,7 +241,7 @@
         },
         "A6": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -251,7 +251,7 @@
         },
         "B6": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -261,7 +261,7 @@
         },
         "C6": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -271,7 +271,7 @@
         },
         "D6": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -281,7 +281,7 @@
         },
         "A7": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -291,7 +291,7 @@
         },
         "B7": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -301,7 +301,7 @@
         },
         "C7": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,
@@ -311,7 +311,7 @@
         },
         "D7": {
             "depth": 82,
-            "height": 173,
+            "height": 172,
             "volume": 4000,
             "shape": "circular",
             "diameter": 18.0,

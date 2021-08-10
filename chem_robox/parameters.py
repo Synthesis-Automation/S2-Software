@@ -3,7 +3,7 @@ LARGE_FONT = ("Verdana", 11)
 NORMAL_FONT = ("Verdana", 10)
 SMALL_FONT = ("Verdana", 9)
 
-steps_per_mm_Z = 50      # 8 mm, 2 microstepping: 2x200/8
+steps_per_mm_Z = 64      # 8 mm, 2 microstepping: 2x200/8
 
 LIQUID = "Z1"
 TABLET = "Z2"

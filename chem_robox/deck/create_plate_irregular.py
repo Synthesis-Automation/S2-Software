@@ -195,9 +195,14 @@ class Plate_circle(object):
 
 if __name__ == "__main__":
     my_plate = Plate_rect(name='caps', grid=(5, 4), offset=(
-        12.05, 12.82), column_offset_2=23.55, spacing=(23.0, 19.92), diameter=18.0, depth=59.0, height=156.0, volume=0)
+        23.55, 12.82), column_offset_2=12.05, spacing=(23.0, 19.92), diameter=18.0, depth=59.0, height=155.0, volume=0)
     my_plate.creat_plate()
     my_plate.save_plate_file()
+
+    # my_plate = Plate_rect(name='caps', grid=(5, 4), offset=(
+    #     12.05, 12.82), column_offset_2=23.55, spacing=(23.0, 19.92), diameter=18.0, depth=59.0, height=156.0, volume=0)
+    # my_plate.creat_plate()
+    # my_plate.save_plate_file()
 
     my_plate = Plate_rect(name='reactor_square_8mL_20p', grid=(5, 4), offset=(
         23.55, 12.82), column_offset_2=12.05, spacing=(23.0, 19.92), diameter=18.0, depth=59.0, height=166.0, volume=0)
@@ -205,7 +210,7 @@ if __name__ == "__main__":
     my_plate.save_plate_file()
 
     my_plate = Plate_rect(name='workup_8mL_20p', grid=(5, 4), offset=(
-        23.55, 12.82), column_offset_2=12.05, spacing=(23.0, 19.92), diameter=18.0, depth=59.0, height=136.0, volume=0)
+        23.55, 12.82), column_offset_2=12.05, spacing=(23.0, 19.92), diameter=18.0, depth=59.0, height=139.0, volume=0)
     my_plate.creat_plate()
     my_plate.save_plate_file()
 
