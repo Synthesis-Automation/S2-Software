@@ -292,7 +292,7 @@ class Connect_tab(ttk.Frame):
             self.connect_btn["state"] = "disabled"
         except Exception:
             messagebox.showinfo(
-                " ", "Connection failed, please check USB connection and try again.")
+                " ", "Connection failed, please \n1) check your USB connection; \n2) make sure that powder is on. \nAnd try again.")
 
     def run_thread(self):
         t = threading.Thread(target=self.connect)

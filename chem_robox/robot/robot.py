@@ -20,6 +20,9 @@ from chem_robox.parameters import CAPPER, LIQUID, TABLET, GRIPPER_ID
 # import tkinter as tk
 from chem_robox.tools import custom_widgets, helper
 
+# Gripper hold distance to the cap
+HOLD_DISTANCE = 10
+Z_NORMAL_SPEED = 3000 
 
 class Robot(object):
     def __init__(
@@ -56,7 +59,6 @@ class Robot(object):
         # self.xy_platform_port = get_port_by_serial_no(usb_sn_xy_platform)
         # self.z_platform_port = get_port_by_serial_no(usb_sn_z_platform)
 
-        # Convert a string to a hex nmuber (VID)
         usb_vid_xy_platform = self.robot_config["usb_serial_VID"]["xy_platform"]
         self.xy_platform_port = get_port_by_VID_list(usb_vid_xy_platform)
 
@@ -235,9 +237,10 @@ class Robot(object):
         my_vial = self.vial(vial[0], vial[1])
         vial_type = my_vial["type"]
         self.z_platform.set_max_speed(
-            head=CAPPER, speed=4000)  # normal Max speed = 4000
+            head=CAPPER, speed=Z_NORMAL_SPEED)  # normal Max speed = 3000
+  
         if vial_type == "reactor_27p":
-            hold = -11
+            # hold = -11
             rotation_speed = 80
             rotation_force = 90
             ratio = 6.0
@@ -247,18 +250,18 @@ class Robot(object):
             up_distance = 7
             gripper_closing_percent = 20
         elif vial_type == "plate_5mL":
-            hold = -12
+            # hold = -12
             rotation_speed = 40
             rotation_force = 90
             ratio = 7.0
             Z_speed = int(rotation_speed*ratio)
             rotation_angle = 1100
             gripper_openning_percent = 50
-            up_distance = rotation_angle/100
+            up_distance = 10
             gripper_closing_percent = 10
 
         elif vial_type == "reactor_12p":
-            hold = -7
+            # hold = -7
             rotation_speed = 70
             rotation_force = 90
             ratio = 5.0
@@ -268,16 +271,17 @@ class Robot(object):
             up_distance = 6
             gripper_closing_percent = 20
 
+        # 8-mL vial
         elif vial_type in ["reactor_circle_8mL_20p", "reactor_circle_8mL_10p", "reactor_square_8mL_20p", "workup_8mL_20p"]:
-            hold = -7
+            # hold = -7
             rotation_speed = 99
             rotation_force = 90
             ratio = 5.0
             Z_speed = int(rotation_speed*ratio)
             rotation_angle = 1500
             gripper_openning_percent = 75
-            up_distance = 6
             gripper_closing_percent = 20
+            up_distance = 6
 
         elif vial_type == "plate_50mL" or vial_type == "plate_10mL":
             hold = -6
@@ -292,10 +296,11 @@ class Robot(object):
         else:
             print("unknow cap type!")
             return "unknow cap"
+
         self.gripper.set_rotation_force(rotation_force)
         self.move_to(head=CAPPER, vial=vial)
         self.gripper.gripper_open(gripper_openning_percent)
-        self.move_to_top_of_vial(head=CAPPER, vial=vial, z=hold)
+        self.move_to_top_of_vial(head=CAPPER, vial=vial, z=HOLD_DISTANCE*-1)
         self.gripper.gripper_close(gripper_closing_percent)
         if vial_type == "plate_5mL":
             self.lock_vial_before_decap()
@@ -310,7 +315,7 @@ class Robot(object):
         self.z_platform.set_max_speed(head=CAPPER, speed=Z_speed)
         self.z_platform.move(head=CAPPER, z=up_distance)
         self.z_platform.set_max_speed(
-            head=CAPPER, speed=3000)  # normal Max speed = 3000
+            head=CAPPER, speed=Z_NORMAL_SPEED)  # normal Max speed = 3000
         self.back_to_safe_position(head=CAPPER)
         if self.gripper.is_gripper_holding():
             return "finish"
@@ -653,6 +658,7 @@ class Robot(object):
 
 # misc funcitons
     # use mosfets to control the lights
+
 
     def green_light(self, state='on'):
         GREEN_MOSFET = 2
