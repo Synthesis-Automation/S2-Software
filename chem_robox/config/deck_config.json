@@ -32,15 +32,15 @@
         "assignment": "Clean up"
     },
     "B4": {
-        "plate": "not_used:001",
-        "assignment": "Not_used"
+        "plate": "plate_10mL:001",
+        "assignment": "Reagent"
     },
     "B5": {
         "plate": "plate_5mL:002",
         "assignment": "Reagent"
     },
     "C1": {
-        "plate": "plate_GC_LC_2mL:001",
+        "plate": "plate_2mL:001",
         "assignment": "GC LC"
     },
     "C2": {

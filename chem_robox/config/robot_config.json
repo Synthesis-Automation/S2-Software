@@ -132,6 +132,7 @@
     "workup_8mL_20p": "Workup",
     "caps": "Reaction caps",
     "not_used": "Not_used",
+    "plate_2mL": "GC LC",
     "plate_GC_LC_2mL": "GC LC"
   },
   "pipette_model": "foreach",

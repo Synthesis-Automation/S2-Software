@@ -1,8 +1,8 @@
 {
     "note": " Z1, Z2, Z3 was used to store calibration for head Z1, Z2, Z3, Tips is the corridinate of tips",
     "A1": [
-        -0.539999999999992,
-        -1.199999999999994,
+        0,
+        0,
         125.0
     ],
     "A2": [
@@ -26,8 +26,8 @@
         0.0
     ],
     "B1": [
-        -1.1799999999999926,
-        -1.0400000000000063,
+        0,
+        0,
         136.0
     ],
     "B2": [
@@ -120,6 +120,6 @@
         0,
         141.8
     ],
-    "current_tip": 25,
+    "current_tip": 0,
     "current_tip_small": 0
 }
