@@ -1,16 +1,16 @@
 [
     {
-        "tracking_number": "08/13/2021/13:00/1",
+        "tracking_number": "08/13/2021/15:26/1",
         "reactor_no": 1,
         "addition_temperature": 25,
         "reaction_time": 6.0,
         "reaction_temperature": 25.0,
         "reagents": [
             {
-                "name": "KF",
+                "name": "CsF",
                 "type": "solid",
                 "plate": "plate_5mL:001",
-                "position": "A1",
+                "position": "D7",
                 "is_volatile": "no",
                 "amount": 1
             },
@@ -21,6 +21,14 @@
                 "position": "C4",
                 "amount": 0.5,
                 "is_volatile": "no"
+            },
+            {
+                "name": "water",
+                "type": "solution",
+                "plate": "plate_50mL:003",
+                "position": "B3",
+                "amount": 0.9,
+                "is_volatile": "no"
             }
         ],
         "workup": {
@@ -28,7 +36,7 @@
         }
     },
     {
-        "tracking_number": "08/13/2021/13:00/2",
+        "tracking_number": "08/13/2021/15:26/2",
         "reactor_no": 2,
         "addition_temperature": 25,
         "reaction_time": 6.0,

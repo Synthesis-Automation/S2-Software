@@ -1,333 +1,983 @@
-2021-08-13 12:00:19,966 Com ports: xy_port= COM5, z_port= COM16, gripper_port= COM6, pipette_port= COM9
-2021-08-13 12:06:40,348 Simulation mode （模拟运行模式）..........................................................
-2021-08-13 12:06:40,444 Reaction No. 1 of 2, (tracking number: 08/13/2021/12:06/1)
-2021-08-13 12:06:40,445 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A1 ...
-2021-08-13 12:06:40,499 Transfer liquid1 (pure_liquid, 0.04 mL) from vial@ (B4, C4), to reactor@ A1 ...
-2021-08-13 12:06:40,550 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
-2021-08-13 12:06:40,612 Add cap to reactor@ A1
-2021-08-13 12:06:40,612  
-2021-08-13 12:06:40,612 Reaction No. 2 of 2, (tracking number: 08/13/2021/12:06/2)
-2021-08-13 12:06:40,628 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
-2021-08-13 12:06:40,690 Transfer liquid1 (pure_liquid, 0.04 mL) from vial@ (B4, C4), to reactor@ A2 ...
-2021-08-13 12:06:40,753 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
-2021-08-13 12:06:40,815 Add cap to reactor@ A2
-2021-08-13 12:06:40,815  
-2021-08-13 12:06:40,815 *Finished*
+2021-08-13 13:54:27,325 Com ports: xy_port= COM5, z_port= COM16, gripper_port= COM6, pipette_port= COM9
+2021-08-13 13:55:33,992 Starting transfering...
+2021-08-13 13:55:51,766 Run 1 of 1, adding solvent NaCl-water 1.0 mL to reactor at A1 using tip E2
+2021-08-13 13:56:33,755 Starting transfering...
+2021-08-13 13:56:52,229 Run 1 of 1, adding solvent MeOtBu 1.0 mL to reactor at A1 using tip F2
+2021-08-13 13:57:52,219 *Finished*
 
-2021-08-13 12:06:40,831 Synthesis plan was parsed successfully! All reagents have been located.
-2021-08-13 12:06:40,831 Required plates: plate_10mL:001, plate_50mL:003, plate_5mL:001
+2021-08-13 13:59:24,933 Run 1 of 5, transfer cap for reactor@ A1
+2021-08-13 13:59:40,456 Run 2 of 5, transfer cap for reactor@ A2
+2021-08-13 13:59:56,463 Run 3 of 5, transfer cap for reactor@ A3
+2021-08-13 14:00:12,571 Run 4 of 5, transfer cap for reactor@ A4
+2021-08-13 14:00:28,661 Run 5 of 5, transfer cap for reactor@ A5
+2021-08-13 14:00:44,750 *Finished*
 
-2021-08-13 12:06:40,831 End of simulation..................................................................
+2021-08-13 14:15:07,794 Com ports: xy_port= COM5, z_port= COM16, gripper_port= COM6, pipette_port= COM9
+2021-08-13 14:17:14,321 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 14:17:14,336 Reaction No. 1 of 2, (tracking number: 08/13/2021/14:17/1)
+2021-08-13 14:17:14,336 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A1 ...
+2021-08-13 14:17:14,399 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 14:17:14,462 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
+2021-08-13 14:17:14,524 Add cap to reactor@ A1
+2021-08-13 14:17:14,524  
+2021-08-13 14:17:14,540 Reaction No. 2 of 2, (tracking number: 08/13/2021/14:17/2)
+2021-08-13 14:17:14,540 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
+2021-08-13 14:17:14,618 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
+2021-08-13 14:17:14,680 Add cap to reactor@ A2
+2021-08-13 14:17:14,696  
+2021-08-13 14:17:14,719 *Finished*
 
-2021-08-13 12:09:21,398 Simulation mode （模拟运行模式）..........................................................
-2021-08-13 12:09:21,429 Reaction No. 1 of 2, (tracking number: 08/13/2021/12:09/1)
-2021-08-13 12:09:21,445 Transfer KF (solid, 1 tablet) from vial@ (C5, A2), to reactor@ A1 ...
-2021-08-13 12:09:21,507 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
-2021-08-13 12:09:21,570 Add cap to reactor@ A1
-2021-08-13 12:09:21,570  
-2021-08-13 12:09:21,586 Reaction No. 2 of 2, (tracking number: 08/13/2021/12:09/2)
-2021-08-13 12:09:21,601 Transfer KF (solid, 1 tablet) from vial@ (C5, A2), to reactor@ A2 ...
-2021-08-13 12:09:21,664 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
-2021-08-13 12:09:21,726 Add cap to reactor@ A2
-2021-08-13 12:09:21,726  
-2021-08-13 12:09:21,726 *Finished*
+2021-08-13 14:17:14,724 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 14:17:14,727 Required plates: plate_10mL:001, plate_50mL:003, plate_5mL:001
 
-2021-08-13 12:09:21,740 Synthesis plan was parsed successfully! All reagents have been located.
-2021-08-13 12:09:21,743 Required plates: plate_50mL:003, plate_5mL:001
+2021-08-13 14:17:14,730 End of simulation..................................................................
 
-2021-08-13 12:09:21,746 End of simulation..................................................................
+2021-08-13 14:51:20,831 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 14:51:20,831 Reaction No. 1 of 2, (tracking number: 08/13/2021/14:51/1)
+2021-08-13 14:51:20,831 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A1 ...
+2021-08-13 14:51:20,893 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 14:51:20,956 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
+2021-08-13 14:51:21,018 Add cap to reactor@ A1
+2021-08-13 14:51:21,018  
+2021-08-13 14:51:21,034 Reaction No. 2 of 2, (tracking number: 08/13/2021/14:51/2)
+2021-08-13 14:51:21,034 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A2 ...
+2021-08-13 14:51:21,096 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
+2021-08-13 14:51:21,159 Add cap to reactor@ A2
+2021-08-13 14:51:21,159  
+2021-08-13 14:51:21,181 *Finished*
 
-2021-08-13 12:09:45,234 Simulation mode （模拟运行模式）..........................................................
-2021-08-13 12:09:45,236 Reaction No. 1 of 2, (tracking number: 08/13/2021/12:09/1)
-2021-08-13 12:09:45,238 Transfer KF (solid, 1 tablet) from vial@ (C5, A2), to reactor@ A1 ...
-2021-08-13 12:09:45,298 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
-2021-08-13 12:09:45,361 Add cap to reactor@ A1
-2021-08-13 12:09:45,376  
-2021-08-13 12:09:45,376 Reaction No. 2 of 2, (tracking number: 08/13/2021/12:09/2)
-2021-08-13 12:09:45,376 Transfer KF (solid, 1 tablet) from vial@ (C5, A2), to reactor@ A2 ...
-2021-08-13 12:09:45,439 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
-2021-08-13 12:09:45,501 Add cap to reactor@ A2
-2021-08-13 12:09:45,501  
-2021-08-13 12:09:45,501 *Finished*
+2021-08-13 14:51:21,187 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 14:51:21,190 Required plates: plate_5mL:001, plate_10mL:001, plate_50mL:003
 
-2021-08-13 12:09:45,516 Synthesis plan was parsed successfully! All reagents have been located.
-2021-08-13 12:09:45,519 Required plates: plate_50mL:003, plate_5mL:001
+2021-08-13 14:51:21,198 Warning: unassigned plates: plate_5mL:001
 
-2021-08-13 12:09:45,522 End of simulation..................................................................
+2021-08-13 14:51:21,198 End of simulation..................................................................
 
-2021-08-13 12:11:26,164 Simulation mode （模拟运行模式）..........................................................
-2021-08-13 12:11:26,166 Reaction No. 1 of 2, (tracking number: 08/13/2021/12:11/1)
-2021-08-13 12:11:26,168 Transfer KF (solid, 1 tablet) from vial@ (C5, A2), to reactor@ A1 ...
-2021-08-13 12:11:26,226 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
-2021-08-13 12:11:26,289 Add cap to reactor@ A1
-2021-08-13 12:11:26,289  
-2021-08-13 12:11:26,289 Reaction No. 2 of 2, (tracking number: 08/13/2021/12:11/2)
-2021-08-13 12:11:26,289 Transfer KF (solid, 1 tablet) from vial@ (C5, A2), to reactor@ A2 ...
-2021-08-13 12:11:26,351 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
-2021-08-13 12:11:26,414 Add cap to reactor@ A2
-2021-08-13 12:11:26,429  
-2021-08-13 12:11:26,429 *Finished*
+2021-08-13 14:56:38,729 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 14:56:38,733 Reaction No. 1 of 2, (tracking number: 08/13/2021/14:56/1)
+2021-08-13 14:56:38,737 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A1 ...
+2021-08-13 14:56:38,792 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
+2021-08-13 14:56:38,854 Add cap to reactor@ A1
+2021-08-13 14:56:38,869  
+2021-08-13 14:56:38,869 Reaction No. 2 of 2, (tracking number: 08/13/2021/14:56/2)
+2021-08-13 14:56:38,885 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A2 ...
+2021-08-13 14:56:38,948 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
+2021-08-13 14:56:39,010 Add cap to reactor@ A2
+2021-08-13 14:56:39,026  
+2021-08-13 14:56:39,026 *Finished*
 
-2021-08-13 12:11:26,443 Synthesis plan was parsed successfully! All reagents have been located.
-2021-08-13 12:11:26,446 Required plates: plate_50mL:003, plate_5mL:001
+2021-08-13 14:56:39,041 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 14:56:39,044 Required plates: plate_5mL:001, plate_50mL:003
 
-2021-08-13 12:11:26,448 End of simulation..................................................................
+2021-08-13 14:56:39,046 Warning: unassigned plates: plate_5mL:001
 
-2021-08-13 12:11:31,024 Simulation mode （模拟运行模式）..........................................................
-2021-08-13 12:11:31,026 Reaction No. 1 of 2, (tracking number: 08/13/2021/12:11/1)
-2021-08-13 12:11:31,027 Transfer KF (solid, 1 tablet) from vial@ (C5, A2), to reactor@ A1 ...
-2021-08-13 12:11:31,088 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
-2021-08-13 12:11:31,150 Add cap to reactor@ A1
-2021-08-13 12:11:31,150  
-2021-08-13 12:11:31,150 Reaction No. 2 of 2, (tracking number: 08/13/2021/12:11/2)
-2021-08-13 12:11:31,150 Transfer KF (solid, 1 tablet) from vial@ (C5, A2), to reactor@ A2 ...
-2021-08-13 12:11:31,213 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
-2021-08-13 12:11:31,275 Add cap to reactor@ A2
-2021-08-13 12:11:31,275  
-2021-08-13 12:11:31,275 *Finished*
+2021-08-13 14:56:39,049 End of simulation..................................................................
 
-2021-08-13 12:11:31,289 Synthesis plan was parsed successfully! All reagents have been located.
-2021-08-13 12:11:31,295 Required plates: plate_50mL:003, plate_5mL:001
+2021-08-13 14:56:48,217 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 14:57:11,319 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 14:57:11,335 Running in the saver mode （节省模式启动）
+2021-08-13 14:57:11,351 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 14:57:11,351 Transfer KF (solid, 1 tablet) from vial@ (False, A1) to reactor@ A1
+2021-08-13 14:57:11,413 Transfer KF (solid, 1 tablet) from vial@ (False, A1) to reactor@ A2
+2021-08-13 14:57:11,476 
+2021-08-13 14:57:11,491 Starting the main sequence (开始主反应序列)
+2021-08-13 14:57:11,491 Reaction No. 1 of 2, (tracking number: 08/13/2021/14:57/1)
+2021-08-13 14:57:11,507 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 14:57:11,569  
+2021-08-13 14:57:11,585 Reaction No. 2 of 2, (tracking number: 08/13/2021/14:57/2)
+2021-08-13 14:57:11,600  
+2021-08-13 14:57:11,600 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 14:57:11,615 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 14:57:11,679 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 14:57:11,741 
+2021-08-13 14:57:11,741 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 14:57:11,741 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 14:57:11,757 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 14:57:11,757 *Finished*
 
-2021-08-13 12:11:31,300 End of simulation..................................................................
+2021-08-13 14:57:11,757 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 14:57:11,757 Required plates: plate_5mL:001, plate_10mL:001, plate_50mL:003
 
-2021-08-13 12:11:46,544 Simulation mode （模拟运行模式）..........................................................
-2021-08-13 12:11:46,546 Reaction No. 1 of 2, (tracking number: 08/13/2021/12:11/1)
-2021-08-13 12:11:46,548 Transfer KF (solid, 1 tablet) from vial@ (C5, A2), to reactor@ A1 ...
-2021-08-13 12:11:46,622 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
-2021-08-13 12:11:46,685 Add cap to reactor@ A1
-2021-08-13 12:11:46,685  
-2021-08-13 12:11:46,685 Reaction No. 2 of 2, (tracking number: 08/13/2021/12:11/2)
-2021-08-13 12:11:46,685 Transfer KF (solid, 1 tablet) from vial@ (C5, A2), to reactor@ A2 ...
-2021-08-13 12:11:46,748 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
-2021-08-13 12:11:46,811 Add cap to reactor@ A2
-2021-08-13 12:11:46,811  
-2021-08-13 12:11:46,820 *Finished*
+2021-08-13 14:57:11,757 Warning: unassigned plates: plate_5mL:001
 
-2021-08-13 12:11:46,825 Synthesis plan was parsed successfully! All reagents have been located.
-2021-08-13 12:11:46,828 Required plates: plate_50mL:003, plate_5mL:001
+2021-08-13 14:57:11,772 End of simulation..................................................................
 
-2021-08-13 12:11:46,831 End of simulation..................................................................
+2021-08-13 14:57:33,981 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 14:57:33,984 Running in the saver mode （节省模式启动）
+2021-08-13 14:57:33,987 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 14:57:33,989 
+2021-08-13 14:57:33,991 Starting the main sequence (开始主反应序列)
+2021-08-13 14:57:33,994 Reaction No. 1 of 2, (tracking number: 08/13/2021/14:57/1)
+2021-08-13 14:57:33,996 Transfer CsF (solid, 1 tablet) from vial@ (False, D7), to reactor@ A1 ...
+2021-08-13 14:57:34,060 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 14:57:34,122  
+2021-08-13 14:57:34,122 Reaction No. 2 of 2, (tracking number: 08/13/2021/14:57/2)
+2021-08-13 14:57:34,138 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A2 ...
+2021-08-13 14:57:34,201  
+2021-08-13 14:57:34,216 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 14:57:34,236 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 14:57:34,300 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 14:57:34,362 
+2021-08-13 14:57:34,378 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 14:57:34,393 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 14:57:34,393 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 14:57:34,409 *Finished*
 
-2021-08-13 12:16:47,633 Simulation mode （模拟运行模式）..........................................................
-2021-08-13 12:16:47,635 Reaction No. 1 of 2, (tracking number: 08/13/2021/12:16/1)
-2021-08-13 12:16:47,637 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A1 ...
-2021-08-13 12:16:47,698 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
-2021-08-13 12:16:47,761 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
-2021-08-13 12:16:47,825 Add cap to reactor@ A1
-2021-08-13 12:16:47,827  
-2021-08-13 12:16:47,831 Reaction No. 2 of 2, (tracking number: 08/13/2021/12:16/2)
-2021-08-13 12:16:47,834 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
-2021-08-13 12:16:47,888 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
-2021-08-13 12:16:47,950 Add cap to reactor@ A2
-2021-08-13 12:16:47,953  
-2021-08-13 12:16:47,959 *Finished*
+2021-08-13 14:57:34,409 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 14:57:34,409 Required plates: plate_5mL:001, plate_10mL:001, plate_50mL:003
 
-2021-08-13 12:16:47,964 Synthesis plan was parsed successfully! All reagents have been located.
-2021-08-13 12:16:47,967 Required plates: plate_10mL:001, plate_50mL:003, plate_5mL:001
+2021-08-13 14:57:34,409 Warning: unassigned plates: plate_5mL:001
 
-2021-08-13 12:16:47,969 End of simulation..................................................................
+2021-08-13 14:57:34,424 End of simulation..................................................................
 
-2021-08-13 12:17:38,901 Simulation mode （模拟运行模式）..........................................................
-2021-08-13 12:17:38,903 Reaction No. 1 of 2, (tracking number: 08/13/2021/12:17/1)
-2021-08-13 12:17:38,905 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A1 ...
-2021-08-13 12:17:38,964 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
-2021-08-13 12:17:39,027 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
-2021-08-13 12:17:39,089 Add cap to reactor@ A1
-2021-08-13 12:17:39,089  
-2021-08-13 12:17:39,105 Reaction No. 2 of 2, (tracking number: 08/13/2021/12:17/2)
-2021-08-13 12:17:39,105 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
-2021-08-13 12:17:39,167 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
-2021-08-13 12:17:39,230 Add cap to reactor@ A2
-2021-08-13 12:17:39,230  
-2021-08-13 12:17:39,245 *Finished*
+2021-08-13 14:57:39,056 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 14:57:39,059 Reaction No. 1 of 2, (tracking number: 08/13/2021/14:57/1)
+2021-08-13 14:57:39,060 Transfer CsF (solid, 1 tablet) from vial@ (False, D7), to reactor@ A1 ...
+2021-08-13 14:57:39,120 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 14:57:39,182 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
+2021-08-13 14:57:39,244 Add cap to reactor@ A1
+2021-08-13 14:57:39,244  
+2021-08-13 14:57:39,244 Reaction No. 2 of 2, (tracking number: 08/13/2021/14:57/2)
+2021-08-13 14:57:39,260 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A2 ...
+2021-08-13 14:57:39,323 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
+2021-08-13 14:57:39,385 Add cap to reactor@ A2
+2021-08-13 14:57:39,401  
+2021-08-13 14:57:39,422 *Finished*
 
-2021-08-13 12:17:39,249 Synthesis plan was parsed successfully! All reagents have been located.
-2021-08-13 12:17:39,251 Required plates: plate_10mL:001, plate_50mL:003, plate_5mL:001
+2021-08-13 14:57:39,427 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 14:57:39,429 Required plates: plate_5mL:001, plate_10mL:001, plate_50mL:003
 
-2021-08-13 12:17:39,254 End of simulation..................................................................
+2021-08-13 14:57:39,432 Warning: unassigned plates: plate_5mL:001
 
-2021-08-13 12:17:42,898 Simulation mode （模拟运行模式）..........................................................
-2021-08-13 12:17:42,902 Reaction No. 1 of 2, (tracking number: 08/13/2021/12:17/1)
-2021-08-13 12:17:42,903 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A1 ...
-2021-08-13 12:17:42,957 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
-2021-08-13 12:17:43,034 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
-2021-08-13 12:17:43,097 Add cap to reactor@ A1
-2021-08-13 12:17:43,113  
-2021-08-13 12:17:43,113 Reaction No. 2 of 2, (tracking number: 08/13/2021/12:17/2)
-2021-08-13 12:17:43,128 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
-2021-08-13 12:17:43,191 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
-2021-08-13 12:17:43,269 Add cap to reactor@ A2
-2021-08-13 12:17:43,284  
-2021-08-13 12:17:43,297 *Finished*
+2021-08-13 14:57:39,434 End of simulation..................................................................
 
-2021-08-13 12:17:43,303 Synthesis plan was parsed successfully! All reagents have been located.
-2021-08-13 12:17:43,307 Required plates: plate_10mL:001, plate_50mL:003, plate_5mL:001
+2021-08-13 14:57:40,528 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 14:57:40,531 Reaction No. 1 of 2, (tracking number: 08/13/2021/14:57/1)
+2021-08-13 14:57:40,534 Transfer CsF (solid, 1 tablet) from vial@ (False, D7), to reactor@ A1 ...
+2021-08-13 14:57:40,592 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 14:57:40,654 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
+2021-08-13 14:57:40,717 Add cap to reactor@ A1
+2021-08-13 14:57:40,732  
+2021-08-13 14:57:40,732 Reaction No. 2 of 2, (tracking number: 08/13/2021/14:57/2)
+2021-08-13 14:57:40,748 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A2 ...
+2021-08-13 14:57:40,810 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
+2021-08-13 14:57:40,873 Add cap to reactor@ A2
+2021-08-13 14:57:40,888  
+2021-08-13 14:57:40,895 *Finished*
 
-2021-08-13 12:17:43,310 End of simulation..................................................................
+2021-08-13 14:57:40,899 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 14:57:40,901 Required plates: plate_5mL:001, plate_10mL:001, plate_50mL:003
 
-2021-08-13 12:18:10,301 Simulation mode （模拟运行模式）..........................................................
-2021-08-13 12:18:10,303 Reaction No. 1 of 2, (tracking number: 08/13/2021/12:18/1)
-2021-08-13 12:18:10,305 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A1 ...
-2021-08-13 12:18:10,364 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
-2021-08-13 12:18:10,442 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
-2021-08-13 12:18:10,504 Add cap to reactor@ A1
-2021-08-13 12:18:10,504  
-2021-08-13 12:18:10,504 Reaction No. 2 of 2, (tracking number: 08/13/2021/12:18/2)
-2021-08-13 12:18:10,504 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
-2021-08-13 12:18:10,567 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
-2021-08-13 12:18:10,630 Add cap to reactor@ A2
-2021-08-13 12:18:10,645  
-2021-08-13 12:18:10,663 *Finished*
+2021-08-13 14:57:40,904 Warning: unassigned plates: plate_5mL:001
 
-2021-08-13 12:18:10,667 Synthesis plan was parsed successfully! All reagents have been located.
-2021-08-13 12:18:10,670 Required plates: plate_10mL:001, plate_50mL:003, plate_5mL:001
+2021-08-13 14:57:40,906 End of simulation..................................................................
 
-2021-08-13 12:18:10,672 End of simulation..................................................................
+2021-08-13 14:57:41,456 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 14:57:41,458 Reaction No. 1 of 2, (tracking number: 08/13/2021/14:57/1)
+2021-08-13 14:57:41,461 Transfer CsF (solid, 1 tablet) from vial@ (False, D7), to reactor@ A1 ...
+2021-08-13 14:57:41,519 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 14:57:41,582 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
+2021-08-13 14:57:41,644 Add cap to reactor@ A1
+2021-08-13 14:57:41,644  
+2021-08-13 14:57:41,660 Reaction No. 2 of 2, (tracking number: 08/13/2021/14:57/2)
+2021-08-13 14:57:41,660 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A2 ...
+2021-08-13 14:57:41,722 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
+2021-08-13 14:57:41,785 Add cap to reactor@ A2
+2021-08-13 14:57:41,800  
+2021-08-13 14:57:41,816 *Finished*
 
-2021-08-13 12:18:36,076 Simulation mode （模拟运行模式）..........................................................
-2021-08-13 12:18:36,080 Running in the saver mode （节省模式启动）
-2021-08-13 12:18:36,084 Starting to add common reagents (开始添加每个反应的相同试剂)
-2021-08-13 12:39:26,654 Simulation mode （模拟运行模式）..........................................................
-2021-08-13 12:39:26,654 Reaction No. 1 of 2, (tracking number: 08/13/2021/12:39/1)
-2021-08-13 12:39:26,654 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A1 ...
-2021-08-13 12:39:26,716 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
-2021-08-13 12:39:26,779 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
-2021-08-13 12:39:26,841 Add cap to reactor@ A1
-2021-08-13 12:39:26,841  
-2021-08-13 12:39:26,857 Reaction No. 2 of 2, (tracking number: 08/13/2021/12:39/2)
-2021-08-13 12:39:26,857 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
-2021-08-13 12:39:26,919 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
-2021-08-13 12:39:26,982 Add cap to reactor@ A2
-2021-08-13 12:39:26,997  
-2021-08-13 12:39:27,018 *Finished*
+2021-08-13 14:57:41,820 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 14:57:41,822 Required plates: plate_5mL:001, plate_10mL:001, plate_50mL:003
 
-2021-08-13 12:39:27,026 Synthesis plan was parsed successfully! All reagents have been located.
-2021-08-13 12:39:27,030 Required plates: plate_5mL:001, plate_10mL:001, plate_50mL:003
+2021-08-13 14:57:41,825 Warning: unassigned plates: plate_5mL:001
 
-2021-08-13 12:39:27,033 End of simulation..................................................................
+2021-08-13 14:57:41,828 End of simulation..................................................................
 
-2021-08-13 12:39:38,529 Simulation mode （模拟运行模式）..........................................................
-2021-08-13 12:39:38,533 Running in the saver mode （节省模式启动）
-2021-08-13 12:39:38,535 Starting to add common reagents (开始添加每个反应的相同试剂)
-2021-08-13 12:58:47,147 Simulation mode （模拟运行模式）..........................................................
-2021-08-13 12:58:47,147 Reaction No. 1 of 2, (tracking number: 08/13/2021/12:58/1)
-2021-08-13 12:58:47,147 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A1 ...
-2021-08-13 12:58:47,209 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
-2021-08-13 12:58:47,263 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
-2021-08-13 12:58:47,352 Add cap to reactor@ A1
-2021-08-13 12:58:47,352  
-2021-08-13 12:58:47,368 Reaction No. 2 of 2, (tracking number: 08/13/2021/12:58/2)
-2021-08-13 12:58:47,368 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
-2021-08-13 12:58:47,437 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
-2021-08-13 12:58:47,496 Add cap to reactor@ A2
-2021-08-13 12:58:47,511  
-2021-08-13 12:58:47,526 *Finished*
+2021-08-13 14:58:10,912 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 14:58:10,916 Running in the saver mode （节省模式启动）
+2021-08-13 14:58:10,919 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 14:58:10,921 
+2021-08-13 14:58:10,923 Starting the main sequence (开始主反应序列)
+2021-08-13 14:58:10,925 Reaction No. 1 of 2, (tracking number: 08/13/2021/14:58/1)
+2021-08-13 14:58:10,927 Transfer CsF (solid, 1 tablet) from vial@ (False, D7), to reactor@ A1 ...
+2021-08-13 14:58:10,990 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 14:58:11,053  
+2021-08-13 14:58:11,057 Reaction No. 2 of 2, (tracking number: 08/13/2021/14:58/2)
+2021-08-13 14:58:11,061 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A2 ...
+2021-08-13 14:58:11,115  
+2021-08-13 14:58:11,119 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 14:58:11,124 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 14:58:11,194 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 14:58:11,253 
+2021-08-13 14:58:11,269 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 14:58:11,285 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 14:58:11,285 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 14:58:11,300 *Finished*
 
-2021-08-13 12:58:47,533 Synthesis plan was parsed successfully! All reagents have been located.
-2021-08-13 12:58:47,536 Required plates: plate_5mL:001, plate_50mL:003, plate_10mL:001
+2021-08-13 14:58:11,300 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 14:58:11,300 Required plates: plate_5mL:001, plate_10mL:001, plate_50mL:003
 
-2021-08-13 12:58:47,538 End of simulation..................................................................
+2021-08-13 14:58:11,300 Warning: unassigned plates: plate_5mL:001
 
-2021-08-13 12:58:50,432 Simulation mode （模拟运行模式）..........................................................
-2021-08-13 12:58:50,436 Running in the saver mode （节省模式启动）
-2021-08-13 12:58:50,438 Starting to add common reagents (开始添加每个反应的相同试剂)
-2021-08-13 12:58:50,441 Transfer KF (solid, 1 tablet) from vial@ (C5, A1) to reactor@ A1
-2021-08-13 12:58:50,503 Transfer KF (solid, 1 tablet) from vial@ (C5, A1) to reactor@ A2
-2021-08-13 12:58:50,565 
-2021-08-13 12:58:50,568 Starting the main sequence (开始主反应序列)
-2021-08-13 12:58:50,572 Reaction No. 1 of 2, (tracking number: 08/13/2021/12:58/1)
-2021-08-13 12:58:50,577 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
-2021-08-13 12:58:50,644  
-2021-08-13 12:58:50,649 Reaction No. 2 of 2, (tracking number: 08/13/2021/12:58/2)
-2021-08-13 12:58:50,654  
-2021-08-13 12:58:50,660 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
-2021-08-13 12:58:50,666 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
-2021-08-13 12:58:50,737 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
-2021-08-13 12:58:50,798 
-2021-08-13 12:58:50,814 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
-2021-08-13 12:58:50,830 Run 1 of 2, adding cap to reactor at A1
-2021-08-13 12:58:50,830 Run 2 of 2, adding cap to reactor at A2
-2021-08-13 12:58:50,845 *Finished*
+2021-08-13 14:58:11,316 End of simulation..................................................................
 
-2021-08-13 12:58:50,845 Synthesis plan was parsed successfully! All reagents have been located.
-2021-08-13 12:58:50,845 Required plates: plate_5mL:001, plate_50mL:003, plate_10mL:001
+2021-08-13 14:59:18,253 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 14:59:18,258 Running in the saver mode （节省模式启动）
+2021-08-13 14:59:18,260 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 14:59:18,262 
+2021-08-13 14:59:18,264 Starting the main sequence (开始主反应序列)
+2021-08-13 14:59:18,267 Reaction No. 1 of 2, (tracking number: 08/13/2021/14:59/1)
+2021-08-13 14:59:18,270 Transfer CsF (solid, 1 tablet) from vial@ (C5, D7), to reactor@ A1 ...
+2021-08-13 14:59:18,333 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 14:59:18,392  
+2021-08-13 14:59:18,407 Reaction No. 2 of 2, (tracking number: 08/13/2021/14:59/2)
+2021-08-13 14:59:18,423 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
+2021-08-13 14:59:18,486  
+2021-08-13 14:59:18,501 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 14:59:18,520 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 14:59:18,583 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 14:59:18,646 
+2021-08-13 14:59:18,661 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 14:59:18,677 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 14:59:18,692 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 14:59:18,692 *Finished*
 
-2021-08-13 12:58:50,845 End of simulation..................................................................
+2021-08-13 14:59:18,692 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 14:59:18,692 Required plates: plate_5mL:001, plate_10mL:001, plate_50mL:003
 
-2021-08-13 12:59:36,716 Simulation mode （模拟运行模式）..........................................................
-2021-08-13 12:59:36,716 Running in the saver mode （节省模式启动）
-2021-08-13 12:59:36,716 Starting to add common reagents (开始添加每个反应的相同试剂)
-2021-08-13 12:59:36,724 Transfer KF (solid, 1 tablet) from vial@ (C5, A1) to reactor@ A1
-2021-08-13 12:59:36,797 Transfer KF (solid, 1 tablet) from vial@ (C5, A1) to reactor@ A2
-2021-08-13 12:59:36,865 
-2021-08-13 12:59:36,865 Starting the main sequence (开始主反应序列)
-2021-08-13 12:59:36,881 Reaction No. 1 of 2, (tracking number: 08/13/2021/12:59/1)
-2021-08-13 12:59:36,881 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
-2021-08-13 12:59:36,944  
-2021-08-13 12:59:36,944 Reaction No. 2 of 2, (tracking number: 08/13/2021/12:59/2)
-2021-08-13 12:59:36,959  
-2021-08-13 12:59:36,959 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
-2021-08-13 12:59:36,959 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
-2021-08-13 12:59:37,030 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
-2021-08-13 12:59:37,100 
-2021-08-13 12:59:37,116 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
-2021-08-13 12:59:37,131 Run 1 of 2, adding cap to reactor at A1
-2021-08-13 12:59:37,131 Run 2 of 2, adding cap to reactor at A2
-2021-08-13 12:59:37,147 *Finished*
+2021-08-13 14:59:18,708 Warning: unassigned plates: 
 
-2021-08-13 12:59:37,147 Synthesis plan was parsed successfully! All reagents have been located.
-2021-08-13 12:59:37,147 Required plates: plate_5mL:001, plate_50mL:003, plate_10mL:001
+2021-08-13 14:59:18,708 End of simulation..................................................................
 
-2021-08-13 12:59:37,147 End of simulation..................................................................
+2021-08-13 15:03:52,573 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:03:52,573 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:03/1)
+2021-08-13 15:03:52,573 Transfer CsF (solid, 1 tablet) from vial@ (C5, D7), to reactor@ A1 ...
+2021-08-13 15:03:52,635 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:03:52,698 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
+2021-08-13 15:03:52,760 Add cap to reactor@ A1
+2021-08-13 15:03:52,776  
+2021-08-13 15:03:52,791 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:03/2)
+2021-08-13 15:03:52,791 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
+2021-08-13 15:03:52,854 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
+2021-08-13 15:03:52,917 Add cap to reactor@ A2
+2021-08-13 15:03:52,933  
+2021-08-13 15:03:52,946 *Finished*
 
-2021-08-13 12:59:47,615 Simulation mode （模拟运行模式）..........................................................
-2021-08-13 12:59:47,618 Running in the saver mode （节省模式启动）
-2021-08-13 12:59:47,620 Starting to add common reagents (开始添加每个反应的相同试剂)
-2021-08-13 12:59:47,622 Transfer KF (solid, 1 tablet) from vial@ (C5, A1) to reactor@ A1
-2021-08-13 12:59:47,680 Transfer KF (solid, 1 tablet) from vial@ (C5, A1) to reactor@ A2
-2021-08-13 12:59:47,744 
-2021-08-13 12:59:47,748 Starting the main sequence (开始主反应序列)
-2021-08-13 12:59:47,753 Reaction No. 1 of 2, (tracking number: 08/13/2021/12:59/1)
-2021-08-13 12:59:47,753 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
-2021-08-13 12:59:47,816  
-2021-08-13 12:59:47,831 Reaction No. 2 of 2, (tracking number: 08/13/2021/12:59/2)
-2021-08-13 12:59:47,831 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
-2021-08-13 12:59:47,894  
-2021-08-13 12:59:47,908 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
-2021-08-13 12:59:47,915 
-2021-08-13 12:59:47,922 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
-2021-08-13 12:59:47,925 Run 1 of 2, adding cap to reactor at A1
-2021-08-13 12:59:47,925 Run 2 of 2, adding cap to reactor at A2
-2021-08-13 12:59:47,925 *Finished*
+2021-08-13 15:03:52,952 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:03:52,955 Required plates: plate_5mL:001, plate_50mL:003, plate_10mL:001
 
-2021-08-13 12:59:47,941 Synthesis plan was parsed successfully! All reagents have been located.
-2021-08-13 12:59:47,941 Required plates: plate_5mL:001, plate_50mL:003, plate_10mL:001
+2021-08-13 15:03:52,959 End of simulation..................................................................
 
-2021-08-13 12:59:47,941 End of simulation..................................................................
+2021-08-13 15:08:16,087 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:08:16,087 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:08/1)
+2021-08-13 15:08:16,087 Transfer CsF (solid, 1 tablet) from vial@ (C5, D7), to reactor@ A1 ...
+2021-08-13 15:08:16,149 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:08:16,212 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
+2021-08-13 15:08:16,274 Add cap to reactor@ A1
+2021-08-13 15:08:16,274  
+2021-08-13 15:08:16,274 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:08/2)
+2021-08-13 15:08:16,274 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
+2021-08-13 15:08:16,337 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
+2021-08-13 15:08:16,399 Add cap to reactor@ A2
+2021-08-13 15:08:16,415  
+2021-08-13 15:08:16,442 *Finished*
 
-2021-08-13 13:00:02,068 Simulation mode （模拟运行模式）..........................................................
-2021-08-13 13:00:02,072 Running in the saver mode （节省模式启动）
-2021-08-13 13:00:02,074 Starting to add common reagents (开始添加每个反应的相同试剂)
-2021-08-13 13:00:02,077 Transfer KF (solid, 1 tablet) from vial@ (C5, A1) to reactor@ A1
-2021-08-13 13:00:02,140 Transfer KF (solid, 1 tablet) from vial@ (C5, A1) to reactor@ A2
-2021-08-13 13:00:02,207 
-2021-08-13 13:00:02,209 Starting the main sequence (开始主反应序列)
-2021-08-13 13:00:02,209 Reaction No. 1 of 2, (tracking number: 08/13/2021/13:00/1)
-2021-08-13 13:00:02,209 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
-2021-08-13 13:00:02,271  
-2021-08-13 13:00:02,271 Reaction No. 2 of 2, (tracking number: 08/13/2021/13:00/2)
-2021-08-13 13:00:02,287 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
-2021-08-13 13:00:02,349  
-2021-08-13 13:00:02,381 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
-2021-08-13 13:00:02,393 
-2021-08-13 13:00:02,396 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
-2021-08-13 13:00:02,396 Run 1 of 2, adding cap to reactor at A1
-2021-08-13 13:00:02,396 Run 2 of 2, adding cap to reactor at A2
-2021-08-13 13:00:02,412 *Finished*
+2021-08-13 15:08:16,448 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:08:16,452 Required plates: plate_10mL:001, plate_50mL:003, plate_5mL:001
 
-2021-08-13 13:00:02,412 Synthesis plan was parsed successfully! All reagents have been located.
-2021-08-13 13:00:02,412 Required plates: plate_5mL:001, plate_50mL:003, plate_10mL:001
+2021-08-13 15:08:16,456 End of simulation..................................................................
 
-2021-08-13 13:00:02,412 End of simulation..................................................................
+2021-08-13 15:08:20,968 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:08:20,971 Running in the saver mode （节省模式启动）
+2021-08-13 15:08:20,974 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 15:08:20,977 
+2021-08-13 15:08:20,979 Starting the main sequence (开始主反应序列)
+2021-08-13 15:08:20,981 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:08/1)
+2021-08-13 15:08:20,983 Transfer CsF (solid, 1 tablet) from vial@ (C5, D7), to reactor@ A1 ...
+2021-08-13 15:08:21,047 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:08:21,110  
+2021-08-13 15:08:21,110 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:08/2)
+2021-08-13 15:08:21,125 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
+2021-08-13 15:08:21,188  
+2021-08-13 15:08:21,188 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 15:08:21,210 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 15:08:21,273 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 15:08:21,331 
+2021-08-13 15:08:21,346 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 15:08:21,346 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 15:08:21,362 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 15:08:21,362 *Finished*
+
+2021-08-13 15:08:21,378 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:08:21,378 Required plates: plate_10mL:001, plate_50mL:003, plate_5mL:001
+
+2021-08-13 15:08:21,378 End of simulation..................................................................
+
+2021-08-13 15:15:55,543 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:15:55,543 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:15/1)
+2021-08-13 15:15:55,543 Transfer CsF (solid, 1 tablet) from vial@ (C5, D7), to reactor@ A1 ...
+2021-08-13 15:15:55,606 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:15:55,684 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
+2021-08-13 15:15:55,762 Add cap to reactor@ A1
+2021-08-13 15:15:55,762  
+2021-08-13 15:15:55,778 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:15/2)
+2021-08-13 15:15:55,778 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
+2021-08-13 15:15:55,852 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
+2021-08-13 15:15:55,930 Add cap to reactor@ A2
+2021-08-13 15:15:55,945  
+2021-08-13 15:15:55,954 *Finished*
+
+2021-08-13 15:15:55,960 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:15:55,962 Required plates: plate_50mL:003, plate_10mL:001, plate_5mL:001
+
+2021-08-13 15:15:55,965 End of simulation..................................................................
+
+2021-08-13 15:15:58,080 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:15:58,085 Running in the saver mode （节省模式启动）
+2021-08-13 15:15:58,087 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 15:15:58,088 
+2021-08-13 15:15:58,090 Starting the main sequence (开始主反应序列)
+2021-08-13 15:15:58,093 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:15/1)
+2021-08-13 15:15:58,095 Transfer CsF (solid, 1 tablet) from vial@ (C5, D7), to reactor@ A1 ...
+2021-08-13 15:15:58,160 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:15:58,223  
+2021-08-13 15:15:58,238 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:15/2)
+2021-08-13 15:15:58,238 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
+2021-08-13 15:15:58,301  
+2021-08-13 15:15:58,316 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 15:15:58,339 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 15:15:58,402 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 15:15:58,464 
+2021-08-13 15:15:58,464 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 15:15:58,464 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 15:15:58,480 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 15:15:58,480 *Finished*
+
+2021-08-13 15:15:58,480 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:15:58,480 Required plates: plate_50mL:003, plate_10mL:001, plate_5mL:001
+
+2021-08-13 15:15:58,495 End of simulation..................................................................
+
+2021-08-13 15:16:19,136 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:16:19,140 Running in the saver mode （节省模式启动）
+2021-08-13 15:16:19,142 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 15:16:19,144 
+2021-08-13 15:16:19,146 Starting the main sequence (开始主反应序列)
+2021-08-13 15:16:19,149 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:16/1)
+2021-08-13 15:16:19,151 Transfer CsF (solid, 1 tablet) from vial@ (False, D7), to reactor@ A1 ...
+2021-08-13 15:16:19,224 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:16:19,287  
+2021-08-13 15:16:19,302 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:16/2)
+2021-08-13 15:16:19,318 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A2 ...
+2021-08-13 15:16:19,375  
+2021-08-13 15:16:19,390 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 15:16:19,400 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 15:16:19,464 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 15:16:19,526 
+2021-08-13 15:16:19,526 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 15:16:19,526 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 15:16:19,526 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 15:16:19,542 *Finished*
+
+2021-08-13 15:16:19,542 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:16:19,542 Required plates: plate_50mL:003, plate_10mL:001, plate_5mL:001
+
+2021-08-13 15:16:19,542 Warning: unassigned plates: plate_5mL:001
+
+2021-08-13 15:16:19,557 End of simulation..................................................................
+
+2021-08-13 15:16:22,953 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:16:22,957 Running in the saver mode （节省模式启动）
+2021-08-13 15:16:22,958 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 15:16:22,961 
+2021-08-13 15:16:22,963 Starting the main sequence (开始主反应序列)
+2021-08-13 15:16:22,965 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:16/1)
+2021-08-13 15:16:22,968 Transfer CsF (solid, 1 tablet) from vial@ (False, D7), to reactor@ A1 ...
+2021-08-13 15:16:23,032 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:16:23,094  
+2021-08-13 15:16:23,094 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:16/2)
+2021-08-13 15:16:23,094 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A2 ...
+2021-08-13 15:16:23,157  
+2021-08-13 15:16:23,172 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 15:16:23,179 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 15:16:23,242 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 15:16:23,305 
+2021-08-13 15:16:23,320 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 15:16:23,336 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 15:16:23,336 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 15:16:23,351 *Finished*
+
+2021-08-13 15:16:23,351 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:16:23,351 Required plates: plate_50mL:003, plate_10mL:001, plate_5mL:001
+
+2021-08-13 15:16:23,351 Warning: unassigned plates: plate_5mL:001
+
+2021-08-13 15:16:23,367 End of simulation..................................................................
+
+2021-08-13 15:16:24,160 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:16:24,164 Running in the saver mode （节省模式启动）
+2021-08-13 15:16:24,166 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 15:16:24,168 
+2021-08-13 15:16:24,171 Starting the main sequence (开始主反应序列)
+2021-08-13 15:16:24,173 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:16/1)
+2021-08-13 15:16:24,176 Transfer CsF (solid, 1 tablet) from vial@ (False, D7), to reactor@ A1 ...
+2021-08-13 15:16:24,240 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:16:24,302  
+2021-08-13 15:16:24,302 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:16/2)
+2021-08-13 15:16:24,302 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A2 ...
+2021-08-13 15:16:24,365  
+2021-08-13 15:16:24,365 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 15:16:24,385 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 15:16:24,448 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 15:16:24,511 
+2021-08-13 15:16:24,526 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 15:16:24,526 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 15:16:24,542 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 15:16:24,542 *Finished*
+
+2021-08-13 15:16:24,542 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:16:24,542 Required plates: plate_50mL:003, plate_10mL:001, plate_5mL:001
+
+2021-08-13 15:16:24,557 Warning: unassigned plates: plate_5mL:001
+
+2021-08-13 15:16:24,557 End of simulation..................................................................
+
+2021-08-13 15:16:25,152 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:16:25,155 Running in the saver mode （节省模式启动）
+2021-08-13 15:16:25,158 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 15:16:25,159 
+2021-08-13 15:16:25,161 Starting the main sequence (开始主反应序列)
+2021-08-13 15:16:25,163 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:16/1)
+2021-08-13 15:16:25,165 Transfer CsF (solid, 1 tablet) from vial@ (False, D7), to reactor@ A1 ...
+2021-08-13 15:16:25,231 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:16:25,293  
+2021-08-13 15:16:25,309 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:16/2)
+2021-08-13 15:16:25,325 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A2 ...
+2021-08-13 15:16:25,387  
+2021-08-13 15:16:25,387 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 15:16:25,403 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 15:16:25,466 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 15:16:25,529 
+2021-08-13 15:16:25,544 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 15:16:25,560 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 15:16:25,560 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 15:16:25,560 *Finished*
+
+2021-08-13 15:16:25,576 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:16:25,576 Required plates: plate_50mL:003, plate_10mL:001, plate_5mL:001
+
+2021-08-13 15:16:25,576 Warning: unassigned plates: plate_5mL:001
+
+2021-08-13 15:16:25,576 End of simulation..................................................................
+
+2021-08-13 15:16:26,152 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:16:26,155 Running in the saver mode （节省模式启动）
+2021-08-13 15:16:26,158 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 15:16:26,160 
+2021-08-13 15:16:26,162 Starting the main sequence (开始主反应序列)
+2021-08-13 15:16:26,164 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:16/1)
+2021-08-13 15:16:26,166 Transfer CsF (solid, 1 tablet) from vial@ (False, D7), to reactor@ A1 ...
+2021-08-13 15:16:26,231 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:16:26,293  
+2021-08-13 15:16:26,293 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:16/2)
+2021-08-13 15:16:26,293 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A2 ...
+2021-08-13 15:16:26,356  
+2021-08-13 15:16:26,371 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 15:16:26,392 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 15:16:26,455 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 15:16:26,517 
+2021-08-13 15:16:26,533 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 15:16:26,549 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 15:16:26,549 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 15:16:26,564 *Finished*
+
+2021-08-13 15:16:26,564 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:16:26,580 Required plates: plate_50mL:003, plate_10mL:001, plate_5mL:001
+
+2021-08-13 15:16:26,580 Warning: unassigned plates: plate_5mL:001
+
+2021-08-13 15:16:26,580 End of simulation..................................................................
+
+2021-08-13 15:16:27,264 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:16:27,267 Running in the saver mode （节省模式启动）
+2021-08-13 15:16:27,270 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 15:16:27,271 
+2021-08-13 15:16:27,274 Starting the main sequence (开始主反应序列)
+2021-08-13 15:16:27,277 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:16/1)
+2021-08-13 15:16:27,279 Transfer CsF (solid, 1 tablet) from vial@ (False, D7), to reactor@ A1 ...
+2021-08-13 15:16:27,344 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:16:27,406  
+2021-08-13 15:16:27,422 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:16/2)
+2021-08-13 15:16:27,438 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A2 ...
+2021-08-13 15:16:27,500  
+2021-08-13 15:16:27,516 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 15:16:27,540 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 15:16:27,603 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 15:16:27,665 
+2021-08-13 15:16:27,681 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 15:16:27,681 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 15:16:27,697 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 15:16:27,697 *Finished*
+
+2021-08-13 15:16:27,712 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:16:27,712 Required plates: plate_50mL:003, plate_10mL:001, plate_5mL:001
+
+2021-08-13 15:16:27,712 Warning: unassigned plates: plate_5mL:001
+
+2021-08-13 15:16:27,712 End of simulation..................................................................
+
+2021-08-13 15:16:28,496 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:16:28,500 Running in the saver mode （节省模式启动）
+2021-08-13 15:16:28,502 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 15:16:28,504 
+2021-08-13 15:16:28,506 Starting the main sequence (开始主反应序列)
+2021-08-13 15:16:28,508 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:16/1)
+2021-08-13 15:16:28,510 Transfer CsF (solid, 1 tablet) from vial@ (False, D7), to reactor@ A1 ...
+2021-08-13 15:16:28,575 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:16:28,638  
+2021-08-13 15:16:28,638 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:16/2)
+2021-08-13 15:16:28,638 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A2 ...
+2021-08-13 15:16:28,700  
+2021-08-13 15:16:28,700 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 15:16:28,720 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 15:16:28,783 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 15:16:28,846 
+2021-08-13 15:16:28,861 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 15:16:28,861 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 15:16:28,877 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 15:16:28,877 *Finished*
+
+2021-08-13 15:16:28,892 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:16:28,892 Required plates: plate_50mL:003, plate_10mL:001, plate_5mL:001
+
+2021-08-13 15:16:28,892 Warning: unassigned plates: plate_5mL:001
+
+2021-08-13 15:16:28,892 End of simulation..................................................................
+
+2021-08-13 15:16:31,652 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:16:31,657 Running in the saver mode （节省模式启动）
+2021-08-13 15:16:31,660 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 15:16:31,662 
+2021-08-13 15:16:31,664 Starting the main sequence (开始主反应序列)
+2021-08-13 15:16:31,666 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:16/1)
+2021-08-13 15:16:31,669 Transfer CsF (solid, 1 tablet) from vial@ (False, D7), to reactor@ A1 ...
+2021-08-13 15:16:31,732 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:16:31,788  
+2021-08-13 15:16:31,804 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:16/2)
+2021-08-13 15:16:31,819 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A2 ...
+2021-08-13 15:16:31,882  
+2021-08-13 15:16:31,897 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 15:16:31,925 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 15:16:31,988 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 15:16:32,051 
+2021-08-13 15:16:32,066 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 15:16:32,066 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 15:16:32,066 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 15:16:32,082 *Finished*
+
+2021-08-13 15:16:32,082 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:16:32,082 Required plates: plate_50mL:003, plate_10mL:001, plate_5mL:001
+
+2021-08-13 15:16:32,082 Warning: unassigned plates: plate_5mL:001
+
+2021-08-13 15:16:32,082 End of simulation..................................................................
+
+2021-08-13 15:18:59,692 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:18:59,692 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:18/1)
+2021-08-13 15:18:59,692 Transfer CsF (solid, 1 tablet) from vial@ (False, D7), to reactor@ A1 ...
+2021-08-13 15:18:59,755 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:18:59,817 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
+2021-08-13 15:18:59,880 Add cap to reactor@ A1
+2021-08-13 15:18:59,895  
+2021-08-13 15:18:59,895 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:18/2)
+2021-08-13 15:18:59,895 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A2 ...
+2021-08-13 15:18:59,958 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
+2021-08-13 15:19:00,020 Add cap to reactor@ A2
+2021-08-13 15:19:00,020  
+2021-08-13 15:19:00,040 *Finished*
+
+2021-08-13 15:19:00,044 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:19:00,047 Required plates: plate_5mL:001, plate_10mL:001, plate_50mL:003
+
+2021-08-13 15:19:00,049 Warning: unassigned plates: plate_5mL:001
+
+2021-08-13 15:19:00,052 End of simulation..................................................................
+
+2021-08-13 15:19:05,017 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:19:05,019 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:19/1)
+2021-08-13 15:19:05,021 Transfer CsF (solid, 1 tablet) from vial@ (False, D7), to reactor@ A1 ...
+2021-08-13 15:19:05,080 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:19:05,142 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
+2021-08-13 15:19:05,205 Add cap to reactor@ A1
+2021-08-13 15:19:05,220  
+2021-08-13 15:19:05,220 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:19/2)
+2021-08-13 15:19:05,220 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A2 ...
+2021-08-13 15:19:05,283 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
+2021-08-13 15:19:05,346 Add cap to reactor@ A2
+2021-08-13 15:19:05,361  
+2021-08-13 15:19:05,371 *Finished*
+
+2021-08-13 15:19:05,374 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:19:05,377 Required plates: plate_5mL:001, plate_10mL:001, plate_50mL:003
+
+2021-08-13 15:19:05,380 Warning: unassigned plates: plate_5mL:001
+
+2021-08-13 15:19:05,383 End of simulation..................................................................
+
+2021-08-13 15:19:09,008 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:19:09,011 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:19/1)
+2021-08-13 15:19:09,013 Transfer CsF (solid, 1 tablet) from vial@ (False, D7), to reactor@ A1 ...
+2021-08-13 15:19:09,072 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:19:09,134 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
+2021-08-13 15:19:09,197 Add cap to reactor@ A1
+2021-08-13 15:19:09,197  
+2021-08-13 15:19:09,197 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:19/2)
+2021-08-13 15:19:09,197 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A2 ...
+2021-08-13 15:19:09,259 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
+2021-08-13 15:19:09,322 Add cap to reactor@ A2
+2021-08-13 15:19:09,322  
+2021-08-13 15:19:09,337 *Finished*
+
+2021-08-13 15:19:09,340 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:19:09,343 Required plates: plate_5mL:001, plate_10mL:001, plate_50mL:003
+
+2021-08-13 15:19:09,346 Warning: unassigned plates: plate_5mL:001
+
+2021-08-13 15:19:09,349 End of simulation..................................................................
+
+2021-08-13 15:19:23,368 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:19:23,370 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:19/1)
+2021-08-13 15:19:23,371 Transfer CsF (solid, 1 tablet) from vial@ (C5, D7), to reactor@ A1 ...
+2021-08-13 15:19:23,432 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:19:23,494 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
+2021-08-13 15:19:23,557 Add cap to reactor@ A1
+2021-08-13 15:19:23,557  
+2021-08-13 15:19:23,557 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:19/2)
+2021-08-13 15:19:23,557 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
+2021-08-13 15:19:23,619 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
+2021-08-13 15:19:23,682 Add cap to reactor@ A2
+2021-08-13 15:19:23,697  
+2021-08-13 15:19:23,717 *Finished*
+
+2021-08-13 15:19:23,723 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:19:23,726 Required plates: plate_5mL:001, plate_10mL:001, plate_50mL:003
+
+2021-08-13 15:19:23,729 End of simulation..................................................................
+
+2021-08-13 15:19:39,825 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:19:39,826 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:19/1)
+2021-08-13 15:19:39,828 Transfer CsF (solid, 1 tablet) from vial@ (False, D7), to reactor@ A1 ...
+2021-08-13 15:19:39,888 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:19:39,950 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
+2021-08-13 15:19:40,013 Add cap to reactor@ A1
+2021-08-13 15:19:40,028  
+2021-08-13 15:19:40,028 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:19/2)
+2021-08-13 15:19:40,044 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A2 ...
+2021-08-13 15:19:40,106 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
+2021-08-13 15:19:40,169 Add cap to reactor@ A2
+2021-08-13 15:19:40,184  
+2021-08-13 15:19:40,197 *Finished*
+
+2021-08-13 15:19:40,200 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:19:40,203 Required plates: plate_5mL:001, plate_10mL:001, plate_50mL:003
+
+2021-08-13 15:19:40,206 Warning: unassigned plates: plate_5mL:001
+
+2021-08-13 15:19:40,209 End of simulation..................................................................
+
+2021-08-13 15:19:41,504 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:19:41,506 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:19/1)
+2021-08-13 15:19:41,508 Transfer CsF (solid, 1 tablet) from vial@ (False, D7), to reactor@ A1 ...
+2021-08-13 15:19:41,567 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:19:41,630 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
+2021-08-13 15:19:41,692 Add cap to reactor@ A1
+2021-08-13 15:19:41,692  
+2021-08-13 15:19:41,708 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:19/2)
+2021-08-13 15:19:41,708 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A2 ...
+2021-08-13 15:19:41,770 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
+2021-08-13 15:19:41,833 Add cap to reactor@ A2
+2021-08-13 15:19:41,848  
+2021-08-13 15:19:41,871 *Finished*
+
+2021-08-13 15:19:41,878 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:19:41,882 Required plates: plate_5mL:001, plate_10mL:001, plate_50mL:003
+
+2021-08-13 15:19:41,886 Warning: unassigned plates: plate_5mL:001
+
+2021-08-13 15:19:41,888 End of simulation..................................................................
+
+2021-08-13 15:19:42,512 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:19:42,514 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:19/1)
+2021-08-13 15:19:42,516 Transfer CsF (solid, 1 tablet) from vial@ (False, D7), to reactor@ A1 ...
+2021-08-13 15:19:42,575 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:19:42,638 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
+2021-08-13 15:19:42,700 Add cap to reactor@ A1
+2021-08-13 15:19:42,716  
+2021-08-13 15:19:42,716 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:19/2)
+2021-08-13 15:19:42,731 Transfer KF (solid, 1 tablet) from vial@ (False, A1), to reactor@ A2 ...
+2021-08-13 15:19:42,794 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
+2021-08-13 15:19:42,856 Add cap to reactor@ A2
+2021-08-13 15:19:42,872  
+2021-08-13 15:19:42,891 *Finished*
+
+2021-08-13 15:19:42,900 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:19:42,905 Required plates: plate_5mL:001, plate_10mL:001, plate_50mL:003
+
+2021-08-13 15:19:42,909 Warning: unassigned plates: plate_5mL:001
+
+2021-08-13 15:19:42,909 End of simulation..................................................................
+
+2021-08-13 15:20:06,293 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:20:06,295 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:20/1)
+2021-08-13 15:20:06,297 Transfer CsF (solid, 1 tablet) from vial@ (C5, D7), to reactor@ A1 ...
+2021-08-13 15:20:06,356 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:20:06,419 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A1 ...
+2021-08-13 15:20:06,481 Add cap to reactor@ A1
+2021-08-13 15:20:06,497  
+2021-08-13 15:20:06,512 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:20/2)
+2021-08-13 15:20:06,512 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
+2021-08-13 15:20:06,590 Transfer water (solution, 0.9 mL) from vial@ (A2, B3), to reactor@ A2 ...
+2021-08-13 15:20:06,653 Add cap to reactor@ A2
+2021-08-13 15:20:06,653  
+2021-08-13 15:20:06,673 *Finished*
+
+2021-08-13 15:20:06,676 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:20:06,679 Required plates: plate_5mL:001, plate_10mL:001, plate_50mL:003
+
+2021-08-13 15:20:06,683 End of simulation..................................................................
+
+2021-08-13 15:20:08,575 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:20:08,578 Running in the saver mode （节省模式启动）
+2021-08-13 15:20:08,580 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 15:20:08,583 
+2021-08-13 15:20:08,585 Starting the main sequence (开始主反应序列)
+2021-08-13 15:20:08,587 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:20/1)
+2021-08-13 15:20:08,590 Transfer CsF (solid, 1 tablet) from vial@ (C5, D7), to reactor@ A1 ...
+2021-08-13 15:20:08,655 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:20:08,718  
+2021-08-13 15:20:08,733 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:20/2)
+2021-08-13 15:20:08,749 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
+2021-08-13 15:20:08,811  
+2021-08-13 15:20:08,827 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 15:20:08,846 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 15:20:08,910 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 15:20:08,972 
+2021-08-13 15:20:08,988 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 15:20:09,003 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 15:20:09,019 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 15:20:09,019 *Finished*
+
+2021-08-13 15:20:09,019 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:20:09,034 Required plates: plate_5mL:001, plate_10mL:001, plate_50mL:003
+
+2021-08-13 15:20:09,034 End of simulation..................................................................
+
+2021-08-13 15:20:13,032 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:20:13,037 Running in the saver mode （节省模式启动）
+2021-08-13 15:20:13,038 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 15:20:13,040 
+2021-08-13 15:20:13,041 Starting the main sequence (开始主反应序列)
+2021-08-13 15:20:13,044 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:20/1)
+2021-08-13 15:20:13,046 Transfer CsF (solid, 1 tablet) from vial@ (C5, D7), to reactor@ A1 ...
+2021-08-13 15:20:13,111 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:20:13,174  
+2021-08-13 15:20:13,174 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:20/2)
+2021-08-13 15:20:13,174 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
+2021-08-13 15:20:13,236  
+2021-08-13 15:20:13,251 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 15:20:13,268 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 15:20:13,330 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 15:20:13,392 
+2021-08-13 15:20:13,392 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 15:20:13,408 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 15:20:13,423 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 15:20:13,423 *Finished*
+
+2021-08-13 15:20:13,439 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:20:13,439 Required plates: plate_5mL:001, plate_10mL:001, plate_50mL:003
+
+2021-08-13 15:20:13,439 End of simulation..................................................................
+
+2021-08-13 15:20:13,968 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:20:13,972 Running in the saver mode （节省模式启动）
+2021-08-13 15:20:13,975 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 15:20:13,976 
+2021-08-13 15:20:13,978 Starting the main sequence (开始主反应序列)
+2021-08-13 15:20:13,980 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:20/1)
+2021-08-13 15:20:13,983 Transfer CsF (solid, 1 tablet) from vial@ (C5, D7), to reactor@ A1 ...
+2021-08-13 15:20:14,048 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:20:14,110  
+2021-08-13 15:20:14,110 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:20/2)
+2021-08-13 15:20:14,110 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
+2021-08-13 15:20:14,173  
+2021-08-13 15:20:14,173 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 15:20:14,193 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 15:20:14,272 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 15:20:14,335 
+2021-08-13 15:20:14,335 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 15:20:14,335 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 15:20:14,350 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 15:20:14,350 *Finished*
+
+2021-08-13 15:20:14,350 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:20:14,350 Required plates: plate_5mL:001, plate_10mL:001, plate_50mL:003
+
+2021-08-13 15:20:14,366 End of simulation..................................................................
+
+2021-08-13 15:20:14,952 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:20:14,956 Running in the saver mode （节省模式启动）
+2021-08-13 15:20:14,957 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 15:20:14,960 
+2021-08-13 15:20:14,964 Starting the main sequence (开始主反应序列)
+2021-08-13 15:20:14,966 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:20/1)
+2021-08-13 15:20:14,969 Transfer CsF (solid, 1 tablet) from vial@ (C5, D7), to reactor@ A1 ...
+2021-08-13 15:20:15,032 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:20:15,094  
+2021-08-13 15:20:15,110 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:20/2)
+2021-08-13 15:20:15,110 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
+2021-08-13 15:20:15,172  
+2021-08-13 15:20:15,188 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 15:20:15,188 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 15:20:15,258 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 15:20:15,320 
+2021-08-13 15:20:15,336 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 15:20:15,351 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 15:20:15,351 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 15:20:15,367 *Finished*
+
+2021-08-13 15:20:15,367 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:20:15,367 Required plates: plate_5mL:001, plate_10mL:001, plate_50mL:003
+
+2021-08-13 15:20:15,367 End of simulation..................................................................
+
+2021-08-13 15:20:17,921 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:20:17,927 Running in the saver mode （节省模式启动）
+2021-08-13 15:20:17,929 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 15:20:17,931 
+2021-08-13 15:20:17,934 Starting the main sequence (开始主反应序列)
+2021-08-13 15:20:17,934 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:20/1)
+2021-08-13 15:20:17,934 Transfer CsF (solid, 1 tablet) from vial@ (C5, D7), to reactor@ A1 ...
+2021-08-13 15:20:17,996 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:20:18,059  
+2021-08-13 15:20:18,090 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:20/2)
+2021-08-13 15:20:18,090 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
+2021-08-13 15:20:18,153  
+2021-08-13 15:20:18,153 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 15:20:18,174 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 15:20:18,237 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 15:20:18,299 
+2021-08-13 15:20:18,314 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 15:20:18,314 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 15:20:18,330 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 15:20:18,330 *Finished*
+
+2021-08-13 15:20:19,473 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:20:19,485 Running in the saver mode （节省模式启动）
+2021-08-13 15:20:19,485 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 15:20:19,485 
+2021-08-13 15:20:19,485 Starting the main sequence (开始主反应序列)
+2021-08-13 15:20:19,501 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:20/1)
+2021-08-13 15:20:19,501 Transfer CsF (solid, 1 tablet) from vial@ (C5, D7), to reactor@ A1 ...
+2021-08-13 15:20:19,563 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:20:19,626  
+2021-08-13 15:20:19,626 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:20/2)
+2021-08-13 15:20:19,641 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
+2021-08-13 15:20:19,704  
+2021-08-13 15:20:19,704 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 15:20:19,729 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 15:20:19,792 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 15:20:19,870 
+2021-08-13 15:20:19,885 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 15:20:19,901 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 15:20:19,901 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 15:20:19,916 *Finished*
+
+2021-08-13 15:20:23,279 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:20:23,283 Running in the saver mode （节省模式启动）
+2021-08-13 15:20:23,286 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 15:20:23,289 
+2021-08-13 15:20:23,292 Starting the main sequence (开始主反应序列)
+2021-08-13 15:20:23,294 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:20/1)
+2021-08-13 15:20:23,294 Transfer CsF (solid, 1 tablet) from vial@ (C5, D7), to reactor@ A1 ...
+2021-08-13 15:20:23,356 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:20:23,425  
+2021-08-13 15:20:23,425 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:20/2)
+2021-08-13 15:20:23,441 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
+2021-08-13 15:20:23,503  
+2021-08-13 15:20:23,503 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 15:20:23,531 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 15:20:23,594 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 15:20:23,693 
+2021-08-13 15:20:23,693 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 15:20:23,708 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 15:20:23,724 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 15:20:23,724 *Finished*
+
+2021-08-13 15:20:26,113 Com ports: xy_port= COM5, z_port= COM16, gripper_port= COM6, pipette_port= COM9
+2021-08-13 15:21:11,604 Run 1 of 1, transfer cap for reactor@ A1
+2021-08-13 15:21:27,402 Stopping......
+
+2021-08-13 15:21:32,893 Finished**************
+
+2021-08-13 15:23:14,325 Com ports: xy_port= COM5, z_port= COM16, gripper_port= COM6, pipette_port= COM9
+2021-08-13 15:23:54,105 Run 1 of 1, transfer cap for reactor@ A1
+2021-08-13 15:24:09,604 Finished**************
+
+2021-08-13 15:24:20,957 Run 1 of 5, transfer cap for reactor@ A1
+2021-08-13 15:24:36,691 Run 2 of 5, transfer cap for reactor@ A2
+2021-08-13 15:24:52,551 Run 3 of 5, transfer cap for reactor@ A3
+2021-08-13 15:25:08,388 Run 4 of 5, transfer cap for reactor@ A4
+2021-08-13 15:25:24,291 Run 5 of 5, transfer cap for reactor@ A5
+2021-08-13 15:25:40,182 Finished**************
+
+2021-08-13 15:26:09,356 Simulation mode （模拟运行模式）..........................................................
+2021-08-13 15:26:09,372 Running in the saver mode （节省模式启动）
+2021-08-13 15:26:09,372 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 15:26:09,372 
+2021-08-13 15:26:09,372 Starting the main sequence (开始主反应序列)
+2021-08-13 15:26:09,372 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:26/1)
+2021-08-13 15:26:09,372 Transfer CsF (solid, 1 tablet) from vial@ (C5, D7), to reactor@ A1 ...
+2021-08-13 15:26:09,434 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:26:09,497  
+2021-08-13 15:26:09,512 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:26/2)
+2021-08-13 15:26:09,512 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
+2021-08-13 15:26:09,575  
+2021-08-13 15:26:09,590 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 15:26:09,600 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 15:26:09,664 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 15:26:09,727 
+2021-08-13 15:26:09,742 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 15:26:09,742 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 15:26:09,758 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 15:26:09,758 *Finished*
+
+2021-08-13 15:26:09,758 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-13 15:26:09,773 Required plates: plate_10mL:001, plate_50mL:003, plate_5mL:001
+
+2021-08-13 15:26:09,773 End of simulation..................................................................
+
+2021-08-13 15:26:19,762 Start running...........................................................................
+2021-08-13 15:26:19,762 Running in the saver mode （节省模式启动）
+2021-08-13 15:26:19,778 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-13 15:26:19,778 
+2021-08-13 15:26:19,778 Starting the main sequence (开始主反应序列)
+2021-08-13 15:26:19,778 Reaction No. 1 of 2, (tracking number: 08/13/2021/15:26/1)
+2021-08-13 15:26:19,793 Transfer CsF (solid, 1 tablet) from vial@ (C5, D7), to reactor@ A1 ...
+2021-08-13 15:27:02,143 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-13 15:28:02,569  
+2021-08-13 15:28:02,572 Reaction No. 2 of 2, (tracking number: 08/13/2021/15:26/2)
+2021-08-13 15:28:02,572 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
+2021-08-13 15:28:41,229  
+2021-08-13 15:28:41,229 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-13 15:28:49,924 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-13 15:29:20,355 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-13 15:30:03,519 
+2021-08-13 15:30:03,519 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-13 15:30:03,534 Run 1 of 2, adding cap to reactor at A1
+2021-08-13 15:30:19,521 Run 2 of 2, adding cap to reactor at A2
+2021-08-13 15:30:35,611 *Finished*
+
+2021-08-13 15:33:09,260 Run 1 of 2, transfer cap for reactor@ A1
+2021-08-13 15:33:25,104 Run 2 of 2, transfer cap for reactor@ A2
+2021-08-13 15:33:40,989 Finished**************
 

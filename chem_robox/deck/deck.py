@@ -338,3 +338,23 @@ class Deck(object):
                 return assignment
         return "complete"
 
+# example of self.deck_config
+# {
+#     "A1": {"plate": "plate_5mL:001", "assignment": "Reagent"},
+#     "A2": {"plate": "plate_5mL:001", "assignment": "Reagent"},
+
+
+    def get_plate_list(self):
+        self.plate_list = []
+        for slot in self.deck_config:
+            self.plate_list.append(self.deck_config[slot]["plate"])
+        return self.plate_list
+            
+    def is_plate_on_deck(self, plate_list):
+        unassigned_plate = []
+        self.get_plate_list()
+        for plate_name in plate_list:
+            if plate_name not in self.plate_list:
+                unassigned_plate.append(plate_name)
+        return unassigned_plate
+

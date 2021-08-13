@@ -85,3 +85,7 @@ if __name__ == '__main__':
 
     v = deck.deck_config.values()
     print(v)
+    a = deck.get_plate_list()
+    print(a)
+    b = deck.is_plate_on_deck(plate_list = ["plate_2mL:001"])
+    print(b)

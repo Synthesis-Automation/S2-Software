@@ -749,12 +749,10 @@ class Synthesis_tab(ttk.Frame):
                 self.reactor_selection.set_current(reactor_start_number)
                 reagent_counter = 1
                 for reagent in reaction:
-                    print(reagent)
                     reactor_no = self.reactor_selection.get_current(
                         format="A1")
                     reactor_vial = (reactor_plate, reactor_no)
                     is_volatile = reagent["is_volatile"]
-                    # print("is_volative     1", is_volatile, reagent_counter)
                     reagent_amount = reagent["amount"]
                     if reagent_type in ["pure_liquid", "solution"]:
                         reagent_unit = "mL"
@@ -938,7 +936,7 @@ class Synthesis_tab(ttk.Frame):
         self.run_button["state"] = "normal"
         self.information.display_msg(
             "*Finished*\n", start_over=False)
-        self.run_button["state"] = "enabled"
+        # self.run_button["state"] = "enabled"
         if chem_robot.check_stop_status() == "stop":
             return
         if not simulation:
@@ -1052,13 +1050,21 @@ class Synthesis_tab(ttk.Frame):
                 messagebox.showinfo(" ", res)
                 return
         chem_synthesis.ready = True
-        self.run_button["state"] = "enabled"
         self.setup(simulation=True)
         msg = "Synthesis plan was parsed successfully! All reagents have been located."
-        required_plate_list = "Required plates: " + \
-            ", ".join(chem_synthesis.get_required_reagent_plate()) + "\n"
+        required_plate_list = chem_synthesis.get_required_reagent_plate()
+        required_plate_text = "Required plates: " + \
+            ", ".join(required_plate_list) + "\n"
+        unassigned_plate_list = chem_robot.deck.is_plate_on_deck(
+            required_plate_list)
+        unassigned_plate_text = "Warning: unassigned plates: " + \
+            ", ".join(unassigned_plate_list) + "\n"
         self.information.display_msg(msg, start_over=False)
-        self.information.display_msg(required_plate_list, start_over=False)
+        self.information.display_msg(required_plate_text, start_over=False)
+        if unassigned_plate_list:
+            self.information.display_msg(
+                unassigned_plate_text, start_over=False)
+            self.run_button["state"] = "disabled"
         end_msg = "End of simulation..................................................................\n"
         self.information.display_msg(end_msg, start_over=False)
 
@@ -1499,7 +1505,7 @@ class Workup_tab(ttk.Frame):
             self.reactor_selection.next()
             self.GC_LC_selection.next()
         self.information.display_msg(
-            "*Finished*\n", start_over=False)
+            "Finished***********\n", start_over=False)
         self.run_button["state"] = "enabled"
 
     def run(self):
@@ -2387,7 +2393,7 @@ class Cap_operation():
             self.cap_selection.next()
 
         self.information.display_msg(
-            "*Finished*\n", start_over=False)
+            "Finished**************\n", start_over=False)
 
         self.popup_window.grab_release()
         self.exit_button["state"] = "normal"

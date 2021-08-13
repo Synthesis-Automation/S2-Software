@@ -22,7 +22,7 @@ class XY_platform():
         if self.firmware == "Marlin":
             self.motion_control.set_steps_per_mm(axis = 'x', steps_per_mm = 5120)
             self.motion_control.set_steps_per_mm(axis = 'y', steps_per_mm = 5120)
-            self.set_speed(x=300/MARLIN_SPEED_MULTIPLIER, y=150/MARLIN_SPEED_MULTIPLIER)
+            self.set_speed(x=300/MARLIN_SPEED_MULTIPLIER, y=200/MARLIN_SPEED_MULTIPLIER)
             self.set_acceleration(x=80, y=20) # 100 is stable
 
     def update(self, head_offsets={}):
