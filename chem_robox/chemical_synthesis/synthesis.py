@@ -62,7 +62,7 @@ class Synthesis(object):
         self.synthesis_plan_json = []
         self.ready = False
 
-    def load_reagent_index(self, file_name):
+    def  load_reagent_index(self, file_name):
         try:
             data = pd.read_excel(file_name)
             # read reagent index excel file and convert it to a list
@@ -263,6 +263,7 @@ class Synthesis(object):
                             "type": tablet['type'],
                             "plate": tablet['plate'],
                             "position": tablet['vial'],
+                            "is_volatile": tablet['is_volatile'],
                             "amount": number_of_tablet
                         }
                     )

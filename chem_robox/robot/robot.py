@@ -21,8 +21,12 @@ from chem_robox.parameters import CAPPER, LIQUID, TABLET, GRIPPER_ID
 from chem_robox.tools import custom_widgets, helper
 
 # Gripper hold distance to the cap
-HOLD_DISTANCE = 10
-Z_NORMAL_SPEED = 3000 
+CAP_HEIGHT = {"reactor_circle_8mL_20p": 9, "reactor_circle_8mL_10p": 9, "reactor_square_8mL_20p": 9,
+              "workup_8mL_20p": 9, "plate_50mL": 12, "plate_10mL": 12, "plate_5mL": 12}
+
+
+Z_NORMAL_SPEED = 3000
+
 
 class Robot(object):
     def __init__(
@@ -184,6 +188,7 @@ class Robot(object):
             print(f"{head} should not move to {assignment}")
             return assignment
         my_vial = self.vial(vial[0], vial[1])
+        print(vial, my_vial)
         self.back_to_safe_position_all()
         response = self.xy_platform.move_to(head=head, vial=my_vial)
         return response
@@ -238,7 +243,7 @@ class Robot(object):
         vial_type = my_vial["type"]
         self.z_platform.set_max_speed(
             head=CAPPER, speed=Z_NORMAL_SPEED)  # normal Max speed = 3000
-  
+
         if vial_type == "reactor_27p":
             rotation_speed = 80
             rotation_force = 90
@@ -280,7 +285,7 @@ class Robot(object):
             gripper_closing_percent = 20
             up_distance = 6
 
-        elif vial_type == "plate_50mL" or vial_type == "plate_10mL":
+        elif vial_type in ["plate_50mL", "plate_10mL"]:
             rotation_speed = 70
             rotation_force = 90
             ratio = 6.0
@@ -292,7 +297,7 @@ class Robot(object):
         else:
             print("unknown cap type!")
             return "unknown cap"
-
+        HOLD_DISTANCE = CAP_HEIGHT[vial_type]
         self.gripper.set_rotation_force(rotation_force)
         self.move_to(head=CAPPER, vial=vial)
         self.gripper.gripper_open(gripper_openning_percent)
@@ -329,6 +334,7 @@ class Robot(object):
             self.z_platform.set_max_speed(
                 head=CAPPER, speed=4000)  # normal Max speed = 4000
             time.sleep(0.1)
+            HOLD_DISTANCE = CAP_HEIGHT[vial_type]
             if vial_type == "reactor_27p":
                 screw_height = 3
                 rotation_speed = 80
@@ -350,7 +356,7 @@ class Robot(object):
                 gripper_openning_percent = 70
 
             if vial_type in ["reactor_circle_8mL_20p", "reactor_circle_8mL_10p", "reactor_square_8mL_20p", "workup_8mL_20p"]:
-                screw_height = 3  
+                screw_height = 3
                 rotation_speed = 60
                 rotation_force = 30
                 ratio = 8
@@ -370,7 +376,7 @@ class Robot(object):
                 gripper_openning_percent = 40
 
             if vial_type == "reactor_12p_8mL":
-                screw_height = 4  
+                screw_height = 4
                 rotation_speed = 70
                 rotation_force = 30
                 ratio = 8.0
@@ -379,7 +385,7 @@ class Robot(object):
                 rotation_angle = -1400
                 gripper_openning_percent = 70
 
-            if vial_type == "plate_50mL" or vial_type == "plate_10mL":
+            if vial_type in ["plate_50mL", "plate_10mL"]:
                 screw_height = 5
                 rotation_speed = 70
                 rotation_force = 30
@@ -401,7 +407,7 @@ class Robot(object):
             time.sleep(0.3)
             self.gripper.gripper_open(gripper_openning_percent)
             self.z_platform.set_max_speed(
-                head=CAPPER, speed=Z_NORMAL_SPEED)  
+                head=CAPPER, speed=Z_NORMAL_SPEED)
             self.back_to_safe_position(CAPPER)
             return "finish"
         else:
@@ -415,6 +421,8 @@ class Robot(object):
         if self.gripper.is_gripper_holding():
             print("Cap already holded")
             return "cap hold"
+        HOLD_DISTANCE = CAP_HEIGHT["reactor_square_8mL_20p"]
+
         gripper_openning_percent = 75
         rotation_angle = 1500
         self.move_to(head=CAPPER, vial=vial)
@@ -434,8 +442,9 @@ class Robot(object):
         if not self.gripper.is_gripper_holding():
             print("No cap is holded")
             return
-        gripper_openning_percent = 80
+        gripper_openning_percent = 70
         rotation_angle = -1500
+        HOLD_DISTANCE = CAP_HEIGHT["reactor_square_8mL_20p"]
         self.move_to(head=CAPPER, vial=vial)
         self.move_to_top_of_vial(head=CAPPER, vial=vial, z=HOLD_DISTANCE*-1)
         self.gripper.gripper_open(gripper_openning_percent)
@@ -509,7 +518,7 @@ class Robot(object):
             print(msg)
             return msg
 
-    def aspirate(self, vial=(), volume=0, tip_type="tips_1000uL", tip_extraction_screw_height=0):
+    def aspirate(self, vial=(), volume=0, tip_type="tips_1000uL", tip_extraction_adjustment=0):
         '''vial=("A1", "B1"), volume= xx uL'''
         # the function does move to target location
         if not self.ready:
@@ -521,7 +530,7 @@ class Robot(object):
         tip_length_adjustment = -1 * \
             self.robot_config["tip_length_adjustment"][tip_type]
         self.move_to_bottom_of_vial(
-            head=LIQUID, vial=vial, z=tip_length_adjustment + tip_extraction_screw_height)
+            head=LIQUID, vial=vial, z=tip_length_adjustment + tip_extraction_adjustment)
         self.pipette.aspirate(volume)
         return "finish"
 
@@ -567,7 +576,7 @@ class Robot(object):
             self.pipette.dispense()
 
     def transfer_liquid(self, vial_from=(), vial_to=(),
-                        tip=None, trash=(), volume=0, is_volatile="no", tip_type="tips_1000uL", is_extraction=False, tip_extraction_screw_height=0, z=-10):
+                        tip=None, trash=(), volume=0, is_volatile="no", tip_type="tips_1000uL", is_extraction=False, tip_extraction_adjustment=0, z=-10):
         '''vial_from=("A1", "B1"), volume=mL, when tip = None, no tip will be used, z is used for screw_height of height of tip'''
         if not self.ready:
             return
@@ -604,7 +613,7 @@ class Robot(object):
             if not (is_volatile and is_first):
                 self.move_to(head=LIQUID, vial=vial_from)
             self.aspirate(vial=vial_from, volume=vol, tip_type=tip_type,
-                          tip_extraction_screw_height=tip_extraction_screw_height)
+                          tip_extraction_adjustment=tip_extraction_adjustment)
             if self.check_stop_status() == "stop":
                 return "stop"
             if tip_type == "tips_1000uL":
@@ -651,7 +660,6 @@ class Robot(object):
 
 # misc funcitons
     # use mosfets to control the lights
-
 
     def green_light(self, state='on'):
         GREEN_MOSFET = 2

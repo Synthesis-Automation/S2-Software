@@ -1,50 +1,54 @@
 [
     {
-        "tracking_number": "08/04/2021/15:46/1",
+        "tracking_number": "08/13/2021/13:00/1",
         "reactor_no": 1,
         "addition_temperature": 25,
-        "reaction_time": 1,
-        "reaction_temperature": 25,
+        "reaction_time": 6.0,
+        "reaction_temperature": 25.0,
         "reagents": [
             {
-                "name": "AcOH",
-                "type": "pure_liquid",
-                "plate": "plate_10mL:001",
-                "position": "C1",
-                "amount": 0.0057,
-                "is_volatile": "no"
+                "name": "KF",
+                "type": "solid",
+                "plate": "plate_5mL:001",
+                "position": "A1",
+                "is_volatile": "no",
+                "amount": 1
             },
             {
-                "name": "MeOH",
+                "name": "liquid1",
                 "type": "pure_liquid",
-                "plate": "plate_50mL:001",
-                "position": "B2",
+                "plate": "plate_10mL:001",
+                "position": "C4",
                 "amount": 0.5,
-                "is_volatile": "yes"
-            },
-            {
-                "name": "Isopropylaniline",
-                "type": "pure_liquid",
-                "plate": "plate_10mL:002",
-                "position": "B1",
-                "amount": 0.0109,
                 "is_volatile": "no"
+            }
+        ],
+        "workup": {
+            "name": "None"
+        }
+    },
+    {
+        "tracking_number": "08/13/2021/13:00/2",
+        "reactor_no": 2,
+        "addition_temperature": 25,
+        "reaction_time": 6.0,
+        "reaction_temperature": 25.0,
+        "reagents": [
+            {
+                "name": "KF",
+                "type": "solid",
+                "plate": "plate_5mL:001",
+                "position": "A1",
+                "is_volatile": "no",
+                "amount": 1
             },
             {
-                "name": "Benzaldehyde",
-                "type": "pure_liquid",
-                "plate": "plate_10mL:001",
-                "position": "A3",
-                "amount": 0.0102,
-                "is_volatile": "no"
-            },
-            {
-                "name": "NaBH3CN",
+                "name": "water",
                 "type": "solution",
                 "plate": "plate_50mL:003",
-                "position": "A1",
-                "amount": 0.5,
-                "is_volatile": "yes"
+                "position": "B3",
+                "amount": 0.9,
+                "is_volatile": "no"
             }
         ],
         "workup": {

@@ -749,6 +749,7 @@ class Synthesis_tab(ttk.Frame):
                 self.reactor_selection.set_current(reactor_start_number)
                 reagent_counter = 1
                 for reagent in reaction:
+                    print(reagent)
                     reactor_no = self.reactor_selection.get_current(
                         format="A1")
                     reactor_vial = (reactor_plate, reactor_no)
@@ -965,8 +966,9 @@ class Synthesis_tab(ttk.Frame):
     def open_reagent_index(self):
         filename = filedialog.askopenfilename(title="Select protocol file", filetypes=(
             ("excel file", "*.xlsx"), ("all files", "*.*")))
+        print(filename)
         if filename:
-            chem_synthesis.load_reagent_index(filename)
+            chem_synthesis.load_reagent_index(Path(filename))
 
     def open_plan(self):
         filename = filedialog.askopenfilename(title="Select protocol file", filetypes=(

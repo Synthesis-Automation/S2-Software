@@ -4,8 +4,8 @@
         "assignment": "Tips 50uL"
     },
     "A2": {
-        "plate": "not_used:001",
-        "assignment": "Not_used"
+        "plate": "plate_50mL:003",
+        "assignment": "Reagent"
     },
     "A3": {
         "plate": "trash:001",
@@ -16,8 +16,8 @@
         "assignment": "Reaction caps"
     },
     "A5": {
-        "plate": "plate_5mL:003",
-        "assignment": "Reagent"
+        "plate": "not_used:003",
+        "assignment": "Not_used"
     },
     "B1": {
         "plate": "tiprack_1000uL:002",
@@ -36,8 +36,8 @@
         "assignment": "Reagent"
     },
     "B5": {
-        "plate": "plate_5mL:002",
-        "assignment": "Reagent"
+        "plate": "not_used:002",
+        "assignment": "Not_used"
     },
     "C1": {
         "plate": "plate_2mL:001",
