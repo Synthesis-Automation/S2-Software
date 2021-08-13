@@ -16,16 +16,13 @@ from chem_robox.robot.drivers.serial_connection import get_port_by_VID, get_port
 from chem_robox.deck import deck
 
 # Defined in parameters.py; CAPPER = 'Z1', TABLET = 'Z2', LOQUID = 'Z3'
-from chem_robox.parameters import CAPPER, LIQUID, TABLET, GRIPPER_ID
+from chem_robox.parameters import CAPPER, LIQUID, TABLET, GRIPPER_ID, Z_NORMAL_SPEED
 # import tkinter as tk
 from chem_robox.tools import custom_widgets, helper
 
 # Gripper hold distance to the cap
 CAP_HEIGHT = {"reactor_circle_8mL_20p": 9, "reactor_circle_8mL_10p": 9, "reactor_square_8mL_20p": 9,
               "workup_8mL_20p": 9, "plate_50mL": 12, "plate_10mL": 12, "plate_5mL": 12}
-
-
-Z_NORMAL_SPEED = 3000
 
 
 class Robot(object):

@@ -10,6 +10,8 @@ TABLET = "Z2"
 CAPPER = "Z3"
 
 GRIPPER_ID = 1
+Z_NORMAL_SPEED = 3000
+
 
 VERSION = "v 1.0"
 SYSTEM_NAME = "Open Automatic Chemical Synthesis Platform - ChemRobox"
