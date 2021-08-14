@@ -61,39 +61,7 @@ class Main(tk.Tk):
         self.log_menu.add_separator()
         self.log_menu.add_command(
             label="Open log book folder", command=lambda: self.open_log_book_folder())
-
         self.menu.add_cascade(label="LogBook ", menu=self.log_menu)
-
-        self.home_menu = Menu(self.menu, tearoff=0)
-        self.home_menu.add_command(label="Home all axes",
-                                   command=lambda: chem_robot.home_all())
-        self.home_menu.add_command(label="Home Z axes only",
-                                   command=lambda: chem_robot.home_all_z())
-        self.menu.add_cascade(label="Home-robot ", menu=self.home_menu)
-
-        self.pipette_menu = Menu(self.menu, tearoff=0)
-        self.pipette_menu.add_command(
-            label="Reset pipette", command=lambda: chem_robot.pipette.initialization())
-        self.pipette_menu.add_command(
-            label="Eject tip", command=lambda: chem_robot.pipette.send_drop_tip_cmd())
-        self.menu.add_cascade(label="Pipette  ", menu=self.pipette_menu)
-
-        self.gripper_menu = Menu(self.menu, tearoff=0)
-        self.gripper_menu.add_command(
-            label="Reset gripper", command=lambda: chem_robot.gripper.initialization())
-        self.gripper_menu.add_command(
-            label="Gripper open (100%)", command=lambda: chem_robot.gripper.gripper_open(100))
-        self.gripper_menu.add_command(
-            label="Gripper open (80%)", command=lambda: chem_robot.gripper.gripper_open(80))
-        self.gripper_menu.add_command(
-            label="Gripper open (50%)", command=lambda: chem_robot.gripper.gripper_open(50))
-        self.gripper_menu.add_command(
-            label="Gripper open (30%)", command=lambda: chem_robot.gripper.gripper_open(30))
-        self.gripper_menu.add_command(
-            label="Gripper close", command=lambda: chem_robot.gripper.gripper_open(0))
-        self.gripper_menu.add_command(
-            label="Gripper rotate 90 degree", command=lambda: chem_robot.gripper.rotate(90))
-        self.menu.add_cascade(label="Gripper  ", menu=self.gripper_menu)
 
         self.calibration_menu = Menu(self.menu, tearoff=0)
         self.calibration_menu.add_command(
@@ -130,6 +98,7 @@ class Main(tk.Tk):
         helpmenu = Menu(self.menu, tearoff=0)
         helpmenu.add_command(label="About", command=lambda: self.about())
         self.menu.add_cascade(label="Help", menu=helpmenu)
+
         tk.Tk.config(self, menu=self.menu)
         # End of main menu
 
@@ -1984,7 +1953,8 @@ class Solid_distrubution():
             solvent_plate_name = reagent['plate']
             solvent_pos = reagent['position']
             solvent_name = reagent['name']
-            mmol_per_tablet = reagent['mmol_per_tablet']
+            mmol_per_tablet = chem_synthesis.locate_reagent(solvent_name)[
+                'amount']
             solvent_slot = chem_robot.deck.get_slot_from_plate_name(
                 solvent_plate_name)
             solvent_vial = (solvent_slot, solvent_pos)
@@ -2010,7 +1980,8 @@ class Solid_distrubution():
                 message = f"Run {i+1} of {number_of_reaction}, adding solid {solvent_name} {amount} mmol to reactor at {reactor_vial[1]}"
                 self.information.display_msg(message, start_over=False)
                 number_of_tablet = int(math.ceil(amount/mmol_per_tablet))
-                print("amount/mmol_per_tablet", amount, mmol_per_tablet, amount/mmol_per_tablet, number_of_tablet)
+                print("amount/mmol_per_tablet", amount, mmol_per_tablet,
+                      amount/mmol_per_tablet, number_of_tablet)
                 chem_robot.transfer_tablet(
                     vial_from=solvent_vial, vial_to=reactor_vial, number_of_tablet=number_of_tablet)
                 if chem_robot.check_stop_status() == "stop":
@@ -2048,6 +2019,41 @@ class Manual_control():
         self.tip_selector = tip_selector
         self.popup_window = Toplevel()
         self.popup_window.title("Manual Controls ")
+
+        self.menu = Menu(self.popup_window, bg="lightgrey", fg="black")
+
+        self.home_menu = Menu(self.menu, tearoff=0)
+        self.home_menu.add_command(label="Home all axes",
+                                   command=lambda: chem_robot.home_all())
+        self.home_menu.add_command(label="Home Z axes only",
+                                   command=lambda: chem_robot.home_all_z())
+        self.menu.add_cascade(label="Home-Robot ", menu=self.home_menu)
+
+        self.pipette_menu = Menu(self.menu, tearoff=0)
+        self.pipette_menu.add_command(
+            label="Reset pipette", command=lambda: chem_robot.pipette.initialization())
+        self.pipette_menu.add_command(
+            label="Eject tip", command=lambda: chem_robot.pipette.send_drop_tip_cmd())
+        self.menu.add_cascade(label="Pipette  ", menu=self.pipette_menu)
+
+        self.gripper_menu = Menu(self.menu, tearoff=0)
+        self.gripper_menu.add_command(
+            label="Reset gripper", command=lambda: chem_robot.gripper.initialization())
+        self.gripper_menu.add_command(
+            label="Gripper open (100%)", command=lambda: chem_robot.gripper.gripper_open(100))
+        self.gripper_menu.add_command(
+            label="Gripper open (80%)", command=lambda: chem_robot.gripper.gripper_open(80))
+        self.gripper_menu.add_command(
+            label="Gripper open (50%)", command=lambda: chem_robot.gripper.gripper_open(50))
+        self.gripper_menu.add_command(
+            label="Gripper open (30%)", command=lambda: chem_robot.gripper.gripper_open(30))
+        self.gripper_menu.add_command(
+            label="Gripper close", command=lambda: chem_robot.gripper.gripper_open(0))
+        self.gripper_menu.add_command(
+            label="Gripper rotate 90 degree", command=lambda: chem_robot.gripper.rotate(90))
+        self.menu.add_cascade(label="Gripper  ", menu=self.gripper_menu)
+
+        tk.Tk.config(self.popup_window, menu=self.menu)
 
         # Slot selector
         self.current_slot = 8

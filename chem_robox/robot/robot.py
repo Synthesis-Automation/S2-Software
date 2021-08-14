@@ -131,6 +131,7 @@ class Robot(object):
             self.go_home()
             self.pipette.initialization()
             self.gripper.initialization()
+            self.clear_stop_status()
         else:
             print("Robot not ready, going home failed")
 
@@ -655,6 +656,9 @@ class Robot(object):
             else:
                 self.set_stop_flag(False)
                 return "resume"
+
+    def clear_stop_status(self):
+        self.set_stop_flag(False)
 
 
 # misc funcitons
