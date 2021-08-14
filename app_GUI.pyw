@@ -1984,7 +1984,7 @@ class Solid_distrubution():
             solvent_plate_name = reagent['plate']
             solvent_pos = reagent['position']
             solvent_name = reagent['name']
-            mmol_per_tablet = reagent['amount']
+            mmol_per_tablet = reagent['mmol_per_tablet']
             solvent_slot = chem_robot.deck.get_slot_from_plate_name(
                 solvent_plate_name)
             solvent_vial = (solvent_slot, solvent_pos)
@@ -2010,6 +2010,7 @@ class Solid_distrubution():
                 message = f"Run {i+1} of {number_of_reaction}, adding solid {solvent_name} {amount} mmol to reactor at {reactor_vial[1]}"
                 self.information.display_msg(message, start_over=False)
                 number_of_tablet = int(math.ceil(amount/mmol_per_tablet))
+                print("amount/mmol_per_tablet", amount, mmol_per_tablet, amount/mmol_per_tablet, number_of_tablet)
                 chem_robot.transfer_tablet(
                     vial_from=solvent_vial, vial_to=reactor_vial, number_of_tablet=number_of_tablet)
                 if chem_robot.check_stop_status() == "stop":

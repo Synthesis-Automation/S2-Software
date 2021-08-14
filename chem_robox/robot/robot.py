@@ -439,7 +439,7 @@ class Robot(object):
         if not self.gripper.is_gripper_holding():
             print("No cap is holded")
             return
-        gripper_openning_percent = 70
+        gripper_openning_percent = 65
         rotation_angle = -1500
         HOLD_DISTANCE = CAP_HEIGHT["reactor_square_8mL_20p"]
         self.move_to(head=CAPPER, vial=vial)
@@ -478,6 +478,7 @@ class Robot(object):
     def transfer_tablet(self, vial_from=None, vial_to=None,
                         number_of_tablet=1):
         if not self.ready:
+            print("Robot not ready!")
             return
         for _ in range(number_of_tablet):
             self.pickup_tablet(vial_from)
@@ -619,9 +620,10 @@ class Robot(object):
                 wait_height = -35
             tip_length_adjustment = -1 * \
                 self.robot_config["tip_length_adjustment"][tip_type]
-            self.move_to_top_of_vial(
-                head=LIQUID, vial=vial_from, z=wait_height+tip_length_adjustment)
-            time.sleep(1)
+            if not is_extraction:
+                self.move_to_top_of_vial(
+                    head=LIQUID, vial=vial_from, z=wait_height+tip_length_adjustment)
+                time.sleep(1)
             if self.check_stop_status() == "stop":
                 return "stop"
             if tip_type == "tips_1000uL":

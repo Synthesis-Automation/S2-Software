@@ -1,1 +1,106 @@
 2021-08-14 00:03:08,416 Com ports: xy_port= None, z_port= None, gripper_port= None, pipette_port= None
+2021-08-14 11:58:24,038 Com ports: xy_port= COM5, z_port= COM16, gripper_port= COM6, pipette_port= COM9
+2021-08-14 11:59:37,452 Run 1 of 5, transfer cap for reactor@ A1
+2021-08-14 11:59:52,971 Run 2 of 5, transfer cap for reactor@ A2
+2021-08-14 12:00:09,089 Run 3 of 5, transfer cap for reactor@ A3
+2021-08-14 12:00:25,196 Run 4 of 5, transfer cap for reactor@ A4
+2021-08-14 12:00:41,284 Run 5 of 5, transfer cap for reactor@ A5
+2021-08-14 12:00:57,373 Finished**************
+
+2021-08-14 12:01:09,923 Run 1 of 5, transfer cap for reactor@ A1
+2021-08-14 12:01:25,742 Run 2 of 5, transfer cap for reactor@ A2
+2021-08-14 12:01:41,604 Run 3 of 5, transfer cap for reactor@ A3
+2021-08-14 12:01:57,474 Run 4 of 5, transfer cap for reactor@ A4
+2021-08-14 12:02:13,344 Run 5 of 5, transfer cap for reactor@ A5
+2021-08-14 12:02:29,209 Finished**************
+
+2021-08-14 12:03:03,947 Com ports: xy_port= COM5, z_port= COM16, gripper_port= COM6, pipette_port= COM9
+2021-08-14 12:03:41,712 Run 1 of 5, transfer cap for reactor@ A1
+2021-08-14 12:03:57,239 Run 2 of 5, transfer cap for reactor@ A2
+2021-08-14 12:04:13,327 Run 3 of 5, transfer cap for reactor@ A3
+2021-08-14 12:04:29,416 Run 4 of 5, transfer cap for reactor@ A4
+2021-08-14 12:04:45,522 Run 5 of 5, transfer cap for reactor@ A5
+2021-08-14 12:05:01,612 Finished**************
+
+2021-08-14 12:05:11,247 Run 1 of 5, transfer cap for reactor@ A1
+2021-08-14 12:05:27,081 Run 2 of 5, transfer cap for reactor@ A2
+2021-08-14 12:05:42,939 Run 3 of 5, transfer cap for reactor@ A3
+2021-08-14 12:05:58,809 Run 4 of 5, transfer cap for reactor@ A4
+2021-08-14 12:06:14,687 Run 5 of 5, transfer cap for reactor@ A5
+2021-08-14 12:06:30,555 Finished**************
+
+2021-08-14 12:07:08,935 Simulation mode （模拟运行模式）..........................................................
+2021-08-14 12:07:08,966 Running in the saver mode （节省模式启动）
+2021-08-14 12:07:08,966 Starting to add common reagents (开始添加每个反应的相同试剂)
+2021-08-14 12:07:08,966 
+2021-08-14 12:07:08,982 Starting the main sequence (开始主反应序列)
+2021-08-14 12:07:08,982 Reaction No. 1 of 2, (tracking number: 08/14/2021/12:07/1)
+2021-08-14 12:07:08,982 Transfer CsF (solid, 1 tablet) from vial@ (C5, D7), to reactor@ A1 ...
+2021-08-14 12:07:09,044 Transfer liquid1 (pure_liquid, 0.5 mL) from vial@ (B4, C4), to reactor@ A1 ...
+2021-08-14 12:07:09,107  
+2021-08-14 12:07:09,122 Reaction No. 2 of 2, (tracking number: 08/14/2021/12:07/2)
+2021-08-14 12:07:09,122 Transfer KF (solid, 1 tablet) from vial@ (C5, A1), to reactor@ A2 ...
+2021-08-14 12:07:09,185  
+2021-08-14 12:07:09,201 Starting to add remaining common reagents (开始添加尚未加入的相同试剂)
+2021-08-14 12:07:09,208 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A1
+2021-08-14 12:07:09,286 Transfer water (solution, 0.9 mL) from vial@ (A2, B3) to reactor@ A2
+2021-08-14 12:07:09,349 
+2021-08-14 12:07:09,380 Reagents addition completed, start to cap reactors (试剂添加完成！开始反应瓶加盖操作)
+2021-08-14 12:07:09,380 Run 1 of 2, adding cap to reactor at A1
+2021-08-14 12:07:09,380 Run 2 of 2, adding cap to reactor at A2
+2021-08-14 12:07:09,396 *Finished*
+
+2021-08-14 12:07:09,396 Synthesis plan was parsed successfully! All reagents have been located.
+2021-08-14 12:07:09,396 Required plates: plate_5mL:001, plate_10mL:001, plate_50mL:003
+
+2021-08-14 12:07:09,396 End of simulation..................................................................
+
+2021-08-14 12:08:25,977 Start work-up...
+
+2021-08-14 12:08:28,664 Run 1 of 5, transfer 2.0 mL reaction mixture from reactor@ A1 to workup plate position@ A1 using tip@ A3
+2021-08-14 12:10:22,172 Run 2 of 5, transfer 2.0 mL reaction mixture from reactor@ A2 to workup plate position@ A2 using tip@ B3
+2021-08-14 12:12:15,948 Run 3 of 5, transfer 2.0 mL reaction mixture from reactor@ A3 to workup plate position@ A3 using tip@ C3
+2021-08-14 12:13:59,708 Stopping......
+
+2021-08-14 12:14:52,539 Com ports: xy_port= COM5, z_port= COM16, gripper_port= COM6, pipette_port= COM9
+2021-08-14 12:15:32,526 Start work-up...
+
+2021-08-14 12:15:35,215 Run 1 of 5, transfer 2.0 mL reaction mixture from reactor@ A1 to workup plate position@ A1 using tip@ D3
+2021-08-14 12:17:26,430 Run 2 of 5, transfer 2.0 mL reaction mixture from reactor@ A2 to workup plate position@ A2 using tip@ E3
+2021-08-14 12:19:17,354 Run 3 of 5, transfer 2.0 mL reaction mixture from reactor@ A3 to workup plate position@ A3 using tip@ F3
+2021-08-14 12:21:08,276 Run 4 of 5, transfer 2.0 mL reaction mixture from reactor@ A4 to workup plate position@ A4 using tip@ G3
+2021-08-14 12:22:59,301 Run 5 of 5, transfer 2.0 mL reaction mixture from reactor@ A5 to workup plate position@ A5 using tip@ H3
+2021-08-14 12:24:50,441 Finished***********
+
+2021-08-14 13:27:15,999 Starting transfering...
+2021-08-14 13:27:33,690 Run 1 of 1, adding solvent Ethyl-acetate 1.0 mL to reactor at A1 using tip A4
+2021-08-14 13:28:15,358 *Finished*
+
+2021-08-14 13:28:48,353 Starting transfering...
+2021-08-14 13:29:06,577 Run 1 of 10, adding solvent Ethyl-acetate 1.0 mL to reactor at A1 using tip B4
+2021-08-14 13:29:27,643 Run 2 of 10, adding solvent Ethyl-acetate 1.0 mL to reactor at A2 using tip B4
+2021-08-14 13:29:50,646 Run 3 of 10, adding solvent Ethyl-acetate 1.0 mL to reactor at A3 using tip B4
+2021-08-14 13:30:13,724 Run 4 of 10, adding solvent Ethyl-acetate 1.0 mL to reactor at A4 using tip B4
+2021-08-14 13:30:24,254 Stopping......
+
+2021-08-14 13:31:50,871 Starting transfering...
+2021-08-14 13:32:17,960 Run 1 of 2, adding solid KF 0.006 mmol to reactor at A1
+2021-08-14 13:32:33,946 Run 2 of 2, adding solid KF 0.006 mmol to reactor at A2
+2021-08-14 13:32:58,649 *Finished*
+
+2021-08-14 13:33:20,064 Starting transfering...
+2021-08-14 13:33:29,457 Run 1 of 2, adding solid KF 0.01 mmol to reactor at A1
+2021-08-14 13:33:45,679 Run 2 of 2, adding solid KF 0.01 mmol to reactor at A2
+2021-08-14 13:34:10,593 *Finished*
+
+2021-08-14 13:34:35,120 Starting transfering...
+2021-08-14 13:34:53,652 Run 1 of 2, adding solvent Ethyl-acetate 1.5 mL to reactor at A1 using tip C4
+2021-08-14 13:35:35,121 Run 2 of 2, adding solvent Ethyl-acetate 1.5 mL to reactor at A2 using tip C4
+2021-08-14 13:36:39,191 *Finished*
+
+2021-08-14 13:43:40,622 Com ports: xy_port= COM5, z_port= COM16, gripper_port= COM6, pipette_port= COM9
+2021-08-14 13:44:24,723 Starting transfering...
+2021-08-14 13:44:33,882 Run 1 of 2, adding solid KF 0.006 mmol to reactor at A1
+2021-08-14 13:44:50,317 Run 2 of 2, adding solid KF 0.006 mmol to reactor at A2
+2021-08-14 13:45:15,478 *Finished*
+
