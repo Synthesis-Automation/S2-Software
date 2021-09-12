@@ -1,7 +1,10 @@
 # No space in names, ',' as seperator, 'mL' for liquids, 'mmol' for solids, program ignores chemical name start with '$'. 
 
-CsF (0.005 mmol), liquid1 (0.5 mL), water (0.9 mL), Reaction-temperature (25.0 degree), Reaction-time (6.0 h)
+CsFF (0.005 mmol), liquid1 (0.5 mL), water (0.9 mL), Reaction-temperature (25.0 degree), Reaction-time (6.0 h)
 KF (0.005 mmol), water (0.9 mL), Reaction-temperature (25.0 degree), Reaction-time (6.0 h)
+
+
+
 
 
 

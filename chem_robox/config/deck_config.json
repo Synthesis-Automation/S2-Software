@@ -32,8 +32,8 @@
         "assignment": "Clean up"
     },
     "B4": {
-        "plate": "plate_10mL:001",
-        "assignment": "Reagent"
+        "plate": "workup_8mL_20p:001",
+        "assignment": "Workup"
     },
     "B5": {
         "plate": "not_used:002",
@@ -52,8 +52,8 @@
         "assignment": "Reactor"
     },
     "C4": {
-        "plate": "workup_8mL_20p:002",
-        "assignment": "Workup"
+        "plate": "plate_10mL:001",
+        "assignment": "Reagent"
     },
     "C5": {
         "plate": "plate_5mL:001",

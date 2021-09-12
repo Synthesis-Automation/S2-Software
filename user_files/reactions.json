@@ -1,25 +1,25 @@
 [
     {
-        "tracking_number": "08/15/2021/12:09/1",
+        "tracking_number": "09/12/2021/14:07/1",
         "reactor_no": 1,
         "addition_temperature": 25,
-        "reaction_time": 1,
-        "reaction_temperature": 25,
+        "reaction_time": 6.0,
+        "reaction_temperature": 25.0,
         "reagents": [
             {
-                "name": "benzylamine",
-                "type": "pure_liquid",
-                "plate": "plate_10mL:002",
-                "position": "C2",
-                "amount": 0.0109,
-                "is_volatile": "no"
+                "name": "KF",
+                "type": "solid",
+                "plate": "plate_5mL:001",
+                "position": "A1",
+                "is_volatile": "no",
+                "amount": 1
             },
             {
-                "name": "benzaldehyde",
+                "name": "liquid1",
                 "type": "pure_liquid",
                 "plate": "plate_10mL:001",
-                "position": "A3",
-                "amount": 0.0102,
+                "position": "C4",
+                "amount": 0.5,
                 "is_volatile": "no"
             }
         ],
@@ -28,26 +28,26 @@
         }
     },
     {
-        "tracking_number": "08/15/2021/12:09/2",
+        "tracking_number": "09/12/2021/14:07/2",
         "reactor_no": 2,
         "addition_temperature": 25,
-        "reaction_time": 1,
-        "reaction_temperature": 25,
+        "reaction_time": 6.0,
+        "reaction_temperature": 25.0,
         "reagents": [
             {
-                "name": "benzylamine",
-                "type": "pure_liquid",
-                "plate": "plate_10mL:002",
-                "position": "C2",
-                "amount": 0.0109,
-                "is_volatile": "no"
+                "name": "KF",
+                "type": "solid",
+                "plate": "plate_5mL:001",
+                "position": "A1",
+                "is_volatile": "no",
+                "amount": 1
             },
             {
-                "name": "Pyran-4-amine",
-                "type": "pure_liquid",
-                "plate": "plate_10mL:002",
-                "position": "A1",
-                "amount": 0.0102,
+                "name": "water",
+                "type": "solution",
+                "plate": "plate_50mL:003",
+                "position": "B3",
+                "amount": 0.9,
                 "is_volatile": "no"
             }
         ],

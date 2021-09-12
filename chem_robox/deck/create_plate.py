@@ -176,6 +176,11 @@ if __name__ == "__main__":
     my_plate.save_plate_file()
 
     my_plate = Plate(name='plate_10mL', grid=(4, 3), offset=(
+        15.8, 14.7), spacing=(32.0, 28), diameter=18.0, depth=50, height=148, volume=10000)
+    my_plate.creat_plate()
+    my_plate.save_plate_file()
+
+    my_plate = Plate(name='plate_10mL_old', grid=(4, 3), offset=(
         15.8, 14.7), spacing=(32.0, 28), diameter=18.0, depth=52, height=156, volume=10000)
     my_plate.creat_plate()
     my_plate.save_plate_file()
