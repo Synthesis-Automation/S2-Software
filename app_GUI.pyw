@@ -75,6 +75,9 @@ class Main(tk.Tk):
         self.Manual_control_menu = Menu(self.menu, tearoff=0)
         self.Manual_control_menu.add_command(
             label="Manual control", command=lambda: self.manual_control())
+        self.Manual_control_menu.add_command(
+            label="Return to safe position", command=lambda: chem_robot.go_home())
+
         self.menu.add_cascade(label="Manual-Control  ",
                               menu=self.Manual_control_menu)
 
@@ -2028,6 +2031,11 @@ class Manual_control():
         self.home_menu.add_command(label="Home Z axes only",
                                    command=lambda: chem_robot.home_all_z())
         self.menu.add_cascade(label="Home-Robot ", menu=self.home_menu)
+
+        self.return_menu = Menu(self.menu, tearoff=0)
+        self.return_menu.add_command(label="Return to safe position",
+                                     command=lambda: chem_robot.go_home())
+        self.menu.add_cascade(label="Return ", menu=self.return_menu)
 
         self.pipette_menu = Menu(self.menu, tearoff=0)
         self.pipette_menu.add_command(
