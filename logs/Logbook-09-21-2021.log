@@ -1,0 +1,8 @@
+2021-09-21 14:10:48,497 Com ports: xy_port= COM3, z_port= COM15, gripper_port= None, pipette_port= COM11
+2021-09-21 14:10:50,569 Port must be configured before it can be used.
+2021-09-21 14:10:51,584 Port must be configured before it can be used.
+2021-09-21 14:10:52,601 Port must be configured before it can be used.
+2021-09-21 14:10:53,603 Port must be configured before it can be used.
+2021-09-21 14:10:54,619 Port must be configured before it can be used.
+2021-09-21 14:10:55,626 Port must be configured before it can be used.
+2021-09-21 14:10:56,627 Modbus connection failed

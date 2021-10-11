@@ -74,9 +74,9 @@ class Main(tk.Tk):
 
         self.Manual_control_menu = Menu(self.menu, tearoff=0)
         self.Manual_control_menu.add_command(
-            label="Manual control", command=lambda: self.manual_control())
-        self.Manual_control_menu.add_command(
             label="Return to safe position", command=lambda: chem_robot.go_home())
+        self.Manual_control_menu.add_command(
+            label="Advanced controls", command=lambda: self.manual_control())
 
         self.menu.add_cascade(label="Manual-Control  ",
                               menu=self.Manual_control_menu)
@@ -2458,7 +2458,7 @@ if __name__ == "__main__":
 
     style.configure('Default.Label',
                     foreground="black",
-                    # background="dark green",
+                    background="LightGrey",
                     font=('Helvetica', 11, 'italic'),
                     justify=tk.CENTER,
                     relief=tk.RIDGE
@@ -2466,7 +2466,7 @@ if __name__ == "__main__":
 
     style.configure('Blue.Label',
                     foreground="blue4",
-                    # background="dark green",
+                    background="LightGrey",
                     font=('Helvetica', 11),
                     justify=tk.CENTER,
                     relief=tk.RIDGE
@@ -2479,27 +2479,27 @@ if __name__ == "__main__":
 
     style.configure("Green.TButton",
                     foreground="blue",
-                    background="green",
+                    background="LightGrey",
                     font=('Helvetica', 11, 'italic'))
 
     style.configure("Red.TButton",
                     foreground="red",
                     font=('Helvetica', 11, 'italic'),
-                    background="red")
+                    background="LightGrey")
 
     style.configure("Plate.TButton",
                     foreground="black",
                     font=('Helvetica', 11, 'italic'),
                     width=18,
                     justify=tk.LEFT,
-                    background="deepskyblue")
+                    background="LightGrey")
 
     style.configure("Plate_r.TButton",
                     foreground="blue",
                     font=('Helvetica', 11, 'italic'),
                     width=18,
                     justify=tk.LEFT,
-                    background="deepskyblue")
+                    background="LightGrey")
 
     app.geometry("+0+0")  # set to window to the up/left conner of screen
     # app.state('zoomed')  # full screen mode

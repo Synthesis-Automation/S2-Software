@@ -34,7 +34,7 @@ if __name__ == '__main__':
     # xy_platform.set_acceleration(x= 1000, y = 1000)
 
     # xy_platform.home('x')
-    xy_platform.home('xy')
+    xy_platform.home('y')
 
 
     # Lower level control
@@ -49,19 +49,19 @@ if __name__ == '__main__':
     #     xyz = xy_platform.motion_control.get_current_position()
     #     print(xyz)
 
-    vial_1 = my_deck.vial(plate='R1', vial='A1')
+    # vial_1 = my_deck.vial(plate='R1', vial='A1')
+    # # vial_1 = {'x': 3.805, 'y': 1.9, 'z': 0, 'depth': 59.0, 'plate': 'R1', 'vial': 'A1', 'type': 'reactor_square_8mL_20p', 'height': 166.0, 'diameter': 18.0}
+    # # vial_2 = {'x': 600, 'y': 280, 'z': 0, 'depth': 59.0, 'plate': 'R1', 'vial': 'A1', 'type': 'reactor_square_8mL_20p', 'height': 166.0, 'diameter': 18.0}
     # vial_1 = {'x': 3.805, 'y': 1.9, 'z': 0, 'depth': 59.0, 'plate': 'R1', 'vial': 'A1', 'type': 'reactor_square_8mL_20p', 'height': 166.0, 'diameter': 18.0}
     # vial_2 = {'x': 600, 'y': 280, 'z': 0, 'depth': 59.0, 'plate': 'R1', 'vial': 'A1', 'type': 'reactor_square_8mL_20p', 'height': 166.0, 'diameter': 18.0}
-    vial_1 = {'x': 3.805, 'y': 1.9, 'z': 0, 'depth': 59.0, 'plate': 'R1', 'vial': 'A1', 'type': 'reactor_square_8mL_20p', 'height': 166.0, 'diameter': 18.0}
-    vial_2 = {'x': 600, 'y': 280, 'z': 0, 'depth': 59.0, 'plate': 'R1', 'vial': 'A1', 'type': 'reactor_square_8mL_20p', 'height': 166.0, 'diameter': 18.0}
-    vial_3 = {'x': 600, 'y': 1.9, 'z': 0, 'depth': 59.0, 'plate': 'R1', 'vial': 'A1', 'type': 'reactor_square_8mL_20p', 'height': 166.0, 'diameter': 18.0}
+    # vial_3 = {'x': 600, 'y': 1.9, 'z': 0, 'depth': 59.0, 'plate': 'R1', 'vial': 'A1', 'type': 'reactor_square_8mL_20p', 'height': 166.0, 'diameter': 18.0}
 
-    print(vial_2)
-    xy_platform.move_to(vial=vial_2)
-    for i in range(5):
-        xy_platform.move_to(vial=vial_3)
-        xy_platform.move_to(vial=vial_2)
-        xy_platform.move_to(vial=vial_1)
+    # print(vial_2)
+    # xy_platform.move_to(vial=vial_2)
+    # for i in range(5):
+    #     xy_platform.move_to(vial=vial_3)
+    #     xy_platform.move_to(vial=vial_2)
+    #     xy_platform.move_to(vial=vial_1)
     
     # for i in range(5):
     #     xy_platform.move(x = 650)
